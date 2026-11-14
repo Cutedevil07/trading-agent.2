@@ -91,7 +91,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
 
 <header>
   <h1>$100 Trading Agent</h1>
-  <p class="sub">An automatic agent that picks stocks, ETFs and crypto with pretend money. It runs by itself on GitHub's free computers: every 15 minutes while US markets are open and every 2 hours otherwise, using free market data, the open-source Day Trader skill pack and fixed written rules. No AI and no cost.</p>
+  <p class="sub">An automatic agent that picks stocks, ETFs and crypto with pretend money. It runs by itself on GitHub's free computers: every 5 minutes while US markets are open and every 30 minutes otherwise, using free market data, the open-source Day Trader skill pack, a free finance-news AI model and fixed written rules. No cost.</p>
   <div class="pills">
     <span class="pill paper" id="phase">Paper trading</span>
     <span class="pill" id="day">Day 0 of 20</span>
@@ -123,7 +123,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
 
 <section class="panel">
   <h2>Latest decision</h2>
-  <p class="note" id="journal">Every run checks prices, stops, targets and news on what it holds. It looks for stock trades about every 30 minutes from 10:15 AM to 2:30 PM New York time, and for crypto every 2 hours. At 3:20 PM it closes day trades and reviews the day.</p>
+  <p class="note" id="journal">Every run checks prices, stops, targets and news on what it holds. It looks for stock trades about every 10 minutes from 9:50 AM to 2:55 PM New York time, and for crypto every 30 minutes. At 3:20 PM it closes day trades and reviews the day.</p>
   <div class="rows" id="cands" style="margin-top:10px"></div>
 </section>
 
@@ -138,8 +138,8 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
 </section>
 
 <section class="panel">
-  <h2>Congress trade reports</h2>
-  <div class="rows" id="congress"><p class="empty">New stock-trade reports filed by members of the US House appear here, with a link to each report. Members can report up to 45 days late, so this is background only.</p></div>
+  <h2>Congress trades</h2>
+  <div class="rows" id="congress"><p class="empty">Stock trades reported by members of the US House appear here, read from each report. Members can report up to 45 days late, so this is background only.</p></div>
 </section>
 
 <section class="panel">
@@ -160,7 +160,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
     <div>
       <h3>1. Chart scanner</h3>
       <ul>
-        <li>About every 30 minutes in market hours it screens a fixed list of 46 large US companies and 15 big ETFs, then runs the pack's opening-range breakout scan on the best 20. Crypto: the top-10 coins, without stablecoins, wrapped tokens or meme coins.</li>
+        <li>About every 10 minutes in market hours it screens a fixed list of 46 large US companies and 15 big ETFs, then runs the pack's opening-range breakout scan on the best 20. Crypto: the top-10 coins, without stablecoins, wrapped tokens or meme coins.</li>
         <li>No penny stocks, options, borrowing or shorting.</li>
       </ul>
     </div>
@@ -168,17 +168,17 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
       <h3>2. News monitor</h3>
       <ul>
         <li>Reads the last 12 hours of Yahoo Finance headlines for every candidate and holding (the pack's news tool).</li>
-        <li>Only headlines that name the company or coin count. Words like beat, upgrade, contract or approval are good news; miss, downgrade, lawsuit, recall or probe are bad news. Two bad headlines, or one serious one, sell a holding.</li>
+        <li>Only headlines that name the company or coin count. Each one is read by a free AI model trained on financial news, which judges it good, bad or neutral.</li><li>Two bad headlines, or one serious one (a lawsuit, recall, probe or halt), sell a holding.</li>
       </ul>
     </div>
     <div>
       <h3>How a pick is scored (out of 100)</h3>
       <div class="weights">
         <span>Technical: trend, momentum, RSI, volume, near a 20-day high</span><b>30</b><div class="bar"><span style="width:30%"></span></div>
-        <span>News: today's headlines (12 when there is none)</span><b>25</b><div class="bar"><span style="width:25%"></span></div>
-        <span>Fundamental: fixed at 9 (no free source; large companies only)</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
+        <span>News: the AI model's reading of today's headlines (12 when there is none)</span><b>25</b><div class="bar"><span style="width:25%"></span></div>
+        <span>Fundamental: sales growth, profit growth, price/earnings and analysts' 1-year target (Nasdaq)</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
         <span>Macro: market mood (risk-on 15, cautious 8, risk-off 0)</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
-        <span>Micro: liquidity, unusual volume, earnings date</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
+        <span>Micro: liquidity, unusual volume, earnings date, Congress buying</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
       </div>
     </div>
     <div>
@@ -227,7 +227,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
     <div>
       <h3>9. Price alerts</h3>
       <ul>
-        <li>When a good candidate is not yet at a clean entry, an alert is set where it would become one. Checked at every run (every 15 minutes in market hours); up to 6 at once; each lasts 5 trading days.</li>
+        <li>When a good candidate is not yet at a clean entry, an alert is set where it would become one. Checked at every run (every 5 minutes in market hours); up to 6 at once; each lasts 5 trading days.</li>
       </ul>
     </div>
     <div>
@@ -239,7 +239,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
     <div>
       <h3>11. Congress tracker</h3>
       <ul>
-        <li>Once a day it lists new trade reports from the US House Clerk, with links. It never affects a decision.</li>
+        <li>Once a day it reads every new trade report filed with the US House Clerk.</li><li>A member's purchase in the last 45 days adds up to 3 points to that stock. It is never a reason to buy on its own: reports can be 45 days late.</li>
       </ul>
     </div>
     <div>

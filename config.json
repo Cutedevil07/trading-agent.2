@@ -1,0 +1,24 @@
+{
+  "_about": "What the agent may trade. Large US companies (over US$10 billion) and big ETFs (over US$1 billion, no leveraged or inverse funds). Edit these lists on GitHub to change them.",
+  "stocks": ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "AVGO", "AMD", "NFLX",
+             "ORCL", "CRM", "ADBE", "QCOM", "MU", "PLTR", "UBER", "SHOP", "COIN", "INTC",
+             "JPM", "BAC", "WFC", "GS", "MS", "V", "MA", "PYPL", "XOM", "CVX",
+             "UNH", "LLY", "JNJ", "MRK", "ABBV", "WMT", "COST", "HD", "MCD", "NKE",
+             "KO", "PEP", "DIS", "BA", "CAT", "GE"],
+  "etfs": ["SPY", "QQQ", "IWM", "DIA", "XLK", "XLF", "XLE", "XLV", "XLY", "XLI", "XLP", "XLU", "SMH", "GLD", "TLT"],
+  "names": {
+    "AAPL": "apple", "MSFT": "microsoft", "NVDA": "nvidia", "AMZN": "amazon", "GOOGL": "google|alphabet",
+    "META": "meta platforms|meta's|facebook|instagram", "TSLA": "tesla", "AVGO": "broadcom", "AMD": "amd\\b",
+    "NFLX": "netflix", "ORCL": "oracle", "CRM": "salesforce", "ADBE": "adobe", "QCOM": "qualcomm",
+    "MU": "micron", "PLTR": "palantir", "UBER": "uber\\b", "SHOP": "shopify", "COIN": "coinbase", "INTC": "intel\\b",
+    "JPM": "jpmorgan|jp morgan", "BAC": "bank of america|bofa", "WFC": "wells fargo", "GS": "goldman",
+    "MS": "morgan stanley", "V": "visa\\b", "MA": "mastercard", "PYPL": "paypal", "XOM": "exxon",
+    "CVX": "chevron", "UNH": "unitedhealth", "LLY": "eli lilly|lilly", "JNJ": "johnson & johnson|j&j",
+    "MRK": "merck", "ABBV": "abbvie", "WMT": "walmart", "COST": "costco", "HD": "home depot",
+    "MCD": "mcdonald", "NKE": "nike", "KO": "coca-cola|coke\\b", "PEP": "pepsi", "DIS": "disney",
+    "BA": "boeing", "CAT": "caterpillar", "GE": "ge aerospace|general electric",
+    "BTC": "bitcoin", "ETH": "ethereum|ether\\b", "XRP": "xrp|ripple", "SOL": "solana", "BNB": "bnb\\b|binance coin",
+    "TRX": "tron\\b", "ADA": "cardano", "LINK": "chainlink", "AVAX": "avalanche", "HYPE": "hyperliquid"
+  },
+  "daily_summary": true
+}

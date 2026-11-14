@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading agent</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Trading agent">
+<meta name="theme-color" content="#0d6b57">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f5f3; --panel:#ffffff; --ink:#14201c; --muted:#5d6b66; --line:#d9e0dc;
+  --accent:#0d6b57; --bench:#7a8a99;
+  --good:#1b7f47; --bad:#b83227; --warn:#a36a10;
+  --display:"IBM Plex Sans Condensed","IBM Plex Sans",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1513; --panel:#16201d; --ink:#e7eeeb; --muted:#93a39d; --line:#27342f;
+    --accent:#55c7a6; --bench:#8fa0b0; --good:#5ecb88; --bad:#f08273; --warn:#e0b05a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1513; --panel:#16201d; --ink:#e7eeeb; --muted:#93a39d; --line:#27342f;
+  --accent:#55c7a6; --bench:#8fa0b0; --good:#5ecb88; --bad:#f08273; --warn:#e0b05a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 48px;display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-direction:column;gap:8px}
+h1{font-family:var(--display);font-size:30px;line-height:1.1;margin:0;letter-spacing:.01em;text-wrap:balance}
+h2{font-family:var(--display);font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+p{margin:0}
+.sub{color:var(--muted);font-size:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel)}
+.pill.paper{color:var(--accent);border-color:var(--accent)}
+.pill.halt{color:var(--bad);border-color:var(--bad)}
+.pill.on{color:var(--good);border-color:var(--good)}
+.pill.cautious{color:var(--warn);border-color:var(--warn)}
+.pill.off{color:var(--bad);border-color:var(--bad)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.tile .k{font-size:12px;color:var(--muted)}
+.tile .v{font-family:var(--mono);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.tile .d{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+.good{color:var(--good)} .bad{color:var(--bad)} .muted{color:var(--muted)}
+.chart{width:100%;overflow:hidden}
+.chart svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:10px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0;padding-top:0}
+.row .t{font-weight:600;overflow-wrap:anywhere}
+.row .n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;font-weight:500}
+.row .s{grid-column:1 / -1;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.tag{font-family:var(--mono);font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;border:1px solid var(--line);margin-right:6px}
+.tag.buy{color:var(--good);border-color:var(--good)} .tag.sell{color:var(--bad);border-color:var(--bad)}
+.empty{color:var(--muted);font-size:14px}
+.note{font-size:15px;max-width:65ch}
+.rules{display:flex;flex-direction:column;gap:12px;font-size:14.5px}
+.rules h3{font-size:15px;margin:0 0 2px}
+.rules ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:3px;max-width:65ch}
+.weights{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;font-size:14px}
+.weights b{font-family:var(--mono);font-weight:600;text-align:right}
+.bar{grid-column:1 / -1;height:4px;border-radius:2px;background:var(--line);margin-bottom:6px}
+.bar span{display:block;height:100%;border-radius:2px;background:var(--accent)}
+.lessons{margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:14.5px;max-width:65ch}
+.lessons:empty{display:none}
+.chk{font-family:var(--mono);font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;margin-right:6px}
+.chk.pass{color:var(--good);border:1px solid var(--good)} .chk.block{color:var(--bad);border:1px solid var(--bad)}
+.status{font-size:13px;color:var(--warn)}
+footer{font-size:12.5px;color:var(--muted);max-width:65ch}
+@media (min-width:560px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>$100 Trading Agent</h1>
+  <p class="sub">An automatic agent that picks stocks, ETFs and crypto with pretend money. It runs by itself on GitHub's free computers: every 15 minutes while US markets are open and every 2 hours otherwise, using free market data, the open-source Day Trader skill pack and fixed written rules. No AI and no cost.</p>
+  <div class="pills">
+    <span class="pill paper" id="phase">Paper trading</span>
+    <span class="pill" id="day">Day 0 of 20</span>
+    <span class="pill" id="regime" hidden></span>
+    <span class="pill halt" id="halt" hidden>New buys halted</span>
+  </div>
+  <p class="sub" id="lastrun"></p>
+  <p class="status" id="status" hidden></p>
+</header>
+
+<section class="tiles" aria-label="Summary">
+  <div class="tile"><span class="k">Agent value</span><span class="v" id="eq">$100.00</span><span class="d muted" id="eqd">start $100.00</span></div>
+  <div class="tile"><span class="k">Buy-and-hold value</span><span class="v" id="bm">$100.00</span><span class="d muted" id="bmd">70% S&amp;P 500, 30% Bitcoin</span></div>
+  <div class="tile"><span class="k">Agent vs buy-and-hold</span><span class="v" id="diff">$0.00</span><span class="d muted">the number that matters</span></div>
+  <div class="tile"><span class="k">Worst drop so far</span><span class="v" id="dd">0.0%</span><span class="d muted">limit 15%</span></div>
+</section>
+
+<section class="panel">
+  <h2>Value over time (CAD)</h2>
+  <div class="chart" id="chart"><p class="empty">The line starts after the agent's second day.</p></div>
+  <div class="legend"><span><i style="background:var(--accent)"></i>Agent</span><span><i style="background:var(--bench)"></i>Buy-and-hold</span></div>
+</section>
+
+<section class="panel">
+  <h2>What it holds</h2>
+  <div class="rows" id="positions"><p class="empty">Loading…</p></div>
+  <div class="rows" id="cash" style="margin-top:10px"></div>
+</section>
+
+<section class="panel">
+  <h2>Latest decision</h2>
+  <p class="note" id="journal">Every run checks prices, stops, targets and news on what it holds. It looks for stock trades about every 30 minutes from 10:15 AM to 2:30 PM New York time, and for crypto every 2 hours. At 3:20 PM it closes day trades and reviews the day.</p>
+  <div class="rows" id="cands" style="margin-top:10px"></div>
+</section>
+
+<section class="panel">
+  <h2>Price alerts</h2>
+  <div class="rows" id="alerts"><p class="empty">No alerts set. The agent adds one when a good candidate is not yet at a clean entry price.</p></div>
+</section>
+
+<section class="panel">
+  <h2>Earnings watch</h2>
+  <div class="rows" id="earnings"><p class="empty">No company reports on the radar yet.</p></div>
+</section>
+
+<section class="panel">
+  <h2>Congress trade reports</h2>
+  <div class="rows" id="congress"><p class="empty">New stock-trade reports filed by members of the US House appear here, with a link to each report. Members can report up to 45 days late, so this is background only.</p></div>
+</section>
+
+<section class="panel">
+  <h2>Recent trades</h2>
+  <div class="rows" id="trades"><p class="empty">No trades yet.</p></div>
+</section>
+
+<section class="panel">
+  <h2>Time machine: what past trades taught it</h2>
+  <p class="note" id="replay">After every closed trade the agent scores it in R, where 1R is the amount risked. Results appear here once trades close.</p>
+  <div class="rows" id="setups" style="margin-top:10px"></div>
+  <ul class="lessons" id="lessons"></ul>
+</section>
+
+<section class="panel">
+  <h2>The eleven tools and their rules</h2>
+  <div class="rules">
+    <div>
+      <h3>1. Chart scanner</h3>
+      <ul>
+        <li>About every 30 minutes in market hours it screens a fixed list of 46 large US companies and 15 big ETFs, then runs the pack's opening-range breakout scan on the best 20. Crypto: the top-10 coins, without stablecoins, wrapped tokens or meme coins.</li>
+        <li>No penny stocks, options, borrowing or shorting.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>2. News monitor</h3>
+      <ul>
+        <li>Reads the last 12 hours of Yahoo Finance headlines for every candidate and holding (the pack's news tool).</li>
+        <li>Only headlines that name the company or coin count. Words like beat, upgrade, contract or approval are good news; miss, downgrade, lawsuit, recall or probe are bad news. Two bad headlines, or one serious one, sell a holding.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>How a pick is scored (out of 100)</h3>
+      <div class="weights">
+        <span>Technical: trend, momentum, RSI, volume, near a 20-day high</span><b>30</b><div class="bar"><span style="width:30%"></span></div>
+        <span>News: today's headlines (12 when there is none)</span><b>25</b><div class="bar"><span style="width:25%"></span></div>
+        <span>Fundamental: fixed at 9 (no free source; large companies only)</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
+        <span>Macro: market mood (risk-on 15, cautious 8, risk-off 0)</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
+        <span>Micro: liquidity, unusual volume, earnings date</span><b>15</b><div class="bar"><span style="width:15%"></span></div>
+      </div>
+    </div>
+    <div>
+      <h3>3. Entry time</h3>
+      <ul>
+        <li>Buys only with a score of 70 or more (80 when the market is cautious) and one of three setups: a pullback in an uptrend, a breakout (the pack's opening-range breakout, or a new 20-day high on heavy volume), or a news move holding its gains.</li>
+        <li>Never chases: no buying anything already up more than 10% on the day. At most 2 buys a day and 6 a week.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>4. Exit planner</h3>
+      <ul>
+        <li>Every trade has a stop-loss and a profit target set before buying, the target twice as far as the stop. Breakouts use the pack's exit planner.</li>
+        <li>They act like orders waiting at a broker: if the price touched either one between runs, the trade is counted as sold there. If a bar opened below the stop, it is sold at that worse price.</li>
+        <li>At 3:20 PM, stock day trades are closed unless they are in profit with the trend intact, and stocks are never held into an earnings report (or overnight at all when the earnings calendar can't be read).</li>
+        <li>Stops and targets are checked on 5-minute prices at every run, so one hit at 11:05 is recorded at 11:05.</li>
+        <li>Nothing is held longer than 5 trading days (10 days for crypto). Once a trade is up by its risk, the stop moves to the buy price.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>5. Time machine</h3>
+      <ul>
+        <li>Before every buy it replays the trade 10,000 times: the pack's replay of the rest of the day on 5-minute bars for breakouts, otherwise the last 100 days of daily prices.</li>
+        <li>It buys only if the replays favour the target. A setup that loses money over 8 trades is switched off.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>6. Risk manager</h3>
+      <ul>
+        <li>Every order gets 16 pass/fail checks, plus the pack's own risk check for stocks. One failed check blocks it. Selling is never blocked.</li>
+        <li>Down 2% in a day or 5% in a week: no more buys. At $85 all buying stops and you get an alert.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>7. Budget manager</h3>
+      <ul>
+        <li>Risks 1% of the account per trade, about $1. $70 for stocks and ETFs, $30 for crypto; up to 3 stock or ETF positions and 2 coins.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>8. Order executor</h3>
+      <ul>
+        <li>Paper fills only, with real costs: 1.5% to convert CAD to USD, 0.1% slippage per stock trade, 0.8% per crypto trade. The program contains no broker code at all.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>9. Price alerts</h3>
+      <ul>
+        <li>When a good candidate is not yet at a clean entry, an alert is set where it would become one. Checked at every run (every 15 minutes in market hours); up to 6 at once; each lasts 5 trading days.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>10. Earnings analyst</h3>
+      <ul>
+        <li>Reads Nasdaq's free earnings calendar: no buying in the 2 trading days before a report, nothing held through one, and a profit miss blocks buying for 5 trading days.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>11. Congress tracker</h3>
+      <ul>
+        <li>Once a day it lists new trade reports from the US House Clerk, with links. It never affects a decision.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Before real money</h3>
+      <ul>
+        <li>20 trading days on paper with no broken rules, and a worst drop under 15%. Then you compare it with buy-and-hold and decide. Twenty days shows the machine works; it cannot prove skill.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>Paper results use real market prices and modelled costs. They are not real trades and not financial advice. Past results do not predict future ones. Market data from Yahoo Finance (free, unofficial, delayed).</footer>
+</div>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var money = function(n){ return (n < 0 ? "-$" : "$") + Math.abs(Number(n) || 0).toFixed(2); };
+  var pct = function(n){ var v = Number(n) || 0; return (v > 0 ? "+" : "") + v.toFixed(1) + "%"; };
+  var el = function(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = String(text); return e; };
+  var tone = function(n){ return n > 0.004 ? "good" : (n < -0.004 ? "bad" : "muted"); };
+  var vals = function(o){ return o ? Object.keys(o).map(function(k){ return o[k]; }) : []; };
+  function clear(node){ while (node.firstChild) node.removeChild(node.firstChild); }
+  function px(v){ return "$" + (Number(v) || 0).toLocaleString(undefined, {maximumFractionDigits: 4}); }
+
+  function showState(s){
+    var start = Number(s.startEquityCad) || 100;
+    var eq = Number(s.equityCad) || start, bm = Number(s.benchmarkCad) || start;
+    $("eq").textContent = money(eq);
+    var ep = (eq / start - 1) * 100;
+    $("eqd").textContent = pct(ep) + " since start"; $("eqd").className = "d " + tone(ep);
+    $("bm").textContent = money(bm);
+    var bp = (bm / start - 1) * 100;
+    $("bmd").textContent = pct(bp) + " since start"; $("bmd").className = "d " + tone(bp);
+    var d = eq - bm;
+    $("diff").textContent = (d > 0 ? "+" : "") + money(d); $("diff").className = "v " + tone(d);
+    $("dd").textContent = (Number(s.maxDrawdownPct) || 0).toFixed(1) + "%";
+    $("phase").textContent = s.phase === "live" ? "Live" : "Paper trading";
+    $("day").textContent = "Day " + (Number(s.tradingDays) || 0) + " of 20";
+    $("halt").hidden = !s.halted;
+    if (s.lastRun){
+      var who = {github: "GitHub", iphone: "your iPhone", claude: "Claude", manual: "a manual run"}[s.lastRunBy] || s.lastRunBy || "";
+      var t = new Date(s.lastRun);
+      $("lastrun").textContent = "Last run " + t.toLocaleString(undefined, {weekday: "short", hour: "numeric", minute: "2-digit"}) + (who ? " by " + who : "") + ".";
+    }
+    var cash = $("cash"); clear(cash);
+    [["Cash for stocks (USD)", s.stocksCashUsd], ["Cash for stocks (CAD)", s.stocksCashCad], ["Cash for crypto (CAD)", s.cryptoCashCad]].forEach(function(r){
+      if (r[0].indexOf("(CAD)") > -1 && r[0].indexOf("stocks") > -1 && !(Number(r[1]) > 0)) return;
+      var row = el("div", "row"); row.appendChild(el("span", "t muted", r[0])); row.appendChild(el("span", "n", money(r[1]))); cash.appendChild(row);
+    });
+    showReplay(s.stats);
+  }
+
+  var SETUPS = {pullback: "Pullback in an uptrend", breakout: "Breakout", news: "News move"};
+  function showReplay(st){
+    if (!st || !(Number(st.closed) > 0)) return;
+    var n = Number(st.closed), w = Number(st.wins) || 0, r = Number(st.totalR) || 0;
+    $("replay").textContent = n + " closed trade" + (n === 1 ? "" : "s") + ", " + w + " won (" + Math.round(w / n * 100) + "%). Average result " + (r / n >= 0 ? "+" : "") + (r / n).toFixed(2) + "R, where 1R is the amount risked on a trade.";
+    var box = $("setups"); clear(box);
+    var by = st.bySetup || {};
+    Object.keys(SETUPS).forEach(function(k){
+      var s = by[k]; if (!s || !(Number(s.n) > 0)) return;
+      var row = el("div", "row"), tr = Number(s.r) || 0;
+      row.appendChild(el("span", "t", SETUPS[k]));
+      row.appendChild(el("span", "n " + tone(tr), (tr >= 0 ? "+" : "") + tr.toFixed(2) + "R"));
+      row.appendChild(el("span", "s", s.n + " trades, " + (Number(s.wins) || 0) + " won" + (s.disabled ? "  ·  switched off" : "")));
+      box.appendChild(row);
+    });
+  }
+
+  function showAlerts(docs){
+    docs = docs.filter(function(a){ return a.status === "waiting" || a.status === "hit"; });
+    if (!docs.length) return;
+    var box = $("alerts"); clear(box);
+    docs.sort(function(a, b){ return (a.status === "waiting" ? 0 : 1) - (b.status === "waiting" ? 0 : 1) || String(b.createdOn || "").localeCompare(String(a.createdOn || "")); });
+    docs.slice(0, 8).forEach(function(a){
+      var row = el("div", "row"), hit = a.status === "hit";
+      row.appendChild(el("span", "t", a.symbol || ""));
+      row.appendChild(el("span", "n", (a.direction === "below" ? "below " : "above ") + px(a.level)));
+      var s = el("span", "s");
+      s.appendChild(el("span", hit ? "good" : "muted", hit ? "Hit " + (a.hitOn || "") : "Waiting until " + (a.expiresOn || "")));
+      if (a.reason) s.appendChild(document.createTextNode("  ·  " + a.reason));
+      row.appendChild(s); box.appendChild(row);
+    });
+  }
+
+  function showEarnings(docs){
+    if (!docs.length) return;
+    var box = $("earnings"); clear(box);
+    docs.sort(function(a, b){ return String(b.reportDate || "").localeCompare(String(a.reportDate || "")); });
+    docs.slice(0, 8).forEach(function(e){
+      var row = el("div", "row"), v = String(e.verdict || "");
+      row.appendChild(el("span", "t", e.symbol || ""));
+      row.appendChild(el("span", "n", e.reportDate || ""));
+      var s = el("span", "s");
+      if (e.status === "reported" && v) s.appendChild(el("span", v === "beat" ? "good" : (v === "miss" ? "bad" : "muted"), "Reported: " + v));
+      else s.appendChild(el("span", "muted", e.status === "reported" ? "Reported" : "Upcoming"));
+      if (e.note) s.appendChild(document.createTextNode("  ·  " + e.note));
+      row.appendChild(s); box.appendChild(row);
+    });
+  }
+
+  function showCongress(docs){
+    if (!docs.length) return;
+    var box = $("congress"); clear(box);
+    docs.sort(function(a, b){ return String(b.filedDate || "").localeCompare(String(a.filedDate || "")); });
+    docs.slice(0, 10).forEach(function(c){
+      var row = el("div", "row"), type = String(c.type || "");
+      var buy = /purchase|buy/i.test(type), filed = !buy && !/sale|sell/i.test(type);
+      var t = el("span", "t"); t.appendChild(el("span", "tag" + (filed ? "" : (buy ? " buy" : " sell")), filed ? "REPORT" : (buy ? "BUY" : "SELL")));
+      t.appendChild(document.createTextNode(c.symbol || c.member || "")); row.appendChild(t);
+      row.appendChild(el("span", "n", c.amount || c.filedDate || ""));
+      var s = el("span", "s");
+      s.appendChild(document.createTextNode((c.symbol ? (c.member || "") + "  ·  " : "") + (c.chamber || "House") + "  ·  filed " + (c.filedDate || "?") + "  ·  "));
+      if (c.url && /^https:\/\/disclosures-clerk\.house\.gov\//.test(c.url)){ var a = el("a", null, "read the report"); a.href = c.url; a.rel = "noopener"; a.target = "_blank"; s.appendChild(a); }
+      else s.appendChild(document.createTextNode(c.note || ""));
+      row.appendChild(s); box.appendChild(row);
+    });
+  }
+
+  function showLessons(items){
+    var box = $("lessons"); clear(box);
+    (Array.isArray(items) ? items : []).slice(0, 12).forEach(function(t){ box.appendChild(el("li", null, t)); });
+  }
+
+  function showPositions(docs){
+    var box = $("positions"); clear(box);
+    if (!docs.length){ box.appendChild(el("p", "empty", "No holdings right now. The agent is in cash.")); return; }
+    docs.sort(function(a, b){ return (Number(b.valueCad) || 0) - (Number(a.valueCad) || 0); });
+    docs.forEach(function(p){
+      var row = el("div", "row");
+      row.appendChild(el("span", "t", (p.symbol || "") + (p.name && p.name !== p.symbol ? "  " + p.name : "")));
+      row.appendChild(el("span", "n", money(p.valueCad)));
+      var pl = Number(p.pnlPct) || 0;
+      var s = el("span", "s");
+      s.appendChild(el("span", tone(pl), pct(pl)));
+      s.appendChild(document.createTextNode("  ·  bought " + (p.entryDate || "") + "  ·  stop " + px(p.stopPrice) + (p.targetPrice ? "  ·  target " + px(p.targetPrice) : "") + (p.score != null ? "  ·  score " + p.score : "")));
+      row.appendChild(s);
+      if (p.thesis) row.appendChild(el("span", "s", p.thesis));
+      box.appendChild(row);
+    });
+  }
+
+  function showTrades(docs){
+    var box = $("trades"); clear(box);
+    if (!docs.length){ box.appendChild(el("p", "empty", "No trades yet.")); return; }
+    docs.forEach(function(t){
+      var row = el("div", "row");
+      var title = el("span", "t");
+      var side = String(t.side || "").toUpperCase();
+      title.appendChild(el("span", "tag " + (side === "BUY" ? "buy" : "sell"), side));
+      title.appendChild(document.createTextNode(t.symbol || ""));
+      row.appendChild(title);
+      var n = el("span", "n", money(t.valueCad));
+      row.appendChild(n);
+      var pl = t.pnlCad != null ? "  ·  result " + (t.pnlCad >= 0 ? "+" : "") + money(t.pnlCad) + (t.r != null ? " (" + (t.r >= 0 ? "+" : "") + Number(t.r).toFixed(2) + "R)" : "") : "";
+      row.appendChild(el("span", "s", (t.date || "") + (t.reason ? "  ·  " + t.reason : "") + pl));
+      var c = t.check, rp = t.replay;
+      if (c || rp){
+        var s2 = el("span", "s");
+        if (c && c.verdict){
+          var pass = c.verdict === "PASS";
+          s2.appendChild(el("span", "chk " + (pass ? "pass" : "block"), c.verdict));
+          s2.appendChild(document.createTextNode(pass ? (Number(c.passed) || 0) + " checks passed" : "failed: " + (c.failed || []).join(", ")));
+        }
+        if (rp && rp.pTarget != null){
+          s2.appendChild(document.createTextNode((c ? "  ·  " : "") + "Replays: target first " + Math.round(rp.pTarget * 100) + "%, stop first " + Math.round(rp.pStop * 100) + "%" + (rp.meanR != null ? ", average " + (Number(rp.meanR) >= 0 ? "+" : "") + Number(rp.meanR).toFixed(2) + "R" : "")));
+        }
+        row.appendChild(s2);
+      }
+      box.appendChild(row);
+    });
+  }
+
+  function showJournal(j){
+    if (!j) return;
+    $("journal").textContent = (j.date ? j.date + ": " : "") + (j.summary || "");
+    var r = String(j.regime || "").toLowerCase(), pill = $("regime");
+    if (r){
+      pill.hidden = false;
+      pill.textContent = "Market mood: " + r;
+      pill.className = "pill " + (r === "risk-on" ? "on" : (r === "risk-off" ? "off" : "cautious"));
+    }
+    var box = $("cands"); clear(box);
+    (Array.isArray(j.blocked) ? j.blocked : []).slice(0, 6).forEach(function(b){
+      var row = el("div", "row");
+      var t = el("span", "t"); t.appendChild(el("span", "chk block", "BLOCK")); t.appendChild(document.createTextNode(b.symbol || "")); row.appendChild(t);
+      row.appendChild(el("span", "n", ""));
+      row.appendChild(el("span", "s", "Not bought: " + (Array.isArray(b.failed) ? b.failed.join(", ") : (b.reason || ""))));
+      box.appendChild(row);
+    });
+    (Array.isArray(j.topCandidates) ? j.topCandidates : []).slice(0, 8).forEach(function(c){
+      var row = el("div", "row");
+      row.appendChild(el("span", "t", c.symbol || ""));
+      row.appendChild(el("span", "n", c.score != null ? c.score + " / 100" : ""));
+      if (c.verdict) row.appendChild(el("span", "s", c.verdict));
+      box.appendChild(row);
+    });
+  }
+
+  function showChart(points){
+    var box = $("chart");
+    if (points.length < 2) return;
+    clear(box);
+    var W = 640, H = 240, L = 46, R = 58, T = 12, B = 24;
+    var all = []; points.forEach(function(p){ all.push(Number(p.equityCad) || 0, Number(p.benchmarkCad) || 0); });
+    var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
+    var pad = Math.max((hi - lo) * 0.15, 1); lo = Math.floor(lo - pad); hi = Math.ceil(hi + pad);
+    var x = function(i){ return L + (W - L - R) * i / (points.length - 1); };
+    var y = function(v){ return T + (H - T - B) * (1 - (v - lo) / (hi - lo)); };
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg"); svg.setAttribute("viewBox", "0 0 " + W + " " + H); svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Agent value and buy-and-hold value over time");
+    var mk = function(tag, attrs, text){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; svg.appendChild(e); return e; };
+    for (var g = 0; g <= 3; g++){
+      var v = lo + (hi - lo) * g / 3, yy = y(v);
+      mk("line", {x1: L, x2: W - R, y1: yy, y2: yy, stroke: "var(--line)", "stroke-width": 1});
+      mk("text", {x: L - 6, y: yy + 4, "text-anchor": "end", "font-size": 11, fill: "var(--muted)", "font-family": "var(--mono)"}, "$" + v.toFixed(0));
+    }
+    var line = function(key, color, width){
+      var d = points.map(function(p, i){ return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(Number(p[key]) || 0).toFixed(1); }).join(" ");
+      mk("path", {d: d, fill: "none", stroke: color, "stroke-width": width, "stroke-linejoin": "round", "stroke-linecap": "round"});
+      var lv = Number(points[points.length - 1][key]) || 0;
+      mk("circle", {cx: x(points.length - 1), cy: y(lv), r: 3.5, fill: color});
+      return lv;
+    };
+    var bv = line("benchmarkCad", "var(--bench)", 2), av = line("equityCad", "var(--accent)", 2.5);
+    var ya = y(av), yb = y(bv);
+    if (Math.abs(ya - yb) < 13){ if (ya <= yb){ ya -= 7; yb += 7; } else { ya += 7; yb -= 7; } }
+    mk("text", {x: W - R + 7, y: ya + 4, "font-size": 11, fill: "var(--accent)", "font-family": "var(--mono)", "font-weight": 600}, "$" + av.toFixed(2));
+    mk("text", {x: W - R + 7, y: yb + 4, "font-size": 11, fill: "var(--bench)", "font-family": "var(--mono)"}, "$" + bv.toFixed(2));
+    mk("text", {x: L, y: H - 6, "font-size": 11, fill: "var(--muted)", "font-family": "var(--mono)"}, String(points[0].date || ""));
+    mk("text", {x: W - R, y: H - 6, "text-anchor": "end", "font-size": 11, fill: "var(--muted)", "font-family": "var(--mono)"}, String(points[points.length - 1].date || ""));
+    box.appendChild(svg);
+  }
+
+  function warn(msg){ var s = $("status"); s.textContent = msg; s.hidden = false; }
+
+  // Freshest copy straight from the repository (GitHub Pages can lag a minute), else the page's own copy.
+  var host = location.hostname.match(/^([^.]+)\.github\.io$/), repo = location.pathname.split("/")[1];
+  var raw = host && repo ? "https://raw.githubusercontent.com/" + host[1] + "/" + repo + "/main/docs/state.json" : null;
+  function load(url){ return fetch(url + (url.indexOf("?") > -1 ? "&" : "?") + "t=" + Date.now(), {cache: "no-store"}).then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }); }
+  (raw ? load(raw).catch(function(){ return load("state.json"); }) : load("state.json")).then(function(st){
+    var f = st.fund || {};
+    showState(f);
+    showPositions(vals(st.positions));
+    showTrades((st.trades || []).slice(-15).reverse());
+    showChart(st.nav || []);
+    var j = st.journal || []; if (j.length) showJournal(j[j.length - 1]);
+    showLessons(st.lessons);
+    showAlerts(vals(st.alerts)); showEarnings(vals(st.earnings)); showCongress(vals(st.congress));
+    if (f.lastRun && Date.now() - new Date(f.lastRun).getTime() > 2 * 86400000) warn("The agent has not saved a run for over 2 days. Check the Actions tab on GitHub.");
+  }).catch(function(){ warn("The agent's records could not be loaded. Pull down to refresh."); $("positions").textContent = ""; });
+})();
+</script>
+</body>
+</html>

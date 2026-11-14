@@ -1,0 +1,36 @@
+name: agent
+
+# Runs the $100 Trading Agent on GitHub's free computers.
+# Every 15 minutes while US markets can be open (both clock settings covered),
+# and every 2 hours all week for crypto and news. Times are UTC.
+on:
+  schedule:
+    - cron: "4,19,34,49 13-21 * * 1-5"
+    - cron: "37 */2 * * *"
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "run or selftest"
+        default: "run"
+        required: true
+
+concurrency:
+  group: agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the agent
+        run: python3 agent.py ${{ github.event.inputs.command || 'run' }}
+        env:
+          AGENT_GITHUB_REPO: ${{ github.repository }}
+          AGENT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AGENT_NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          AGENT_RUNNER: github

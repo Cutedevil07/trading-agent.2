@@ -1,0 +1,165 @@
+{
+ "alerts": {
+  "LLY-20261113": {
+   "createdOn": "2026-11-13",
+   "currency": "USD",
+   "direction": "above",
+   "expiresOn": "2026-11-20",
+   "hitOn": "",
+   "level": 1460,
+   "reason": "Move above 20-day high would give a valid breakout entry",
+   "status": "waiting",
+   "symbol": "LLY"
+  }
+ },
+ "congress": {},
+ "earnings": {},
+ "fund": {
+  "benchmarkBtcUnits": 0.0003010243240526266,
+  "benchmarkCad": 98.18,
+  "benchmarkSet": true,
+  "benchmarkSpyUnits": 0.06376749177847375,
+  "cryptoCashCad": 30,
+  "dayDate": "2026-11-13",
+  "dayStartEquityCad": 100,
+  "entriesThisWeek": 0,
+  "entriesToday": 0,
+  "equityCad": 98.95,
+  "haltReason": "",
+  "halted": false,
+  "lastCongressCheck": "2026-11-13",
+  "lastRun": "2026-11-13T20:25:00Z",
+  "lastRunBy": "claude",
+  "lastRunNote": "Pack data test: Yahoo and Nasdaq all answered 200. CLOSE run: no stock buying after the open, Bitcoin still below its long-term average so no crypto buying, nothing held. No trades.",
+  "lastTradingDay": "2026-11-13",
+  "maxDrawdownPct": 1.14,
+  "peakEquityCad": 100,
+  "phase": "paper",
+  "ruleBreaks": 0,
+  "startDate": "2026-11-13",
+  "startEquityCad": 100,
+  "stats": {
+   "bySetup": {
+    "breakout": {
+     "disabled": false,
+     "n": 0,
+     "r": 0,
+     "wins": 0
+    },
+    "news": {
+     "disabled": false,
+     "n": 0,
+     "r": 0,
+     "wins": 0
+    },
+    "pullback": {
+     "disabled": false,
+     "n": 0,
+     "r": 0,
+     "wins": 0
+    }
+   },
+   "closed": 0,
+   "totalR": 0,
+   "wins": 0
+  },
+  "stocksCashCad": 0,
+  "stocksCashUsd": 48.32797134666471,
+  "tradingDays": 1,
+  "usdCad": 1.42672,
+  "weekStart": "2026-11-09",
+  "weekStartEquityCad": 100
+ },
+ "journal": [
+  {
+   "blocked": [
+    {
+     "failed": [
+      "Score high enough"
+     ],
+     "symbol": "LLY"
+    },
+    {
+     "failed": [
+      "Score high enough"
+     ],
+     "symbol": "COST"
+    },
+    {
+     "failed": [
+      "Score high enough"
+     ],
+     "symbol": "V"
+    },
+    {
+     "failed": [
+      "Score high enough"
+     ],
+     "symbol": "MSFT"
+    },
+    {
+     "failed": [
+      "Score high enough"
+     ],
+     "symbol": "META"
+    }
+   ],
+   "dataCalls": 44,
+   "dataMode": "pack",
+   "date": "2026-11-13",
+   "packTest": "query1.finance.yahoo.com: 200; query2.finance.yahoo.com: 200; www.nasdaqtrader.com: 200",
+   "regime": "cautious",
+   "summary": "US stocks have not opened yet, so I only looked at crypto. Bitcoin fell about 5.6% in a day and sits below its long-term average, which is a warning sign. I bought nothing and kept the cash safe. The benchmark was set up: 70 dollars in a stock index fund and 30 in Bitcoin. Fourth early check: Bitcoin still below its long-term average, stocks still closed, still no buying. Fifth check: same picture (Bitcoin down 3% today), no buying. Sixth check: data sites now reachable, but stocks still closed and Bitcoin still weak, so no buying. Open run: stocks are open but the S&P 500 is down 0.9%, so the market is cautious. Costco, Visa, Lilly, Microsoft and Meta broke above their early range, but none scored the 80 needed, so no trades. Close run: no new stock buying after the open. Bitcoin is still below its long-term average, so no crypto buying. Nothing held, so nothing to sell. Lilly has not reached its 1,460 alert level. Week review: the fund only started this week and made no trades. It is down about 1% from setup costs and the dollar move, and slightly ahead of its benchmark.",
+   "topCandidates": [
+    {
+     "score": 60,
+     "symbol": "LLY",
+     "verdict": "Real China drug approval news, but overbought and below its 20-day high"
+    },
+    {
+     "score": 56,
+     "symbol": "COST",
+     "verdict": "New high on dividend news, but overbought and volume pace is normal"
+    },
+    {
+     "score": 50,
+     "symbol": "V",
+     "verdict": "Barely above early range, too far above its 20-day average"
+    },
+    {
+     "score": 40,
+     "symbol": "MSFT",
+     "verdict": "Flat today, outage news is a risk"
+    },
+    {
+     "score": 40,
+     "symbol": "META",
+     "verdict": "Weak trend, below its 50-day average"
+    }
+   ]
+  }
+ ],
+ "lessons": [],
+ "migratedFrom": "Claude artifact database, exported 2026-11-14",
+ "nav": [
+  {
+   "benchmarkCad": 98.18,
+   "cashCad": 98.95,
+   "date": "2026-11-13",
+   "equityCad": 98.95
+  }
+ ],
+ "positions": {},
+ "runs": {
+  "2026-11-13 CLOSE": {
+   "at": "2026-11-13T20:25:00Z",
+   "by": "claude"
+  },
+  "2026-11-13 OPEN": {
+   "at": "2026-11-13T15:20:00Z",
+   "by": "claude"
+  }
+ },
+ "schema": 1,
+ "trades": []
+}

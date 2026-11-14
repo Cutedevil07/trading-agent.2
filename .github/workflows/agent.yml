@@ -1,16 +1,16 @@
 name: agent
 
 # Runs the $100 Trading Agent on GitHub's free computers.
-# Every 15 minutes while US markets can be open (both clock settings covered),
-# and every 2 hours all week for crypto and news. Times are UTC.
+# Every 5 minutes while US markets can be open (both clock settings covered),
+# and every 30 minutes all week for crypto and news. Times are UTC.
 on:
   schedule:
-    - cron: "4,19,34,49 13-21 * * 1-5"
-    - cron: "37 */2 * * *"
+    - cron: "2-59/5 13-21 * * 1-5"
+    - cron: "17,47 * * * *"
   workflow_dispatch:
     inputs:
       command:
-        description: "run or selftest"
+        description: "run, selftest or probe"
         default: "run"
         required: true
 

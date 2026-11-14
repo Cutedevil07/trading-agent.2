@@ -696,9 +696,11 @@ class Run:
         self.type = mode or pick_mode(state, self.ny)
         hm = self.ny.hour * 60 + self.ny.minute
         mins = lambda key: (now - (parse_iso(self.f.get(key)) or dt.datetime(2000, 1, 1))).total_seconds() / 60
-        self.scan_stocks = self.type == "OPEN" or (self.market_day and 10 * 60 + 15 <= hm <= 14 * 60 + 30
-                                                   and mins("lastStockScan") >= 28)
-        self.scan_crypto = self.type in ("OPEN", "CLOSE") or mins("lastCryptoScan") >= 110
+        # stocks: a fresh scan about every 10 minutes from 9:50 AM (opening range done) to 2:55 PM New York
+        self.scan_stocks = self.type == "OPEN" or (self.market_day and 9 * 60 + 50 <= hm <= 14 * 60 + 55
+                                                   and mins("lastStockScan") >= 9)
+        # crypto trades all day, every day: a fresh scan about every 30 minutes
+        self.scan_crypto = self.type in ("OPEN", "CLOSE") or mins("lastCryptoScan") >= 28
         self.replay_now = None          # set when replaying a past moment (tests)
         self.events = []                # things worth an alert
         self.blocked, self.cands = [], []
@@ -1564,7 +1566,7 @@ def cmd_run(a):
         log("Dry run: nothing saved. Value %s vs buy-and-hold %s." % (money(f["equityCad"]), money(f["benchmarkCad"])))
         return 0
     last_saved = parse_iso(f.get("lastSaved")) or dt.datetime(2000, 1, 1)
-    if run.type == "WATCH" and not run.events and not run.scanned and (now - last_saved).total_seconds() < 3600:
+    if run.type == "WATCH" and not run.events and (now - last_saved).total_seconds() < 1800:
         log("Quiet check: nothing changed worth saving. Value %s." % money(f["equityCad"]))
         return 0
     f["lastSaved"] = iso(now)
@@ -1629,6 +1631,25 @@ def cmd_selftest(a):
     return 0 if good else 1
 
 
+def cmd_probe(a):
+    """Developer check: print what the free sources return from this computer."""
+    def show(label, url, headers=None, n=1500):
+        try:
+            s, b = http(url, headers=headers, timeout=25, tries=1)
+            print("== %s HTTP %s\n%s\n" % (label, s, b[:n].decode("utf-8", "replace")), flush=True)
+        except ConnectionError as e:
+            print("== %s ERROR %s\n" % (label, e), flush=True)
+    nh = {"User-Agent": BROWSER_UA, "Accept": "application/json, text/plain, */*",
+          "Origin": "https://www.nasdaq.com", "Referer": "https://www.nasdaq.com/"}
+    show("nasdaq summary", "https://api.nasdaq.com/api/quote/AAPL/summary?assetclass=stocks", nh, 2500)
+    show("nasdaq financials q", "https://api.nasdaq.com/api/company/AAPL/financials?frequency=2", nh, 3500)
+    show("nasdaq revenue", "https://api.nasdaq.com/api/company/AAPL/revenue?limit=1", nh, 2500)
+    show("hf search", "https://huggingface.co/api/models?search=financial-news-sentiment&sort=downloads&limit=15", None, 2500)
+    show("hf model", "https://huggingface.co/api/models/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis", None, 2500)
+    print("pdftotext:", shutil.which("pdftotext"))
+    return 0
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="$100 Trading Agent, Claude-free edition (paper trading only)")
     sub = p.add_subparsers(dest="cmd")
@@ -1639,7 +1660,10 @@ def main(argv=None):
         if name == "run":
             sp.add_argument("--now", help="replay a past moment, UTC ISO time (for testing)")
             sp.add_argument("--mode", choices=["OPEN", "CLOSE", "WATCH"], help="force the run type (testing)")
+    sub.add_parser("probe")
     a = p.parse_args(argv)
+    if a.cmd == "probe":
+        return cmd_probe(a)
     if a.cmd == "run":
         return cmd_run(a)
     if a.cmd == "selftest":

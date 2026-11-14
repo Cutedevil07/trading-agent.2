@@ -21,11 +21,12 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  actions: write
 
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -49,3 +50,20 @@ jobs:
           AGENT_NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           AGENT_SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
           AGENT_RUNNER: github
+      - name: Queue the next run (keeps the agent going even if GitHub's schedule is late)
+        if: always() && github.event_name == 'workflow_dispatch' && github.event.inputs.command == 'run'
+        run: |
+          python3 - <<'PY'
+          import datetime, time
+          now = datetime.datetime.utcnow()
+          market = now.weekday() < 5 and 13 <= now.hour <= 21   # US market hours, both clock settings
+          step = 5 if market else 30
+          wait = ((now.minute // step + 1) * step - now.minute) * 60 - now.second + 60
+          wait = max(60, min(wait, 31 * 60))
+          print("Next run in %d seconds" % wait, flush=True)
+          time.sleep(wait)
+          PY
+          gh workflow run agent.yml --ref main -f command=run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}

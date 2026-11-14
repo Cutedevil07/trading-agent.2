@@ -1858,28 +1858,38 @@ def cmd_probe(a):
             print("== %s HTTP %s\n%s\n" % (label, s, b[:n].decode("utf-8", "replace")), flush=True)
         except ConnectionError as e:
             print("== %s ERROR %s\n" % (label, e), flush=True)
-    nh = {"User-Agent": BROWSER_UA, "Accept": "application/json, text/plain, */*",
-          "Origin": "https://www.nasdaq.com", "Referer": "https://www.nasdaq.com/"}
-    show("nasdaq summary", "https://api.nasdaq.com/api/quote/AAPL/summary?assetclass=stocks", nh, 2500)
-    show("nasdaq financials q", "https://api.nasdaq.com/api/company/AAPL/financials?frequency=2", nh, 3500)
-    show("nasdaq revenue", "https://api.nasdaq.com/api/company/AAPL/revenue?limit=1", nh, 2500)
-    print("fundamentals AAPL:", nasdaq_fundamentals("AAPL"), flush=True)
-    print("fundamentals JPM:", nasdaq_fundamentals("JPM"), flush=True)
-    samples = ["Walmart Named in 81 Official U.S. Recalls in 2026, More Than Any Other Retailer",
-               "Apple beats quarterly revenue estimates as iPhone demand surges",
-               "Nvidia CEO Jensen Huang resigns; shares fall 8% in premarket",
-               "Walmart, Target, and Nvidia Headline a Pivotal Week for Q3 Earnings"]
-    t0 = time.time()
-    print("news model:", classify_texts(samples), "%.1fs" % (time.time() - t0), flush=True)
-    print("pdftotext before:", shutil.which("pdftotext"), "after:", ensure_pdftotext(), flush=True)
+    nh = NASDAQ_H
+    show("option chain", "https://api.nasdaq.com/api/quote/AAPL/option-chain?assetclass=stocks&limit=20&money=at&type=all", nh, 3000)
+    show("earnings surprise", "https://api.nasdaq.com/api/company/AAPL/earnings-surprise", nh, 1500)
+    s, b = http("https://api.nasdaq.com/api/company/AAPL/financials?frequency=2", nh)
+    try:
+        d = json.loads(b)["data"]
+        for tab in ("balanceSheetTable", "cashFlowTable", "financialRatiosTable"):
+            print("== %s" % tab, [r.get("value1") for r in (d.get(tab) or {}).get("rows", [])][:40], flush=True)
+        print("== income rows", [r.get("value1") for r in d["incomeStatementTable"]["rows"]], flush=True)
+    except Exception as e:
+        print("financials parse error", e)
+    for syms in (["ES=F", "NQ=F", "YM=F", "RTY=F", "GC=F", "SI=F", "CL=F", "BTC=F", "ETH=F", "6E=F", "MES=F", "MBT=F"],
+                 ["BTC-USD", "ETH-USD", "SOL-USD", "XRP-USD", "HYPE32196-USD", "LINK-USD", "SUI20947-USD", "AVAX-USD"]):
+        got = yahoo_spark_daily(syms)
+        print("== spark", {k: (round(v["price"], 2), len(v["bars"])) for k, v in got.items()}, "missing", [x for x in syms if x not in got], flush=True)
+    d, err = get_json("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1")
+    print("== coingecko top100", (len(d) if isinstance(d, list) else err), [c["symbol"] for c in (d or [])[:100]] if isinstance(d, list) else "", flush=True)
     work = tempfile.mkdtemp()
     os.makedirs(os.path.join(work, "trader"), exist_ok=True)
-    code, idx, tail = pack("ptr.py", ["index", "--since", (utcnow().date() - dt.timedelta(days=10)).isoformat(), "--json"], work)
-    if isinstance(idx, list) and idx:
-        r = idx[0]
-        code, rep, tail = pack("ptr.py", ["fetch", str(r["doc_id"]), "--year", str(r["year"]), "--filed", r["filed"], "--json"], work)
-        print("congress report:", r["name"], r["filed"], [(x.get("ticker"), x.get("type"), x.get("date"), x.get("amount"))
-                                                         for x in (rep or {}).get("rows", [])][:6], tail[-200:] if not rep else "")
+    code, data, tail = pack("scan.py", ["universe", "--json"], work)
+    print("== universe", code, data if data else tail[-300:], flush=True)
+    try:
+        lines = open(os.path.join(work, "trader", "universe.txt")).read().splitlines()
+        print("universe lines", len(lines), lines[:5])
+    except Exception as e:
+        print("universe read error", e)
+    s, b = http("https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt")
+    etf = [l for l in b.decode("latin-1").splitlines() if l.count("|") > 6 and l.split("|")[6] == "Y"]
+    s2, b2 = http("https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt")
+    etf2 = [l for l in b2.decode("latin-1").splitlines() if l.count("|") > 5 and l.split("|")[4] == "Y"]
+    print("== ETFs nasdaq", len(etf), etf[:2], "other", len(etf2), etf2[:2], flush=True)
+    show("sec tickers (no contact)", "https://www.sec.gov/files/company_tickers.json", {"User-Agent": "trading-agent"}, 200)
     return 0
 
 

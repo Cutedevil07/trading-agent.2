@@ -1,14 +1,14 @@
 # $100 Trading Agent
 
 An automatic **paper-trading** agent (pretend money) for US stocks, ETFs and crypto.
-It runs by itself on GitHub's free computers, around the clock, with no AI and no cost:
+It runs by itself on GitHub's free computers, around the clock, at no cost:
 
-- every 15 minutes while US markets can be open, Monday to Friday
-- every 2 hours, all week, for crypto and news
+- every 5 minutes while US markets can be open, Monday to Friday
+- every 30 minutes, all week, for crypto and news
 
 Each run checks prices, stop-losses, profit targets, news on what it holds and price
-alerts. It looks for new stock trades about every 30 minutes from 10:15 AM to 2:30 PM
-New York time and for crypto every 2 hours. At 3:20 PM it closes day trades and
+alerts. It looks for new stock trades about every 10 minutes from 9:50 AM to 2:55 PM
+New York time and for crypto every 30 minutes. At 3:20 PM it closes day trades and
 reviews the day.
 
 **Page:** https://cutedevil07.github.io/trading-agent.2/ (or https://raw.githack.com/Cutedevil07/trading-agent.2/main/docs/index.html). Add it to your iPhone home screen.
@@ -37,11 +37,12 @@ Type `run` for a normal run or `selftest` to check every data source and send a 
 | what | source |
 | --- | --- |
 | stock, ETF, crypto and USD/CAD prices, 5-minute and daily bars | Yahoo Finance (unofficial, delayed) |
-| headlines | Yahoo Finance RSS, read by the pack's news tool |
+| headlines | Yahoo Finance RSS (the pack's news tool), judged by the open-source finance-news model `mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis` (Apache-2.0) |
+| sales, profit, P/E, analysts' targets | Nasdaq's public company pages |
 | opening-range breakouts, entry timing, exit plan, 10,000-replay time machine, risk check | [Day Trader skill pack](https://github.com/Jakeschincariol/day-trader-skill) by Jake Schincariol, MIT, commit `3d0f4ef`, vendored in `pack/` |
 | top-10 coins | CoinGecko (falls back to a fixed list) |
 | earnings dates and results | Nasdaq's public calendar (if unreachable, stocks are never held overnight) |
-| Congress trade reports | US House Clerk |
+| Congress trades | US House Clerk reports, read with the pack's PDF tool |
 | alerts | ntfy.sh |
 
 ## Files

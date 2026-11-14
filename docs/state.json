@@ -307,7 +307,7 @@
  ],
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9784.49,
+  "benchmarkCad": 9759.93,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -319,11 +319,11 @@
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-14T20:31:49Z",
-  "lastRun": "2026-11-14T20:31:49Z",
+  "lastFuturesScan": "2026-11-14T21:01:41Z",
+  "lastRun": "2026-11-14T21:01:41Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin down 5.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,895.00 vs buy-and-hold $9,784.49.",
-  "lastSaved": "2026-11-14T20:31:49Z",
+  "lastRunNote": "US stock market closed today. Bitcoin down 5.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,895.00 vs buy-and-hold $9,759.93.",
+  "lastSaved": "2026-11-14T21:01:41Z",
   "lastTradingDay": "",
   "maxDrawdownPct": 1.05,
   "peakEquityCad": 10000.0,
@@ -407,12 +407,12 @@
  ],
  "lessons": [],
  "log": [
-  "Run 2026-11-14 WATCH (New York 15:31), stock market closed today",
+  "Run 2026-11-14 WATCH (New York 16:01), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
   {
-   "benchmarkCad": 9784.49,
+   "benchmarkCad": 9759.93,
    "cashCad": 9895.0,
    "date": "2026-11-14",
    "equityCad": 9895.0

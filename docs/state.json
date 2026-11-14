@@ -16,21 +16,22 @@
  "earnings": {},
  "fund": {
   "benchmarkBtcUnits": 0.0003010243240526266,
-  "benchmarkCad": 98.18,
+  "benchmarkCad": 97.45,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 0.06376749177847375,
   "cryptoCashCad": 30,
-  "dayDate": "2026-11-13",
-  "dayStartEquityCad": 100,
+  "dayDate": "2026-11-14",
+  "dayStartEquityCad": 98.95,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 98.95,
+  "equityCad": 98.96,
   "haltReason": "",
   "halted": false,
   "lastCongressCheck": "2026-11-13",
-  "lastRun": "2026-11-13T20:25:00Z",
-  "lastRunBy": "claude",
-  "lastRunNote": "Pack data test: Yahoo and Nasdaq all answered 200. CLOSE run: no stock buying after the open, Bitcoin still below its long-term average so no crypto buying, nothing held. No trades.",
+  "lastRun": "2026-11-14T09:22:10Z",
+  "lastRunBy": "github",
+  "lastRunNote": "Pack data test: ok. US stock market closed today. Bitcoin down 2.4% in 24 hours (risk-off). No buying allowed this run (market closed or risk-off). Value $98.96 vs buy-and-hold $97.45.",
+  "lastSaved": "2026-11-14T09:22:10Z",
   "lastTradingDay": "2026-11-13",
   "maxDrawdownPct": 1.14,
   "peakEquityCad": 100,
@@ -66,7 +67,7 @@
   "stocksCashCad": 0,
   "stocksCashUsd": 48.32797134666471,
   "tradingDays": 1,
-  "usdCad": 1.42672,
+  "usdCad": 1.4269,
   "weekStart": "2026-11-09",
   "weekStartEquityCad": 100
  },
@@ -137,9 +138,22 @@
      "verdict": "Weak trend, below its 50-day average"
     }
    ]
+  },
+  {
+   "dataCalls": 9,
+   "dataMode": "pack",
+   "date": "2026-11-14",
+   "packTest": "query1 200; query2 200",
+   "regime": "risk-off",
+   "summary": ""
   }
  ],
  "lessons": [],
+ "log": [
+  "Run 2026-11-14 WATCH (New York 04:22), market closed today",
+  "Pack data test: query1 200; query2 200 -> pack",
+  "No buying this run: market closed or risk-off"
+ ],
  "migratedFrom": "Claude artifact database, exported 2026-11-14",
  "nav": [
   {
@@ -147,6 +161,12 @@
    "cashCad": 98.95,
    "date": "2026-11-13",
    "equityCad": 98.95
+  },
+  {
+   "benchmarkCad": 97.45,
+   "cashCad": 98.96,
+   "date": "2026-11-14",
+   "equityCad": 98.96
   }
  ],
  "positions": {},

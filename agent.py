@@ -617,16 +617,57 @@ class GitHubStore:
         return False, "GitHub save failed: HTTP %s %s" % (s, b[:160])
 
 
+ALERT_ISSUE = "Trading agent alerts"
+
+
+def github_alert(title, body):
+    """Post the alert as a comment on one issue assigned to the owner: GitHub then notifies them
+    (GitHub app push notification and email) with no setup at all."""
+    repo, token = os.environ.get("AGENT_GITHUB_REPO"), os.environ.get("AGENT_GITHUB_TOKEN")
+    owner = os.environ.get("AGENT_GITHUB_OWNER") or (repo or "/").split("/")[0]
+    if not repo or not token:
+        return False
+    h = {"Authorization": "Bearer " + token, "Accept": "application/vnd.github+json",
+         "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "trading-agent", "Content-Type": "application/json"}
+    base = "https://api.github.com/repos/%s/issues" % repo
+    try:
+        s, b = http(base + "?state=open&per_page=100", h)
+        num = None
+        if s == 200:
+            num = next((i["number"] for i in json.loads(b)
+                        if i.get("title") == ALERT_ISSUE and "pull_request" not in i), None)
+        if not num:
+            intro = ("Every buy, sell, stop-loss, profit target, price alert and halt from the $100 Trading Agent "
+                     "is posted here as a comment, plus a short summary after each market day. "
+                     "GitHub sends you a notification for each one. Paper trading only.")
+            s, b = http(base, h, data=json.dumps({"title": ALERT_ISSUE, "body": intro, "assignees": [owner]}).encode(),
+                        method="POST", tries=1)
+            if s not in (200, 201):
+                log("GitHub alert issue could not be created: HTTP %s %s" % (s, b[:120]))
+                return False
+            num = json.loads(b)["number"]
+        s, b = http("%s/%d/comments" % (base, num), h, data=json.dumps({"body": "**%s**\n\n%s" % (title, body)}).encode(),
+                    method="POST", tries=1)
+        log("GitHub alert %s" % ("sent" if s in (200, 201) else "failed: HTTP %s" % s))
+        return s in (200, 201)
+    except (ConnectionError, ValueError, KeyError) as e:
+        log("GitHub alert failed: %s" % e)
+        return False
+
+
 def notify(topic, title, body, dry):
-    if dry or not topic:
-        log("[alert%s] %s: %s" % (" not sent" if dry or not topic else "", title, body))
+    if dry:
+        log("[alert not sent] %s: %s" % (title, body))
+        return
+    github_alert(title, body)
+    if not topic:
         return
     try:
         s, _ = http("https://ntfy.sh/" + urllib.parse.quote(topic), {"Title": title.encode("ascii", "ignore").decode(),
                     "Tags": "chart_with_upwards_trend"}, data=body.encode(), method="POST", tries=2)
-        log("alert sent (%s)" % s)
+        log("phone alert sent (%s)" % s)
     except ConnectionError as e:
-        log("alert failed: %s" % e)
+        log("phone alert failed: %s" % e)
 
 
 # ---------------------------------------------------------------- helpers

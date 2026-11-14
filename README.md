@@ -11,19 +11,17 @@ alerts. It looks for new stock trades about every 30 minutes from 10:15 AM to 2:
 New York time and for crypto every 2 hours. At 3:20 PM it closes day trades and
 reviews the day.
 
-**Page:** https://cutedevil07.github.io/trading-agent.2/ (add it to your iPhone home screen)
+**Page:** https://cutedevil07.github.io/trading-agent.2/ (or https://raw.githack.com/Cutedevil07/trading-agent.2/main/docs/index.html). Add it to your iPhone home screen.
 
 It never places a real order. There is no broker code in this repository.
 
-## On your iPhone
+## Alerts
 
-1. Install **ntfy** from the App Store (free). Tap **+**, subscribe to your topic name.
-2. On github.com, in this repository: **Settings → Secrets and variables → Actions →
-   New repository secret**. Name `NTFY_TOPIC`, value: the same topic name.
-3. Open the page in Safari, tap Share → **Add to Home Screen**.
+Every buy, sell, stop-loss, profit target, price alert and halt is posted as a comment on the
+issue **Trading agent alerts** (assigned to you), plus a short summary after each market day.
+GitHub notifies you of each one by email and in the GitHub app. Nothing to set up.
 
-You get an alert when the agent buys or sells, a stop or target is hit, an alert
-price is reached or buying is halted, plus a one-line summary after each market day.
+Optional: for ntfy alerts as well, add a repository secret `NTFY_TOPIC` with your topic name.
 
 ## Running it by hand
 

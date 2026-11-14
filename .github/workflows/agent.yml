@@ -28,6 +28,18 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install the news model's libraries
+        run: pip install -q -r requirements.txt || echo "News model libraries unavailable; the agent will use word rules."
+      - name: Keep the downloaded news model between runs
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: news-model-ae0eab9
       - name: Run the agent
         run: python3 agent.py ${{ github.event.inputs.command || 'run' }}
         env:

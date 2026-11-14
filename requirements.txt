@@ -1,0 +1,4 @@
+# Only for the news model on GitHub's computers. The agent itself needs nothing beyond Python.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1+cpu
+transformers==4.46.3

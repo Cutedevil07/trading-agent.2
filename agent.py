@@ -521,29 +521,191 @@ def about(title, sym, aliases):
     return bool(alias and re.search(r"\b(%s)" % alias, title, re.I))
 
 
-def read_news(items, sym, aliases=None, feed=None):
-    pos = neg = serious = 0
-    catalyst = False
-    heads = []
+NEWS_MODEL_ID = "mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis"
+NEWS_MODEL_REV = "ae0eab9ad336d7d548e0efe394b07c04bcaf6e91"
+_NEWS_MODEL = None
+
+
+def news_model():
+    """A free, open-source finance-news sentiment model (Apache-2.0), run locally on GitHub's computer.
+    Falls back to word rules where it is not installed (for example on a phone)."""
+    global _NEWS_MODEL
+    if _NEWS_MODEL is None:
+        try:
+            os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+            os.environ.setdefault("TRANSFORMERS_VERBOSITY", "error")
+            from transformers import pipeline
+            _NEWS_MODEL = pipeline("text-classification", model=NEWS_MODEL_ID, revision=NEWS_MODEL_REV,
+                                   top_k=None, device=-1)
+            log("News model loaded")
+        except Exception as e:
+            log("News model not available (%s): using word rules" % str(e)[:80])
+            _NEWS_MODEL = False
+    return _NEWS_MODEL
+
+
+def classify_texts(texts):
+    """{text: (positive, negative)} probabilities from the model, or from word rules."""
+    out = {}
+    model = news_model() if texts else False
+    if model:
+        try:
+            res = model(list(texts), truncation=True, max_length=256, batch_size=16)
+            for t, r in zip(texts, res):
+                sc = {d["label"].lower(): d["score"] for d in r}
+                out[t] = (sc.get("positive", 0.0), sc.get("negative", 0.0))
+            return out
+        except Exception as e:
+            log("News model failed (%s): using word rules" % str(e)[:80])
+    for t in texts:
+        head = t.split(" || ")[0]
+        p, n = bool(POS_WORDS.search(head)), bool(NEG_WORDS.search(head))
+        out[t] = (0.8 if p and not n else 0.1, 0.8 if n and not p else 0.1)
+    return out
+
+
+def news_text(it):
+    title = str(it.get("title", "")).strip()
+    summ = re.sub(r"\s+", " ", str(it.get("summary") or "")).strip()
+    return title + (" || " + summ[:240] if summ else "")
+
+
+def read_news(items, sym, aliases=None, feed=None, scores=None):
+    """Judge the last 12 hours of headlines about one company or coin."""
     feed = feed or sym
+    rel = []
     for it in items:
         if feed not in (it.get("touches") or [it.get("ticker")]):
             continue
+        if about(str(it.get("title", "")), sym, aliases or {}):
+            rel.append(it)
+    rel.sort(key=lambda it: it.get("time") or "", reverse=True)
+    rel = rel[:6]
+    scores = scores if scores is not None else classify_texts([news_text(it) for it in rel])
+    pos = neg = serious = 0
+    net = 0.0
+    catalyst = False
+    for it in rel:
         title = str(it.get("title", ""))
-        if not about(title, sym, aliases or {}):
-            continue
-        p, n = bool(POS_WORDS.search(title)), bool(NEG_WORDS.search(title))
-        if p and not n:
+        p, n = scores.get(news_text(it), (0.0, 0.0))
+        net += p - n
+        tags = set(it.get("tags") or [])
+        if p >= 0.6:
             pos += 1
-            if set(it.get("tags") or []) & CATALYST_TAGS or re.search(r"contract|approv|guidance|beat|upgrade", title, re.I):
+            if p >= 0.7 and (tags & CATALYST_TAGS or re.search(r"contract|approv|guidance|beat|upgrade|record|deal", title, re.I)):
                 catalyst = True
-        elif n and not p:
+        elif n >= 0.6:
             neg += 1
-            serious += 1 if (SERIOUS.search(title) or set(it.get("tags") or []) & {"legal", "halt", "risk"}) else 0
-        heads.append(title)
-    score = max(0, min(25, 12 + 4 * min(pos, 3) - 5 * min(neg, 3)))
-    return {"score": score, "pos": pos, "neg": neg, "serious": serious, "catalyst": catalyst, "headlines": heads[:3],
+            if SERIOUS.search(title) or tags & {"legal", "halt", "risk"}:
+                serious += 1
+    score = int(round(max(0, min(25, 12 + 5 * max(-2.4, min(2.6, net))))))
+    return {"score": score, "pos": pos, "neg": neg, "serious": serious, "catalyst": catalyst,
+            "headlines": [str(it.get("title", "")) for it in rel[:3]],
             "broken": pos == 0 and (neg >= 2 or serious >= 1)}
+
+
+# ---------------------------------------------------------------- fundamentals (Nasdaq, free)
+NASDAQ_H = {"User-Agent": BROWSER_UA, "Accept": "application/json, text/plain, */*",
+            "Origin": "https://www.nasdaq.com", "Referer": "https://www.nasdaq.com/"}
+
+
+def _num(s):
+    m = re.search(r"-?[\d,]+(\.\d+)?", str(s or "").replace("(", "-").replace(")", ""))
+    if not m:
+        return None
+    try:
+        return float(m.group(0).replace(",", ""))
+    except ValueError:
+        return None
+
+
+def nasdaq_fundamentals(sym):
+    """Quarterly revenue and EPS by fiscal year, and analysts' 1-year target, from Nasdaq's public pages."""
+    d, err = get_json("https://api.nasdaq.com/api/company/%s/revenue?limit=1" % sym, NASDAQ_H)
+    time.sleep(0.3)
+    if not d or not (d.get("data") or {}).get("revenueTable"):
+        return None
+    rows = d["data"]["revenueTable"].get("rows") or []
+    quarters, month, eps_points = [], None, []
+    for r in rows:
+        label = str(r.get("value1", "")).strip()
+        if label and label.lower() not in ("revenue", "eps", "dividends"):
+            month = label
+            continue
+        if label.lower() == "revenue" and month:
+            cur, prev = _num(r.get("value2")), _num(r.get("value3"))
+            if cur is not None:
+                quarters.append({"month": month, "rev": cur, "revPrev": prev})
+        if label.lower() == "eps":
+            for k in ("value2", "value3", "value4"):
+                v = str(r.get(k) or "")
+                m = re.search(r"\((\d{2})/(\d{2})/(\d{4})\)", v)
+                if m and _num(v.split("(")[0]) is not None:
+                    eps_points.append((dt.date(int(m.group(3)), int(m.group(1)), int(m.group(2))), _num(v.split("(")[0])))
+    eps_points.sort()
+    out = {"fetchedOn": utcnow().date().isoformat()}
+    if quarters:
+        q = quarters[-1]
+        out["revGrowthPct"] = round((q["rev"] / q["revPrev"] - 1) * 100, 1) if q.get("revPrev") else None
+    if len(eps_points) >= 4:
+        out["ttmEps"] = round(sum(e for _, e in eps_points[-4:]), 2)
+        last = eps_points[-1]
+        year_ago = [e for dte, e in eps_points if 350 <= (last[0] - dte).days <= 380]
+        out["lastEps"] = last[1]
+        out["epsGrowthPct"] = round((last[1] / year_ago[0] - 1) * 100, 1) if year_ago and year_ago[0] > 0 else None
+    s, err = get_json("https://api.nasdaq.com/api/quote/%s/summary?assetclass=stocks" % sym, NASDAQ_H)
+    time.sleep(0.3)
+    sd = ((s or {}).get("data") or {}).get("summaryData") or {}
+    out["target1y"] = _num((sd.get("OneYrTarget") or {}).get("value"))
+    out["sector"] = (sd.get("Sector") or {}).get("value")
+    return out
+
+
+def fundamental_score(f, price):
+    """0-15 from real numbers: growth (6), profit (5), valuation and analysts (4). None when not available."""
+    if not f or (f.get("revGrowthPct") is None and f.get("ttmEps") is None):
+        return None, "not available"
+    g = f.get("revGrowthPct")
+    growth = 0 if g is None else (6 if g >= 15 else 4 if g >= 5 else 2 if g >= 0 else 0)
+    profit = 0
+    if f.get("lastEps") is not None and f["lastEps"] > 0:
+        profit += 2
+        eg = f.get("epsGrowthPct")
+        profit += 3 if eg is not None and eg >= 10 else 1 if eg is not None and eg >= 0 else 0
+    val = 0
+    pe = price / f["ttmEps"] if f.get("ttmEps") and f["ttmEps"] > 0 and price else None
+    if pe is not None:
+        val += 2 if pe <= 35 else 1 if pe <= 60 else 0
+    tgt = f.get("target1y")
+    if tgt and price:
+        up = (tgt / price - 1) * 100
+        val += 2 if up >= 10 else 1 if up >= 0 else 0
+    parts = []
+    if g is not None:
+        parts.append("sales %+.0f%%" % g)
+    if pe is not None:
+        parts.append("P/E %.0f" % pe)
+    if tgt and price:
+        parts.append("target %+.0f%%" % ((tgt / price - 1) * 100))
+    return min(15, growth + profit + min(4, val)), ", ".join(parts)
+
+
+def ensure_pdftotext():
+    """The Congress reports are PDFs. On GitHub's computer, install the free reader once when needed."""
+    if shutil.which("pdftotext"):
+        return True
+    if os.environ.get("AGENT_RUNNER") != "github" or not shutil.which("sudo"):
+        return False
+    import subprocess
+    for cmd in (["sudo", "apt-get", "install", "-y", "-qq", "poppler-utils"],
+                ["sudo", "apt-get", "update", "-qq"], ["sudo", "apt-get", "install", "-y", "-qq", "poppler-utils"]):
+        try:
+            subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=180)
+        except Exception:
+            pass
+        if shutil.which("pdftotext"):
+            return True
+    return bool(shutil.which("pdftotext"))
 
 
 # ---------------------------------------------------------------- state storage
@@ -935,18 +1097,43 @@ class Run:
             return
         since = (self.today - dt.timedelta(days=7)).isoformat()
         code, data, tail = pack("ptr.py", ["index", "--since", since, "--json"], self.work)
-        if isinstance(data, list):
-            for r in data[:40]:
-                cid = "%s-%s" % (r.get("filed"), r.get("doc_id"))
-                self.s["congress"][cid] = {"member": r.get("name", "").replace("Hon. ", ""), "chamber": "House",
-                                           "symbol": "", "type": "Filed", "amount": "", "tradeDate": "",
-                                           "filedDate": r.get("filed"), "url": r.get("url"),
-                                           "note": "new trade report: open the link to read it"}
-            keep = sorted(self.s["congress"], key=lambda k: self.s["congress"][k].get("filedDate") or "", reverse=True)[:30]
-            self.s["congress"] = {k: self.s["congress"][k] for k in keep}
-            f["lastCongressCheck"] = self.today.isoformat()
-        else:
+        if not isinstance(data, list):
             log("Congress check unavailable: %s" % tail[-120:])
+            return
+        readable = ensure_pdftotext()
+        seen = set(self.s.get("congressSeen", []))
+        new = [r for r in data if r.get("doc_id") not in seen][:8]
+        read = 0
+        for r in new:
+            member = r.get("name", "").replace("Hon. ", "")
+            report = None
+            if readable:
+                argv = ["fetch", str(r["doc_id"]), "--year", str(r.get("year") or self.today.year),
+                        "--filed", r.get("filed") or "", "--json"]
+                code, report, tail = pack("ptr.py", argv, self.work)
+            rows = (report or {}).get("rows") or []
+            stock_rows = [x for x in rows if x.get("ticker") and x.get("asset_type") in (None, "ST", "OP")]
+            if report is not None:
+                read += 1
+            for i, x in enumerate(stock_rows[:12]):
+                cid = "%s-%s-%s-%d" % (r.get("filed"), x["ticker"], r.get("last", ""), i)
+                kind = {"P": "Purchase", "S": "Sale", "S (partial)": "Sale"}.get(x.get("type"), x.get("type_name", "").title())
+                self.s["congress"][cid] = {
+                    "member": member, "chamber": "House", "symbol": x["ticker"], "type": kind,
+                    "amount": x.get("amount") or "", "tradeDate": x.get("date") or "", "filedDate": r.get("filed"),
+                    "url": r.get("url"), "note": ("options, " if x.get("asset_type") == "OP" else "") +
+                    ("%s days to report" % x["days_to_disclose"] if x.get("days_to_disclose") is not None else "")}
+            if not stock_rows:
+                self.s["congress"]["%s-%s" % (r.get("filed"), r.get("doc_id"))] = {
+                    "member": member, "chamber": "House", "symbol": "", "type": "Filed", "amount": "",
+                    "tradeDate": "", "filedDate": r.get("filed"), "url": r.get("url"),
+                    "note": "no stock trades read from this report" if report is not None else "open the link to read it"}
+            seen.add(r.get("doc_id"))
+        self.s["congressSeen"] = sorted(seen)[-300:]
+        keep = sorted(self.s["congress"], key=lambda k: self.s["congress"][k].get("filedDate") or "", reverse=True)[:40]
+        self.s["congress"] = {k: self.s["congress"][k] for k in keep}
+        f["lastCongressCheck"] = self.today.isoformat()
+        log("Congress tracker: %d new House reports, %d read" % (len(new), read))
 
     # -- step 5
     def check_alerts(self):
@@ -1056,8 +1243,14 @@ class Run:
             tech += 5
         regime = self.crypto_regime if crypto else self.stock_regime
         macro = {"risk-on": 15, "cautious": 8}.get(regime, 0)
-        fund = 9  # not checked in the free version: neutral
+        fund = 9  # ETFs and coins have no company accounts: neutral
+        if not crypto and not etf and news.get("full"):
+            fs, why = self.fundamental(sym, dv["price"])
+            if fs is not None:
+                fund = fs
         micro = 5 + (5 if dv["volPace"] >= 1.5 else 0)
+        if not crypto:
+            micro += self.congress_bonus(sym)
         if crypto or etf:
             micro += 5
         elif self.earn_known:
@@ -1068,6 +1261,25 @@ class Run:
             micro += 2
         total = tech + news["score"] + fund + macro + min(15, micro)
         return total, {"technical": tech, "news": news["score"], "fundamental": fund, "macro": macro, "micro": min(15, micro)}
+
+    def fundamental(self, sym, price):
+        cache = self.s.setdefault("fundamentals", {})
+        f = cache.get(sym)
+        fresh = f and f.get("fetchedOn") and (utcnow().date() - dt.date.fromisoformat(f["fetchedOn"])).days < 7
+        if not fresh:
+            got = nasdaq_fundamentals(sym)
+            if got:
+                cache[sym] = f = got
+            elif f is None:
+                return None, "not available"
+        return fundamental_score(f, price)
+
+    def congress_bonus(self, sym):
+        """Members of Congress who bought this stock in the last 45 days: up to 3 points, never a reason alone."""
+        cut = (self.today - dt.timedelta(days=45)).isoformat()
+        buyers = {c.get("member") for c in self.s.get("congress", {}).values()
+                  if c.get("symbol") == sym and c.get("type") == "Purchase" and (c.get("tradeDate") or "") >= cut}
+        return min(3, len(buyers))
 
     def setup_for(self, dv, news, orb):
         if dv["upTodayPct"] > RULES["max_up_today_pct"]:
@@ -1152,7 +1364,7 @@ class Run:
         cands = []
         for sym in shortlist:
             dv = self.dview(sym)
-            n = self.news.get(sym, {"score": 12, "catalyst": False, "pos": 0, "neg": 0})
+            n = dict(self.news.get(sym, {"score": 12, "catalyst": False, "pos": 0, "neg": 0}), full=True)
             total, parts = self.score(sym, dv, n, False, sym in etfs)
             cands.append({"symbol": sym, "kind": "etf" if sym in etfs else "stock", "dv": dv, "news": n,
                           "score": total, "parts": parts})
@@ -1179,9 +1391,16 @@ class Run:
             return
         items = data.get("items", [])
         aliases = self.cfg.get("names", {})
+        texts = []   # one model pass over every relevant headline
         for t in tickers:
             sym = t[:-4] if t.endswith("-USD") else t
-            self.news[sym] = read_news(items, sym, aliases, feed=t)
+            for it in items:
+                if t in (it.get("touches") or [it.get("ticker")]) and about(str(it.get("title", "")), sym, aliases):
+                    texts.append(news_text(it))
+        scores = classify_texts(sorted(set(texts)))
+        for t in tickers:
+            sym = t[:-4] if t.endswith("-USD") else t
+            self.news[sym] = read_news(items, sym, aliases, feed=t, scores=scores)
 
     def try_buy(self, c):
         f, sym, dv, crypto = self.f, c["symbol"], c["dv"], c["kind"] == "crypto"
@@ -1644,9 +1863,23 @@ def cmd_probe(a):
     show("nasdaq summary", "https://api.nasdaq.com/api/quote/AAPL/summary?assetclass=stocks", nh, 2500)
     show("nasdaq financials q", "https://api.nasdaq.com/api/company/AAPL/financials?frequency=2", nh, 3500)
     show("nasdaq revenue", "https://api.nasdaq.com/api/company/AAPL/revenue?limit=1", nh, 2500)
-    show("hf search", "https://huggingface.co/api/models?search=financial-news-sentiment&sort=downloads&limit=15", None, 2500)
-    show("hf model", "https://huggingface.co/api/models/mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis", None, 2500)
-    print("pdftotext:", shutil.which("pdftotext"))
+    print("fundamentals AAPL:", nasdaq_fundamentals("AAPL"), flush=True)
+    print("fundamentals JPM:", nasdaq_fundamentals("JPM"), flush=True)
+    samples = ["Walmart Named in 81 Official U.S. Recalls in 2026, More Than Any Other Retailer",
+               "Apple beats quarterly revenue estimates as iPhone demand surges",
+               "Nvidia CEO Jensen Huang resigns; shares fall 8% in premarket",
+               "Walmart, Target, and Nvidia Headline a Pivotal Week for Q3 Earnings"]
+    t0 = time.time()
+    print("news model:", classify_texts(samples), "%.1fs" % (time.time() - t0), flush=True)
+    print("pdftotext before:", shutil.which("pdftotext"), "after:", ensure_pdftotext(), flush=True)
+    work = tempfile.mkdtemp()
+    os.makedirs(os.path.join(work, "trader"), exist_ok=True)
+    code, idx, tail = pack("ptr.py", ["index", "--since", (utcnow().date() - dt.timedelta(days=10)).isoformat(), "--json"], work)
+    if isinstance(idx, list) and idx:
+        r = idx[0]
+        code, rep, tail = pack("ptr.py", ["fetch", str(r["doc_id"]), "--year", str(r["year"]), "--filed", r["filed"], "--json"], work)
+        print("congress report:", r["name"], r["filed"], [(x.get("ticker"), x.get("type"), x.get("date"), x.get("amount"))
+                                                         for x in (rep or {}).get("rows", [])][:6], tail[-200:] if not rep else "")
     return 0
 
 

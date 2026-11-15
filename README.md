@@ -43,7 +43,8 @@ Switch every new real trade off at once with `"enabled": false` (edit the file i
 **Crypto on Kraken, fully automatic (budget $300).** Buys only (Kraken offers Canadians no margin or
 derivatives). Every buy is protected at once by a stop-loss order resting at Kraken, so it works even
 between runs. Real buying stops if real losses reach 15%. Every order carries the agent's own tag, so it
-never sells coins you bought yourself.
+never sells coins you bought yourself. Only coins Kraken sells for Canadian dollars can be bought for
+real (in November 2026: BTC, ETH, SOL, XRP, DOGE, PEPE, XDC); the paper book still trades the top 100.
 
 To switch it on: in Kraken, Settings → API → create a key with only *Query Funds*, *Query Open Orders &
 Trades*, *Query Closed Orders & Trades*, *Create & Modify Orders* and *Cancel/Close Orders* (never

@@ -606,13 +606,27 @@ def fundamental_score(f, price):
     return min(15, growth + profit + min(3, val) + min(3, bal)), ", ".join(parts)
 
 
+OPTION_ERRORS = {}   # symbol -> why the last options request came back empty
+
+
 def nasdaq_option_chain(sym, d0, d1, money="at"):
     """Calls and puts with bid, ask and open interest for expiries between d0 and d1."""
     q = urllib.parse.urlencode({"assetclass": "stocks", "limit": 400, "fromdate": d0.isoformat(),
                                 "todate": d1.isoformat(), "money": money, "type": "all"})
-    d, err = get_json("https://api.nasdaq.com/api/quote/%s/option-chain?%s" % (sym, q), NASDAQ_H)
-    time.sleep(0.3)
-    rows = ((((d or {}).get("data") or {}).get("table") or {}).get("rows")) or []
+    url = "https://api.nasdaq.com/api/quote/%s/option-chain?%s" % (sym, q)
+    rows = []
+    for attempt in range(2):
+        d, err = get_json(url, NASDAQ_H)
+        time.sleep(0.3)
+        rows = ((((d or {}).get("data") or {}).get("table") or {}).get("rows")) or []
+        if rows:
+            break
+        msgs = [m.get("errorMessage", "") for m in (((d or {}).get("status") or {}).get("bCodeMessage") or []) if isinstance(m, dict)]
+        OPTION_ERRORS[sym] = "; ".join(msgs) or err or "empty"
+        if attempt == 0:
+            time.sleep(2)   # Nasdaq's data supplier sometimes fails for a moment ("Error while calling vendor")
+    if rows:
+        OPTION_ERRORS.pop(sym, None)
     out, exp = [], None
     for r in rows:
         if r.get("expirygroup"):
@@ -759,6 +773,7 @@ def kraken_private(method, params, key, secret):
 
 
 KRAKEN_NAMES = {"XBT": "BTC", "XDG": "DOGE"}
+KRAKEN_CASH = {"USD", "EUR", "GBP", "CHF", "AUD", "JPY", "USDT", "USDC", "DAI", "PYUSD", "USDG", "RLUSD", "TUSD", "EURC", "USDS", "FDUSD"}
 
 
 def kraken_cad_pairs():
@@ -768,8 +783,10 @@ def kraken_cad_pairs():
         ws = str(p.get("wsname", ""))
         if not ws.endswith("/CAD") or p.get("status", "online") != "online" or ".d" in name:
             continue
-        base = ws.split("/")[0]
-        out[KRAKEN_NAMES.get(base, base)] = {
+        base = KRAKEN_NAMES.get(ws.split("/")[0], ws.split("/")[0])
+        if base in KRAKEN_CASH:
+            continue   # money and stablecoins, not coins to trade
+        out[base] = {
             "pair": name, "altname": p.get("altname"), "asset": p.get("base"),
             "ordermin": float(p.get("ordermin") or 0), "costmin": float(p.get("costmin") or 0),
             "lot": int(p.get("lot_decimals", 8)), "pdec": int(p.get("pair_decimals", 2))}

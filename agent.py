@@ -1511,6 +1511,18 @@ def cmd_probe(a):
                 p = {"underlying": sym, "expiry": opt["expiry"], "strike": opt["strike"], "right": opt["right"], "lastPrice": opt["ask"]}
                 r.mark_option(p)
                 print("   marked:", {k: p.get(k) for k in ("bid", "ask", "lastPrice", "underlyingPrice")}, flush=True)
+    for sym in ("AAPL", "AMD", "NVDA", "KO"):
+        for money in ("at", "all"):
+            for span in ((21, 50), (7, 60)):
+                q = urllib.parse.urlencode({"assetclass": "stocks", "limit": 400, "fromdate": (r.today + dt.timedelta(days=span[0])).isoformat(),
+                                            "todate": (r.today + dt.timedelta(days=span[1])).isoformat(), "money": money, "type": "all"})
+                d, err = get_json("https://api.nasdaq.com/api/quote/%s/option-chain?%s" % (sym, q), NASDAQ_H)
+                data = (d or {}).get("data") or {}
+                rows = ((data.get("table") or {}).get("rows")) or []
+                groups = [x.get("expirygroup") for x in rows if x.get("expirygroup")]
+                print("chain", sym, money, span, "err", err, "status", (d or {}).get("status"), "rows", len(rows), "total", data.get("totalRecord"),
+                      "groups", groups[:4], "filters", str(data.get("filterlist"))[:160], flush=True)
+                time.sleep(0.4)
     try:
         pairs = kraken_cad_pairs()
         print("kraken CAD pairs:", len(pairs), sorted(pairs)[:40], flush=True)

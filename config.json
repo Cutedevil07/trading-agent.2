@@ -125,8 +125,8 @@
   },
   "daily_summary": true,
   "live": {
-    "_about": "Real money. enabled=false stops all new real trades at once (stops already resting at Kraken stay). The agent never uses more than these budgets, whatever is in the accounts.",
-    "enabled": true,
+    "_about": "Real money. enabled=false stops all new real trades at once (stops already resting at Kraken stay). The agent never uses more than these budgets, whatever is in the accounts. Off for now: paper trading only (owner's choice, 2026-11-15).",
+    "enabled": false,
     "capCad": 1000,
     "riskPct": 0.01,
     "maxEntriesPerDay": 2,

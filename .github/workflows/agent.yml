@@ -1,8 +1,8 @@
 name: agent
 
-# Runs the $100 Trading Agent on GitHub's free computers.
-# Every 5 minutes while US markets can be open (both clock settings covered),
-# and every 30 minutes all week for crypto and news. Times are UTC.
+# Runs the trading agent on GitHub's free computers.
+# Each run queues the next one: every 5 minutes while US markets can be open, every 30 minutes otherwise.
+# GitHub's own schedule below is a second way to start it. Times are UTC.
 on:
   schedule:
     - cron: "2-59/5 13-21 * * 1-5"
@@ -14,10 +14,6 @@ on:
         default: "run"
         required: true
 
-concurrency:
-  group: agent
-  cancel-in-progress: false
-
 permissions:
   contents: write
   issues: write
@@ -26,7 +22,11 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 25
+    # Only one agent run at a time. The wait for the next run is a separate job, so it never holds this place.
+    concurrency:
+      group: agent
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -52,8 +52,15 @@ jobs:
           AGENT_KRAKEN_KEY: ${{ secrets.KRAKEN_API_KEY }}
           AGENT_KRAKEN_SECRET: ${{ secrets.KRAKEN_API_SECRET }}
           AGENT_RUNNER: github
-      - name: Queue the next run (keeps the agent going even if GitHub's schedule is late)
-        if: always() && github.event_name == 'workflow_dispatch' && github.event.inputs.command == 'run'
+
+  next:
+    # Keeps the agent going even if GitHub's schedule is late, and even if the run above failed or was cancelled.
+    needs: run
+    if: always() && github.event_name == 'workflow_dispatch' && github.event.inputs.command == 'run'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Wait for the next check time, then queue the next run
         run: |
           python3 - <<'PY'
           import datetime, time

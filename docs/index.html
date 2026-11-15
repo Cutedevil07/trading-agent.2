@@ -322,7 +322,7 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
   function signed(n, dp){ var v = Number(n) || 0; return (v > 0 ? "+" : v < 0 ? "−" : "") + money(Math.abs(v), dp); }
   function pct(n, dp){ var v = Number(n) || 0; return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(dp == null ? 1 : dp) + "%"; }
   function cls(n){ return n > 0.004 ? "up" : n < -0.004 ? "down" : "muted"; }
-  function px(v){ v = Number(v) || 0; var a = Math.abs(v); return "$" + v.toLocaleString("en-US", {maximumFractionDigits: a >= 1000 ? 0 : a >= 1 ? 2 : 6}); }
+  function px(v){ v = Number(v) || 0; var a = Math.abs(v), d = a >= 1000 ? 0 : a >= 1 ? 2 : 6; return "$" + v.toLocaleString("en-US", {minimumFractionDigits: a >= 1 ? d : 2, maximumFractionDigits: d}); }
   function compact(v){ var a = Math.abs(v); if (a >= 10000) return "$" + (v / 1000).toFixed(a >= 100000 ? 0 : 1).replace(/\.0$/, "") + "K"; return "$" + Math.round(v).toLocaleString("en-US"); }
   function day(d){ if (!d) return ""; var x = new Date(String(d).slice(0, 10) + "T12:00:00Z"); return isNaN(x) ? String(d) : x.toLocaleDateString("en-US", {month: "short", day: "numeric", timeZone: "UTC"}); }
   function stamp(d){ if (!d) return ""; var s = String(d); return day(s) + (s.length > 10 ? ", " + s.slice(11, 16) : ""); }

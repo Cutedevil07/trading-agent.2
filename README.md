@@ -7,7 +7,7 @@ It runs by itself on GitHub's free computers at no cost:
 - every 5 minutes while US markets can be open, Monday to Friday
 - every 30 minutes, all week, for crypto, futures and news
 
-**Page:** https://cutedevil07.github.io/trading-agent.2/ (add it to your iPhone home screen).
+**Page:** https://mxmedits.github.io/trading-agent.2/ (add it to your iPhone home screen).
 **Alerts:** every trade, stop, target, earnings read and halt is posted to the issue
 "Trading agent alerts", which GitHub sends to you in its app and by email.
 

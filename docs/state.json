@@ -307,7 +307,7 @@
  ],
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9764.79,
+  "benchmarkCad": 9773.65,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -315,15 +315,15 @@
   "dayStartEquityCad": 9895.0,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9894.52,
+  "equityCad": 9893.55,
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-15T22:01:48Z",
-  "lastRun": "2026-11-15T22:01:48Z",
+  "lastFuturesScan": "2026-11-15T22:31:44Z",
+  "lastRun": "2026-11-15T22:31:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin up 1.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,894.52 vs buy-and-hold $9,764.79.",
-  "lastSaved": "2026-11-15T22:01:48Z",
+  "lastRunNote": "US stock market closed today. Bitcoin up 2.3% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,893.55 vs buy-and-hold $9,773.65.",
+  "lastSaved": "2026-11-15T22:31:44Z",
   "lastTradingDay": "",
   "maxDrawdownPct": 1.06,
   "peakEquityCad": 10000.0,
@@ -388,7 +388,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4268,
+  "usdCad": 1.4266,
   "weekStart": "2026-11-09",
   "weekStartEquityCad": 10000.0
  },
@@ -434,10 +434,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-15T22:01:48Z"
+  "updated": "2026-11-15T22:31:44Z"
  },
  "log": [
-  "Run 2026-11-15 WATCH (New York 17:01), stock market closed today",
+  "Run 2026-11-15 WATCH (New York 17:31), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -448,10 +448,10 @@
    "equityCad": 9895.0
   },
   {
-   "benchmarkCad": 9764.79,
-   "cashCad": 9894.52,
+   "benchmarkCad": 9773.65,
+   "cashCad": 9893.55,
    "date": "2026-11-15",
-   "equityCad": 9894.52
+   "equityCad": 9893.55
   }
  ],
  "positions": {},

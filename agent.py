@@ -30,6 +30,7 @@ import traceback
 
 from core import *  # noqa: F401,F403  (clock, data sources, judgement, maths, storage)
 from core import LOG, CALLS, RULES, FUTURES, INDEX_FUTURES, CRYPTO_FUTURES, LONG_SETUPS, SHORT_SETUPS, SETUPS
+from live import LiveDesk
 
 
 def kind_group(kind):
@@ -69,6 +70,7 @@ class Run:
         self.orb = {}
         self.stock_regime = self.crypto_regime = "cautious"
         self.btc24 = 0.0
+        self.live = None
 
     # ---------------------------------------------------------- prices
     def ny_arg(self):
@@ -201,6 +203,8 @@ class Run:
     # ---------------------------------------------------------- closing
     def close(self, pid, price, reason, when=None, bid=None):
         p = self.s["positions"].pop(pid)
+        if self.live and p["kind"] in ("stock", "etf") and p["side"] == "long":
+            self.live.stock_exit(p["underlying"], reason)
         f, k, fx = self.f, p["kind"], self.fx
         when = when or self.ny
         fees = 0.0
@@ -307,6 +311,8 @@ class Run:
                 if gain >= abs(p["entryPrice"] - init) and ((side == "long" and p["stopPrice"] < p["entryPrice"]) or
                                                              (side == "short" and p["stopPrice"] > p["entryPrice"])):
                     p["stopPrice"] = p["entryPrice"]
+                    if self.live and k in ("stock", "etf") and side == "long":
+                        self.live.stock_stop(p["underlying"], p["entryPrice"])
                     log("%s: up 1R, stop moved to the entry price" % p["symbol"])
             p["lastChecked"] = iso(self.now)
             self.value_position(p)
@@ -1181,6 +1187,11 @@ class Run:
                      costCad=r2(costcad), lastPrice=price, lastFeeAt=iso(self.now), borrowFeeCad=0.0)
             label, fillpx, cost_fee = "%s %s %s" % (verb, money(value), sym), fill, value * slip
         self.s["positions"][pid] = p
+        if self.live:
+            if inst == "crypto":
+                self.live.enter_crypto(sym, price, stop, target, setup, c["score"])
+            elif inst in ("stock", "etf") and side == "long":
+                self.live.stock_entry(sym, price, stop, target, setup, c["score"], p.get("name", sym))
         self.value_position(p)
         f["entriesToday"] += 1
         f["entriesThisWeek"] += 1
@@ -1228,6 +1239,8 @@ class Run:
                                                           "open day" if self.market_day else "closed today"))
         self.bookkeeping()
         self.mark()
+        self.live = LiveDesk(self)
+        self.live.start()
         if self.market_day and not self.replay_now:
             spy = yahoo_chart("SPY", "5d", "5m")
             if spy and spy["bars"] and bar_day(spy["bars"][-1]["t"]) != self.today and self.hm >= 9 * 60 + 45:
@@ -1240,6 +1253,7 @@ class Run:
         if stocks_held and self.market_day:
             self.earnings(stocks_held)
         self.exits()
+        self.live.manage()
         self.regimes()
         self.gate()
         if self.etf_due:
@@ -1253,6 +1267,7 @@ class Run:
         elif self.type != "WATCH" or self.scan_stocks:
             log("No new trades this run: %s" % (self.block_reason or "markets closed or nothing due"))
         self.review()
+        self.live.finish()
         self.record()
 
     def record(self):
@@ -1496,6 +1511,12 @@ def cmd_probe(a):
                 p = {"underlying": sym, "expiry": opt["expiry"], "strike": opt["strike"], "right": opt["right"], "lastPrice": opt["ask"]}
                 r.mark_option(p)
                 print("   marked:", {k: p.get(k) for k in ("bid", "ask", "lastPrice", "underlyingPrice")}, flush=True)
+    try:
+        pairs = kraken_cad_pairs()
+        print("kraken CAD pairs:", len(pairs), sorted(pairs)[:40], flush=True)
+        print("kraken BTC:", pairs.get("BTC"), kraken_public("Ticker", {"pair": pairs["BTC"]["pair"]}) if "BTC" in pairs else "", flush=True)
+    except Exception as e:
+        print("kraken public failed:", e, flush=True)
     print("surprise AAPL:", nasdaq_surprise("AAPL"))
     print("fundamentals MSFT:", nasdaq_fundamentals("MSFT"))
     print("release read (word rules if no model):", read_release("Revenue grew 18% to a record $50 billion. We are raising our full-year guidance. Gross margin expanded."))

@@ -35,6 +35,26 @@ It never places a real order. There is no broker code in this repository.
 
 The rules are listed in full on the page under "How it decides".
 
+## Real money
+
+Set in `config.json` under `live`: at most **CAD 1,000** in total, about **$10 risked per trade**.
+Switch every new real trade off at once with `"enabled": false` (edit the file in the GitHub app).
+
+**Crypto on Kraken, fully automatic (budget $300).** Buys only (Kraken offers Canadians no margin or
+derivatives). Every buy is protected at once by a stop-loss order resting at Kraken, so it works even
+between runs. Real buying stops if real losses reach 15%. Every order carries the agent's own tag, so it
+never sells coins you bought yourself.
+
+To switch it on: in Kraken, Settings → API → create a key with only *Query Funds*, *Query Open Orders &
+Trades*, *Query Closed Orders & Trades*, *Create & Modify Orders* and *Cancel/Close Orders* (never
+*Withdraw*), then add two repository secrets on github.com: `KRAKEN_API_KEY` and `KRAKEN_API_SECRET`.
+The agent checks the key each day and refuses to trade if it could withdraw money.
+
+**Stocks and ETFs on Questrade, approved by you (budget $700).** Questrade lets only partner companies
+place orders by program. The agent writes each long trade as a signal in `docs/state.json`
+(`live.stocks`); Claude's Questrade connection sends it to your Questrade app, and nothing happens
+unless you approve it there. Needs an active self-directed Questrade account with push-to-approve set up.
+
 ## One optional setting: reading companies' own earnings reports
 
 The SEC asks every program to give a contact email. To let the agent read press releases from the SEC,

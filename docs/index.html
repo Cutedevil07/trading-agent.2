@@ -111,6 +111,11 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
   <div class="tile"><span class="k">Worst drop so far</span><span class="v" id="dd">0.0%</span><span class="d muted">halts at 15%</span></div>
 </section>
 
+<section class="panel" id="livepanel" hidden>
+  <h2>Real money</h2>
+  <div class="rows" id="live"></div>
+</section>
+
 <section class="panel">
   <h2>Value over time (CAD)</h2>
   <div class="chart" id="chart"><p class="empty">The line starts after the agent's second day.</p></div>
@@ -473,6 +478,28 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
     box.appendChild(svg);
   }
 
+  function showLive(L){
+    if (!L || !L.enabled && !L.crypto) return;
+    $("livepanel").hidden = false;
+    var box = $("live"); clear(box);
+    var c = L.crypto || {}, st = L.stocks || {};
+    function row(t, n, s, cls){ var r = el("div", "row"); r.appendChild(el("span", "t", t)); r.appendChild(el("span", "n " + (cls || ""), n)); if (s) r.appendChild(el("span", "s", s)); box.appendChild(r); }
+    var pnl = Number(c.pnlCad) || 0;
+    row("Crypto on Kraken (automatic)", c.equityCad != null ? money(c.equityCad) : "", (c.status || "") + "  ·  budget " + money(L.cryptoBudgetCad || 300) + "  ·  realised " + (pnl >= 0 ? "+" : "") + money(pnl) + (c.halted ? "  ·  HALTED" : "") + (c.cashCad != null ? "  ·  cash in account " + money(c.cashCad) : ""), tone(pnl));
+    vals(c.positions).forEach(function(p){
+      var pl = Number(p.pnlCad) || 0;
+      row("  " + p.symbol + " (real)", (pl >= 0 ? "+" : "") + money(pl), p.volume + " coins  ·  bought " + p.entryDate + " at " + px(p.entryPrice) + " CAD  ·  stop " + px(p.stopPrice) + " resting at Kraken  ·  target " + px(p.targetPrice), tone(pl));
+    });
+    (c.trades || []).slice(-6).reverse().forEach(function(tr){
+      var pl = tr.pnlCad;
+      row("  " + tr.side + " " + tr.symbol, pl != null ? (pl >= 0 ? "+" : "") + money(pl) : money(tr.valueCad), tr.date + "  ·  " + tr.volume + " at " + px(tr.priceCad) + " CAD  ·  " + (tr.reason || ""), pl != null ? tone(pl) : "");
+    });
+    var sig = (st.signals || []).slice(-5).reverse();
+    row("Stocks on Questrade (you approve each order)", money(L.stockBudgetCad || 700), sig.length ? "Latest buy signals below. Each one needs your approval in the Questrade app." : "No stock signals yet. Each one will need your approval in the Questrade app.");
+    sig.forEach(function(s){ row("  BUY " + s.symbol, "up to " + money(s.maxValueCad), s.createdAt.replace("T", " ").slice(0, 16) + " UTC  ·  entry " + px(s.entry) + " (no higher than " + px(s.maxEntryPrice) + ")  ·  stop " + px(s.stop) + "  ·  target " + px(s.target)); });
+    (st.exits || []).slice(-3).reverse().forEach(function(x){ row("  SELL " + x.symbol, "", x.createdAt.replace("T", " ").slice(0, 16) + " UTC  ·  " + x.reason); });
+  }
+
   function warn(msg){ var s = $("status"); s.textContent = msg; s.hidden = false; }
 
   var parts = location.pathname.split("/"), host = location.hostname.match(/^([^.]+)\.github\.io$/);
@@ -487,6 +514,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
     showChart(st.nav || []);
     var j = st.journal || []; if (j.length) showJournal(j[j.length - 1]);
     showLessons(st.lessons);
+    showLive(st.live);
     showAlerts(vals(st.alerts)); showEarnings(vals(st.earnings)); showCongress(vals(st.congress));
     if (st.previous) $("foot").textContent += " The earlier $100 long-only test (" + st.previous.startDate + " to " + st.previous.endDate + ") ended at " + money(st.previous.endEquityCad) + ".";
     if (f.lastRun && Date.now() - new Date(f.lastRun).getTime() > 2 * 86400000) warn("The agent has not saved a run for over 2 days. Check the Actions tab on GitHub.");

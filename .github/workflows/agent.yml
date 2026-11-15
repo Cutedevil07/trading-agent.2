@@ -49,6 +49,8 @@ jobs:
           AGENT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AGENT_NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           AGENT_SEC_CONTACT: ${{ secrets.SEC_CONTACT }}
+          AGENT_KRAKEN_KEY: ${{ secrets.KRAKEN_API_KEY }}
+          AGENT_KRAKEN_SECRET: ${{ secrets.KRAKEN_API_SECRET }}
           AGENT_RUNNER: github
       - name: Queue the next run (keeps the agent going even if GitHub's schedule is late)
         if: always() && github.event_name == 'workflow_dispatch' && github.event.inputs.command == 'run'

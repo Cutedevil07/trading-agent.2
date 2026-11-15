@@ -10,6 +10,7 @@ import html
 import importlib.util
 import io
 import json
+import math
 import os
 import random
 import re
@@ -709,6 +710,75 @@ def read_release(text):
     best = max(scores.items(), key=lambda kv: kv[1][0] - kv[1][1])[0] if scores else ""
     worst = min(scores.items(), key=lambda kv: kv[1][0] - kv[1][1])[0] if scores else ""
     return {"tone": round(tone, 2), "guidance": guide, "sentences": len(key), "best": best[:160], "worst": worst[:160]}
+
+
+# ---------------------------------------------------------------- Kraken (real money: crypto, spot only)
+KRAKEN = "https://api.kraken.com"
+_KNONCE = [0]
+
+
+class KrakenError(Exception):
+    pass
+
+
+def kraken_public(method, params=None):
+    q = ("?" + urllib.parse.urlencode(params)) if params else ""
+    d, err = get_json(KRAKEN + "/0/public/" + method + q, {"Accept": "application/json"}, timeout=20)
+    if d is None:
+        raise KrakenError(err or "no answer")
+    if d.get("error"):
+        raise KrakenError(", ".join(d["error"]))
+    return d.get("result") or {}
+
+
+def kraken_sign(path, nonce, post, secret):
+    import hashlib
+    import hmac
+    sha = hashlib.sha256((nonce + post).encode()).digest()
+    return base64.b64encode(hmac.new(base64.b64decode(secret), path.encode() + sha, hashlib.sha512).digest()).decode()
+
+
+def kraken_private(method, params, key, secret):
+    """A signed request. Never retried automatically: a repeated order could be filled twice."""
+    path = "/0/private/" + method
+    nonce = max(int(time.time() * 1000), _KNONCE[0] + 1)
+    _KNONCE[0] = nonce
+    data = dict(params or {})
+    data["nonce"] = str(nonce)
+    post = urllib.parse.urlencode(data)
+    h = {"API-Key": key, "API-Sign": kraken_sign(path, str(nonce), post, secret),
+         "Content-Type": "application/x-www-form-urlencoded; charset=utf-8", "Accept": "application/json"}
+    s, b = http(KRAKEN + path, h, data=post.encode(), method="POST", timeout=30, tries=1)
+    try:
+        d = json.loads(b)
+    except ValueError:
+        raise KrakenError("HTTP %s, not JSON" % s)
+    if d.get("error"):
+        raise KrakenError(", ".join(d["error"]))
+    return d.get("result") or {}
+
+
+KRAKEN_NAMES = {"XBT": "BTC", "XDG": "DOGE"}
+
+
+def kraken_cad_pairs():
+    """Every coin Kraken trades against the Canadian dollar, with its minimum order and decimals."""
+    out = {}
+    for name, p in kraken_public("AssetPairs").items():
+        ws = str(p.get("wsname", ""))
+        if not ws.endswith("/CAD") or p.get("status", "online") != "online" or ".d" in name:
+            continue
+        base = ws.split("/")[0]
+        out[KRAKEN_NAMES.get(base, base)] = {
+            "pair": name, "altname": p.get("altname"), "asset": p.get("base"),
+            "ordermin": float(p.get("ordermin") or 0), "costmin": float(p.get("costmin") or 0),
+            "lot": int(p.get("lot_decimals", 8)), "pdec": int(p.get("pair_decimals", 2))}
+    return out
+
+
+def floor_dec(x, dec):
+    m = 10 ** dec
+    return math.floor(x * m + 1e-9) / m
 
 
 # ---------------------------------------------------------------- the Day Trader pack, in-process

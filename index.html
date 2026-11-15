@@ -479,7 +479,9 @@ footer{font-size:12.5px;color:var(--muted);max-width:65ch}
   }
 
   function showLive(L){
-    if (!L || !L.enabled && !L.crypto) return;
+    if (!L) return;
+    var anyReal = L.crypto && (Object.keys(L.crypto.positions || {}).length || (L.crypto.trades || []).length);
+    if (!L.enabled && !anyReal) { $("livepanel").hidden = true; return; }
     $("livepanel").hidden = false;
     var box = $("live"); clear(box);
     var c = L.crypto || {}, st = L.stocks || {};

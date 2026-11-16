@@ -67,6 +67,7 @@ class Run:
         self.scanned = False
         self.earn_known = bool(self.f.get("earningsCheckedOn") == self.today.isoformat() and self.f.get("earningsKnown"))
         self.sec_contact = os.environ.get("AGENT_SEC_CONTACT", "").strip()
+        self.facts_budget = 4   # SEC company-facts lookups per run (each file can be several MB)
         self.orb = {}
         self.stock_regime = self.crypto_regime = "cautious"
         self.btc24 = 0.0
@@ -665,7 +666,7 @@ class Run:
         return bool(e.get(key) and e[key] >= t)
 
     # ---------------------------------------------------------- scoring
-    def fundamental(self, sym, price):
+    def fundamental(self, sym, price, facts=None):
         cache = self.s.setdefault("fundamentals", {})
         f = cache.get(sym)
         fresh = f and f.get("fetchedOn") and (utcnow().date() - dt.date.fromisoformat(f["fetchedOn"])).days < 7
@@ -673,8 +674,23 @@ class Run:
             got = nasdaq_fundamentals(sym)
             if got:
                 cache[sym] = f = got
-            elif f is None:
-                return None, "not available"
+        if facts and not facts.get("missing"):
+            # Filed numbers first: the SEC figures replace the website's growth and profit numbers
+            f = dict(f or {})
+            if facts.get("revGrowth") is not None:
+                f["revGrowthPct"] = facts["revGrowth"]
+            if facts.get("epsGrowth") is not None:
+                f["epsGrowthPct"] = facts["epsGrowth"]
+            if facts.get("epsTtm") is not None:
+                f["lastEps"] = facts["epsTtm"]
+                if not f.get("ttmEps"):
+                    f["ttmEps"] = facts["epsTtm"]
+            sc, why = fundamental_score(f, price)
+            if sc is not None and facts.get("opMargin") is not None:
+                why = "filed: operating margin %.0f%%, " % facts["opMargin"] + why
+            return sc, why
+        if not f:
+            return None, "not available"
         return fundamental_score(f, price)
 
     def regime_for(self, kind, sym):
@@ -689,10 +705,6 @@ class Run:
         tech = tech_score(dv, side)
         news_pts = news["score"] if side == "long" else 25 - news["score"]
         fund, fwhy = 9, ""
-        if kind == "stock":
-            fs, fwhy = self.fundamental(sym, dv["price"])
-            if fs is not None:
-                fund = fs if side == "long" else 15 - fs
         regime = self.regime_for(kind, sym)
         favour = {"long": "risk-on", "short": "risk-off"}[side]
         macro = 15 if regime == favour else 8 if regime in ("cautious", "neutral") else 0
@@ -708,6 +720,12 @@ class Run:
             micro += self.congress_bonus(sym, side)
         else:
             micro += 5
+        if kind == "stock":
+            need = RULES["score_min"] if regime == favour else 75 if regime == "neutral" else RULES["score_min_against"]
+            close_call = tech + news_pts + macro + min(15, micro) + 15 >= need
+            fs, fwhy = self.fundamental(sym, dv["price"], self.sec_facts(sym) if close_call else None)
+            if fs is not None:
+                fund = fs if side == "long" else 15 - fs
         total = tech + news_pts + fund + macro + min(15, micro)
         c.update({"score": total, "regime": regime, "fundWhy": fwhy,
                   "parts": {"technical": tech, "news": news_pts, "fundamental": fund, "macro": macro, "micro": min(15, micro)}})
@@ -1076,6 +1094,15 @@ class Run:
             free = self.free_usd() * fx
             need_mult = RULES["short_collateral"] if side == "short" else 1.0
             value = min(risk_cad / d, cap, free / need_mult / (1 + RULES["slip"][kind]))
+            if side == "long" and self.packmode:
+                # Whole shares, sized by the Day Trader pack's own four limits (trader-budget)
+                shares, sizing = self.pack_size(sym, price, stop, target, setup, risk_cad, cap, free / (1 + RULES["slip"][kind]))
+                c["sizing"] = sizing
+                if shares >= 1:
+                    c["shares"] = shares
+                    value = shares * price * (1 + RULES["slip"][kind]) * fx
+                else:
+                    value = 0.0
             o.update({"sizeCad": value, "sizeCapCad": cap, "cashNeededCad": value * need_mult, "cashFreeCad": free,
                       "lossAtStopCad": value * d + value * 0.002})
             c["value"] = value
@@ -1083,10 +1110,14 @@ class Run:
         failed = list(chk["failed"])
         if kind == "future" and c.get("contracts", 0) < 1:
             failed.append("One contract risks more than 1% of the account")
+        if c.get("sizing") is not None and not c.get("shares"):
+            failed.append("Sizing: %s" % str(c["sizing"].get("refusal") or "not even one whole share fits")[:120])
         passed = sum(1 for r in chk["rules"] if r["ok"])
         if inst in ("stock", "etf") and self.packmode and not failed:
-            if self.pack_risk(sym, side, c["value"] / fx, price, stop, target, setup):
+            if self.pack_risk(sym, side, c["value"] / fx, price, stop, target, setup, c.get("shares")):
                 passed += 1
+                if c.get("shares"):
+                    c["ticket"] = self.pack_ticket()
             else:
                 failed.append("Pack risk check")
         if failed:
@@ -1095,31 +1126,179 @@ class Run:
             return
         self.enter(c, inst, setup, price, stop, target, risk_cad, rep, passed, opt)
 
-    def pack_risk(self, sym, side, usd, price, stop, target, setup):
+    def pack_cfg(self, max_loss_usd):
+        """The agent's limits written in the Day Trader pack's config format."""
         f = self.f
         sleeve = self.sleeve_value("usd") / self.fx
-        cfg = {"budget": round(sleeve, 2), "cash_buffer_pct": 2, "max_position_pct": 25,
-               "max_order_usd": round(RULES["equity_cap_pct"] * sleeve + 1, 2), "min_order_usd": 5,
-               "max_loss_per_trade_usd": round(1.5 * RULES["risk_pct"] * f["equityCad"] / self.fx, 2),
-               "max_daily_loss_usd": round(RULES["day_loss_pct"] * f["dayStartEquityCad"] / self.fx, 2),
-               "max_trades_per_day": RULES["entries_per_day"], "max_orders_per_day": 12, "min_reward_risk": 2.0,
-               "require_stop": True, "no_entries_before": "09:45", "no_entries_after": "15:00", "flat_by": "15:55",
-               "fractional": True, "broker": "alpaca", "paper": True, "blocked": [], "allow_options": False,
-               "allow_margin": False, "allow_short": True, "pdt_guard": False, "sec_user_agent": ""}
-        order = {"symbol": sym, "side": "buy" if side == "long" else "sell", "notional": "%.2f" % usd, "type": "market",
-                 "time_in_force": "day", "why": "paper",
-                 "plan": {"entry": round(price, 2), "stop": round(stop, 2), "target": round(target, 2), "setup": setup, "flat_by": "15:55"}}
+        return {"budget": round(sleeve, 2), "cash_buffer_pct": 0, "max_position_pct": round(RULES["equity_cap_pct"] * 100, 2),
+                "max_order_usd": round(RULES["equity_cap_pct"] * sleeve + 1, 2), "min_order_usd": 5,
+                "max_loss_per_trade_usd": round(max_loss_usd, 2),
+                "max_daily_loss_usd": round(RULES["day_loss_pct"] * f["dayStartEquityCad"] / self.fx, 2),
+                "max_trades_per_day": RULES["entries_per_day"], "max_orders_per_day": 12, "min_reward_risk": 1.9,
+                "require_stop": True, "no_entries_before": "09:45", "no_entries_after": "15:00", "flat_by": "15:55",
+                "fractional": False, "broker": "alpaca", "paper": True, "blocked": [], "allow_options": False,
+                "allow_margin": False, "allow_short": True, "pdt_guard": False, "sec_user_agent": ""}
+
+    def pack_nowarg(self):
+        return ["--now", self.ny_arg()] if self.ny_arg() else []
+
+    def pack_size(self, sym, price, stop, target, setup, risk_cad, cap_cad, cash_cad):
+        """Day Trader pack's Budget Manager (trader-budget): whole shares inside four limits, written as one bracket order."""
+        fx = self.fx
+        cfg = self.pack_cfg(risk_cad / fx)
+        cfg["max_order_usd"] = round(cap_cad / fx, 2)
+        plan = {"symbol": sym, "side": "buy", "date": self.today.isoformat(), "entry": round(price, 2), "stop": round(stop, 2),
+                "target": round(target, 2), "setup": setup, "entry_time": self.ny.strftime("%I:%M %p").lstrip("0"), "flat_by": "15:55"}
+        tdir = os.path.join(self.work, "trader")
+        for name, doc in (("size-config.json", cfg), ("plan.json", plan), ("size-cash.json", {"cash": round(max(0.0, cash_cad) / fx, 2)})):
+            with open(os.path.join(tdir, name), "w") as fh:
+                json.dump(doc, fh)
+        code, data, tail = pack("size.py", ["--config", "trader/size-config.json", "--portfolio", "trader/size-cash.json", "--json", "--write"]
+                                + self.pack_nowarg(), self.work)
+        sz = (data or {}).get("sizing") if isinstance(data, dict) else None
+        if not sz:
+            lines = [x for x in tail.strip().splitlines() if x.strip()]
+            return 0, {"refusal": (lines[-1] if lines else "no answer from the sizing tool")[:160]}
+        keep = {k: sz.get(k) for k in ("qty", "bound_by", "cost", "max_loss", "risk_per_share", "reward_risk", "refusal")}
+        keep["limits"] = [{"name": x.get("name"), "shares": x.get("shares")} for x in sz.get("limits") or []]
+        if sz.get("refusal") or not sz.get("qty"):
+            return 0, keep
+        log("pack sizing %s: %s shares, bound by %s" % (sym, sz["qty"], sz.get("bound_by")))
+        return int(sz["qty"]), keep
+
+    def pack_risk(self, sym, side, usd, price, stop, target, setup, shares=None):
+        cfg = self.pack_cfg(1.5 * RULES["risk_pct"] * self.f["equityCad"] / self.fx)
         with open(os.path.join(self.work, "trader", "config.json"), "w") as fh:
             json.dump(cfg, fh)
-        with open(os.path.join(self.work, "trader", "orders.json"), "w") as fh:
-            json.dump({"created_by": "trading-agent", "status": "proposed", "paper": True, "orders": [order]}, fh)
-        code, data, tail = pack("check.py", ["--json", "--no-write"] + (["--now", self.ny_arg()] if self.ny_arg() else []), self.work)
+        if not shares:
+            # Shorts: the sizing tool never sizes them, so the agent writes the order itself
+            order = {"symbol": sym, "side": "buy" if side == "long" else "sell", "notional": "%.2f" % usd, "type": "market",
+                     "time_in_force": "day", "why": "paper",
+                     "plan": {"entry": round(price, 2), "stop": round(stop, 2), "target": round(target, 2), "setup": setup, "flat_by": "15:55"}}
+            with open(os.path.join(self.work, "trader", "orders.json"), "w") as fh:
+                json.dump({"created_by": "trading-agent", "status": "proposed", "paper": True, "orders": [order]}, fh)
+        code, data, tail = pack("check.py", ["--json"] + self.pack_nowarg(), self.work)
         res = (data or {}).get("results") or []
         if res and res[0].get("verdict") == "PASS":
             return True
         reasons = (res[0].get("reasons") if res else None) or [tail[-100:].strip() or "no answer"]
         log("pack risk check (%s %s): %s" % (side, sym, "; ".join(str(r) for r in reasons)[:200]))
         return False
+
+    def pack_ticket(self):
+        """Day Trader pack's Order Executor (trader-broker), used only to write the plain ticket for the record.
+        It never approves, never records a yes and never sends anything to a broker: this is the paper book."""
+        code, data, tail = pack("ticket.py", ["show", "--json"] + self.pack_nowarg(), self.work)
+        t = data[0] if isinstance(data, list) and data else None
+        if not t:
+            log("pack ticket: no ticket (%s)" % tail[-100:].strip())
+            return None
+        return {"plain": str(t.get("plain") or "")[:300], "why": str(t.get("why") or "")[:200], "maxLoss": t.get("max_loss"),
+                "riskPassed": bool(t.get("ready")), "sent": False}
+
+    def pack_clock(self):
+        """Day Trader pack's NYSE clock (trader-alerts) double-checks the agent's own calendar before any stock trade."""
+        if not self.packmode:
+            return
+        code, clk, tail = pack("alerts.py", ["clock", "--json"] + self.pack_nowarg(), self.work)
+        if not isinstance(clk, dict):
+            log("pack clock: no answer (%s)" % tail[-80:].strip())
+            return
+        keep = {k: clk.get(k) for k in ("date", "open", "reason", "early_close", "opens", "closes", "next_open", "calendar_known")}
+        keep["checkedAt"] = iso(self.now)
+        self.s.setdefault("pack", {})["clock"] = keep
+        if clk.get("calendar_known") and self.stocks_ok and not clk.get("open"):
+            self.stocks_ok = False
+            self.block_reason = "the pack's NYSE clock says the market is closed (%s)" % clk.get("reason")
+            log("No stock trades: " + self.block_reason)
+
+    def pack_alerts(self):
+        """Day Trader pack's Price Alerts (trader-alerts): a phone alert when something held moves a lot in a day.
+        An alert is information only: the agent's own stops and targets still do the selling."""
+        if not self.packmode or self.replay_now:
+            return
+        pk = self.s.setdefault("pack", {})
+        rules = {}
+        for p in self.s["positions"].values():
+            if p["kind"] == "option" or not p.get("yahoo"):
+                continue
+            ysym = str(p["yahoo"]).upper()
+            rid = re.sub(r"[^a-z0-9]+", "-", ysym.lower()).strip("-") + "-move"
+            rules[rid] = {"id": rid, "symbol": ysym, "type": "pct_move", "pct": {"crypto": 6, "future": 2.5}.get(p["kind"], 4),
+                          "note": p["symbol"]}
+        pk["alertRules"] = len(rules)
+        if not rules:
+            pk["alertState"] = {}
+            return
+        tdir = os.path.join(self.work, "trader")
+        os.makedirs(os.path.join(tdir, "state"), exist_ok=True)
+        spath = os.path.join(tdir, "state", "alerts.json")
+        with open(os.path.join(tdir, "alerts.json"), "w") as fh:
+            json.dump({"rules": list(rules.values())}, fh)
+        with open(spath, "w") as fh:
+            json.dump(pk.get("alertState") or {}, fh)
+        code, res, tail = pack("alerts.py", ["check", "--json"], self.work)
+        try:
+            with open(spath) as fh:
+                st = json.load(fh)
+            if isinstance(st.get("rung"), dict):
+                st["rung"] = {k: v for k, v in st["rung"].items() if k in rules}
+            pk["alertState"] = st
+        except (OSError, ValueError, AttributeError):
+            pass
+        if not isinstance(res, dict):
+            log("pack alerts: no answer (%s)" % tail[-100:].strip())
+            return
+        names = {r["symbol"]: r["note"] for r in rules.values()}
+        for r in res.get("rings") or []:
+            msg = str(r.get("message") or "")
+            self.events.append("Alert: " + msg)
+            pk.setdefault("rings", []).append({"at": iso(self.now), "symbol": names.get(r.get("symbol"), r.get("symbol")), "message": msg[:200]})
+        pk["rings"] = pk.get("rings", [])[-20:]
+        if res.get("errors"):
+            log("pack alerts: " + "; ".join(str(e) for e in res["errors"])[:200])
+
+    def sec_facts(self, sym):
+        """Day Trader pack's Earnings Analyst (trader-analyst): the numbers the company filed with the SEC."""
+        cache = self.s.setdefault("facts", {})
+        got = cache.get(sym)
+        e = self.s["earnings"].get(sym) or {}
+        stale = not got or (self.today - dt.date.fromisoformat(got["fetchedOn"])).days >= 7 or \
+            (e.get("status") == "reported" and (e.get("reportDate") or "") >= got.get("fetchedOn", ""))
+        if not stale or not self.packmode or self.replay_now or self.facts_budget <= 0:
+            return got if got and not got.get("missing") else None
+        if "@" not in self.sec_contact:
+            if not getattr(self, "_facts_said", False):
+                log("SEC filed numbers skipped: add the SEC_CONTACT secret (your email) to turn them on")
+                self._facts_said = True
+            return got if got and not got.get("missing") else None
+        self.facts_budget -= 1
+        cik = sec_cik(sym, self.sec_contact)
+        if not cik:
+            cache[sym] = {"fetchedOn": self.today.isoformat(), "missing": True}
+            return None
+        rel = "trader/metrics-%s.json" % re.sub(r"[^A-Za-z0-9]", "_", sym)
+        code, data, tail = pack("facts.py", ["--cik", str(cik), "--quarters", "5", "--json", "--metrics", rel,
+                                             "--user-agent", "trading-agent research %s" % self.sec_contact], self.work)
+        row = None
+        try:
+            with open(os.path.join(self.work, rel)) as fh:
+                row = (json.load(fh).get("companies") or [None])[0]
+        except (OSError, ValueError):
+            row = None
+        res = data[0] if isinstance(data, list) and data else {}
+        if not row:
+            log("SEC filed numbers for %s: none (%s)" % (sym, tail[-100:].strip()))
+            cache[sym] = {"fetchedOn": self.today.isoformat(), "missing": True}
+            return None
+        changes = res.get("changes") or []
+        cache[sym] = {"fetchedOn": self.today.isoformat(), "period": row.get("period_end"),
+                      "revGrowth": row.get("revenue_growth_yoy"), "epsGrowth": row.get("eps_growth_yoy"), "epsTtm": row.get("eps_ttm"),
+                      "grossMargin": row.get("gross_margin"), "opMargin": row.get("operating_margin"), "netMargin": row.get("net_margin"),
+                      "line": str(changes[0])[:220] if changes else "", "note": str(res.get("note") or "")[:220],
+                      "oneOff": any("operating income" in str(x) for x in changes)}
+        log("SEC filed numbers for %s: sales %s%% y/y, operating margin %s%%" % (sym, row.get("revenue_growth_yoy"), row.get("operating_margin")))
+        return cache[sym]
 
     def enter(self, c, inst, setup, price, stop, target, risk_cad, rep, passed, opt):
         f, fx, sym, side = self.f, self.fx, c["symbol"], c["side"]
@@ -1172,7 +1351,7 @@ class Run:
             usd = value / fx
             if side == "long":
                 fill = price * (1 + slip)
-                units = usd / fill
+                units = c.get("shares") or usd / fill
                 f["usd"] -= units * fill
                 costcad = units * fill * fx
                 trade_side, verb = "BUY", "Bought"
@@ -1202,6 +1381,7 @@ class Run:
             "units": units, "price": round(fillpx, 6), "currency": p["currency"], "valueCad": r2(value),
             "costsCad": r2(cost_fee), "setup": setup, "reason": "%s, score %d" % (SETUP_NAMES.get(setup, setup), c["score"]),
             "check": {"verdict": "PASS", "passed": passed, "failed": []},
+            "ticket": c.get("ticket"), "sizedBy": (c.get("sizing") or {}).get("bound_by"),
             "replay": {"pTarget": rep.get("pTarget"), "pStop": rep.get("pStop"), "meanR": rep.get("meanR"), "source": rep.get("source")}})
         self.events.append("%s (%s, score %d)" % (label, SETUP_NAMES.get(setup, setup), c["score"]))
         log("%s %s: entry %.4f, stop %.4f, target %.4f" % (trade_side, p["symbol"], p["entryPrice"], p["stopPrice"], p["targetPrice"]))
@@ -1257,6 +1437,7 @@ class Run:
         self.live.manage()
         self.regimes()
         self.gate()
+        self.pack_clock()
         if self.etf_due:
             self.etf_refresh()
         if self.universe_due:
@@ -1267,6 +1448,7 @@ class Run:
             self.hunt(hits)
         elif self.type != "WATCH" or self.scan_stocks:
             log("No new trades this run: %s" % (self.block_reason or "markets closed or nothing due"))
+        self.pack_alerts()
         self.review()
         self.live.finish()
         self.record()
@@ -1329,6 +1511,7 @@ class Run:
         fu = s.get("fundamentals", {})
         cut = (self.today - dt.timedelta(days=14)).isoformat()
         s["fundamentals"] = {k: v for k, v in fu.items() if k in keep_f or (v.get("fetchedOn") or "") >= cut}
+        s["facts"] = {k: v for k, v in s.get("facts", {}).items() if k in keep_f or (v.get("fetchedOn") or "") >= cut}
         s["log"] = LOG[-100:]
         shutil.rmtree(self.work, ignore_errors=True)
 
@@ -1490,7 +1673,19 @@ def cmd_selftest(a):
             st, v = make_store(a).load()
             return True, "records read, value %s" % money(st["fund"]["equityCad"])
         check("Agent records (GitHub)", gh)
-    check("Day Trader pack", lambda: (lambda r: (r[0] in (0, None), "loaded"))(pack("timemachine.py", ["--help"], tempfile.gettempdir())))
+    tools = ["scan.py", "news.py", "entry.py", "exit.py", "timemachine.py", "size.py", "check.py", "ticket.py", "alerts.py", "facts.py", "ptr.py"]
+    check("Day Trader pack", lambda: (lambda bad: (not bad, "all 11 tools load" if not bad else "failed: " + ", ".join(bad)))(
+        [t for t in tools if pack(t, ["--help"], tempfile.gettempdir())[0] not in (0, None)]))
+    check("Pack NYSE clock", lambda: (lambda d: (isinstance(d, dict) and "open" in d, "open now" if (d or {}).get("open") else "closed now: %s" % (d or {}).get("reason")))(
+        pack("alerts.py", ["clock", "--json"], tempfile.gettempdir())[1]))
+    if "@" in contact:
+        def facts_check():
+            w = tempfile.mkdtemp()
+            code, data, tail = pack("facts.py", ["--cik", "320193", "--quarters", "4", "--json", "--no-filings",
+                                                 "--user-agent", "trading-agent research %s" % contact], w)
+            ok = isinstance(data, list) and bool(data)
+            return ok, ((data[0].get("changes") or ["read"])[0][:70] if ok else tail[-80:])
+        check("SEC filed numbers (AAPL)", facts_check)
     good = all(r[1] for r in rows)
     msg = "Self-test %s: %d of %d checks passed." % ("passed" if good else "had problems", sum(r[1] for r in rows), len(rows))
     print(msg)

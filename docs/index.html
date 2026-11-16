@@ -294,13 +294,15 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
       <li><b>Scans</b><span>All US stocks, ETFs, coins, futures</span></li>
       <li><b>Buys</b><span>Score 70+, or 80+ against the market</span></li>
       <li><b>Tests</b><span>10,000 replays before every trade</span></li>
-      <li><b>Risks</b><span>1% a trade, 6% at most in total</span></li>
+      <li><b>Sizes</b><span>Whole shares, 1% risk a trade</span></li>
+      <li><b>Limits</b><span>6% risk open, 4 new trades a day</span></li>
       <li><b>Exits</b><span>Stop first, target twice as far</span></li>
       <li><b>Shorts</b><span>Weak stocks; calls or puts on 80+</span></li>
+      <li><b>Company</b><span>Filed SEC numbers first</span></li>
       <li><b>Earnings</b><span>Never holds through a report</span></li>
+      <li><b>Alerts</b><span>Phone alert on any big daily move</span></li>
       <li><b>Pauses</b><span>At −2% a day or −5% a week</span></li>
       <li><b>Stops</b><span>For good at −15% from the start</span></li>
-      <li><b>Costs</b><span>Real prices, fees and slippage</span></li>
     </ul>
   </section>
 
@@ -329,6 +331,10 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
   function clock(t){ return t.toLocaleTimeString([], {hour: "numeric", minute: "2-digit"}); }
   function cap(t){ t = String(t || ""); return t.charAt(0).toUpperCase() + t.slice(1); }
   function why(t){ return cap(String(t || "").replace(/,? score \d+/, "").replace(/day trade closed: not in profit with the trend intact/i, "closed at day end").replace(/ \(resting at Kraken\)/, "")); }
+  function t12(hm){ var m = String(hm || "").match(/^(\d{1,2}):(\d{2})/); if (!m) return hm || ""; var h = +m[1]; return (h % 12 || 12) + ":" + m[2] + (h < 12 ? " AM" : " PM"); }
+  function nyNow(){ try { var p = {}; new Intl.DateTimeFormat("en-CA", {timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23"}).formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; }); return p.year + "-" + p.month + "-" + p.day + " " + p.hour + ":" + p.minute; } catch (e) { return ""; } }
+  function wkday(ymd){ var x = new Date(String(ymd).slice(0, 10) + "T12:00:00Z"); return isNaN(x) ? "" : x.toLocaleDateString("en-US", {weekday: "short", timeZone: "UTC"}); }
+  function sp0(v){ v = +v; return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(0) + "%"; }
   function vals(o){ return o ? Object.keys(o).map(function(k){ return o[k]; }) : []; }
   function el(tag, c, text){ var e = document.createElement(tag); if (c) e.className = c; if (text != null) e.textContent = String(text); return e; }
   function sv(tag, attrs, parent){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
@@ -574,6 +580,13 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
       var v = String(r[1] || "").toLowerCase(); if (!v) return;
       chip(r[0] + " " + v.replace("risk-", "risk "), v === "risk-on" ? "on" : v === "risk-off" ? "off" : "mid");
     });
+    var ck = (st.pack || {}).clock, nn = nyNow();
+    if (ck && ck.date){
+      var openNow = ck.open && !(nn && nn >= ck.date + " " + (ck.closes || "16:00"));
+      if (!ck.open && ck.next_open && nn && nn >= ck.next_open) chip("NYSE open", "on");
+      else if (openNow) chip("NYSE open until " + t12(ck.closes) + (ck.early_close ? " (early close)" : ""), "on");
+      else if (ck.next_open) chip("NYSE opens " + wkday(ck.next_open) + " " + t12(String(ck.next_open).slice(11)));
+    }
     if (f.halted){ var h = el("span", "chip alert", "New trades halted"); chips.appendChild(h); }
     showLive(f);
   }
@@ -669,7 +682,8 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     return r;
   }
 
-  function showPositions(ps){
+  function showPositions(ps, facts){
+    facts = facts || {};
     var box = clear($("positions"));
     if (!ps.length){ box.appendChild(el("p", "empty", "No holdings right now. The agent is in cash.")); return; }
     ps.sort(function(a, b){ return Math.abs(+b.valueCad || 0) - Math.abs(+a.valueCad || 0); });
@@ -684,6 +698,9 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
       var bits = [KIND[p.kind] || p.kind, SETUPS[p.setup] || p.setup, pct(p.pnlPct), "since " + day(p.entryDate)];
       if (p.kind === "option" || p.kind === "future") bits.push(p.units + " contract" + (p.units == 1 ? "" : "s"));
       it.appendChild(el("div", "s", bits.filter(Boolean).join(", ")));
+      var fc = facts[p.underlying || p.symbol];
+      if (fc && !fc.missing && fc.revGrowth != null && (p.kind === "stock" || p.kind === "option"))
+        it.appendChild(el("div", "s", "Filed: sales " + sp0(fc.revGrowth) + (fc.epsGrowth != null ? ", EPS " + sp0(fc.epsGrowth) : "") + (fc.opMargin != null ? ", margin " + Math.round(fc.opMargin) + "%" : "")));
       var rb = rangeBar(p); if (rb) it.appendChild(rb);
       box.appendChild(it);
     });
@@ -725,14 +742,25 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
       it.appendChild(x);
       var pl = t.pnlCad;
       it.appendChild(el("div", "n " + (pl != null ? cls(pl) : ""), pl != null ? signed(pl) : money(t.valueCad, 0)));
-      var bits = [why(t.reason) || null, pl != null && t.r != null ? (t.r >= 0 ? "+" : "−") + Math.abs(t.r).toFixed(2) + "R" : null, stamp(t.date)];
+      var tp = t.ticket && t.ticket.plain ? String(t.ticket.plain).split(" / ") : [];
+      var find = function(re){ for (var i = 0; i < tp.length; i++) if (re.test(tp[i])) return tp[i]; return ""; };
+      var qty = (tp[0] || "").match(/^(?:BUY|SELL) (\d+) /);
+      var bits = [why(t.reason) || null, qty ? qty[1] + " shares" : null, pl != null && t.r != null ? (t.r >= 0 ? "+" : "−") + Math.abs(t.r).toFixed(2) + "R" : null, stamp(t.date)];
       it.appendChild(el("div", "s", bits.filter(Boolean).join(", ")));
+      if (tp.length){
+        it.appendChild(el("div", "s", cap([find(/^stop-loss/).replace("stop-loss", "stop"), find(/^take-profit/).replace("take-profit", "target"),
+          find(/^max loss/).replace(/^max loss about/, "max loss").replace(/ if the stop.*$/, "")].filter(Boolean).join(", "))));
+      }
       box.appendChild(it);
     });
   }
 
   function showRadar(st){
     var box = clear($("radar")), items = [];
+    ((st.pack || {}).rings || []).filter(function(r){ return Date.now() - Date.parse(r.at) < 2 * 86400000; }).slice(-4).reverse().forEach(function(r){
+      var m = String(r.message || ""), upm = /moved \+/.test(m), dn = /moved -/.test(m);
+      items.push({tag: "BIG MOVE", tc: upm ? "long" : dn ? "short" : "", sym: r.symbol, n: day(r.at.slice(0, 10)) + ", " + clock(new Date(r.at)), s: cap(m.replace(/^\S+ /, "").replace("moved -", "moved −"))});
+    });
     vals(st.earnings).sort(function(a, b){ return String(a.reportDate).localeCompare(String(b.reportDate)); }).slice(0, 6).forEach(function(e){
       var v = String(e.verdict || "");
       items.push({tag: "EARNINGS", tc: v === "beat" ? "long" : v === "miss" ? "short" : "", sym: e.symbol, n: day(e.reportDate),
@@ -795,7 +823,7 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     showMoney(st, f);
     showRisk(st, f);
     showReal(st.live);
-    showPositions(vals(st.positions));
+    showPositions(vals(st.positions), st.facts);
     dailyChart(st.nav || []);
     setupChart(f.stats);
     showIdeas(st);

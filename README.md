@@ -27,11 +27,18 @@ It never places a real order. There is no broker code in this repository.
 
 - **News:** each headline about the company or coin is read by the open-source finance-news model
   `mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis` (Apache-2.0), on GitHub's computer.
-- **Fundamentals:** sales and profit growth, price/earnings, debt, free cash flow and analysts' targets (Nasdaq).
+- **Fundamentals:** sales and profit growth, price/earnings, debt, free cash flow and analysts' targets (Nasdaq);
+  for close calls, the numbers the company filed with the SEC take over (the pack's earnings analyst).
 - **Earnings:** report dates (Nasdaq); after a report, profit against forecast, sales growth, and the tone and
   outlook of the company's own press release from the SEC.
 - **Congress:** every new House trade report, read from the PDF.
 - **Time machine:** 10,000 replays before every trade (the Day Trader pack's 5-minute replay for breakouts and breakdowns).
+- **Sizing:** every stock or ETF buy is whole shares, sized by the pack's Budget Manager inside four limits
+  (max loss, position cap, max order, cash); a stop too far away means no trade, not a smaller one.
+- **Tickets:** the pack's Order Executor writes the plain ticket for each paper buy (shares, stop, target,
+  max loss). It never records a yes and never contacts a broker.
+- **Market clock and alerts:** the pack's NYSE clock double-checks the market is open before a stock trade,
+  and a phone alert goes out when anything held moves a lot in a day (4% stocks, 6% crypto, 2.5% futures).
 
 The rules are listed in full on the page under "How it decides".
 
@@ -61,6 +68,7 @@ unless you approve it there. Needs an active self-directed Questrade account wit
 The SEC asks every program to give a contact email. To let the agent read press releases from the SEC,
 add a repository secret on github.com: **Settings → Secrets and variables → Actions → New repository secret**,
 name `SEC_CONTACT`, value: your email. It is only sent to the SEC and never appears in the code.
+It also turns on the SEC's filed numbers (sales, margins, profit per share) for close calls.
 Without it, earnings are judged from Nasdaq's numbers and the earnings headlines.
 
 ## Running it by hand, or stopping it
@@ -79,7 +87,7 @@ To stop it: **Actions → agent → ⋯ → Disable workflow**.
 | `docs/index.html` | the page (published from the `gh-pages` branch) |
 | `.github/workflows/agent.yml` | the schedule |
 | `requirements.txt` | the news model's libraries (installed on GitHub's computer) |
-| `pack/` | the seven [Day Trader skill pack](https://github.com/Jakeschincariol/day-trader-skill) tools it uses (MIT, commit `3d0f4ef`) |
+| `pack/` | all eleven [Day Trader skill pack](https://github.com/Jakeschincariol/day-trader-skill) tools (MIT, commit `3d0f4ef`) |
 
 Data: Yahoo Finance (prices, headlines), Nasdaq (earnings, fundamentals, options), CoinGecko (coin list),
 SEC (press releases), US House Clerk (Congress). All free, unofficial where noted, and delayed.

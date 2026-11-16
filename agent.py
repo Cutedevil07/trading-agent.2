@@ -37,6 +37,20 @@ def kind_group(kind):
     return "equity" if kind in ("stock", "etf") else kind
 
 
+def addon(default):
+    """A Day Trader pack add-on must never stop a run. On any error: log it and carry on with the safe answer."""
+    def wrap(fn):
+        def inner(self, *args, **kw):
+            try:
+                return fn(self, *args, **kw)
+            except Exception as e:
+                log("%s skipped after an error: %s: %s" % (fn.__name__, type(e).__name__, str(e)[:120]))
+                return default() if callable(default) else default
+        inner.__name__, inner.__doc__ = fn.__name__, fn.__doc__
+        return inner
+    return wrap
+
+
 class Run:
     """One run of the agent."""
 
@@ -1142,6 +1156,7 @@ class Run:
     def pack_nowarg(self):
         return ["--now", self.ny_arg()] if self.ny_arg() else []
 
+    @addon(lambda: (0, {"refusal": "the sizing tool had an error, so no trade"}))
     def pack_size(self, sym, price, stop, target, setup, risk_cad, cap_cad, cash_cad):
         """Day Trader pack's Budget Manager (trader-budget): whole shares inside four limits, written as one bracket order."""
         fx = self.fx
@@ -1166,6 +1181,7 @@ class Run:
         log("pack sizing %s: %s shares, bound by %s" % (sym, sz["qty"], sz.get("bound_by")))
         return int(sz["qty"]), keep
 
+    @addon(False)
     def pack_risk(self, sym, side, usd, price, stop, target, setup, shares=None):
         cfg = self.pack_cfg(1.5 * RULES["risk_pct"] * self.f["equityCad"] / self.fx)
         with open(os.path.join(self.work, "trader", "config.json"), "w") as fh:
@@ -1185,6 +1201,7 @@ class Run:
         log("pack risk check (%s %s): %s" % (side, sym, "; ".join(str(r) for r in reasons)[:200]))
         return False
 
+    @addon(None)
     def pack_ticket(self):
         """Day Trader pack's Order Executor (trader-broker), used only to write the plain ticket for the record.
         It never approves, never records a yes and never sends anything to a broker: this is the paper book."""
@@ -1196,6 +1213,7 @@ class Run:
         return {"plain": str(t.get("plain") or "")[:300], "why": str(t.get("why") or "")[:200], "maxLoss": t.get("max_loss"),
                 "riskPassed": bool(t.get("ready")), "sent": False}
 
+    @addon(None)
     def pack_clock(self):
         """Day Trader pack's NYSE clock (trader-alerts) double-checks the agent's own calendar before any stock trade."""
         if not self.packmode:
@@ -1212,6 +1230,7 @@ class Run:
             self.block_reason = "the pack's NYSE clock says the market is closed (%s)" % clk.get("reason")
             log("No stock trades: " + self.block_reason)
 
+    @addon(None)
     def pack_alerts(self):
         """Day Trader pack's Price Alerts (trader-alerts): a phone alert when something held moves a lot in a day.
         An alert is information only: the agent's own stops and targets still do the selling."""
@@ -1258,6 +1277,7 @@ class Run:
         if res.get("errors"):
             log("pack alerts: " + "; ".join(str(e) for e in res["errors"])[:200])
 
+    @addon(None)
     def sec_facts(self, sym):
         """Day Trader pack's Earnings Analyst (trader-analyst): the numbers the company filed with the SEC."""
         cache = self.s.setdefault("facts", {})

@@ -308,7 +308,7 @@
  "facts": {},
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9745.05,
+  "benchmarkCad": 9750.92,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -316,7 +316,7 @@
   "dayStartEquityCad": 9897.9,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9904.66,
+  "equityCad": 9906.11,
   "focus": {
    "active": [
     "NVDA",
@@ -589,11 +589,11 @@
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T13:02:01Z",
-  "lastRun": "2026-11-16T13:02:01Z",
+  "lastFuturesScan": "2026-11-16T13:31:49Z",
+  "lastRun": "2026-11-16T13:31:49Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 2.0% in 24 hours (risk-off). No trades: SHORT SIL came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,904.66 vs buy-and-ho",
-  "lastSaved": "2026-11-16T13:02:01Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.8% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,906.11 vs buy-and-ho",
+  "lastSaved": "2026-11-16T13:31:49Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -659,7 +659,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4289,
+  "usdCad": 1.4292,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -717,16 +717,6 @@
       "Size within limit",
       "Daily loss limit",
       "Total open risk",
-      "One contract risks more than 1% of the account"
-     ],
-     "symbol": "SHORT SIL"
-    },
-    {
-     "failed": [
-      "Loss at stop fits budget",
-      "Size within limit",
-      "Daily loss limit",
-      "Total open risk",
       "Time machine favourable",
       "One contract risks more than 1% of the account"
      ],
@@ -734,7 +724,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 322,
+   "dataCalls": 10,
    "date": "2026-11-16",
    "liquid": 2162,
    "regime": "cautious",
@@ -743,13 +733,13 @@
    "topCandidates": [
     {
      "score": 75,
-     "symbol": "SHORT SIL",
+     "symbol": "SHORT MGC",
      "verdict": "75/100, new 20-day low on heavy volume"
     },
     {
-     "score": 75,
-     "symbol": "SHORT MGC",
-     "verdict": "75/100, new 20-day low on heavy volume"
+     "score": 70,
+     "symbol": "SHORT MCL",
+     "verdict": "70/100, below the 75 needed"
     }
    ],
    "universe": 6229
@@ -774,12 +764,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T13:02:01Z"
+  "updated": "2026-11-16T13:31:49Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 08:02), stock market open day",
-  "Market screen: 6227 of 6229 charts read, 2162 liquid, focus 60 long / 40 short ideas (148s)",
-  "BLOCK SHORT SIL: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, One contract risks more than 1% of the account",
+  "Run 2026-11-16 WATCH (New York 08:31), stock market open day",
   "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
@@ -796,10 +784,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9745.05,
-   "cashCad": 9904.66,
+   "benchmarkCad": 9750.92,
+   "cashCad": 9906.11,
    "date": "2026-11-16",
-   "equityCad": 9904.66
+   "equityCad": 9906.11
   }
  ],
  "pack": {
@@ -807,7 +795,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T13:02:01Z",
+   "checkedAt": "2026-11-16T13:31:49Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

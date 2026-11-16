@@ -820,7 +820,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9656.11,
+  "benchmarkCad": 9687.06,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -830,7 +830,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9909.98,
+  "equityCad": 9909.5,
   "focus": {
    "active": [
     "NVDA",
@@ -1105,11 +1105,11 @@
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-16T15:31:39Z",
-  "lastRun": "2026-11-16T15:36:40Z",
+  "lastRun": "2026-11-16T15:46:34Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood cautious. Bitcoin down 1.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.98 vs buy-and-hold $9,656.11.",
-  "lastSaved": "2026-11-16T15:36:40Z",
-  "lastStockScan": "2026-11-16T15:36:40Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood cautious. Bitcoin down 0.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.50 vs buy-and-hold $9,687.06.",
+  "lastSaved": "2026-11-16T15:46:34Z",
+  "lastStockScan": "2026-11-16T15:46:34Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -1175,7 +1175,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.43,
+  "usdCad": 1.4299,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1270,19 +1270,14 @@
    "summary": "Morning: The S&P 500 fund was down 1.3% today; market mood cautious. Bitcoin down 0.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,906.60 vs buy-and-hold $9,653.13.",
    "topCandidates": [
     {
-     "score": 75,
-     "symbol": "SHORT VXUS",
-     "verdict": "75/100, below the 80 needed"
-    },
-    {
-     "score": 74,
-     "symbol": "LONG XLV",
-     "verdict": "74/100, below the 80 needed"
-    },
-    {
      "score": 74,
      "symbol": "LONG XLP",
      "verdict": "74/100, below the 80 needed"
+    },
+    {
+     "score": 70,
+     "symbol": "SHORT VXUS",
+     "verdict": "70/100, below the 80 needed"
     },
     {
      "score": 69,
@@ -1291,8 +1286,18 @@
     },
     {
      "score": 69,
+     "symbol": "LONG XLV",
+     "verdict": "69/100, below the 80 needed"
+    },
+    {
+     "score": 69,
      "symbol": "LONG XLF",
      "verdict": "69/100, below the 80 needed"
+    },
+    {
+     "score": 68,
+     "symbol": "LONG SO",
+     "verdict": "68/100, below the 80 needed"
     },
     {
      "score": 65,
@@ -1300,14 +1305,9 @@
      "verdict": "65/100, below the 80 needed"
     },
     {
-     "score": 63,
-     "symbol": "LONG SO",
-     "verdict": "63/100, below the 80 needed"
-    },
-    {
-     "score": 63,
-     "symbol": "SHORT SYF",
-     "verdict": "63/100, below the 80 needed"
+     "score": 65,
+     "symbol": "SHORT USHY",
+     "verdict": "65/100, below the 80 needed"
     }
    ],
    "universe": 6229
@@ -1332,11 +1332,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T15:36:40Z"
+  "updated": "2026-11-16T15:46:34Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 10:36), stock market open day",
-  "Stock scan: 87 long and 68 short ideas pre-screened; 1 breakouts, 3 breakdowns",
+  "Run 2026-11-16 WATCH (New York 10:46), stock market open day",
+  "Stock scan: 87 long and 68 short ideas pre-screened; 1 breakouts, 4 breakdowns",
   "News model loaded"
  ],
  "nav": [
@@ -1353,10 +1353,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9656.11,
-   "cashCad": 9909.98,
+   "benchmarkCad": 9687.06,
+   "cashCad": 9909.5,
    "date": "2026-11-16",
-   "equityCad": 9909.98
+   "equityCad": 9909.5
   }
  ],
  "pack": {
@@ -1364,7 +1364,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T15:36:40Z",
+   "checkedAt": "2026-11-16T15:46:34Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

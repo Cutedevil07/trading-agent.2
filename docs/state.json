@@ -305,9 +305,10 @@
   "CWB",
   "SCO"
  ],
+ "facts": {},
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9750.5,
+  "benchmarkCad": 9756.74,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -315,15 +316,15 @@
   "dayStartEquityCad": 9897.9,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9901.77,
+  "equityCad": 9902.73,
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T10:18:26Z",
-  "lastRun": "2026-11-16T10:18:26Z",
+  "lastFuturesScan": "2026-11-16T11:01:50Z",
+  "lastRun": "2026-11-16T11:01:50Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,901.77 vs buy-and-ho",
-  "lastSaved": "2026-11-16T10:18:26Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.4% in 24 hours (risk-off). No trades: SHORT SIL came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,902.73 vs buy-and-ho",
+  "lastSaved": "2026-11-16T11:01:50Z",
   "lastTradingDay": "",
   "maxDrawdownPct": 1.06,
   "peakEquityCad": 10000.0,
@@ -388,7 +389,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4283,
+  "usdCad": 1.4285,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -446,18 +447,20 @@
       "Size within limit",
       "Daily loss limit",
       "Total open risk",
+      "One contract risks more than 1% of the account"
+     ],
+     "symbol": "SHORT SIL"
+    },
+    {
+     "failed": [
+      "Loss at stop fits budget",
+      "Size within limit",
+      "Daily loss limit",
+      "Total open risk",
       "Time machine favourable",
       "One contract risks more than 1% of the account"
      ],
      "symbol": "SHORT MGC"
-    },
-    {
-     "failed": [
-      "Size within limit",
-      "Time machine favourable",
-      "One contract risks more than 1% of the account"
-     ],
-     "symbol": "SHORT M6E"
     }
    ],
    "cryptoRegime": "risk-off",
@@ -470,12 +473,12 @@
    "topCandidates": [
     {
      "score": 75,
-     "symbol": "SHORT MGC",
+     "symbol": "SHORT SIL",
      "verdict": "75/100, new 20-day low on heavy volume"
     },
     {
      "score": 75,
-     "symbol": "SHORT M6E",
+     "symbol": "SHORT MGC",
      "verdict": "75/100, new 20-day low on heavy volume"
     }
    ],
@@ -501,12 +504,12 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T10:18:26Z"
+  "updated": "2026-11-16T11:01:50Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 05:18), stock market open day",
-  "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account",
-  "BLOCK SHORT M6E: Size within limit, Time machine favourable, One contract risks more than 1% of the account"
+  "Run 2026-11-16 WATCH (New York 06:01), stock market open day",
+  "BLOCK SHORT SIL: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, One contract risks more than 1% of the account",
+  "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
   {
@@ -522,12 +525,27 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9750.5,
-   "cashCad": 9901.77,
+   "benchmarkCad": 9756.74,
+   "cashCad": 9902.73,
    "date": "2026-11-16",
-   "equityCad": 9901.77
+   "equityCad": 9902.73
   }
  ],
+ "pack": {
+  "alertRules": 0,
+  "alertState": {},
+  "clock": {
+   "calendar_known": true,
+   "checkedAt": "2026-11-16T11:01:50Z",
+   "closes": "16:00",
+   "date": "2026-11-16",
+   "early_close": null,
+   "next_open": "2026-11-16 09:30",
+   "open": false,
+   "opens": "09:30",
+   "reason": "before the open"
+  }
+ },
  "positions": {},
  "previous": {
   "endDate": "2026-11-14",

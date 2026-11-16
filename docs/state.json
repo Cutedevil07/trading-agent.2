@@ -846,7 +846,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9706.13,
+  "benchmarkCad": 9706.37,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -1130,11 +1130,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T16:01:53Z",
-  "lastRun": "2026-11-16T16:26:39Z",
+  "lastFuturesScan": "2026-11-16T16:31:49Z",
+  "lastRun": "2026-11-16T16:31:49Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,912.88 vs buy-and-hold $9,706.13.",
-  "lastSaved": "2026-11-16T16:26:39Z",
+  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin up 0.1% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,912.88 vs buy-and-ho",
+  "lastSaved": "2026-11-16T16:31:49Z",
   "lastStockScan": "2026-11-16T16:26:39Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
@@ -1297,9 +1297,21 @@
    "universe": null
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Loss at stop fits budget",
+      "Size within limit",
+      "Daily loss limit",
+      "Total open risk",
+      "Time machine favourable",
+      "One contract risks more than 1% of the account"
+     ],
+     "symbol": "SHORT MGC"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 37,
+   "dataCalls": 17,
    "date": "2026-11-16",
    "liquid": 2162,
    "regime": "cautious",
@@ -1307,44 +1319,14 @@
    "summary": "Morning: The S&P 500 fund was down 1.3% today; market mood cautious. Bitcoin down 0.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,906.60 vs buy-and-hold $9,653.13.",
    "topCandidates": [
     {
-     "score": 70,
-     "symbol": "SHORT VXUS",
-     "verdict": "70/100, below the 80 needed"
+     "score": 75,
+     "symbol": "SHORT MGC",
+     "verdict": "75/100, new 20-day low on heavy volume"
     },
     {
-     "score": 69,
-     "symbol": "LONG XLP",
-     "verdict": "69/100, below the 80 needed"
-    },
-    {
-     "score": 65,
-     "symbol": "SHORT VEA",
-     "verdict": "65/100, below the 80 needed"
-    },
-    {
-     "score": 65,
-     "symbol": "SHORT USHY",
-     "verdict": "65/100, below the 80 needed"
-    },
-    {
-     "score": 64,
-     "symbol": "LONG XLY",
-     "verdict": "64/100, below the 80 needed"
-    },
-    {
-     "score": 64,
-     "symbol": "LONG XLV",
-     "verdict": "64/100, below the 80 needed"
-    },
-    {
-     "score": 64,
-     "symbol": "LONG XLF",
-     "verdict": "64/100, below the 80 needed"
-    },
-    {
-     "score": 64,
-     "symbol": "LONG XEL",
-     "verdict": "64/100, below the 80 needed"
+     "score": 60,
+     "symbol": "SHORT MCL",
+     "verdict": "60/100, below the 75 needed"
     }
    ],
    "universe": 6229
@@ -1369,12 +1351,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T16:26:39Z"
+  "updated": "2026-11-16T16:31:49Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 11:26), stock market open day",
-  "Stock scan: 87 long and 68 short ideas pre-screened; 0 breakouts, 6 breakdowns",
-  "News model loaded"
+  "Run 2026-11-16 WATCH (New York 11:31), stock market open day",
+  "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
   {
@@ -1390,7 +1371,7 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9706.13,
+   "benchmarkCad": 9706.37,
    "cashCad": 9912.88,
    "date": "2026-11-16",
    "equityCad": 9912.88
@@ -1401,7 +1382,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T16:26:39Z",
+   "checkedAt": "2026-11-16T16:31:49Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

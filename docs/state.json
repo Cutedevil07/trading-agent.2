@@ -307,7 +307,7 @@
  ],
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9761.24,
+  "benchmarkCad": 9765.77,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -315,15 +315,15 @@
   "dayStartEquityCad": 9895.0,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9896.45,
+  "equityCad": 9898.38,
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T01:01:48Z",
-  "lastRun": "2026-11-16T01:01:48Z",
+  "lastFuturesScan": "2026-11-16T01:31:33Z",
+  "lastRun": "2026-11-16T01:31:33Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin up 3.0% in 24 hours (risk-off). No trades: SHORT SIL came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,896.45 vs buy-and-hold $9,761.24.",
-  "lastSaved": "2026-11-16T01:01:48Z",
+  "lastRunNote": "US stock market closed today. Bitcoin up 4.0% in 24 hours (risk-off). No trades: SHORT SIL came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,898.38 vs buy-and-hold $9,765.77.",
+  "lastSaved": "2026-11-16T01:31:33Z",
   "lastTradingDay": "",
   "maxDrawdownPct": 1.06,
   "peakEquityCad": 10000.0,
@@ -388,7 +388,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4272,
+  "usdCad": 1.4276,
   "weekStart": "2026-11-09",
   "weekStartEquityCad": 10000.0
  },
@@ -410,7 +410,6 @@
      "failed": [
       "Loss at stop fits budget",
       "Size within limit",
-      "Cash or margin available",
       "Daily loss limit",
       "Total open risk",
       "One contract risks more than 1% of the account"
@@ -459,11 +458,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T01:01:48Z"
+  "updated": "2026-11-16T01:31:33Z"
  },
  "log": [
-  "Run 2026-11-15 WATCH (New York 20:01), stock market closed today",
-  "BLOCK SHORT SIL: Loss at stop fits budget, Size within limit, Cash or margin available, Daily loss limit, Total open risk, One contract risks more than 1% of the account"
+  "Run 2026-11-15 WATCH (New York 20:31), stock market closed today",
+  "BLOCK SHORT SIL: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, One contract risks more than 1% of the account"
  ],
  "nav": [
   {
@@ -473,10 +472,10 @@
    "equityCad": 9895.0
   },
   {
-   "benchmarkCad": 9761.24,
-   "cashCad": 9896.45,
+   "benchmarkCad": 9765.77,
+   "cashCad": 9898.38,
    "date": "2026-11-15",
-   "equityCad": 9896.45
+   "equityCad": 9898.38
   }
  ],
  "positions": {},

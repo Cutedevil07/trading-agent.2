@@ -307,7 +307,7 @@
  ],
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9780.21,
+  "benchmarkCad": 9777.0,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -315,15 +315,15 @@
   "dayStartEquityCad": 9895.0,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9898.87,
+  "equityCad": 9898.38,
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T02:31:45Z",
-  "lastRun": "2026-11-16T02:31:45Z",
+  "lastFuturesScan": "2026-11-16T03:01:45Z",
+  "lastRun": "2026-11-16T03:01:45Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin up 0.8% in 24 hours (risk-off). No trades: SHORT SIL came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,898.87 vs buy-and-hold $9,780.21.",
-  "lastSaved": "2026-11-16T02:31:45Z",
+  "lastRunNote": "US stock market closed today. Bitcoin down 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,898.38 vs buy-and-hold $9,777.00.",
+  "lastSaved": "2026-11-16T03:01:45Z",
   "lastTradingDay": "",
   "maxDrawdownPct": 1.06,
   "peakEquityCad": 10000.0,
@@ -388,7 +388,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4277,
+  "usdCad": 1.4276,
   "weekStart": "2026-11-09",
   "weekStartEquityCad": 10000.0
  },
@@ -405,18 +405,7 @@
    "universe": null
   },
   {
-   "blocked": [
-    {
-     "failed": [
-      "Loss at stop fits budget",
-      "Size within limit",
-      "Daily loss limit",
-      "Total open risk",
-      "One contract risks more than 1% of the account"
-     ],
-     "symbol": "SHORT SIL"
-    }
-   ],
+   "blocked": [],
    "cryptoRegime": "risk-off",
    "dataCalls": 10,
    "date": "2026-11-15",
@@ -427,8 +416,8 @@
    "topCandidates": [
     {
      "score": 75,
-     "symbol": "SHORT SIL",
-     "verdict": "75/100, new 20-day low on heavy volume"
+     "symbol": "SHORT M6E",
+     "verdict": "75/100, no clean setup yet"
     },
     {
      "score": 65,
@@ -458,11 +447,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T02:31:45Z"
+  "updated": "2026-11-16T03:01:45Z"
  },
  "log": [
-  "Run 2026-11-15 WATCH (New York 21:31), stock market closed today",
-  "BLOCK SHORT SIL: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, One contract risks more than 1% of the account"
+  "Run 2026-11-15 WATCH (New York 22:01), stock market closed today"
  ],
  "nav": [
   {
@@ -472,10 +460,10 @@
    "equityCad": 9895.0
   },
   {
-   "benchmarkCad": 9780.21,
-   "cashCad": 9898.87,
+   "benchmarkCad": 9777.0,
+   "cashCad": 9898.38,
    "date": "2026-11-15",
-   "equityCad": 9898.87
+   "equityCad": 9898.38
   }
  ],
  "positions": {},

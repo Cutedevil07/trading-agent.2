@@ -846,7 +846,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9692.79,
+  "benchmarkCad": 9688.44,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -856,7 +856,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9909.98,
+  "equityCad": 9907.08,
   "focus": {
    "active": [
     "NVDA",
@@ -1131,11 +1131,11 @@
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-16T17:01:44Z",
-  "lastRun": "2026-11-16T17:07:12Z",
+  "lastRun": "2026-11-16T17:16:39Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood cautious. Bitcoin up 0.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.98 vs buy-and-hold $9,692.79.",
-  "lastSaved": "2026-11-16T17:07:12Z",
-  "lastStockScan": "2026-11-16T17:07:12Z",
+  "lastRunNote": "The S&P 500 fund was down 1.4% today; market mood cautious. Bitcoin up 0.3% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,907.08 vs buy-and-hold $9,688.44.",
+  "lastSaved": "2026-11-16T17:16:39Z",
+  "lastStockScan": "2026-11-16T17:16:39Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -1201,7 +1201,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.43,
+  "usdCad": 1.4294,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1307,11 +1307,6 @@
    "summary": "Morning: The S&P 500 fund was down 1.3% today; market mood cautious. Bitcoin down 0.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,906.60 vs buy-and-hold $9,653.13.",
    "topCandidates": [
     {
-     "score": 69,
-     "symbol": "LONG XLP",
-     "verdict": "69/100, below the 80 needed"
-    },
-    {
      "score": 65,
      "symbol": "SHORT VXUS",
      "verdict": "65/100, below the 80 needed"
@@ -1329,6 +1324,11 @@
     {
      "score": 64,
      "symbol": "LONG XLV",
+     "verdict": "64/100, below the 80 needed"
+    },
+    {
+     "score": 64,
+     "symbol": "LONG XLP",
      "verdict": "64/100, below the 80 needed"
     },
     {
@@ -1369,10 +1369,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T17:07:12Z"
+  "updated": "2026-11-16T17:16:39Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 12:07), stock market open day",
+  "Run 2026-11-16 WATCH (New York 12:16), stock market open day",
   "Stock scan: 87 long and 68 short ideas pre-screened; 0 breakouts, 7 breakdowns",
   "News model loaded"
  ],
@@ -1390,10 +1390,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9692.79,
-   "cashCad": 9909.98,
+   "benchmarkCad": 9688.44,
+   "cashCad": 9907.08,
    "date": "2026-11-16",
-   "equityCad": 9909.98
+   "equityCad": 9907.08
   }
  ],
  "pack": {
@@ -1401,7 +1401,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T17:07:12Z",
+   "checkedAt": "2026-11-16T17:16:39Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

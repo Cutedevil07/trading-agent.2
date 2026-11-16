@@ -820,7 +820,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9650.15,
+  "benchmarkCad": 9671.68,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -1104,11 +1104,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T15:01:43Z",
-  "lastRun": "2026-11-16T15:26:37Z",
+  "lastFuturesScan": "2026-11-16T15:31:39Z",
+  "lastRun": "2026-11-16T15:31:39Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.4% today; market mood cautious. Bitcoin down 0.8% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,911.91 vs buy-and-hold $9,650.15.",
-  "lastSaved": "2026-11-16T15:26:37Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood cautious. Bitcoin down 0.7% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,911.91 vs buy-and-",
+  "lastSaved": "2026-11-16T15:31:39Z",
   "lastStockScan": "2026-11-16T15:26:37Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
@@ -1260,9 +1260,21 @@
    "universe": null
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Loss at stop fits budget",
+      "Size within limit",
+      "Daily loss limit",
+      "Total open risk",
+      "Time machine favourable",
+      "One contract risks more than 1% of the account"
+     ],
+     "symbol": "SHORT MGC"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 34,
+   "dataCalls": 15,
    "date": "2026-11-16",
    "liquid": 2162,
    "regime": "cautious",
@@ -1271,43 +1283,13 @@
    "topCandidates": [
     {
      "score": 75,
-     "symbol": "SHORT VXUS",
-     "verdict": "75/100, below the 80 needed"
+     "symbol": "SHORT MGC",
+     "verdict": "75/100, new 20-day low on heavy volume"
     },
     {
-     "score": 74,
-     "symbol": "LONG XLV",
-     "verdict": "74/100, below the 80 needed"
-    },
-    {
-     "score": 74,
-     "symbol": "LONG XLP",
-     "verdict": "74/100, below the 80 needed"
-    },
-    {
-     "score": 69,
-     "symbol": "LONG XLF",
-     "verdict": "69/100, below the 80 needed"
-    },
-    {
-     "score": 68,
-     "symbol": "LONG WMT",
-     "verdict": "68/100, below the 80 needed"
-    },
-    {
-     "score": 65,
-     "symbol": "SHORT VEA",
-     "verdict": "65/100, below the 80 needed"
-    },
-    {
-     "score": 63,
-     "symbol": "LONG SO",
-     "verdict": "63/100, below the 80 needed"
-    },
-    {
-     "score": 63,
-     "symbol": "SHORT SYF",
-     "verdict": "63/100, below the 80 needed"
+     "score": 70,
+     "symbol": "SHORT MNQ",
+     "verdict": "70/100, below the 80 needed"
     }
    ],
    "universe": 6229
@@ -1332,12 +1314,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T15:26:37Z"
+  "updated": "2026-11-16T15:31:39Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 10:26), stock market open day",
-  "Stock scan: 87 long and 68 short ideas pre-screened; 1 breakouts, 3 breakdowns",
-  "News model loaded"
+  "Run 2026-11-16 WATCH (New York 10:31), stock market open day",
+  "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
   {
@@ -1353,7 +1334,7 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9650.15,
+   "benchmarkCad": 9671.68,
    "cashCad": 9911.91,
    "date": "2026-11-16",
    "equityCad": 9911.91
@@ -1364,7 +1345,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T15:26:37Z",
+   "checkedAt": "2026-11-16T15:31:39Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

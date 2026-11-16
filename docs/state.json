@@ -307,7 +307,7 @@
  ],
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9760.39,
+  "benchmarkCad": 9759.95,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -315,15 +315,15 @@
   "dayStartEquityCad": 9897.9,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9899.83,
+  "equityCad": 9899.35,
   "haltReason": "",
   "halted": false,
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T07:01:54Z",
-  "lastRun": "2026-11-16T07:01:54Z",
+  "lastFuturesScan": "2026-11-16T07:31:46Z",
+  "lastRun": "2026-11-16T07:31:46Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin up 0.6% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,899.83 vs buy-and-hold",
-  "lastSaved": "2026-11-16T07:01:54Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin up 0.8% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,899.35 vs buy-and-hold",
+  "lastSaved": "2026-11-16T07:31:46Z",
   "lastTradingDay": "",
   "maxDrawdownPct": 1.06,
   "peakEquityCad": 10000.0,
@@ -388,7 +388,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4279,
+  "usdCad": 1.4278,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -493,10 +493,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T07:01:54Z"
+  "updated": "2026-11-16T07:31:46Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 02:01), stock market open day",
+  "Run 2026-11-16 WATCH (New York 02:31), stock market open day",
   "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
@@ -513,10 +513,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9760.39,
-   "cashCad": 9899.83,
+   "benchmarkCad": 9759.95,
+   "cashCad": 9899.35,
    "date": "2026-11-16",
-   "equityCad": 9899.83
+   "equityCad": 9899.35
   }
  ],
  "positions": {},

@@ -13,6 +13,19 @@
    "status": "waiting",
    "symbol": "VCIT"
   },
+  "WMT-long-20261116": {
+   "createdOn": "2026-11-16",
+   "currency": "USD",
+   "direction": "above",
+   "expiresOn": "2026-11-23",
+   "hitOn": "",
+   "kind": "stock",
+   "level": 131.82,
+   "reason": "a breakout would start above here",
+   "side": "long",
+   "status": "waiting",
+   "symbol": "WMT"
+  },
   "XLF-long-20261116": {
    "createdOn": "2026-11-16",
    "currency": "USD",
@@ -477,7 +490,17 @@
    ]
   ]
  },
- "earnings": {},
+ "earnings": {
+  "WMT": {
+   "note": "reports before open",
+   "reportDate": "2026-11-19",
+   "status": "upcoming",
+   "symbol": "WMT",
+   "timing": "before-open",
+   "updatedOn": "2026-11-16",
+   "verdict": ""
+  }
+ },
  "etfUniverse": [
   "SPY",
   "QQQ",
@@ -780,10 +803,24 @@
   "CWB",
   "SCO"
  ],
- "facts": {},
+ "facts": {
+  "WMT": {
+   "epsGrowth": -9.1,
+   "epsTtm": 2.76,
+   "fetchedOn": "2026-11-16",
+   "grossMargin": 25.4,
+   "line": "Quarter ending 2026-07-31: revenue $186.10B (+5.9% vs a year earlier), net income $6.37B (-9.4%), diluted EPS $0.80 (-9.1%).",
+   "netMargin": 3.4,
+   "note": "",
+   "oneOff": false,
+   "opMargin": 5.0,
+   "period": "2026-07-31",
+   "revGrowth": 5.9
+  }
+ },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9706.0,
+  "benchmarkCad": 9676.95,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -793,7 +830,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9910.46,
+  "equityCad": 9910.95,
   "focus": {
    "active": [
     "NVDA",
@@ -1068,11 +1105,11 @@
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-16T15:01:43Z",
-  "lastRun": "2026-11-16T15:01:43Z",
+  "lastRun": "2026-11-16T15:11:56Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood cautious. Bitcoin up 0.5% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,910.46 vs buy-and-ho",
-  "lastSaved": "2026-11-16T15:01:43Z",
-  "lastStockScan": "2026-11-16T15:01:43Z",
+  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood cautious. Bitcoin down 0.3% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,910.95 vs buy-and-hold $9,676.95.",
+  "lastSaved": "2026-11-16T15:11:56Z",
+  "lastStockScan": "2026-11-16T15:11:56Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -1138,7 +1175,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4301,
+  "usdCad": 1.4302,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1164,6 +1201,17 @@
    "sector": "Finance",
    "target1y": 86.0,
    "ttmEps": 9.58
+  },
+  "WMT": {
+   "debtToEquity": 0.58,
+   "epsGrowthPct": -19.7,
+   "fetchedOn": "2026-11-16",
+   "freeCashFlow": 22469000.0,
+   "lastEps": 0.53,
+   "revGrowthPct": 4.7,
+   "sector": "Consumer Discretionary",
+   "target1y": 131.5,
+   "ttmEps": 2.73
   }
  },
  "journal": [
@@ -1212,21 +1260,9 @@
    "universe": null
   },
   {
-   "blocked": [
-    {
-     "failed": [
-      "Loss at stop fits budget",
-      "Size within limit",
-      "Daily loss limit",
-      "Total open risk",
-      "Time machine favourable",
-      "One contract risks more than 1% of the account"
-     ],
-     "symbol": "SHORT MGC"
-    }
-   ],
+   "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 39,
+   "dataCalls": 37,
    "date": "2026-11-16",
    "liquid": 2162,
    "regime": "cautious",
@@ -1235,13 +1271,13 @@
    "topCandidates": [
     {
      "score": 75,
-     "symbol": "SHORT VXUS",
+     "symbol": "LONG WMT",
      "verdict": "75/100, below the 80 needed"
     },
     {
      "score": 75,
-     "symbol": "SHORT MGC",
-     "verdict": "75/100, new 20-day low on heavy volume"
+     "symbol": "SHORT VXUS",
+     "verdict": "75/100, below the 80 needed"
     },
     {
      "score": 74,
@@ -1254,13 +1290,8 @@
      "verdict": "74/100, below the 80 needed"
     },
     {
-     "score": 70,
-     "symbol": "SHORT MCL",
-     "verdict": "70/100, below the 75 needed"
-    },
-    {
      "score": 69,
-     "symbol": "LONG XLY",
+     "symbol": "LONG XLF",
      "verdict": "69/100, below the 80 needed"
     },
     {
@@ -1269,9 +1300,14 @@
      "verdict": "65/100, below the 80 needed"
     },
     {
-     "score": 64,
-     "symbol": "LONG XLF",
-     "verdict": "64/100, below the 80 needed"
+     "score": 63,
+     "symbol": "LONG SO",
+     "verdict": "63/100, below the 80 needed"
+    },
+    {
+     "score": 63,
+     "symbol": "SHORT SYF",
+     "verdict": "63/100, below the 80 needed"
     }
    ],
    "universe": 6229
@@ -1296,13 +1332,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T15:01:43Z"
+  "updated": "2026-11-16T15:11:56Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 10:01), stock market open day",
+  "Run 2026-11-16 WATCH (New York 10:11), stock market open day",
   "Stock scan: 87 long and 68 short ideas pre-screened; 1 breakouts, 3 breakdowns",
   "News model loaded",
-  "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
+  "SEC filed numbers for WMT: sales 5.9% y/y, operating margin 5.0%"
  ],
  "nav": [
   {
@@ -1318,10 +1354,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9706.0,
-   "cashCad": 9910.46,
+   "benchmarkCad": 9676.95,
+   "cashCad": 9910.95,
    "date": "2026-11-16",
-   "equityCad": 9910.46
+   "equityCad": 9910.95
   }
  ],
  "pack": {
@@ -1329,7 +1365,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T15:01:43Z",
+   "checkedAt": "2026-11-16T15:11:56Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

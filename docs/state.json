@@ -1,7 +1,347 @@
 {
  "alerts": {},
- "congress": {},
- "congressSeen": [],
+ "congress": {
+  "2026-11-09-20035014": {
+   "amount": "",
+   "chamber": "House",
+   "filedDate": "2026-11-09",
+   "member": "Thomas Suozzi",
+   "note": "no stock trades read from this report",
+   "symbol": "",
+   "tradeDate": "",
+   "type": "Filed",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035014.pdf"
+  },
+  "2026-11-09-WBD-Kustoff-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-09",
+   "member": "David Kustoff",
+   "note": "33 days to report",
+   "symbol": "WBD",
+   "tradeDate": "2026-10-07",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20024921.pdf"
+  },
+  "2026-11-10-9116403": {
+   "amount": "",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Charles J. \"Chuck\" Fleischmann",
+   "note": "no stock trades read from this report",
+   "symbol": "",
+   "tradeDate": "",
+   "type": "Filed",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116403.pdf"
+  },
+  "2026-11-10-APP-Cisneros-2": {
+   "amount": "$15,001 - $50,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "27 days to report",
+   "symbol": "APP",
+   "tradeDate": "2026-10-14",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-APP-Cisneros-3": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "21 days to report",
+   "symbol": "APP",
+   "tradeDate": "2026-10-20",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-ARE-Cisneros-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "21 days to report",
+   "symbol": "ARE",
+   "tradeDate": "2026-10-20",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-ARGX-Cisneros-4": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "26 days to report",
+   "symbol": "ARGX",
+   "tradeDate": "2026-10-15",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-ARGX-Cisneros-5": {
+   "amount": "$15,001 - $50,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "27 days to report",
+   "symbol": "ARGX",
+   "tradeDate": "2026-10-14",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-ARGX-Cisneros-6": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "14 days to report",
+   "symbol": "ARGX",
+   "tradeDate": "2026-10-27",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-BBIO-Cisneros-10": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "8 days to report",
+   "symbol": "BBIO",
+   "tradeDate": "2026-11-02",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-BBIO-Cisneros-9": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "14 days to report",
+   "symbol": "BBIO",
+   "tradeDate": "2026-10-27",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-BNPQF-Cisneros-8": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "28 days to report",
+   "symbol": "BNPQF",
+   "tradeDate": "2026-10-13",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-BNS-Cisneros-7": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "32 days to report",
+   "symbol": "BNS",
+   "tradeDate": "2026-10-09",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-CF-Cisneros-11": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "21 days to report",
+   "symbol": "CF",
+   "tradeDate": "2026-10-20",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-LNT-Cisneros-1": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Gilbert Cisneros",
+   "note": "21 days to report",
+   "symbol": "LNT",
+   "tradeDate": "2026-10-20",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
+  },
+  "2026-11-10-WBD-Johnson-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-10",
+   "member": "Julie Johnson",
+   "note": "34 days to report",
+   "symbol": "WBD",
+   "tradeDate": "2026-10-07",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035806.pdf"
+  },
+  "2026-11-11-KO-Doggett-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-11",
+   "member": "Lloyd Doggett",
+   "note": "41 days to report",
+   "symbol": "KO",
+   "tradeDate": "2026-10-01",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035826.pdf"
+  },
+  "2026-11-11-SHW-Allen-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-11",
+   "member": "Richard W. Allen",
+   "note": "33 days to report",
+   "symbol": "SHW",
+   "tradeDate": "2026-10-09",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035821.pdf"
+  },
+  "2026-11-12-AMGN-Taylor-2": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "AMGN",
+   "tradeDate": "2026-11-03",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-AMGN-Taylor-3": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "AMGN",
+   "tradeDate": "2026-11-03",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-AVGO-Taylor-6": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "7 days to report",
+   "symbol": "AVGO",
+   "tradeDate": "2026-11-05",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-ETN-Taylor-7": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "ETN",
+   "tradeDate": "2026-11-03",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-ETN-Taylor-8": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "ETN",
+   "tradeDate": "2026-11-03",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-GOOGL-Taylor-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "GOOGL",
+   "tradeDate": "2026-11-03",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-GOOGL-Taylor-1": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "GOOGL",
+   "tradeDate": "2026-11-03",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-HD-Taylor-11": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "7 days to report",
+   "symbol": "HD",
+   "tradeDate": "2026-11-05",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-LLY-Taylor-10": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "LLY",
+   "tradeDate": "2026-11-03",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-LLY-Taylor-9": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "LLY",
+   "tradeDate": "2026-11-03",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-T-Taylor-4": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "T",
+   "tradeDate": "2026-11-03",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-12-T-Taylor-5": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-12",
+   "member": "David J. Taylor",
+   "note": "9 days to report",
+   "symbol": "T",
+   "tradeDate": "2026-11-03",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  }
+ },
+ "congressSeen": [
+  "20024921",
+  "20035014",
+  "20035788",
+  "20035806",
+  "20035821",
+  "20035826",
+  "20035831",
+  "9116403"
+ ],
  "earnings": {},
  "etfUniverse": [
   "SPY",
@@ -308,7 +648,7 @@
  "facts": {},
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9750.92,
+  "benchmarkCad": 9742.19,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -316,7 +656,7 @@
   "dayStartEquityCad": 9897.9,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9906.11,
+  "equityCad": 9907.56,
   "focus": {
    "active": [
     "NVDA",
@@ -588,12 +928,13 @@
   },
   "haltReason": "",
   "halted": false,
+  "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T13:31:49Z",
-  "lastRun": "2026-11-16T13:31:49Z",
+  "lastFuturesScan": "2026-11-16T14:02:01Z",
+  "lastRun": "2026-11-16T14:02:01Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.8% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,906.11 vs buy-and-ho",
-  "lastSaved": "2026-11-16T13:31:49Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.8% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,907.56 vs buy-and-ho",
+  "lastSaved": "2026-11-16T14:02:01Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -659,7 +1000,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4292,
+  "usdCad": 1.4295,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -764,10 +1105,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T13:31:49Z"
+  "updated": "2026-11-16T14:02:01Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 08:31), stock market open day",
+  "Run 2026-11-16 WATCH (New York 09:02), stock market open day",
+  "Congress tracker: 8 new House reports, 8 read",
   "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
@@ -784,10 +1126,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9750.92,
-   "cashCad": 9906.11,
+   "benchmarkCad": 9742.19,
+   "cashCad": 9907.56,
    "date": "2026-11-16",
-   "equityCad": 9906.11
+   "equityCad": 9907.56
   }
  ],
  "pack": {
@@ -795,7 +1137,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T13:31:49Z",
+   "checkedAt": "2026-11-16T14:02:01Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

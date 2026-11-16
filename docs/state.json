@@ -648,7 +648,7 @@
  "facts": {},
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9742.19,
+  "benchmarkCad": 9705.4,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -656,7 +656,7 @@
   "dayStartEquityCad": 9897.9,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9907.56,
+  "equityCad": 9910.46,
   "focus": {
    "active": [
     "NVDA",
@@ -930,11 +930,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-16T14:02:01Z",
-  "lastRun": "2026-11-16T14:02:01Z",
+  "lastFuturesScan": "2026-11-16T14:31:44Z",
+  "lastRun": "2026-11-16T14:31:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.8% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,907.56 vs buy-and-ho",
-  "lastSaved": "2026-11-16T14:02:01Z",
+  "lastRunNote": "The S&P 500 fund was down 0.9% today; market mood cautious. Bitcoin down 0.5% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,910.46 vs buy-and-",
+  "lastSaved": "2026-11-16T14:31:44Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -1000,7 +1000,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4295,
+  "usdCad": 1.4301,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1105,11 +1105,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T14:02:01Z"
+  "updated": "2026-11-16T14:31:44Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 09:02), stock market open day",
-  "Congress tracker: 8 new House reports, 8 read",
+  "Run 2026-11-16 WATCH (New York 09:31), stock market open day",
   "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
@@ -1126,10 +1125,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9742.19,
-   "cashCad": 9907.56,
+   "benchmarkCad": 9705.4,
+   "cashCad": 9910.46,
    "date": "2026-11-16",
-   "equityCad": 9907.56
+   "equityCad": 9910.46
   }
  ],
  "pack": {
@@ -1137,14 +1136,14 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T14:02:01Z",
+   "checkedAt": "2026-11-16T14:31:44Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,
-   "next_open": "2026-11-16 09:30",
-   "open": false,
+   "next_open": "2026-11-17 09:30",
+   "open": true,
    "opens": "09:30",
-   "reason": "before the open"
+   "reason": "regular session"
   }
  },
  "positions": {},

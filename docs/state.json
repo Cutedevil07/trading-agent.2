@@ -846,7 +846,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9704.53,
+  "benchmarkCad": 9691.72,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -856,7 +856,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9914.33,
+  "equityCad": 9911.91,
   "focus": {
    "active": [
     "NVDA",
@@ -1131,11 +1131,11 @@
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-16T16:31:49Z",
-  "lastRun": "2026-11-16T16:36:33Z",
+  "lastRun": "2026-11-16T16:46:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood cautious. Bitcoin up 0.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,704.53.",
-  "lastSaved": "2026-11-16T16:36:33Z",
-  "lastStockScan": "2026-11-16T16:36:33Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood cautious. Bitcoin up 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,911.91 vs buy-and-hold $9,691.72.",
+  "lastSaved": "2026-11-16T16:46:43Z",
+  "lastStockScan": "2026-11-16T16:46:43Z",
   "lastTradingDay": "",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
   "maxDrawdownPct": 1.06,
@@ -1201,7 +1201,7 @@
   },
   "tradingDays": 0,
   "usd": 4832.15361973509,
-  "usdCad": 1.4309,
+  "usdCad": 1.4304,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1328,11 +1328,6 @@
     },
     {
      "score": 64,
-     "symbol": "LONG XLY",
-     "verdict": "64/100, below the 80 needed"
-    },
-    {
-     "score": 64,
      "symbol": "LONG XLV",
      "verdict": "64/100, below the 80 needed"
     },
@@ -1345,6 +1340,11 @@
      "score": 64,
      "symbol": "LONG XEL",
      "verdict": "64/100, below the 80 needed"
+    },
+    {
+     "score": 59,
+     "symbol": "LONG XLY",
+     "verdict": "59/100, below the 80 needed"
     }
    ],
    "universe": 6229
@@ -1369,10 +1369,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-16T16:36:33Z"
+  "updated": "2026-11-16T16:46:43Z"
  },
  "log": [
-  "Run 2026-11-16 WATCH (New York 11:36), stock market open day",
+  "Run 2026-11-16 WATCH (New York 11:46), stock market open day",
   "Stock scan: 87 long and 68 short ideas pre-screened; 0 breakouts, 7 breakdowns",
   "News model loaded"
  ],
@@ -1390,10 +1390,10 @@
    "equityCad": 9897.9
   },
   {
-   "benchmarkCad": 9704.53,
-   "cashCad": 9914.33,
+   "benchmarkCad": 9691.72,
+   "cashCad": 9911.91,
    "date": "2026-11-16",
-   "equityCad": 9914.33
+   "equityCad": 9911.91
   }
  ],
  "pack": {
@@ -1401,7 +1401,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-16T16:36:33Z",
+   "checkedAt": "2026-11-16T16:46:43Z",
    "closes": "16:00",
    "date": "2026-11-16",
    "early_close": null,

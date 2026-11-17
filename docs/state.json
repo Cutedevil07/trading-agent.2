@@ -935,8 +935,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T23:01:44Z",
-   "count": 1
+   "at": "2026-11-17T23:31:48Z",
+   "count": 4
   },
   "messages": [
    {
@@ -2252,6 +2252,42 @@
     "t": "2026-11-17T23:01:44Z",
     "to": "pm",
     "x": "Futures market is closed right now. No futures trades."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "SIL",
+    "t": "2026-11-17T23:31:48Z",
+    "to": "pm",
+    "x": "Short SIL: no clean setup yet, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "SIL",
+    "t": "2026-11-17T23:31:48Z",
+    "to": "pm",
+    "x": "SIL: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-17T23:31:48Z",
+    "to": "pm",
+    "x": "Futures are neutral: 8/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "SIL",
+    "t": "2026-11-17T23:31:48Z",
+    "to": "all",
+    "x": "Short SIL scores 75 but no clean setup yet. Waiting."
    }
   ],
   "said": {
@@ -2263,7 +2299,7 @@
    "idea:MYM:short:18:none": "2026-11-17T19:31:53Z",
    "idea:MYM:short:19:none": "2026-11-17T19:01:50Z",
    "idea:MYM:short:20:breakdown": "2026-11-17T16:01:52Z",
-   "idea:SIL:short:18:none": "2026-11-17T19:31:53Z",
+   "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
    "idea:SNDK:short:19:breakdown": "2026-11-17T15:11:45Z",
    "idea:V:long:19:breakout": "2026-11-17T15:01:42Z",
    "idea:VGT:short:18:breakdown": "2026-11-17T15:11:45Z",
@@ -2283,6 +2319,7 @@
    "macro:futures:short:neutral:2026-11-17T12:31:48.270734": "2026-11-17T12:31:48Z",
    "macro:futures:short:neutral:2026-11-17T16:01:52.768649": "2026-11-17T16:01:52Z",
    "macro:futures:short:neutral:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
+   "macro:futures:short:neutral:2026-11-17T23:31:48.877253": "2026-11-17T23:31:48Z",
    "macro:futures:short:risk-off:2026-11-17T16:01:52.768649": "2026-11-17T16:01:52Z",
    "macro:futures:short:risk-off:2026-11-17T19:01:50.565495": "2026-11-17T19:01:50Z",
    "macro:futures:short:risk-off:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
@@ -2324,7 +2361,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9575.74,
+  "benchmarkCad": 9581.64,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2602,11 +2639,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-17T23:01:44Z",
-  "lastRun": "2026-11-17T23:01:44Z",
+  "lastFuturesScan": "2026-11-17T23:31:48Z",
+  "lastRun": "2026-11-17T23:31:48Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 0.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.50 vs buy-and-hold $9,575.74.",
-  "lastSaved": "2026-11-17T23:01:44Z",
+  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.50 vs buy-and-hold $9,581.64.",
+  "lastSaved": "2026-11-17T23:31:48Z",
   "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
@@ -2882,7 +2919,7 @@
   {
    "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 14,
+   "dataCalls": 17,
    "date": "2026-11-17",
    "liquid": 2229,
    "regime": "cautious",
@@ -2895,9 +2932,9 @@
      "verdict": "75/100, no clean setup yet"
     },
     {
-     "score": 65,
-     "symbol": "SHORT MYM",
-     "verdict": "65/100, below the 80 needed"
+     "score": 60,
+     "symbol": "SHORT MNQ",
+     "verdict": "60/100, below the 80 needed"
     }
    ],
    "universe": 6228
@@ -2922,11 +2959,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T23:01:44Z"
+  "updated": "2026-11-17T23:31:48Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 18:01), stock market open day",
-  "Futures market closed now: no futures trades"
+  "Run 2026-11-17 WATCH (New York 18:31), stock market open day"
  ],
  "nav": [
   {
@@ -2948,7 +2984,7 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9575.74,
+   "benchmarkCad": 9581.64,
    "cashCad": 9909.5,
    "date": "2026-11-17",
    "equityCad": 9909.5
@@ -2959,7 +2995,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T23:01:44Z",
+   "checkedAt": "2026-11-17T23:31:48Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

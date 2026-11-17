@@ -2125,7 +2125,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9518.49,
+  "benchmarkCad": 9505.91,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2404,11 +2404,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T18:31:41Z",
-  "lastRun": "2026-11-17T18:36:40Z",
+  "lastRun": "2026-11-17T18:46:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,903.21 vs buy-and-hold $9,518.49.",
-  "lastSaved": "2026-11-17T18:36:40Z",
-  "lastStockScan": "2026-11-17T18:36:40Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 2.1% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,903.21 vs buy-and-hold $9,505.91.",
+  "lastSaved": "2026-11-17T18:46:47Z",
+  "lastStockScan": "2026-11-17T18:46:47Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2761,10 +2761,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T18:36:40Z"
+  "updated": "2026-11-17T18:46:47Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 13:36), stock market open day",
+  "Run 2026-11-17 WATCH (New York 13:46), stock market open day",
   "Stock scan: 87 long and 62 short ideas pre-screened; 11 breakouts, 7 breakdowns",
   "News model loaded",
   "BLOCK SHORT XLK: Time machine favourable",
@@ -2791,7 +2791,7 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9518.49,
+   "benchmarkCad": 9505.91,
    "cashCad": 9903.21,
    "date": "2026-11-17",
    "equityCad": 9903.21
@@ -2802,7 +2802,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T18:36:40Z",
+   "checkedAt": "2026-11-17T18:46:47Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

@@ -571,6 +571,15 @@
   ]
  },
  "earnings": {
+  "VIK": {
+   "note": "reports before open",
+   "reportDate": "2026-11-17",
+   "status": "upcoming",
+   "symbol": "VIK",
+   "timing": "before-open",
+   "updatedOn": "2026-11-17",
+   "verdict": ""
+  },
   "WMT": {
    "note": "reports before open",
    "reportDate": "2026-11-19",
@@ -926,8 +935,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T17:46:43Z",
-   "count": 7
+   "at": "2026-11-17T17:56:37Z",
+   "count": 1
   },
   "messages": [
    {
@@ -1964,6 +1973,15 @@
     "t": "2026-11-17T17:46:43Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short XLK at 82, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-17T17:56:37Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 62 short charts checked, 11 breakouts, 7 breakdowns. Strongest: XLV, XLP, XEL, XLK."
    }
   ],
   "said": {
@@ -2008,6 +2026,7 @@
    "nothing:XLK:17": "2026-11-17T14:51:44Z",
    "nothing:XLK:18": "2026-11-17T17:26:44Z",
    "nothing:XLK:20": "2026-11-17T17:46:43Z",
+   "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T17:56:37Z",
    "scan:stocks:XLV,XLP,XEL,XLK:13:7": "2026-11-17T17:36:45Z",
    "scan:stocks:XLV,XLP,XEL,XLK:14:7": "2026-11-17T16:46:48Z",
    "scan:stocks:XLV,XLP,XEL,XLK:15:7": "2026-11-17T15:56:41Z",
@@ -2021,7 +2040,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9513.48,
+  "benchmarkCad": 9509.25,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2031,7 +2050,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9901.28,
+  "equityCad": 9899.83,
   "focus": {
    "active": [
     "NVDA",
@@ -2300,11 +2319,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T17:31:41Z",
-  "lastRun": "2026-11-17T17:46:43Z",
+  "lastRun": "2026-11-17T17:56:37Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood risk-off. Bitcoin down 1.8% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,901.28 vs buy-and-hold $9,513.48.",
-  "lastSaved": "2026-11-17T17:46:43Z",
-  "lastStockScan": "2026-11-17T17:46:43Z",
+  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,899.83 vs buy-and-hold $9,509.25.",
+  "lastSaved": "2026-11-17T17:56:37Z",
+  "lastStockScan": "2026-11-17T17:56:37Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2370,7 +2389,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4282,
+  "usdCad": 1.4279,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2587,7 +2606,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 35,
+   "dataCalls": 36,
    "date": "2026-11-17",
    "liquid": 2229,
    "regime": "risk-off",
@@ -2616,18 +2635,18 @@
     },
     {
      "score": 56,
-     "symbol": "LONG XLP",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 56,
      "symbol": "LONG WM",
      "verdict": "56/100, below the 80 needed"
     },
     {
-     "score": 55,
-     "symbol": "LONG WEC",
-     "verdict": "55/100, below the 80 needed"
+     "score": 56,
+     "symbol": "LONG VIK",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 51,
+     "symbol": "LONG VTV",
+     "verdict": "51/100, below the 80 needed"
     },
     {
      "score": 45,
@@ -2657,11 +2676,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T17:46:43Z"
+  "updated": "2026-11-17T17:56:37Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 12:46), stock market open day",
-  "Stock scan: 87 long and 62 short ideas pre-screened; 13 breakouts, 7 breakdowns",
+  "Run 2026-11-17 WATCH (New York 12:56), stock market open day",
+  "Stock scan: 87 long and 62 short ideas pre-screened; 11 breakouts, 7 breakdowns",
   "News model loaded",
   "BLOCK SHORT XLK: Time machine favourable",
   "BLOCK SHORT VOO: Time machine favourable",
@@ -2687,10 +2706,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9513.48,
-   "cashCad": 9901.28,
+   "benchmarkCad": 9509.25,
+   "cashCad": 9899.83,
    "date": "2026-11-17",
-   "equityCad": 9901.28
+   "equityCad": 9899.83
   }
  ],
  "pack": {
@@ -2698,7 +2717,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T17:46:43Z",
+   "checkedAt": "2026-11-17T17:56:37Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

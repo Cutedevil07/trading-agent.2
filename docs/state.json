@@ -2040,7 +2040,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9502.91,
+  "benchmarkCad": 9513.31,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2050,7 +2050,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9900.8,
+  "equityCad": 9899.83,
   "focus": {
    "active": [
     "NVDA",
@@ -2319,11 +2319,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T18:01:40Z",
-  "lastRun": "2026-11-17T18:01:40Z",
+  "lastRun": "2026-11-17T18:06:37Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: SHORT MYM came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,900.80 vs buy-and-",
-  "lastSaved": "2026-11-17T18:01:40Z",
-  "lastStockScan": "2026-11-17T17:56:37Z",
+  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,899.83 vs buy-and-hold $9,513.31.",
+  "lastSaved": "2026-11-17T18:06:37Z",
+  "lastStockScan": "2026-11-17T18:06:37Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2389,7 +2389,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4281,
+  "usdCad": 1.4279,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2588,17 +2588,25 @@
    "blocked": [
     {
      "failed": [
-      "Loss at stop fits budget",
-      "Size within limit",
-      "Daily loss limit",
-      "Time machine favourable",
-      "One contract risks more than 1% of the account"
+      "Time machine favourable"
      ],
-     "symbol": "SHORT MYM"
+     "symbol": "SHORT XLK"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT VOO"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLI"
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 17,
+   "dataCalls": 35,
    "date": "2026-11-17",
    "liquid": 2229,
    "regime": "risk-off",
@@ -2607,13 +2615,43 @@
    "topCandidates": [
     {
      "score": 82,
-     "symbol": "SHORT MYM",
-     "verdict": "82/100, new 20-day low on heavy volume"
+     "symbol": "SHORT XLK",
+     "verdict": "82/100, fell below its opening range"
     },
     {
-     "score": 75,
-     "symbol": "SHORT SIL",
-     "verdict": "75/100, no clean setup yet"
+     "score": 82,
+     "symbol": "SHORT VOO",
+     "verdict": "82/100, fell below its opening range"
+    },
+    {
+     "score": 72,
+     "symbol": "SHORT XLI",
+     "verdict": "72/100, fell below its opening range"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG XLV",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WM",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 55,
+     "symbol": "LONG WEC",
+     "verdict": "55/100, below the 80 needed"
+    },
+    {
+     "score": 51,
+     "symbol": "LONG VTV",
+     "verdict": "51/100, below the 80 needed"
+    },
+    {
+     "score": 45,
+     "symbol": "LONG WMT",
+     "verdict": "45/100, below the 80 needed"
     }
    ],
    "universe": 6228
@@ -2638,11 +2676,15 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T18:01:40Z"
+  "updated": "2026-11-17T18:06:37Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 13:01), stock market open day",
-  "BLOCK SHORT MYM: Loss at stop fits budget, Size within limit, Daily loss limit, Time machine favourable, One contract risks more than 1% of the account"
+  "Run 2026-11-17 WATCH (New York 13:06), stock market open day",
+  "Stock scan: 87 long and 62 short ideas pre-screened; 11 breakouts, 7 breakdowns",
+  "News model loaded",
+  "BLOCK SHORT XLK: Time machine favourable",
+  "BLOCK SHORT VOO: Time machine favourable",
+  "BLOCK SHORT XLI: Time machine favourable"
  ],
  "nav": [
   {
@@ -2664,10 +2706,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9502.91,
-   "cashCad": 9900.8,
+   "benchmarkCad": 9513.31,
+   "cashCad": 9899.83,
    "date": "2026-11-17",
-   "equityCad": 9900.8
+   "equityCad": 9899.83
   }
  ],
  "pack": {
@@ -2675,7 +2717,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T18:01:40Z",
+   "checkedAt": "2026-11-17T18:06:37Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

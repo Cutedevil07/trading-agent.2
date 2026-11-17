@@ -935,8 +935,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T19:31:53Z",
-   "count": 9
+   "at": "2026-11-17T19:46:30Z",
+   "count": 1
   },
   "messages": [
    {
@@ -2207,6 +2207,15 @@
     "t": "2026-11-17T19:31:53Z",
     "to": "all",
     "x": "Nothing to trade this scan. Short SIL scores enough but has no clean setup yet."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-17T19:46:30Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 62 short charts checked, 12 breakouts, 7 breakdowns. Strongest: XLV, XLP, XEL, XLK."
    }
   ],
   "said": {
@@ -2262,7 +2271,7 @@
    "nothing:XLK:20": "2026-11-17T17:46:43Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
-   "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T18:16:44Z",
+   "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
    "scan:stocks:XLV,XLP,XEL,XLK:13:7": "2026-11-17T17:36:45Z",
    "scan:stocks:XLV,XLP,XEL,XLK:14:7": "2026-11-17T16:46:48Z",
    "scan:stocks:XLV,XLP,XEL,XLK:15:7": "2026-11-17T15:56:41Z",
@@ -2276,7 +2285,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9507.11,
+  "benchmarkCad": 9508.57,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2555,11 +2564,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T19:31:53Z",
-  "lastRun": "2026-11-17T19:36:31Z",
+  "lastRun": "2026-11-17T19:46:30Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,904.66 vs buy-and-hold $9,507.11.",
-  "lastSaved": "2026-11-17T19:36:31Z",
-  "lastStockScan": "2026-11-17T19:36:31Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,904.66 vs buy-and-hold $9,508.57.",
+  "lastSaved": "2026-11-17T19:46:30Z",
+  "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2718,6 +2727,17 @@
    "target1y": 118.0,
    "ttmEps": 5.5
   },
+  "WELL": {
+   "debtToEquity": 0.4,
+   "epsGrowthPct": 29.3,
+   "fetchedOn": "2026-11-17",
+   "freeCashFlow": 1544463.0,
+   "lastEps": 0.53,
+   "revGrowthPct": -2.0,
+   "sector": "Real Estate",
+   "target1y": 265.5,
+   "ttmEps": 2.29
+  },
   "WM": {
    "debtToEquity": 2.37,
    "epsGrowthPct": 36.7,
@@ -2842,7 +2862,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 35,
+   "dataCalls": 38,
    "date": "2026-11-17",
    "liquid": 2229,
    "regime": "risk-off",
@@ -2871,17 +2891,17 @@
     },
     {
      "score": 55,
+     "symbol": "LONG WELL",
+     "verdict": "55/100, below the 80 needed"
+    },
+    {
+     "score": 55,
      "symbol": "LONG WEC",
      "verdict": "55/100, below the 80 needed"
     },
     {
      "score": 51,
      "symbol": "LONG XLV",
-     "verdict": "51/100, below the 80 needed"
-    },
-    {
-     "score": 51,
-     "symbol": "LONG VTV",
      "verdict": "51/100, below the 80 needed"
     },
     {
@@ -2912,11 +2932,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T19:36:31Z"
+  "updated": "2026-11-17T19:46:30Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 14:36), stock market open day",
-  "Stock scan: 87 long and 62 short ideas pre-screened; 11 breakouts, 7 breakdowns",
+  "Run 2026-11-17 WATCH (New York 14:46), stock market open day",
+  "Stock scan: 87 long and 62 short ideas pre-screened; 12 breakouts, 7 breakdowns",
   "News model loaded",
   "BLOCK SHORT XLK: Time machine favourable",
   "BLOCK SHORT VOO: Time machine favourable",
@@ -2942,7 +2962,7 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9507.11,
+   "benchmarkCad": 9508.57,
    "cashCad": 9904.66,
    "date": "2026-11-17",
    "equityCad": 9904.66
@@ -2953,7 +2973,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T19:36:31Z",
+   "checkedAt": "2026-11-17T19:46:30Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

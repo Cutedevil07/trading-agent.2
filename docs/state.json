@@ -926,8 +926,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T16:01:52Z",
-   "count": 11
+   "at": "2026-11-17T16:36:42Z",
+   "count": 1
   },
   "messages": [
    {
@@ -1766,6 +1766,15 @@
     "t": "2026-11-17T16:01:52Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short MYM at 82, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-17T16:36:42Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 62 short charts checked, 13 breakouts, 7 breakdowns. Strongest: XLV, XLP, XEL, XLK."
    }
   ],
   "said": {
@@ -1804,6 +1813,7 @@
    "nothing:XLK:17": "2026-11-17T14:51:44Z",
    "nothing:XLK:18": "2026-11-17T15:16:48Z",
    "nothing:XLK:20": "2026-11-17T15:46:35Z",
+   "scan:stocks:XLV,XLP,XEL,XLK:13:7": "2026-11-17T16:36:42Z",
    "scan:stocks:XLV,XLP,XEL,XLK:14:7": "2026-11-17T15:46:35Z",
    "scan:stocks:XLV,XLP,XEL,XLK:15:7": "2026-11-17T15:56:41Z",
    "scan:stocks:XLV,XLP,XLF,XLK:10:1": "2026-11-17T15:01:42Z",
@@ -1816,7 +1826,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9506.86,
+  "benchmarkCad": 9499.8,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -1826,7 +1836,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9901.77,
+  "equityCad": 9900.8,
   "focus": {
    "active": [
     "NVDA",
@@ -2095,11 +2105,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T16:31:48Z",
-  "lastRun": "2026-11-17T16:31:48Z",
+  "lastRun": "2026-11-17T16:36:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin down 1.2% in 24 hours (risk-off). No trades: SHORT MYM came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,901.77 vs buy-and-",
-  "lastSaved": "2026-11-17T16:31:48Z",
-  "lastStockScan": "2026-11-17T16:26:43Z",
+  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin down 1.3% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,900.80 vs buy-and-hold $9,499.80.",
+  "lastSaved": "2026-11-17T16:36:42Z",
+  "lastStockScan": "2026-11-17T16:36:42Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2165,7 +2175,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4283,
+  "usdCad": 1.4281,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2353,17 +2363,25 @@
    "blocked": [
     {
      "failed": [
-      "Loss at stop fits budget",
-      "Size within limit",
-      "Daily loss limit",
-      "Time machine favourable",
-      "One contract risks more than 1% of the account"
+      "Time machine favourable"
      ],
-     "symbol": "SHORT MYM"
+     "symbol": "SHORT XLK"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT VOO"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLI"
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 17,
+   "dataCalls": 35,
    "date": "2026-11-17",
    "liquid": 2229,
    "regime": "risk-off",
@@ -2372,13 +2390,43 @@
    "topCandidates": [
     {
      "score": 82,
-     "symbol": "SHORT MYM",
-     "verdict": "82/100, new 20-day low on heavy volume"
+     "symbol": "SHORT XLK",
+     "verdict": "82/100, fell below its opening range"
     },
     {
-     "score": 75,
-     "symbol": "SHORT SIL",
-     "verdict": "75/100, no clean setup yet"
+     "score": 82,
+     "symbol": "SHORT VOO",
+     "verdict": "82/100, fell below its opening range"
+    },
+    {
+     "score": 77,
+     "symbol": "SHORT XLI",
+     "verdict": "77/100, fell below its opening range"
+    },
+    {
+     "score": 61,
+     "symbol": "LONG XLV",
+     "verdict": "61/100, below the 80 needed"
+    },
+    {
+     "score": 61,
+     "symbol": "LONG XLP",
+     "verdict": "61/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG XEL",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WM",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 45,
+     "symbol": "LONG WMT",
+     "verdict": "45/100, below the 80 needed"
     }
    ],
    "universe": 6228
@@ -2403,11 +2451,15 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T16:31:48Z"
+  "updated": "2026-11-17T16:36:42Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 11:31), stock market open day",
-  "BLOCK SHORT MYM: Loss at stop fits budget, Size within limit, Daily loss limit, Time machine favourable, One contract risks more than 1% of the account"
+  "Run 2026-11-17 WATCH (New York 11:36), stock market open day",
+  "Stock scan: 87 long and 62 short ideas pre-screened; 13 breakouts, 7 breakdowns",
+  "News model loaded",
+  "BLOCK SHORT XLK: Time machine favourable",
+  "BLOCK SHORT VOO: Time machine favourable",
+  "BLOCK SHORT XLI: Time machine favourable"
  ],
  "nav": [
   {
@@ -2429,10 +2481,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9506.86,
-   "cashCad": 9901.77,
+   "benchmarkCad": 9499.8,
+   "cashCad": 9900.8,
    "date": "2026-11-17",
-   "equityCad": 9901.77
+   "equityCad": 9900.8
   }
  ],
  "pack": {
@@ -2440,7 +2492,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T16:31:48Z",
+   "checkedAt": "2026-11-17T16:36:42Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

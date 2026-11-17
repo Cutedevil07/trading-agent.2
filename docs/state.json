@@ -934,7 +934,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9621.18,
+  "benchmarkCad": 9619.86,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -944,7 +944,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9907.08,
+  "equityCad": 9906.6,
   "focus": {
    "active": [
     "NVDA",
@@ -1218,11 +1218,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-16",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-17T09:31:47Z",
-  "lastRun": "2026-11-17T09:31:47Z",
+  "lastFuturesScan": "2026-11-17T10:01:39Z",
+  "lastRun": "2026-11-17T10:01:39Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood cautious. Bitcoin down 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,907.08 vs buy-and-hold $9,621.18.",
-  "lastSaved": "2026-11-17T09:31:47Z",
+  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood cautious. Bitcoin up 0.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,906.60 vs buy-and-hold $9,619.86.",
+  "lastSaved": "2026-11-17T10:01:39Z",
   "lastStockScan": "2026-11-16T19:46:50Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-16T13:02:01Z",
@@ -1289,7 +1289,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4294,
+  "usdCad": 1.4293,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1434,9 +1434,9 @@
      "verdict": "75/100, no clean setup yet"
     },
     {
-     "score": 70,
+     "score": 65,
      "symbol": "SHORT MNQ",
-     "verdict": "70/100, below the 80 needed"
+     "verdict": "65/100, below the 80 needed"
     }
    ],
    "universe": 6229
@@ -1461,10 +1461,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T09:31:47Z"
+  "updated": "2026-11-17T10:01:39Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 04:31), stock market open day"
+  "Run 2026-11-17 WATCH (New York 05:01), stock market open day"
  ],
  "nav": [
   {
@@ -1486,10 +1486,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9621.18,
-   "cashCad": 9907.08,
+   "benchmarkCad": 9619.86,
+   "cashCad": 9906.6,
    "date": "2026-11-17",
-   "equityCad": 9907.08
+   "equityCad": 9906.6
   }
  ],
  "pack": {
@@ -1497,7 +1497,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T09:31:47Z",
+   "checkedAt": "2026-11-17T10:01:39Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

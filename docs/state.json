@@ -935,7 +935,7 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T20:16:34Z",
+   "at": "2026-11-17T21:01:41Z",
    "count": 1
   },
   "messages": [
@@ -2225,9 +2225,19 @@
     "t": "2026-11-17T20:16:34Z",
     "to": "all",
     "x": "Closing bell: value $9,906.11 (-$5.32 today), 0 new trades, 0 exits, 0 held overnight."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-17T21:01:41Z",
+    "to": "pm",
+    "x": "NYSE is closed (after the close). Opens Nov 18 at 9:30 AM."
    }
   ],
   "said": {
+   "clock:closed:2026-11-17:after the close": "2026-11-17T21:01:41Z",
    "clock:closed:2026-11-17:before the open": "2026-11-17T09:31:47Z",
    "clock:open:2026-11-17": "2026-11-17T14:31:41Z",
    "idea:MNQ:short:18:none": "2026-11-17T17:31:41Z",
@@ -2295,7 +2305,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9513.27,
+  "benchmarkCad": 9533.23,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2305,7 +2315,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9904.18,
+  "equityCad": 9905.15,
   "focus": {
    "active": [
     "NVDA",
@@ -2573,11 +2583,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-17T20:31:34Z",
-  "lastRun": "2026-11-17T20:31:34Z",
+  "lastFuturesScan": "2026-11-17T21:01:41Z",
+  "lastRun": "2026-11-17T21:01:41Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,904.18 vs buy-and-hold $9,513.27.",
-  "lastSaved": "2026-11-17T20:31:34Z",
+  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood risk-off. Bitcoin down 1.5% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,905.15 vs buy-and-hold $9,533.23.",
+  "lastSaved": "2026-11-17T21:01:41Z",
   "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
@@ -2644,7 +2654,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4288,
+  "usdCad": 1.429,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2893,10 +2903,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T20:31:34Z"
+  "updated": "2026-11-17T21:01:41Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 15:31), stock market open day"
+  "Run 2026-11-17 WATCH (New York 16:01), stock market open day"
  ],
  "nav": [
   {
@@ -2918,10 +2928,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9513.27,
-   "cashCad": 9904.18,
+   "benchmarkCad": 9533.23,
+   "cashCad": 9905.15,
    "date": "2026-11-17",
-   "equityCad": 9904.18
+   "equityCad": 9905.15
   }
  ],
  "pack": {
@@ -2929,14 +2939,14 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T20:31:34Z",
+   "checkedAt": "2026-11-17T21:01:41Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,
    "next_open": "2026-11-18 09:30",
-   "open": true,
+   "open": false,
    "opens": "09:30",
-   "reason": "regular session"
+   "reason": "after the close"
   }
  },
  "positions": {},

@@ -2276,7 +2276,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9502.94,
+  "benchmarkCad": 9507.11,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2286,7 +2286,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9905.63,
+  "equityCad": 9904.66,
   "focus": {
    "active": [
     "NVDA",
@@ -2555,11 +2555,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T19:31:53Z",
-  "lastRun": "2026-11-17T19:31:53Z",
+  "lastRun": "2026-11-17T19:36:31Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin down 1.8% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,905.63 vs buy-and-hold $9,502.94.",
-  "lastSaved": "2026-11-17T19:31:53Z",
-  "lastStockScan": "2026-11-17T19:26:40Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,904.66 vs buy-and-hold $9,507.11.",
+  "lastSaved": "2026-11-17T19:36:31Z",
+  "lastStockScan": "2026-11-17T19:36:31Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2625,7 +2625,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4291,
+  "usdCad": 1.4289,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2821,9 +2821,28 @@
    "universe": 6229
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLK"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT VOO"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLI"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 17,
+   "dataCalls": 35,
    "date": "2026-11-17",
    "liquid": 2229,
    "regime": "risk-off",
@@ -2831,14 +2850,44 @@
    "summary": "Morning: The S&P 500 fund was down 0.4% today; market mood cautious. Bitcoin up 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,911.43 vs buy-and-hold $9,609.61.",
    "topCandidates": [
     {
-     "score": 75,
-     "symbol": "SHORT SIL",
-     "verdict": "75/100, no clean setup yet"
+     "score": 77,
+     "symbol": "SHORT XLK",
+     "verdict": "77/100, fell below its opening range"
+    },
+    {
+     "score": 77,
+     "symbol": "SHORT VOO",
+     "verdict": "77/100, fell below its opening range"
     },
     {
      "score": 72,
-     "symbol": "SHORT MYM",
-     "verdict": "72/100, no clean setup yet"
+     "symbol": "SHORT XLI",
+     "verdict": "72/100, fell below its opening range"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WM",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 55,
+     "symbol": "LONG WEC",
+     "verdict": "55/100, below the 80 needed"
+    },
+    {
+     "score": 51,
+     "symbol": "LONG XLV",
+     "verdict": "51/100, below the 80 needed"
+    },
+    {
+     "score": 51,
+     "symbol": "LONG VTV",
+     "verdict": "51/100, below the 80 needed"
+    },
+    {
+     "score": 45,
+     "symbol": "LONG WMT",
+     "verdict": "45/100, below the 80 needed"
     }
    ],
    "universe": 6228
@@ -2863,10 +2912,15 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T19:31:53Z"
+  "updated": "2026-11-17T19:36:31Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 14:31), stock market open day"
+  "Run 2026-11-17 WATCH (New York 14:36), stock market open day",
+  "Stock scan: 87 long and 62 short ideas pre-screened; 11 breakouts, 7 breakdowns",
+  "News model loaded",
+  "BLOCK SHORT XLK: Time machine favourable",
+  "BLOCK SHORT VOO: Time machine favourable",
+  "BLOCK SHORT XLI: Time machine favourable"
  ],
  "nav": [
   {
@@ -2888,10 +2942,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9502.94,
-   "cashCad": 9905.63,
+   "benchmarkCad": 9507.11,
+   "cashCad": 9904.66,
    "date": "2026-11-17",
-   "equityCad": 9905.63
+   "equityCad": 9904.66
   }
  ],
  "pack": {
@@ -2899,7 +2953,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T19:31:53Z",
+   "checkedAt": "2026-11-17T19:36:31Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

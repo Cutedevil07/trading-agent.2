@@ -422,13 +422,94 @@
    "tradeDate": "2026-11-03",
    "type": "Purchase",
    "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035831.pdf"
+  },
+  "2026-11-13-20035779": {
+   "amount": "",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "Suzan K. DelBene",
+   "note": "no stock trades read from this report",
+   "symbol": "",
+   "tradeDate": "",
+   "type": "Filed",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035779.pdf"
+  },
+  "2026-11-13-20035786": {
+   "amount": "",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "Scott H. Peters",
+   "note": "no stock trades read from this report",
+   "symbol": "",
+   "tradeDate": "",
+   "type": "Filed",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035786.pdf"
+  },
+  "2026-11-13-BP-Jackson-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "Jonathan Jackson",
+   "note": "43 days to report",
+   "symbol": "BP",
+   "tradeDate": "2026-10-01",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035757.pdf"
+  },
+  "2026-11-13-DDOG-Jackson-1": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "Jonathan Jackson",
+   "note": "22 days to report",
+   "symbol": "DDOG",
+   "tradeDate": "2026-10-22",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035757.pdf"
+  },
+  "2026-11-13-EL-Jackson-2": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "Jonathan Jackson",
+   "note": "32 days to report",
+   "symbol": "EL",
+   "tradeDate": "2026-10-12",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035757.pdf"
+  },
+  "2026-11-13-JBGS-Hill-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "James French Hill",
+   "note": "4 days to report",
+   "symbol": "JBGS",
+   "tradeDate": "2026-11-09",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035807.pdf"
+  },
+  "2026-11-13-SPHR-Jackson-3": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-13",
+   "member": "Jonathan Jackson",
+   "note": "32 days to report",
+   "symbol": "SPHR",
+   "tradeDate": "2026-10-12",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035757.pdf"
   }
  },
  "congressSeen": [
   "20024921",
   "20035014",
+  "20035757",
+  "20035779",
+  "20035786",
   "20035788",
   "20035806",
+  "20035807",
   "20035821",
   "20035826",
   "20035831",
@@ -846,8 +927,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T13:01:43Z",
-   "count": 1
+   "at": "2026-11-17T14:01:47Z",
+   "count": 4
   },
   "messages": [
    {
@@ -975,6 +1056,42 @@
     "t": "2026-11-17T13:01:43Z",
     "to": "pm",
     "x": "Morning screen: 6,227 charts read, 2,229 liquid enough. 60 long and 40 short ideas on today's list."
+   },
+   {
+    "d": "analyst",
+    "k": "info",
+    "n": 0,
+    "s": "JBGS",
+    "t": "2026-11-17T14:01:47Z",
+    "to": "research",
+    "x": "House filing: James French Hill sold JBGS ($1,001 - $15,000), traded Nov 9."
+   },
+   {
+    "d": "analyst",
+    "k": "info",
+    "n": 1,
+    "s": "BP",
+    "t": "2026-11-17T14:01:47Z",
+    "to": "research",
+    "x": "House filing: Jonathan Jackson sold BP ($1,001 - $15,000), traded Oct 1."
+   },
+   {
+    "d": "analyst",
+    "k": "info",
+    "n": 2,
+    "s": "DDOG",
+    "t": "2026-11-17T14:01:47Z",
+    "to": "research",
+    "x": "House filing: Jonathan Jackson bought DDOG ($1,001 - $15,000), traded Oct 22."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "",
+    "t": "2026-11-17T14:01:47Z",
+    "to": "all",
+    "x": "Nothing to trade this scan. Short SIL scores enough but has no clean setup yet."
    }
   ],
   "said": {
@@ -984,12 +1101,12 @@
    "macro:futures:short:neutral:2026-11-17T12:31:48.270734": "2026-11-17T12:31:48Z",
    "mood:crypto:risk-off:2026-11-17": "2026-11-17T09:31:47Z",
    "mood:stocks:cautious:2026-11-17": "2026-11-17T09:31:47Z",
-   "nothing:SIL:18": "2026-11-17T12:01:45Z"
+   "nothing:SIL:18": "2026-11-17T14:01:47Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9649.28,
+  "benchmarkCad": 9653.03,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -999,7 +1116,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9909.01,
+  "equityCad": 9908.05,
   "focus": {
    "active": [
     "NVDA",
@@ -1265,13 +1382,13 @@
   },
   "haltReason": "",
   "halted": false,
-  "lastCongressCheck": "2026-11-16",
+  "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-17T13:31:45Z",
-  "lastRun": "2026-11-17T13:31:45Z",
+  "lastFuturesScan": "2026-11-17T14:01:47Z",
+  "lastRun": "2026-11-17T14:01:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood cautious. Bitcoin up 0.8% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.01 vs buy-and-hold $9,649.28.",
-  "lastSaved": "2026-11-17T13:31:45Z",
+  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood cautious. Bitcoin up 1.5% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,908.05 vs buy-and-hold $9,653.03.",
+  "lastSaved": "2026-11-17T14:01:47Z",
   "lastStockScan": "2026-11-16T19:46:50Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
@@ -1338,7 +1455,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4298,
+  "usdCad": 1.4296,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -1510,10 +1627,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T13:31:45Z"
+  "updated": "2026-11-17T14:01:47Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 08:31), stock market open day"
+  "Run 2026-11-17 WATCH (New York 09:01), stock market open day",
+  "Congress tracker: 4 new House reports, 4 read"
  ],
  "nav": [
   {
@@ -1535,10 +1653,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9649.28,
-   "cashCad": 9909.01,
+   "benchmarkCad": 9653.03,
+   "cashCad": 9908.05,
    "date": "2026-11-17",
-   "equityCad": 9909.01
+   "equityCad": 9908.05
   }
  ],
  "pack": {
@@ -1546,7 +1664,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T13:31:45Z",
+   "checkedAt": "2026-11-17T14:01:47Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

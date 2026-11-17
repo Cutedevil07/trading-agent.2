@@ -1816,7 +1816,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9540.52,
+  "benchmarkCad": 9520.6,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -1826,7 +1826,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9902.25,
+  "equityCad": 9896.45,
   "focus": {
    "active": [
     "NVDA",
@@ -2095,11 +2095,11 @@
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-17T16:01:52Z",
-  "lastRun": "2026-11-17T16:06:49Z",
+  "lastRun": "2026-11-17T16:16:46Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,902.25 vs buy-and-hold $9,540.52.",
-  "lastSaved": "2026-11-17T16:06:49Z",
-  "lastStockScan": "2026-11-17T16:06:49Z",
+  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood risk-off. Bitcoin down 0.7% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,896.45 vs buy-and-hold $9,520.60.",
+  "lastSaved": "2026-11-17T16:16:46Z",
+  "lastStockScan": "2026-11-17T16:16:46Z",
   "lastTradingDay": "2026-11-16",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
   "maxDrawdownPct": 1.06,
@@ -2165,7 +2165,7 @@
   },
   "tradingDays": 1,
   "usd": 4832.15361973509,
-  "usdCad": 1.4284,
+  "usdCad": 1.4272,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2441,11 +2441,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T16:06:49Z"
+  "updated": "2026-11-17T16:16:46Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 11:06), stock market open day",
-  "Stock scan: 87 long and 62 short ideas pre-screened; 15 breakouts, 7 breakdowns",
+  "Run 2026-11-17 WATCH (New York 11:16), stock market open day",
+  "Stock scan: 87 long and 62 short ideas pre-screened; 14 breakouts, 7 breakdowns",
   "News model loaded",
   "BLOCK SHORT XLK: Time machine favourable",
   "BLOCK SHORT VOO: Time machine favourable",
@@ -2471,10 +2471,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9540.52,
-   "cashCad": 9902.25,
+   "benchmarkCad": 9520.6,
+   "cashCad": 9896.45,
    "date": "2026-11-17",
-   "equityCad": 9902.25
+   "equityCad": 9896.45
   }
  ],
  "pack": {
@@ -2482,7 +2482,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T16:06:49Z",
+   "checkedAt": "2026-11-17T16:16:46Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

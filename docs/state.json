@@ -935,7 +935,7 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-17T21:01:41Z",
+   "at": "2026-11-17T22:01:44Z",
    "count": 1
   },
   "messages": [
@@ -2234,6 +2234,15 @@
     "t": "2026-11-17T21:01:41Z",
     "to": "pm",
     "x": "NYSE is closed (after the close). Opens Nov 18 at 9:30 AM."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-17T22:01:44Z",
+    "to": "all",
+    "x": "Nothing to trade this scan. Short SIL scores enough but has no clean setup yet."
    }
   ],
   "said": {
@@ -2282,7 +2291,7 @@
    "mood:stocks:risk-off:2026-11-17": "2026-11-17T15:46:35Z",
    "nothing:MYM:19": "2026-11-17T19:01:50Z",
    "nothing:MYM:20": "2026-11-17T16:01:52Z",
-   "nothing:SIL:18": "2026-11-17T19:31:53Z",
+   "nothing:SIL:18": "2026-11-17T22:01:44Z",
    "nothing:SNDK:19": "2026-11-17T15:11:45Z",
    "nothing:V:19": "2026-11-17T15:01:42Z",
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
@@ -2305,7 +2314,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9563.97,
+  "benchmarkCad": 9545.42,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2315,7 +2324,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9909.01,
+  "equityCad": 9904.66,
   "focus": {
    "active": [
     "NVDA",
@@ -2583,11 +2592,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-17T21:31:47Z",
-  "lastRun": "2026-11-17T21:31:47Z",
+  "lastFuturesScan": "2026-11-17T22:01:44Z",
+  "lastRun": "2026-11-17T22:01:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 1.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,909.01 vs buy-and-hold $9,563.97.",
-  "lastSaved": "2026-11-17T21:31:47Z",
+  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 1.8% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,904.66 vs buy-and-hold $9,545.42.",
+  "lastSaved": "2026-11-17T22:01:44Z",
   "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
@@ -2654,7 +2663,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4298,
+  "usdCad": 1.4289,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2903,10 +2912,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-17T21:31:47Z"
+  "updated": "2026-11-17T22:01:44Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 16:31), stock market open day"
+  "Run 2026-11-17 WATCH (New York 17:01), stock market open day"
  ],
  "nav": [
   {
@@ -2928,10 +2937,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9563.97,
-   "cashCad": 9909.01,
+   "benchmarkCad": 9545.42,
+   "cashCad": 9904.66,
    "date": "2026-11-17",
-   "equityCad": 9909.01
+   "equityCad": 9904.66
   }
  ],
  "pack": {
@@ -2939,7 +2948,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-17T21:31:47Z",
+   "checkedAt": "2026-11-17T22:01:44Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

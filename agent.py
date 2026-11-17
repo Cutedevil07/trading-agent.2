@@ -1165,9 +1165,13 @@ class Run:
             self.try_enter(c)
         if cands and self.f["entriesToday"] == before:
             b = cands[0]
-            self.floor.say("pm", "Nothing good enough this scan. Closest: %s %s at %d, needs %d." % (
-                "long" if b["side"] == "long" else "short", b["symbol"], b["score"], self.need(b)), kind="decide",
-                key="nothing:%s:%d" % (b["symbol"], b["score"] // 4), hours=2)
+            if b["score"] >= self.need(b) and not b.get("setup"):
+                line = "Nothing to trade this scan. %s %s scores enough but has no clean setup yet." % (
+                    "Long" if b["side"] == "long" else "Short", b["symbol"])
+            else:
+                line = "Nothing good enough this scan. Closest: %s %s at %d, needs %d." % (
+                    "long" if b["side"] == "long" else "short", b["symbol"], b["score"], self.need(b))
+            self.floor.say("pm", line, kind="decide", key="nothing:%s:%d" % (b["symbol"], b["score"] // 4), hours=2)
         self.set_alerts(cands)
 
     # ---------------------------------------------------------- deciding and sizing one trade
@@ -1444,8 +1448,10 @@ class Run:
             self.floor.say("strategy", "NYSE is open until %s." % t12(clk.get("closes") or "16:00"), to="pm", kind="mood",
                            key="clock:open:%s" % self.today, hours=12)
         elif self.market_day and clk.get("next_open"):
-            self.floor.say("strategy", "NYSE is closed (%s). Opens %s." % (clk.get("reason"), day_label(str(clk["next_open"])[:10]) + " " +
-                           t12(str(clk["next_open"])[11:16])), to="pm", kind="mood", key="clock:closed:%s:%s" % (self.today, clk.get("reason")), hours=12)
+            nd = str(clk["next_open"])[:10]
+            when = ("today" if nd == self.today.isoformat() else day_label(nd)) + " at " + t12(str(clk["next_open"])[11:16])
+            self.floor.say("strategy", "NYSE is closed (%s). Opens %s." % (clk.get("reason"), when), to="pm", kind="mood",
+                           key="clock:closed:%s:%s" % (self.today, clk.get("reason")), hours=12)
         if clk.get("calendar_known") and self.stocks_ok and not clk.get("open"):
             self.stocks_ok = False
             self.block_reason = "the pack's NYSE clock says the market is closed (%s)" % clk.get("reason")

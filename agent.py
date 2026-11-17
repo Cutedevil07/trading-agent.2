@@ -31,6 +31,7 @@ import traceback
 from core import *  # noqa: F401,F403  (clock, data sources, judgement, maths, storage)
 from core import OPTION_ERRORS, LOG, CALLS, RULES, FUTURES, INDEX_FUTURES, CRYPTO_FUTURES, LONG_SETUPS, SHORT_SETUPS, SETUPS
 from live import LiveDesk
+from floor import Floor, fail_words
 
 
 def kind_group(kind):
@@ -49,6 +50,23 @@ def addon(default):
         inner.__name__, inner.__doc__ = fn.__name__, fn.__doc__
         return inner
     return wrap
+
+
+def day_label(d):
+    """'2026-11-21' -> 'Nov 21'."""
+    try:
+        return dt.date.fromisoformat(str(d)[:10]).strftime("%b %d").replace(" 0", " ")
+    except ValueError:
+        return str(d or "")
+
+
+def t12(hm):
+    """'16:00' -> '4:00 PM'."""
+    try:
+        h, m = [int(x) for x in str(hm)[:5].split(":")]
+        return "%d:%02d %s" % (h % 12 or 12, m, "AM" if h < 12 else "PM")
+    except ValueError:
+        return str(hm or "")
 
 
 class Run:
@@ -86,6 +104,7 @@ class Run:
         self.stock_regime = self.crypto_regime = "cautious"
         self.btc24 = 0.0
         self.live = None
+        self.floor = Floor(state, now)
 
     # ---------------------------------------------------------- prices
     def ny_arg(self):
@@ -267,6 +286,7 @@ class Run:
             "units": p["units"], "price": round(px, 6), "currency": p.get("currency"), "valueCad": r2(value),
             "costsCad": r2(fees * (fx if p.get("currency") == "USD" else 1)), "setup": p.get("setup"),
             "reason": reason, "pnlCad": r2(pnl), "r": round(r, 2), "closedOn": self.today.isoformat()})
+        self.floor_exit(p, side_lbl, px, reason, pnl, r)
         self.events.append("%s %s (%s): %s%s" % ("Covered" if side_lbl == "COVER" else "Sold", p["symbol"], reason,
                                                  "+" if pnl >= 0 else "", money(pnl)))
         log("%s %s at %.4f: %s, P&L %s (%.2fR)" % (side_lbl, p["symbol"], px, reason, money(pnl), r))
@@ -318,6 +338,10 @@ class Run:
                 continue
             reason = self.exit_reason(p)
             if reason:
+                desk = "news" if reason.startswith("news") else "analyst" if "report" in reason or "earnings" in reason else "risk"
+                self.floor.say(desk, "Close %s: %s." % (p["symbol"], reason.replace("day trade closed: ", "day trade ")), to="trader",
+                               sym=p["underlying"], kind="block")
+                self._reason_said = pid
                 self.close(pid, p["lastPrice"], reason)
                 continue
             if k != "option":
@@ -329,6 +353,8 @@ class Run:
                     if self.live and k in ("stock", "etf") and side == "long":
                         self.live.stock_stop(p["underlying"], p["entryPrice"])
                     log("%s: up 1R, stop moved to the entry price" % p["symbol"])
+                    self.floor.say("trader", "%s is up 1R: stop moved to the entry, %s. This one can't lose now." % (
+                        p["symbol"], self.px(p["entryPrice"])), to="risk", sym=p["underlying"], kind="info")
             p["lastChecked"] = iso(self.now)
             self.value_position(p)
         self.recompute()
@@ -373,6 +399,154 @@ class Run:
                     return "company reports before the next open"
         return None
 
+    # ---------------------------------------------------------- the trading floor: what each desk says
+    @staticmethod
+    def px(v):
+        v = float(v)
+        return "$%s" % ("{:,.2f}".format(v) if v >= 1 else "%.6f" % v)
+
+    @addon(None)
+    def floor_mood(self):
+        spy, btc = self.daily.get("SPY"), self.daily.get("BTC-USD")
+        if self.market_day and spy and spy.get("sma200"):
+            where = ("down %.1f%% today" % abs(spy["movePct"]) if spy["movePct"] < -2 else
+                     "below its 200-day average" if spy["price"] < spy["sma200"] else
+                     "above its 50- and 200-day averages" if spy["price"] > spy["sma50"] else "between its averages")
+            self.floor.say("strategy", "Stocks are %s: the S&P 500 fund is %s." % (self.stock_regime.replace("-", " "), where),
+                           to="pm", kind="mood", key="mood:stocks:%s:%s" % (self.stock_regime, self.today), hours=24)
+        if btc and btc.get("sma50"):
+            self.floor.say("strategy", "Crypto is %s: Bitcoin %+.1f%% in 24 hours, %s its 50-day average." % (
+                self.crypto_regime.replace("-", " "), self.btc24, "above" if btc["price"] > btc["sma50"] else "below"),
+                to="pm", kind="mood", key="mood:crypto:%s:%s" % (self.crypto_regime, self.today), hours=24)
+
+    @addon(None)
+    def floor_gate(self, fomc_late):
+        if self.block_reason:
+            self.floor.say("risk", "No new trades: %s." % self.block_reason, to="pm", kind="block",
+                           key="gate:%s:%s" % (self.block_reason, self.today), hours=24)
+        if fomc_late:
+            self.floor.say("strategy", "Fed decision this afternoon: we stand aside until it's out.", to="pm", kind="mood",
+                           key="fomc:%s" % self.today, hours=24)
+
+    @addon(None)
+    def floor_meeting(self, which):
+        f = self.f
+        held = len(self.s["positions"])
+        if which == "open":
+            self.floor.say("pm", "Morning meeting: value %s, %d position%s held, stocks %s, crypto %s. Let's find setups." % (
+                money(f["equityCad"]), held, "" if held == 1 else "s", self.stock_regime.replace("-", " "),
+                self.crypto_regime.replace("-", " ")), kind="meeting", key="meeting:open:%s" % self.today, hours=20)
+        else:
+            day = f["equityCad"] - f["dayStartEquityCad"]
+            today = [t for t in self.s["trades"] if str(t.get("date", "")).startswith(self.today.isoformat())]
+            ins = sum(1 for t in today if t.get("side") in ("BUY", "SHORT"))
+            self.floor.say("pm", "Closing bell: value %s (%s%s today), %d new trade%s, %d exit%s, %d held overnight." % (
+                money(f["equityCad"]), "+" if day >= 0 else "", money(day), ins, "" if ins == 1 else "s",
+                len(today) - ins, "" if len(today) - ins == 1 else "s", held),
+                kind="meeting", key="meeting:close:%s" % self.today, hours=20)
+
+    @addon(None)
+    def floor_idea(self, c, need, setup, why):
+        """Research, News, Analyst and Strategy brief the PM on one idea; the PM decides."""
+        sym, side, p = c["symbol"], c["side"], c.get("parts") or {}
+        label = "%s %s" % ("Long" if side == "long" else "Short", sym)
+        c["talk"] = False
+        if c["score"] < need - 6 or getattr(self, "_floor_limit", False):
+            return
+        key = "idea:%s:%s:%d:%s" % (sym, side, c["score"] // 4, setup or "none")
+        if not self.floor.say("research", "%s: %s, chart %d/30." % (label, why, p.get("technical", 0)),
+                              to="pm", sym=sym, kind="idea", key=key, hours=3):
+            return
+        c["talk"] = True
+        n = c.get("news") or {}
+        heads = n.get("headlines") or []
+        if heads:
+            tone = "mostly good" if n.get("pos", 0) > n.get("neg", 0) else "mostly bad" if n.get("neg", 0) > n.get("pos", 0) else "mixed"
+            top = heads[0] if len(heads[0]) <= 64 else heads[0][:64].rsplit(" ", 1)[0] + "..."
+            self.floor.say("news", "%s: %d fresh headline%s, %s; %d/25. Top: \"%s\"" % (
+                sym, len(heads), "" if len(heads) == 1 else "s", tone, p.get("news", 12), top), to="pm", sym=sym, kind="vote")
+        else:
+            self.floor.say("news", "%s: no fresh headlines, neutral %d/25." % (sym, p.get("news", 12)), to="pm", sym=sym, kind="vote")
+        if c["kind"] == "stock":
+            fw = c.get("fundWhy") or "not available"
+            self.floor.say("analyst", ("%s: company numbers unavailable today, neutral %d/15." if fw == "not available" else "%s: %s; %d/15.") % (
+                (sym, p.get("fundamental", 9)) if fw == "not available" else (sym, fw[:90], p.get("fundamental", 9))), to="pm", sym=sym, kind="vote")
+        market = "crypto" if c["kind"] == "crypto" else "futures" if c["kind"] == "future" else "stocks"
+        self.floor.say("strategy", "%s are %s: %d/15 for a %s." % (market.title(), c["regime"].replace("-", " "), p.get("macro", 0), side),
+                       to="pm", kind="vote", key="macro:%s:%s:%s:%s" % (market, side, c["regime"], self.now.isoformat()), hours=1)
+        if c["score"] >= need and setup:
+            self.floor.say("pm", "%s scores %d, needs %d. Quant and Risk, check it." % (label, c["score"], need), sym=sym, kind="decide")
+        elif c["score"] >= need:
+            self.floor.say("pm", "%s scores %d but %s. Waiting." % (label, c["score"], why), sym=sym, kind="decide")
+        else:
+            self.floor.say("pm", "%s scores %d, needs %d. Pass." % (label, c["score"], need), sym=sym, kind="decide")
+
+    @addon(None)
+    def floor_plan(self, c, price, stop, target, rep, opt):
+        if not c.get("talk"):
+            return
+        sym = c["symbol"]
+        pt, ps = rep.get("pTarget"), rep.get("pStop")
+        if pt is not None and ps is not None:
+            how = "5-minute" if rep.get("source") == "pack-5m" else "daily"
+            timed = " Most run out of time first." if pt + ps < 0.5 else ""
+            self.floor.say("quant", "%s: in 10,000 %s replays the target comes first %.0f%%, the stop %.0f%%.%s %s" % (
+                sym, how, pt * 100, ps * 100, timed, "Odds are with us." if rep.get("favourable") else "Odds are against us."),
+                to="pm", sym=sym, kind="vote")
+        if opt:
+            self.floor.say("trader", "%s: %d %s%s at strike %g, %s expiry, for %s." % (
+                sym, opt["contracts"], opt["right"], "" if opt["contracts"] == 1 else "s", opt["strike"], day_label(opt["expiry"]),
+                money(opt["costUsd"])), to="pm", sym=sym, kind="vote")
+
+    @addon(None)
+    def floor_check(self, c, inst, failed, passed):
+        if not c.get("talk"):
+            return
+        sym, side = c["symbol"], c["side"]
+        sz = c.get("sizing") or {}
+        if c.get("shares"):
+            self.floor.say("risk", "%s: %d whole shares, limited by the %s; max loss %s." % (
+                sym, c["shares"], str(sz.get("bound_by") or "budget").replace("_", " "), "$%.2f" % float(sz.get("max_loss") or 0)),
+                to="trader", sym=sym, kind="check")
+        if failed:
+            words = fail_words(failed)
+            self.floor.say("risk", "Blocked %s: %s." % (sym, "; ".join(words[:3])), to="pm", sym=sym, kind="block")
+            if set(failed) <= {"Trades today and this week", "Daily loss limit", "Total open risk", "Buying allowed now"}:
+                self._floor_limit = True
+        else:
+            self.floor.say("risk", "%s passes all %d checks." % (sym, passed), to="pm", sym=sym, kind="check")
+            if inst == "option":
+                what = "buy the %s" % ("calls" if side == "long" else "puts")
+            elif inst == "future":
+                what = "go %s %s" % (side, sym)
+            elif c.get("shares"):
+                what = "buy %d %s" % (c["shares"], sym)
+            else:
+                what = "%s %s" % ("buy" if side == "long" else "short", sym)
+            self.floor.say("pm", "Approved: %s." % what, to="trader", sym=sym, kind="order")
+            t = c.get("ticket") or {}
+            if t.get("plain"):
+                parts = str(t["plain"]).split(" / ")
+                keep = [parts[0].replace(", market, good for today", "")] + [x for x in parts[1:] if x.startswith(("stop-loss", "take-profit"))]
+                self.floor.say("trader", "Ticket: %s." % ", ".join(keep), to="pm", sym=sym, kind="order")
+
+    @addon(None)
+    def floor_fill(self, p, side_lbl, units):
+        sym = p["symbol"]
+        what = ("%d %s" % (units, sym)) if p["kind"] in ("stock", "etf", "option", "future") and float(units).is_integer() else sym
+        verb = {"BUY": "bought", "SHORT": "shorted"}.get(side_lbl, side_lbl.lower())
+        self.floor.say("trader", "Filled: %s %s at %s. Stop %s, target %s." % (
+            verb, what, self.px(p["entryPrice"]), self.px(p["stopPrice"]), self.px(p["targetPrice"])),
+            to="pm", sym=p.get("underlying", sym), kind="fill")
+
+    @addon(None)
+    def floor_exit(self, p, side_lbl, px, reason, pnl, r):
+        said = getattr(self, "_reason_said", None) in (p["symbol"], p["symbol"] + " short") or \
+            any(m["s"] == p.get("underlying") and m["x"].startswith("Close ") for m in self.floor.out[-1:])
+        self.floor.say("trader", "%s %s at %s%s: %s%s (%+.2fR)." % (
+            "Covered" if side_lbl == "COVER" else "Sold", p["symbol"], self.px(px), "" if said else " (%s)" % reason,
+            "+" if pnl >= 0 else "", money(pnl), r), to="pm", sym=p.get("underlying", p["symbol"]), kind="exit")
+
     # ---------------------------------------------------------- step 3: the market's mood and the risk gate
     def regimes(self):
         spy = self.dview("SPY")
@@ -396,6 +570,7 @@ class Run:
             self.crypto_regime = "risk-on"
         else:
             self.crypto_regime = "cautious"
+        self.floor_mood()
 
     def gate(self):
         f = self.f
@@ -404,6 +579,7 @@ class Run:
         if f["equityCad"] <= halt_at and not f.get("halted"):
             f["halted"], f["haltReason"] = True, "value fell to %s, at or below the %s limit" % (money(f["equityCad"]), money(halt_at))
             self.events.append("HALTED: " + f["haltReason"])
+            self.floor.say("risk", "Halting all new trades: %s." % f["haltReason"], kind="halt")
         if f.get("halted"):
             why.append("halted")
         if f["equityCad"] <= f["dayStartEquityCad"] * (1 - RULES["day_loss_pct"]):
@@ -424,6 +600,7 @@ class Run:
         self.stocks_ok = self.stocks_ok and not fomc_late
         self.crypto_ok = not why and self.scan_crypto and self.crypto_regime != "risk-off" and not fomc_late
         self.futures_ok = not why and self.scan_futures and not fomc_late
+        self.floor_gate(fomc_late)
 
     # ---------------------------------------------------------- the whole market, once a day
     def universe_scan(self):
@@ -453,6 +630,8 @@ class Run:
         self.scanned = True
         log("Market screen: %d of %d charts read, %d liquid, focus %d long / %d short ideas (%.0fs)" % (
             len(spark), len(syms), len(rows), len(longs), len(shorts), time.time() - t0))
+        self.floor.say("research", "Morning screen: %s charts read, %s liquid enough. %d long and %d short ideas on today's list." % (
+            "{:,}".format(len(spark)), "{:,}".format(len(rows)), len(longs), len(shorts)), to="pm", kind="info")
 
     def etf_refresh(self):
         t0 = time.time()
@@ -470,6 +649,8 @@ class Run:
         self.f["lastEtfScan"] = iso(self.now)
         self.scanned = True
         log("ETF list: %d of %d ETFs read, %d liquid kept (%.0fs)" % (len(spark), len(etfs), len(self.s["etfUniverse"]), time.time() - t0))
+        self.floor.say("research", "Weekly ETF list: %d liquid ETFs kept out of %s." % (len(self.s["etfUniverse"]), "{:,}".format(len(etfs))),
+                       to="pm", kind="info")
 
     # ---------------------------------------------------------- Congress
     def congress(self):
@@ -515,6 +696,15 @@ class Run:
         self.s["congress"] = {k: self.s["congress"][k] for k in keep}
         f["lastCongressCheck"] = self.today.isoformat()
         log("Congress tracker: %d new House reports, %d read" % (len(new), read))
+        fresh = [c for c in self.s["congress"].values() if c.get("symbol") and c.get("filedDate") and
+                 any(str(c.get("url") or "").endswith("%s.pdf" % r.get("doc_id")) for r in new)]
+        for c in fresh[:3]:
+            self.floor.say("analyst", "House filing: %s %s %s (%s), traded %s." % (
+                c["member"], "bought" if c["type"] == "Purchase" else "sold", c["symbol"], c.get("amount") or "amount not given",
+                day_label(c.get("tradeDate"))), to="research", sym=c["symbol"], kind="info")
+        if len(new) and not fresh:
+            self.floor.say("analyst", "%d new House filing%s read, no stock trades in them." % (len(new), "" if len(new) == 1 else "s"),
+                           to="research", kind="info")
 
     def congress_bonus(self, sym, side):
         cut = (self.today - dt.timedelta(days=45)).isoformat()
@@ -538,6 +728,8 @@ class Run:
                 a["status"], a["hitOn"] = "hit", self.today.isoformat()
                 hits.append((a["symbol"], a.get("side", "long")))
                 self.events.append("Alert hit: %s %s %s" % (a["symbol"], a["direction"], a["level"]))
+                self.floor.say("research", "%s just went %s %s. Bringing it back to the desk." % (a["symbol"], a["direction"], self.px(a["level"])),
+                               to="pm", sym=a["symbol"], kind="alert")
         return hits
 
     def set_alerts(self, cands):
@@ -572,6 +764,7 @@ class Run:
                                      "expiresOn": add_trading_days(self.today, RULES["alert_days"]).isoformat(),
                                      "status": "waiting", "hitOn": ""}
             added += 1
+            self.floor.say("research", "Watching %s: %s, at %s." % (sym, reason, self.px(level)), to="pm", sym=sym, kind="info")
         cut = (self.today - dt.timedelta(days=10)).isoformat()
         for aid in [k for k, a in self.s["alerts"].items() if a.get("status") != "waiting"
                     and (a.get("hitOn") or a.get("expiresOn") or "") < cut]:
@@ -667,6 +860,8 @@ class Run:
         if sym in {p["underlying"] for p in self.s["positions"].values()}:
             self.events.append("Earnings read: %s %s (%s)" % (sym, verdict, e["note"][:90]))
         log("Earnings %s: %s - %s" % (sym, verdict, e["note"]))
+        self.floor.say("analyst", "%s reported: %s. %s." % (sym, {"beat": "a beat", "miss": "a miss"}.get(verdict, "mixed"), e["note"][:90]),
+                       to="pm", sym=sym, kind="info")
         return e
 
     def earnings_block(self, sym, side):
@@ -874,6 +1069,11 @@ class Run:
                     orb_s[sym] = hit
         log("Stock scan: %d long and %d short ideas pre-screened; %d breakouts, %d breakdowns" % (
             len(pre_l), len(pre_s), len([s for s in top_l if s in self.orb]), len(orb_s)))
+        nb = len([s for s in top_l if s in self.orb])
+        self.floor.say("research", "Stock scan: %d long and %d short charts checked, %d breakout%s, %d breakdown%s. Strongest: %s." % (
+            len(pre_l), len(pre_s), nb, "" if nb == 1 else "s", len(orb_s), "" if len(orb_s) == 1 else "s",
+            ", ".join(top_l[:3] + top_s[:1]) or "none"), to="pm", kind="info",
+            key="scan:stocks:%s:%d:%d" % (",".join(top_l[:3] + top_s[:1]), nb, len(orb_s)), hours=1)
         short_l = ([s for s in top_l if s in self.orb] + [s for s in top_l if s not in self.orb])[:5]
         short_s = ([s for s in top_s if s in orb_s] + [s for s in top_s if s not in orb_s])[:3]
         for s in short_l + short_s:
@@ -905,6 +1105,8 @@ class Run:
                 pre.append((tech_score(dv, "long"), s))
         top = [s for _, s in sorted(pre, reverse=True)[:4]]
         log("Crypto scan: %d coins from %s, %d with data" % (len(syms), src, len(pre)))
+        self.floor.say("research", "Crypto scan: %d coins checked. Strongest charts: %s." % (len(pre), ", ".join(top[:3]) or "none"),
+                       to="pm", kind="info", key="scan:crypto:%s" % ",".join(top[:3]), hours=3)
         self.fetch_news([(s, crypto_yahoo(s)) for s in top[:2]])
         cands = []
         for s in top:
@@ -921,6 +1123,8 @@ class Run:
         _, es = self.quote("ES=F")
         if not es or not es["bars"] or utc_to_epoch(self.now) - es["bars"][-1]["t"] > 40 * 60:
             log("Futures market closed now: no futures trades")
+            self.floor.say("strategy", "Futures market is closed right now. No futures trades.", to="pm", kind="mood",
+                           key="futures-closed:%s" % self.today, hours=12)
             return []
         spark = yahoo_spark_daily([v[0] for v in FUTURES.values()], self.replay_now)
         pre = []
@@ -956,8 +1160,14 @@ class Run:
             self.scanned = True
             cands += self.futures_candidates()
         cands.sort(key=lambda c: -c["score"])
+        before = self.f["entriesToday"]
         for c in cands:
             self.try_enter(c)
+        if cands and self.f["entriesToday"] == before:
+            b = cands[0]
+            self.floor.say("pm", "Nothing good enough this scan. Closest: %s %s at %d, needs %d." % (
+                "long" if b["side"] == "long" else "short", b["symbol"], b["score"], self.need(b)), kind="decide",
+                key="nothing:%s:%d" % (b["symbol"], b["score"] // 4), hours=2)
         self.set_alerts(cands)
 
     # ---------------------------------------------------------- deciding and sizing one trade
@@ -1050,10 +1260,13 @@ class Run:
         label = "%s %s" % ("LONG" if side == "long" else "SHORT", sym)
         verdict = "%d/100, %s" % (c["score"], why) if c["score"] >= need else "%d/100, below the %d needed" % (c["score"], need)
         self.cands.append({"symbol": label, "score": c["score"], "verdict": verdict[:90]})
+        self.floor_idea(c, need, setup, why)
         if c["score"] < need or not setup:
             return
         if f["stats"]["bySetup"].setdefault(setup, {"n": 0, "wins": 0, "r": 0.0, "disabled": False})["disabled"]:
             self.blocked.append({"symbol": label, "failed": ["Setup switched off"]})
+            if c.get("talk"):
+                self.floor.say("pm", "Pass on %s: %s is switched off after losses." % (sym, SETUP_NAMES.get(setup, setup)), sym=sym, kind="block")
             return
         allowed = {"stock": self.stocks_ok, "etf": self.stocks_ok, "crypto": self.crypto_ok, "future": self.futures_ok}[kind]
         price, stop, target, rep = self.plan(c)
@@ -1067,6 +1280,7 @@ class Run:
                 inst = "option"
             else:
                 log("%s: options not used (%s); shares instead" % (sym, owhy))
+        self.floor_plan(c, price, stop, target, rep, opt)
         group = kind_group(inst)
         held = any(p["underlying"] == sym and (p["side"] == side or p["kind"] == "option") for p in self.s["positions"].values())
         o = {"symbol": label, "allowed": allowed, "blockReason": self.block_reason, "alreadyHeld": held,
@@ -1134,6 +1348,7 @@ class Run:
                     c["ticket"] = self.pack_ticket()
             else:
                 failed.append("Pack risk check")
+        self.floor_check(c, inst, failed, passed)
         if failed:
             self.blocked.append({"symbol": label, "failed": failed})
             log("BLOCK %s: %s" % (label, ", ".join(failed)))
@@ -1225,6 +1440,12 @@ class Run:
         keep = {k: clk.get(k) for k in ("date", "open", "reason", "early_close", "opens", "closes", "next_open", "calendar_known")}
         keep["checkedAt"] = iso(self.now)
         self.s.setdefault("pack", {})["clock"] = keep
+        if clk.get("open"):
+            self.floor.say("strategy", "NYSE is open until %s." % t12(clk.get("closes") or "16:00"), to="pm", kind="mood",
+                           key="clock:open:%s" % self.today, hours=12)
+        elif self.market_day and clk.get("next_open"):
+            self.floor.say("strategy", "NYSE is closed (%s). Opens %s." % (clk.get("reason"), day_label(str(clk["next_open"])[:10]) + " " +
+                           t12(str(clk["next_open"])[11:16])), to="pm", kind="mood", key="clock:closed:%s:%s" % (self.today, clk.get("reason")), hours=12)
         if clk.get("calendar_known") and self.stocks_ok and not clk.get("open"):
             self.stocks_ok = False
             self.block_reason = "the pack's NYSE clock says the market is closed (%s)" % clk.get("reason")
@@ -1272,6 +1493,7 @@ class Run:
         for r in res.get("rings") or []:
             msg = str(r.get("message") or "")
             self.events.append("Alert: " + msg)
+            self.floor.say("trader", "Heads up: " + msg, to="pm", sym=names.get(r.get("symbol"), r.get("symbol")), kind="alert")
             pk.setdefault("rings", []).append({"at": iso(self.now), "symbol": names.get(r.get("symbol"), r.get("symbol")), "message": msg[:200]})
         pk["rings"] = pk.get("rings", [])[-20:]
         if res.get("errors"):
@@ -1403,6 +1625,7 @@ class Run:
             "check": {"verdict": "PASS", "passed": passed, "failed": []},
             "ticket": c.get("ticket"), "sizedBy": (c.get("sizing") or {}).get("bound_by"),
             "replay": {"pTarget": rep.get("pTarget"), "pStop": rep.get("pStop"), "meanR": rep.get("meanR"), "source": rep.get("source")}})
+        self.floor_fill(p, trade_side, units)
         self.events.append("%s (%s, score %d)" % (label, SETUP_NAMES.get(setup, setup), c["score"]))
         log("%s %s: entry %.4f, stop %.4f, target %.4f" % (trade_side, p["symbol"], p["entryPrice"], p["stopPrice"], p["targetPrice"]))
         self.recompute()
@@ -1425,6 +1648,7 @@ class Run:
             if b["n"] >= 8 and b["r"] < 0 and not b["disabled"]:
                 b["disabled"] = True
                 self.events.append("Setup switched off: %s lost money over %d trades" % (SETUP_NAMES.get(setup, setup), b["n"]))
+                self.floor.say("pm", "Switching off %s: it lost money over %d trades." % (SETUP_NAMES.get(setup, setup), b["n"]), kind="block")
             reason = t.get("reason", "")
             if "stop" in reason or "half its value" in reason:
                 lesson = "%s %s: stopped out (%+.2fR). Wait for a cleaner entry before this setup again." % (t["symbol"], SETUP_NAMES.get(setup, setup), r)
@@ -1433,6 +1657,13 @@ class Run:
             else:
                 lesson = "%s %s: closed by rule (%s), %+.2fR." % (t["symbol"], SETUP_NAMES.get(setup, setup), reason[:40], r)
             self.s["lessons"] = ([lesson[:150]] + self.s["lessons"])[:12]
+            if "stop" in reason or "half its value" in reason:
+                note = "stopped out (%+.2fR). Wait for a cleaner entry next time." % r
+            elif "take-profit" in reason or "doubled" in reason:
+                note = "hit its target (%+.2fR). The plan worked as written." % r
+            else:
+                note = "closed by rule (%+.2fR)." % r
+            self.floor.say("pm", "Review: %s %s %s" % (t["symbol"], SETUP_NAMES.get(setup, setup).lower(), note), sym=t.get("symbol", ""), kind="info")
 
     # ---------------------------------------------------------- the whole run
     def go(self):
@@ -1458,6 +1689,8 @@ class Run:
         self.regimes()
         self.gate()
         self.pack_clock()
+        if self.type == "OPEN":
+            self.floor_meeting("open")
         if self.etf_due:
             self.etf_refresh()
         if self.universe_due:
@@ -1491,6 +1724,7 @@ class Run:
         if problems:
             f["ruleBreaks"] = f.get("ruleBreaks", 0) + 1
             self.events.append("Bookkeeping problem: " + ", ".join(problems))
+            self.floor.say("risk", "Bookkeeping problem: %s. Checking the books." % ", ".join(problems), to="pm", kind="halt")
         f["peakEquityCad"] = max(f.get("peakEquityCad", f["equityCad"]), f["equityCad"])
         dd = (1 - f["equityCad"] / f["peakEquityCad"]) * 100 if f["peakEquityCad"] else 0
         f["maxDrawdownPct"] = round(max(f.get("maxDrawdownPct", 0), dd), 2)
@@ -1532,6 +1766,12 @@ class Run:
         cut = (self.today - dt.timedelta(days=14)).isoformat()
         s["fundamentals"] = {k: v for k, v in fu.items() if k in keep_f or (v.get("fetchedOn") or "") >= cut}
         s["facts"] = {k: v for k, v in s.get("facts", {}).items() if k in keep_f or (v.get("fetchedOn") or "") >= cut}
+        if self.type == "CLOSE" and self.market_day:
+            self.floor_meeting("close")
+        try:
+            self.floor.flush()
+        except Exception as e:
+            log("floor not saved: %s" % e)
         s["log"] = LOG[-100:]
         shutil.rmtree(self.work, ignore_errors=True)
 

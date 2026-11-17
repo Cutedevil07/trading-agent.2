@@ -40,6 +40,11 @@ It never places a real order. There is no broker code in this repository.
 - **Market clock and alerts:** the pack's NYSE clock double-checks the market is open before a stock trade,
   and a phone alert goes out when anything held moves a lot in a day (4% stocks, 6% crypto, 2.5% futures).
 
+**Trading floor:** eight desks (Research, News, Analyst, Strategy, Quant, Risk, Trader and the Portfolio manager)
+report each real step of a run to each other, one line at a time: scans, headlines, scores, replays, risk checks, fills
+and exits. The code writes every line from what it just did; no AI chat, no cost. Tap Replay on the page to watch the
+latest check play out.
+
 The rules are listed in full on the page under "How it decides".
 
 ## Real money
@@ -81,6 +86,7 @@ To stop it: **Actions → agent → ⋯ → Disable workflow**.
 | file | what |
 | --- | --- |
 | `agent.py` | the trading logic: one run per call |
+| `floor.py` | the trading floor: the eight desks and what they say to each other |
 | `core.py` | clock, free data sources, judgement, paper-trading maths, storage, alerts |
 | `config.json` | fallback lists and the names used to match headlines |
 | `docs/state.json` | everything it knows: cash, holdings, trades, history (written by each run) |

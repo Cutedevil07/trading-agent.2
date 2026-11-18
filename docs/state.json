@@ -5623,7 +5623,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9529.9,
+  "benchmarkCad": 9527.79,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5633,7 +5633,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9920.13,
+  "equityCad": 9922.06,
   "focus": {
    "active": [
     "NVDA",
@@ -5902,11 +5902,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T18:31:44Z",
-  "lastRun": "2026-11-18T18:46:47Z",
+  "lastRun": "2026-11-18T18:56:50Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.1% today; market mood cautious. Bitcoin down 0.7% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,920.13 vs buy-and-hold $9,529.90.",
-  "lastSaved": "2026-11-18T18:46:47Z",
-  "lastStockScan": "2026-11-18T18:46:47Z",
+  "lastRunNote": "The S&P 500 fund was up 0.1% today; market mood cautious. Bitcoin down 0.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,922.06 vs buy-and-hold $9,527.79.",
+  "lastSaved": "2026-11-18T18:56:50Z",
+  "lastStockScan": "2026-11-18T18:56:50Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5972,7 +5972,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4321,
+  "usdCad": 1.4325,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6283,9 +6283,9 @@
      "verdict": "69/100, below the 80 needed"
     },
     {
-     "score": 66,
+     "score": 69,
      "symbol": "SHORT WFC",
-     "verdict": "66/100, below the 80 needed"
+     "verdict": "69/100, below the 80 needed"
     },
     {
      "score": 65,
@@ -6340,10 +6340,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T18:46:47Z"
+  "updated": "2026-11-18T18:56:50Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 13:46), stock market open day",
+  "Run 2026-11-18 WATCH (New York 13:56), stock market open day",
   "Stock scan: 88 long and 61 short ideas pre-screened; 6 breakouts, 6 breakdowns",
   "News model loaded"
  ],
@@ -6373,10 +6373,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9529.9,
-   "cashCad": 9920.13,
+   "benchmarkCad": 9527.79,
+   "cashCad": 9922.06,
    "date": "2026-11-18",
-   "equityCad": 9920.13
+   "equityCad": 9922.06
   }
  ],
  "pack": {
@@ -6384,7 +6384,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T18:46:47Z",
+   "checkedAt": "2026-11-18T18:56:50Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

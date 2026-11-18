@@ -2656,6 +2656,19 @@
    "period": "2026-09-30",
    "revGrowth": 11.8
   },
+  "SBUX": {
+   "epsGrowth": 436.4,
+   "epsTtm": 2.21,
+   "fetchedOn": "2026-11-18",
+   "grossMargin": null,
+   "line": "Quarter ending 2026-09-27 (derived from the 10-K): revenue $9.14B (-4.5% vs a year earlier), net income $677.2M (+408.8%), diluted EPS $0.59 (+436.4%).",
+   "netMargin": 7.4,
+   "note": "",
+   "oneOff": false,
+   "opMargin": 10.8,
+   "period": "2026-09-27",
+   "revGrowth": -4.5
+  },
   "SMCI": {
    "epsGrowth": 573.1,
    "epsTtm": 4.75,
@@ -2741,109 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T17:16:42Z",
-   "count": 1
+   "at": "2026-11-18T17:26:43Z",
+   "count": 11
   },
   "messages": [
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-17T14:51:44Z",
-    "to": "all",
-    "x": "Nothing good enough this scan. Closest: short XLK at 70, needs 80."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 2,
-    "s": "XLK",
-    "t": "2026-11-17T14:51:44Z",
-    "to": "pm",
-    "x": "Watching XLK: a breakdown (short) would start below here, at $162.14."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 62 short charts checked, 10 breakouts, 1 breakdown. Strongest: XLV, XLP, XLF, XLK."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 1,
-    "s": "V",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "Long V: opening-range breakout, chart 20/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 2,
-    "s": "V",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "V: 3 fresh headlines, mostly good; 25/25. Top: \"Visa and American Express Both Raised Their Dividends 16% This...\""
-   },
-   {
-    "d": "analyst",
-    "k": "vote",
-    "n": 3,
-    "s": "V",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "V: sales +15%, P/E 34, debt/equity 0.7, target +9%; 14/15."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 4,
-    "s": "",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "Stocks are cautious: 8/15 for a long."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 5,
-    "s": "V",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "all",
-    "x": "Long V scores 77, needs 80. Pass."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 6,
-    "s": "XLK",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "Short XLK: no clean setup yet, chart 30/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 7,
-    "s": "XLK",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "XLK: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 8,
-    "s": "",
-    "t": "2026-11-17T15:01:42Z",
-    "to": "pm",
-    "x": "Stocks are cautious: 8/15 for a short."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5444,6 +5358,105 @@
     "t": "2026-11-18T17:16:42Z",
     "to": "pm",
     "x": "Stock scan: 88 long and 61 short charts checked, 5 breakouts, 7 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 6 breakouts, 6 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "TSX scan: 78 Canadian charts checked. Strongest: X.TO, WN.TO, TRP.TO."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 2,
+    "s": "XLP",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "Long XLP: opening-range breakout, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 3,
+    "s": "XLP",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "XLP: no fresh headlines, neutral 12/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "Stocks are cautious: 8/15 for a long."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 5,
+    "s": "XLP",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "all",
+    "x": "Long XLP scores 74, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 6,
+    "s": "SBUX",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "Long SBUX: opening-range breakout, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 7,
+    "s": "SBUX",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "SBUX: 3 fresh headlines, mostly good; 24/25. Top: \"Monster Beverage vs. Starbucks: Which Consumer Goods Stock Is a...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 8,
+    "s": "SBUX",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "pm",
+    "x": "SBUX: filed: operating margin 11%, sales -4%, P/E 49, debt/equity 1.7, target +4%; 7/15."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 9,
+    "s": "SBUX",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "all",
+    "x": "Long SBUX scores 74, needs 80. Pass."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 10,
+    "s": "",
+    "t": "2026-11-18T17:26:43Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: long XLP at 74, needs 80."
    }
   ],
   "said": {
@@ -5466,6 +5479,7 @@
    "idea:MYM:short:19:none": "2026-11-18T08:31:50Z",
    "idea:MYM:short:20:breakdown": "2026-11-17T16:01:52Z",
    "idea:NFLX:short:17:breakdown": "2026-11-18T15:26:37Z",
+   "idea:SBUX:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
    "idea:SNDK:short:17:breakdown": "2026-11-18T15:11:44Z",
    "idea:SNDK:short:19:breakdown": "2026-11-17T15:11:45Z",
@@ -5488,7 +5502,7 @@
    "idea:XLK:short:19:breakdown": "2026-11-17T18:16:44Z",
    "idea:XLK:short:20:breakdown": "2026-11-18T16:46:44Z",
    "idea:XLK:short:20:none": "2026-11-18T14:51:48Z",
-   "idea:XLP:long:18:breakout": "2026-11-17T15:01:42Z",
+   "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:XLP:long:18:none": "2026-11-18T15:01:59Z",
    "idea:XLV:long:18:breakout": "2026-11-17T15:36:46Z",
    "macro:futures:short:cautious:2026-11-17T17:31:41.123899": "2026-11-17T17:31:41Z",
@@ -5516,6 +5530,7 @@
    "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
+   "macro:stocks:long:cautious:2026-11-18T17:26:43.384713": "2026-11-18T17:26:43Z",
    "macro:stocks:short:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:short:cautious:2026-11-17T15:11:45.352677": "2026-11-17T15:11:45Z",
    "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5555,6 +5570,7 @@
    "nothing:XLK:18": "2026-11-17T17:26:44Z",
    "nothing:XLK:19": "2026-11-17T18:16:44Z",
    "nothing:XLK:20": "2026-11-18T16:56:44Z",
+   "nothing:XLP:18": "2026-11-18T17:26:43Z",
    "scan:stocks:XLP,XEL,WMT,XLK:0:0": "2026-11-18T14:51:48Z",
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:2": "2026-11-18T15:11:44Z",
@@ -5569,6 +5585,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:5:3": "2026-11-18T16:06:47Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:4": "2026-11-18T15:56:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:7": "2026-11-18T17:16:42Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:6:6": "2026-11-18T17:26:43Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
@@ -5586,12 +5603,13 @@
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
    "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T16:56:44Z",
+   "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T17:26:43Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9485.21,
+  "benchmarkCad": 9536.31,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5601,7 +5619,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9927.86,
+  "equityCad": 9927.38,
   "focus": {
    "active": [
     "NVDA",
@@ -5870,11 +5888,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T17:01:37Z",
-  "lastRun": "2026-11-18T17:16:42Z",
+  "lastRun": "2026-11-18T17:26:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 2.1% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,927.86 vs buy-and-hold $9,485.21.",
-  "lastSaved": "2026-11-18T17:16:42Z",
-  "lastStockScan": "2026-11-18T17:16:42Z",
+  "lastRunNote": "The S&P 500 fund was up 0.1% today; market mood cautious. Bitcoin down 0.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,927.38 vs buy-and-hold $9,536.31.",
+  "lastSaved": "2026-11-18T17:26:43Z",
+  "lastStockScan": "2026-11-18T17:26:43Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5940,7 +5958,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4337,
+  "usdCad": 1.4336,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6225,73 +6243,54 @@
    "universe": 6228
   },
   {
-   "blocked": [
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT XLK"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT UNH"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT WFC"
-    }
-   ],
+   "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 50,
+   "dataCalls": 49,
    "date": "2026-11-18",
    "liquid": 2234,
-   "regime": "risk-off",
+   "regime": "cautious",
    "screened": 6225,
    "summary": "Morning: The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,539.74.",
    "topCandidates": [
     {
-     "score": 82,
-     "symbol": "SHORT XLK",
-     "verdict": "82/100, fell below its opening range"
+     "score": 74,
+     "symbol": "LONG XLP",
+     "verdict": "74/100, below the 80 needed"
     },
     {
-     "score": 78,
-     "symbol": "SHORT UNH",
-     "verdict": "78/100, fell below its opening range"
-    },
-    {
-     "score": 71,
-     "symbol": "SHORT WFC",
-     "verdict": "71/100, fell below its opening range"
-    },
-    {
-     "score": 68,
+     "score": 74,
      "symbol": "LONG SBUX",
-     "verdict": "68/100, below the 80 needed"
+     "verdict": "74/100, below the 80 needed"
+    },
+    {
+     "score": 70,
+     "symbol": "SHORT XLK",
+     "verdict": "70/100, below the 80 needed"
+    },
+    {
+     "score": 69,
+     "symbol": "LONG X.TO",
+     "verdict": "69/100, below the 80 needed"
     },
     {
      "score": 66,
-     "symbol": "LONG XLP",
+     "symbol": "LONG WMT",
      "verdict": "66/100, below the 80 needed"
     },
     {
-     "score": 61,
-     "symbol": "LONG REI-UN.TO",
-     "verdict": "61/100, below the 80 needed"
+     "score": 66,
+     "symbol": "SHORT WFC",
+     "verdict": "66/100, below the 80 needed"
     },
     {
-     "score": 58,
-     "symbol": "LONG WMT",
-     "verdict": "58/100, below the 80 needed"
-    },
-    {
-     "score": 56,
+     "score": 64,
      "symbol": "LONG VBIL",
-     "verdict": "56/100, below the 80 needed"
+     "verdict": "64/100, below the 80 needed"
+    },
+    {
+     "score": 64,
+     "symbol": "LONG WN.TO",
+     "verdict": "64/100, below the 80 needed"
     }
    ],
    "universe": 6227
@@ -6316,19 +6315,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T17:16:42Z"
+  "updated": "2026-11-18T17:26:43Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 12:16), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 5 breakouts, 7 breakdowns",
+  "Run 2026-11-18 WATCH (New York 12:26), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 6 breakouts, 6 breakdowns",
   "News model loaded",
-  "Borrow list unavailable: TimeoutError: timed out",
-  "Borrow data for XLK unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT XLK: Time machine favourable",
-  "Borrow data for UNH unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT UNH: Time machine favourable",
-  "Borrow data for WFC unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT WFC: Time machine favourable"
+  "SEC filed numbers for SBUX: sales -4.5% y/y, operating margin 10.8%"
  ],
  "nav": [
   {
@@ -6356,10 +6349,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9485.21,
-   "cashCad": 9927.86,
+   "benchmarkCad": 9536.31,
+   "cashCad": 9927.38,
    "date": "2026-11-18",
-   "equityCad": 9927.86
+   "equityCad": 9927.38
   }
  ],
  "pack": {
@@ -6367,7 +6360,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T17:16:42Z",
+   "checkedAt": "2026-11-18T17:26:43Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

@@ -2754,46 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T21:01:42Z",
-   "count": 2
+   "at": "2026-11-18T22:01:48Z",
+   "count": 4
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-17T17:06:43Z",
-    "to": "pm",
-    "x": "Stocks are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "VOO",
-    "t": "2026-11-17T17:06:43Z",
-    "to": "all",
-    "x": "Short VOO scores 77, needs 70. Quant and Risk, check it."
-   },
-   {
-    "d": "quant",
-    "k": "vote",
-    "n": 4,
-    "s": "VOO",
-    "t": "2026-11-17T17:06:43Z",
-    "to": "pm",
-    "x": "VOO: in 10,000 5-minute replays the target comes first 0%, the stop 3%. Most run out of time first. Odds are against us."
-   },
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 5,
-    "s": "VOO",
-    "t": "2026-11-17T17:06:43Z",
-    "to": "pm",
-    "x": "Blocked VOO: the replays favour the stop."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5457,6 +5421,42 @@
     "t": "2026-11-18T21:01:42Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short M6E at 70, needs 75."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "MET",
+    "t": "2026-11-18T22:01:48Z",
+    "to": "pm",
+    "x": "Short MET: no clean setup yet, chart 20/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "MET",
+    "t": "2026-11-18T22:01:48Z",
+    "to": "pm",
+    "x": "MET: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-18T22:01:48Z",
+    "to": "pm",
+    "x": "Futures are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "MET",
+    "t": "2026-11-18T22:01:48Z",
+    "to": "all",
+    "x": "Short MET scores 67, needs 70. Pass."
    }
   ],
   "said": {
@@ -5469,7 +5469,7 @@
    "futures-closed:2026-11-17": "2026-11-17T23:01:44Z",
    "futures-fit:2026-11-18:MET,M6E": "2026-11-18T10:01:48Z",
    "idea:M6E:short:17:breakdown": "2026-11-18T20:31:41Z",
-   "idea:MET:short:16:none": "2026-11-18T18:31:44Z",
+   "idea:MET:short:16:none": "2026-11-18T22:01:48Z",
    "idea:MET:short:18:none": "2026-11-18T17:31:42Z",
    "idea:MET:short:19:breakdown": "2026-11-18T16:31:41Z",
    "idea:MET:short:19:none": "2026-11-18T15:01:59Z",
@@ -5535,6 +5535,7 @@
    "macro:futures:short:risk-off:2026-11-18T16:31:41.097697": "2026-11-18T16:31:41Z",
    "macro:futures:short:risk-off:2026-11-18T17:31:42.254594": "2026-11-18T17:31:42Z",
    "macro:futures:short:risk-off:2026-11-18T18:31:44.159598": "2026-11-18T18:31:44Z",
+   "macro:futures:short:risk-off:2026-11-18T22:01:48.912015": "2026-11-18T22:01:48Z",
    "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5630,7 +5631,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9464.59,
+  "benchmarkCad": 9463.28,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5908,11 +5909,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-18T21:31:37Z",
-  "lastRun": "2026-11-18T21:31:37Z",
+  "lastFuturesScan": "2026-11-18T22:01:48Z",
+  "lastRun": "2026-11-18T22:01:48Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 3.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,921.58 vs buy-and-hold $9,464.59.",
-  "lastSaved": "2026-11-18T21:31:37Z",
+  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 2.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,921.58 vs buy-and-hold $9,463.28.",
+  "lastSaved": "2026-11-18T22:01:48Z",
   "lastStockScan": "2026-11-18T19:46:44Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
@@ -6317,10 +6318,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T21:31:37Z"
+  "updated": "2026-11-18T22:01:48Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 16:31), stock market open day"
+  "Run 2026-11-18 WATCH (New York 17:01), stock market open day"
  ],
  "nav": [
   {
@@ -6348,7 +6349,7 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9464.59,
+   "benchmarkCad": 9463.28,
    "cashCad": 9921.58,
    "date": "2026-11-18",
    "equityCad": 9921.58
@@ -6359,7 +6360,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T21:31:37Z",
+   "checkedAt": "2026-11-18T22:01:48Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

@@ -2741,37 +2741,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T16:46:44Z",
-   "count": 7
+   "at": "2026-11-18T16:56:44Z",
+   "count": 3
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-17T12:31:48Z",
-    "to": "pm",
-    "x": "Futures are neutral: 8/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "SIL",
-    "t": "2026-11-17T12:31:48Z",
-    "to": "all",
-    "x": "Short SIL scores 75 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-17T13:01:43Z",
-    "to": "pm",
-    "x": "Morning screen: 6,227 charts read, 2,229 liquid enough. 60 long and 40 short ideas on today's list."
-   },
    {
     "d": "analyst",
     "k": "info",
@@ -5444,6 +5417,33 @@
     "t": "2026-11-18T16:46:44Z",
     "to": "pm",
     "x": "Blocked XLK: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T16:56:44Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 3 breakouts, 6 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-18T16:56:44Z",
+    "to": "pm",
+    "x": "TSX scan: 78 Canadian charts checked. Strongest: WN.TO, TRP.TO, REI-UN.TO."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-18T16:56:44Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short XLK at 82, needs 70."
    }
   ],
   "said": {
@@ -5553,12 +5553,13 @@
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
    "nothing:XLK:18": "2026-11-17T17:26:44Z",
    "nothing:XLK:19": "2026-11-17T18:16:44Z",
-   "nothing:XLK:20": "2026-11-18T14:51:48Z",
+   "nothing:XLK:20": "2026-11-18T16:56:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:0:0": "2026-11-18T14:51:48Z",
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:2": "2026-11-18T15:11:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:3": "2026-11-18T15:16:47Z",
    "scan:stocks:XLP,XEL,WMT,XLK:3:2": "2026-11-18T15:26:37Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:3:6": "2026-11-18T16:56:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:2": "2026-11-18T15:36:37Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:3": "2026-11-18T16:36:45Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:4": "2026-11-18T16:46:44Z",
@@ -5581,12 +5582,13 @@
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
+   "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T16:56:44Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9460.32,
+  "benchmarkCad": 9454.08,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5596,7 +5598,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9927.38,
+  "equityCad": 9928.34,
   "focus": {
    "active": [
     "NVDA",
@@ -5865,11 +5867,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T16:31:41Z",
-  "lastRun": "2026-11-18T16:46:44Z",
+  "lastRun": "2026-11-18T16:56:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.6% today; market mood risk-off. Bitcoin down 2.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,927.38 vs buy-and-hold $9,460.32.",
-  "lastSaved": "2026-11-18T16:46:44Z",
-  "lastStockScan": "2026-11-18T16:46:44Z",
+  "lastRunNote": "The S&P 500 fund was down 0.6% today; market mood risk-off. Bitcoin down 2.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,928.34 vs buy-and-hold $9,454.08.",
+  "lastSaved": "2026-11-18T16:56:44Z",
+  "lastStockScan": "2026-11-18T16:56:44Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5935,7 +5937,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4336,
+  "usdCad": 1.4338,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6274,7 +6276,7 @@
     },
     {
      "score": 56,
-     "symbol": "LONG TRP.TO",
+     "symbol": "LONG WN.TO",
      "verdict": "56/100, below the 80 needed"
     }
    ],
@@ -6300,11 +6302,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T16:46:44Z"
+  "updated": "2026-11-18T16:56:44Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 11:46), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 4 breakouts, 4 breakdowns",
+  "Run 2026-11-18 WATCH (New York 11:56), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 3 breakouts, 6 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
@@ -6340,10 +6342,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9460.32,
-   "cashCad": 9927.38,
+   "benchmarkCad": 9454.08,
+   "cashCad": 9928.34,
    "date": "2026-11-18",
-   "equityCad": 9927.38
+   "equityCad": 9928.34
   }
  ],
  "pack": {
@@ -6351,7 +6353,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T16:46:44Z",
+   "checkedAt": "2026-11-18T16:56:44Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

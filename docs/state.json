@@ -2754,28 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T19:26:45Z",
-   "count": 1
+   "at": "2026-11-18T19:36:38Z",
+   "count": 2
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 6,
-    "s": "SIL",
-    "t": "2026-11-17T16:01:52Z",
-    "to": "pm",
-    "x": "Short SIL: no clean setup yet, chart 30/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 7,
-    "s": "SIL",
-    "t": "2026-11-17T16:01:52Z",
-    "to": "pm",
-    "x": "SIL: no fresh headlines, neutral 13/25."
-   },
    {
     "d": "strategy",
     "k": "vote",
@@ -5457,6 +5439,24 @@
     "t": "2026-11-18T19:26:45Z",
     "to": "pm",
     "x": "TSX scan: 79 Canadian charts checked. Strongest: X.TO, WN.TO, TRP.TO."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T19:36:38Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 7 breakouts, 6 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-18T19:36:38Z",
+    "to": "pm",
+    "x": "TSX scan: 79 Canadian charts checked. Strongest: WN.TO, TRP.TO, REI-UN.TO."
    }
   ],
   "said": {
@@ -5603,7 +5603,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:5:7": "2026-11-18T17:16:42Z",
    "scan:stocks:XLP,XEL,WMT,XLK:6:6": "2026-11-18T18:36:35Z",
    "scan:stocks:XLP,XEL,WMT,XLK:6:7": "2026-11-18T17:36:46Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T17:56:46Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
@@ -5620,14 +5620,14 @@
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
-   "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T16:56:44Z",
+   "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T19:36:38Z",
    "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T19:26:45Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9489.43,
+  "benchmarkCad": 9483.55,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5906,11 +5906,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T19:31:43Z",
-  "lastRun": "2026-11-18T19:31:43Z",
+  "lastRun": "2026-11-18T19:36:38Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 1.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,925.93 vs buy-and-hold $9,489.43.",
-  "lastSaved": "2026-11-18T19:31:43Z",
-  "lastStockScan": "2026-11-18T19:26:45Z",
+  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 1.5% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,925.93 vs buy-and-hold $9,483.55.",
+  "lastSaved": "2026-11-18T19:36:38Z",
+  "lastStockScan": "2026-11-18T19:36:38Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -6272,9 +6272,22 @@
    "universe": 6228
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT WFC"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLK"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 18,
+   "dataCalls": 50,
    "date": "2026-11-18",
    "liquid": 2234,
    "regime": "risk-off",
@@ -6282,14 +6295,44 @@
    "summary": "Morning: The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,539.74.",
    "topCandidates": [
     {
-     "score": 70,
-     "symbol": "SHORT M6E",
-     "verdict": "70/100, below the 75 needed"
+     "score": 76,
+     "symbol": "SHORT WFC",
+     "verdict": "76/100, fell below its opening range"
+    },
+    {
+     "score": 72,
+     "symbol": "SHORT XLK",
+     "verdict": "72/100, fell below its opening range"
     },
     {
      "score": 67,
-     "symbol": "SHORT MET",
+     "symbol": "SHORT TSM",
      "verdict": "67/100, below the 70 needed"
+    },
+    {
+     "score": 61,
+     "symbol": "LONG XLP",
+     "verdict": "61/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG VBIL",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WN.TO",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG TRP.TO",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG REI-UN.TO",
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6227
@@ -6314,10 +6357,17 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T19:31:43Z"
+  "updated": "2026-11-18T19:36:38Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 14:31), stock market open day"
+  "Run 2026-11-18 WATCH (New York 14:36), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 7 breakouts, 6 breakdowns",
+  "News model loaded",
+  "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for WFC unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT WFC: Time machine favourable",
+  "Borrow data for XLK unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT XLK: Time machine favourable"
  ],
  "nav": [
   {
@@ -6345,7 +6395,7 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9489.43,
+   "benchmarkCad": 9483.55,
    "cashCad": 9925.93,
    "date": "2026-11-18",
    "equityCad": 9925.93
@@ -6356,7 +6406,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T19:31:43Z",
+   "checkedAt": "2026-11-18T19:36:38Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

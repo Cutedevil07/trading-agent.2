@@ -5535,7 +5535,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9495.71,
+  "benchmarkCad": 9467.79,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5545,7 +5545,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9924.96,
+  "equityCad": 9924.48,
   "focus": {
    "active": [
     "NVDA",
@@ -5814,11 +5814,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T16:01:39Z",
-  "lastRun": "2026-11-18T16:06:47Z",
+  "lastRun": "2026-11-18T16:16:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 2.2% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,924.96 vs buy-and-hold $9,495.71.",
-  "lastSaved": "2026-11-18T16:06:47Z",
-  "lastStockScan": "2026-11-18T16:06:47Z",
+  "lastRunNote": "The S&P 500 fund was down 0.5% today; market mood risk-off. Bitcoin down 2.2% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,924.48 vs buy-and-hold $9,467.79.",
+  "lastSaved": "2026-11-18T16:16:43Z",
+  "lastStockScan": "2026-11-18T16:16:43Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5884,7 +5884,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4331,
+  "usdCad": 1.433,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6249,10 +6249,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T16:06:47Z"
+  "updated": "2026-11-18T16:16:43Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 11:06), stock market open day",
+  "Run 2026-11-18 WATCH (New York 11:16), stock market open day",
   "Stock scan: 88 long and 61 short ideas pre-screened; 5 breakouts, 3 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
@@ -6289,10 +6289,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9495.71,
-   "cashCad": 9924.96,
+   "benchmarkCad": 9467.79,
+   "cashCad": 9924.48,
    "date": "2026-11-18",
-   "equityCad": 9924.96
+   "equityCad": 9924.48
   }
  ],
  "pack": {
@@ -6300,7 +6300,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T16:06:47Z",
+   "checkedAt": "2026-11-18T16:16:43Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

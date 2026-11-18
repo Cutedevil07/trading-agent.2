@@ -2741,7 +2741,7 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T15:46:31Z",
+   "at": "2026-11-18T15:56:44Z",
    "count": 8
   },
   "messages": [
@@ -5318,6 +5318,78 @@
     "t": "2026-11-18T15:46:31Z",
     "to": "pm",
     "x": "Blocked UNH: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 5 breakouts, 4 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "VUG",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "pm",
+    "x": "Short VUG: fell below its opening range, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "VUG",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "pm",
+    "x": "VUG: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 3,
+    "s": "",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "VUG",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "all",
+    "x": "Short VUG scores 72, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 5,
+    "s": "VUG",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "pm",
+    "x": "VUG: in 10,000 5-minute replays the target comes first 14%, the stop 39%. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 6,
+    "s": "VUG",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "pm",
+    "x": "Blocked VUG: the replays favour the stop."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 7,
+    "s": "",
+    "t": "2026-11-18T15:56:44Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short UNH at 78, needs 70."
    }
   ],
   "said": {
@@ -5349,6 +5421,7 @@
    "idea:VOO:short:19:breakdown": "2026-11-17T17:06:43Z",
    "idea:VOO:short:20:breakdown": "2026-11-17T15:46:35Z",
    "idea:VTV:long:18:breakout": "2026-11-17T15:01:42Z",
+   "idea:VUG:short:18:breakdown": "2026-11-18T15:56:44Z",
    "idea:WELL:long:19:breakout": "2026-11-18T15:01:59Z",
    "idea:WFC:short:17:breakdown": "2026-11-18T15:11:44Z",
    "idea:WFC:short:17:none": "2026-11-18T14:51:48Z",
@@ -5397,6 +5470,7 @@
    "macro:stocks:short:risk-off:2026-11-18T15:11:44.108705": "2026-11-18T15:11:44Z",
    "macro:stocks:short:risk-off:2026-11-18T15:26:37.270442": "2026-11-18T15:26:37Z",
    "macro:stocks:short:risk-off:2026-11-18T15:46:31.827173": "2026-11-18T15:46:31Z",
+   "macro:stocks:short:risk-off:2026-11-18T15:56:44.967735": "2026-11-18T15:56:44Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
    "meeting:open:2026-11-18": "2026-11-18T15:16:47Z",
@@ -5416,6 +5490,7 @@
    "nothing:MYM:20": "2026-11-17T16:01:52Z",
    "nothing:SIL:18": "2026-11-18T00:31:42Z",
    "nothing:SNDK:19": "2026-11-17T15:11:45Z",
+   "nothing:UNH:19": "2026-11-18T15:56:44Z",
    "nothing:V:19": "2026-11-17T15:01:42Z",
    "nothing:WELL:19": "2026-11-18T15:01:59Z",
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
@@ -5429,6 +5504,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:3:2": "2026-11-18T15:26:37Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:2": "2026-11-18T15:36:37Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:2": "2026-11-18T15:46:31Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:5:4": "2026-11-18T15:56:44Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
@@ -5449,7 +5525,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9494.58,
+  "benchmarkCad": 9499.13,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5459,7 +5535,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9924.96,
+  "equityCad": 9923.99,
   "focus": {
    "active": [
     "NVDA",
@@ -5728,11 +5804,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T15:31:38Z",
-  "lastRun": "2026-11-18T15:46:31Z",
+  "lastRun": "2026-11-18T15:56:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 0.7% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,924.96 vs buy-and-hold $9,494.58.",
-  "lastSaved": "2026-11-18T15:46:31Z",
-  "lastStockScan": "2026-11-18T15:46:31Z",
+  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 1.4% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,923.99 vs buy-and-hold $9,499.13.",
+  "lastSaved": "2026-11-18T15:56:44Z",
+  "lastStockScan": "2026-11-18T15:56:44Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5798,7 +5874,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4331,
+  "usdCad": 1.4329,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6083,11 +6159,17 @@
      "failed": [
       "Time machine favourable"
      ],
+     "symbol": "SHORT VUG"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
      "symbol": "SHORT WFC"
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 53,
+   "dataCalls": 50,
    "date": "2026-11-18",
    "liquid": 2234,
    "regime": "risk-off",
@@ -6095,14 +6177,14 @@
    "summary": "Morning: The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,539.74.",
    "topCandidates": [
     {
-     "score": 82,
-     "symbol": "SHORT XLK",
-     "verdict": "82/100, no clean setup yet"
-    },
-    {
      "score": 78,
      "symbol": "SHORT UNH",
      "verdict": "78/100, fell below its opening range"
+    },
+    {
+     "score": 72,
+     "symbol": "SHORT VUG",
+     "verdict": "72/100, fell below its opening range"
     },
     {
      "score": 71,
@@ -6125,14 +6207,14 @@
      "verdict": "63/100, below the 80 needed"
     },
     {
-     "score": 61,
-     "symbol": "LONG VBIL",
-     "verdict": "61/100, below the 80 needed"
-    },
-    {
      "score": 60,
      "symbol": "LONG WELL",
      "verdict": "60/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG VBIL",
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6227
@@ -6157,16 +6239,17 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T15:46:31Z"
+  "updated": "2026-11-18T15:56:44Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 10:46), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 5 breakouts, 2 breakdowns",
+  "Run 2026-11-18 WATCH (New York 10:56), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 5 breakouts, 4 breakdowns",
   "News model loaded",
-  "SEC filed numbers for UNH: sales -0.4% y/y, operating margin 5.8%",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for UNH unavailable (Remote end closed connection without response)",
   "BLOCK SHORT UNH: Time machine favourable",
+  "Borrow data for VUG unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT VUG: Time machine favourable",
   "Borrow data for WFC unavailable (Remote end closed connection without response)",
   "BLOCK SHORT WFC: Time machine favourable"
  ],
@@ -6196,10 +6279,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9494.58,
-   "cashCad": 9924.96,
+   "benchmarkCad": 9499.13,
+   "cashCad": 9923.99,
    "date": "2026-11-18",
-   "equityCad": 9924.96
+   "equityCad": 9923.99
   }
  ],
  "pack": {
@@ -6207,7 +6290,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T15:46:31Z",
+   "checkedAt": "2026-11-18T15:56:44Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

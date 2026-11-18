@@ -714,7 +714,7 @@ def borrow_table():
     try:
         import ftplib
         import io
-        f = ftplib.FTP("ftp3.interactivebrokers.com", timeout=25)
+        f = ftplib.FTP("ftp3.interactivebrokers.com", timeout=40)
         f.login("shortstock", "")
         buf = io.BytesIO()
         f.retrbinary("RETR usa.txt", buf.write)
@@ -740,6 +740,29 @@ def borrow_table():
         rows = None
     _BORROW["rows"] = rows
     return rows
+
+
+_BORROW_ONE = {}
+
+
+def borrow_one(sym):
+    """Backup when the full list can't be read: one symbol's latest shares and fee (iborrowdesk.com, which republishes
+    Interactive Brokers' list). None when it can't be read either."""
+    if sym in _BORROW_ONE:
+        return _BORROW_ONE[sym]
+    d, err = get_json("https://iborrowdesk.com/api/ticker/%s" % urllib.parse.quote(sym.upper()), {"Accept": "application/json"}, tries=1)
+    out = None
+    rows = (d or {}).get("daily") or (d or {}).get("real_time") or []
+    if rows:
+        last = rows[-1]
+        try:
+            out = {"available": int(float(last.get("available") or 0)), "feePct": float(last.get("fee") or 0)}
+        except (TypeError, ValueError):
+            out = None
+    if out is None:
+        log("Borrow data for %s unavailable (%s)" % (sym, err or "empty"))
+    _BORROW_ONE[sym] = out
+    return out
 
 
 # ---------------------------------------------------------------- the economic calendar (inflation and jobs reports)

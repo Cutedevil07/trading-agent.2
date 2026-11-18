@@ -1526,14 +1526,15 @@ class Run:
         d0, d1 = self.today + dt.timedelta(days=14), self.today + dt.timedelta(days=45)
         cb = len(cboe_option_chain("SPY", d0, d1))
         bt = borrow_table()
+        one = borrow_one("SPY") if bt is None else None
         e = self.s.get("econ") or {}
-        src.update({"date": self.today.isoformat(), "cboeOptions": cb, "borrowNames": len(bt) if bt else 0,
+        src.update({"date": self.today.isoformat(), "cboeOptions": cb, "borrowNames": len(bt) if bt else 0, "borrowBackup": one is not None,
                     "cpiDates": len(e.get("cpi") or []), "jobsDates": len(e.get("jobs") or []), "secContact": "@" in self.sec_contact})
         log("Data sources: Cboe options %d rows, borrow list %d names, CPI dates %d, jobs dates %d, SEC contact %s" % (
             cb, src["borrowNames"], src["cpiDates"], src["jobsDates"], "set" if src["secContact"] else "missing"))
         ok = lambda v: "ok" if v else "not answering"
         self.floor.say("research", "Data check: options backup %s, borrow list %s, economic calendar %s, SEC filings %s." % (
-            ok(cb), ("%s names" % "{:,}".format(src["borrowNames"])) if bt else "not answering",
+            ok(cb), ("%s names" % "{:,}".format(src["borrowNames"])) if bt else ("backup answering" if one else "not answering"),
             ok(src["cpiDates"] or src["jobsDates"]), "on" if src["secContact"] else "off (no SEC_CONTACT secret)"),
             to="pm", kind="info", key="sources:%s" % self.today, hours=20)
 
@@ -1541,8 +1542,11 @@ class Run:
         """Shorts need shares to borrow and a fee under 20% a year (Interactive Brokers' public list)."""
         bt = borrow_table()
         if bt is None:
-            return True, ""
-        b = bt.get(sym.upper())
+            b = borrow_one(sym)
+            if b is None:
+                return True, ""      # neither source answered: allowed, with the flat 5% fee
+        else:
+            b = bt.get(sym.upper())
         if not b or b["available"] <= 0:
             return False, "No shares available to borrow"
         if b["available"] < shares:

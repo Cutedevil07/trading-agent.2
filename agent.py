@@ -1514,7 +1514,14 @@ class Run:
     def source_check(self):
         """Once a day: do the backup and extra data sources answer? Saved, logged and said on the floor."""
         src = self.s.setdefault("sources", {})
-        if self.replay_now or src.get("date") == self.today.isoformat():
+        if self.replay_now:
+            return
+        if src.get("date") == self.today.isoformat():
+            if not src.get("secContact") and "@" in self.sec_contact:
+                src["secContact"] = True
+                log("SEC contact now set: filed numbers and earnings releases are on")
+                self.floor.say("analyst", "The SEC contact is set. I'll read companies' own filings and earnings releases from now on.",
+                               to="pm", kind="info", key="sec-on", hours=24 * 30)
             return
         d0, d1 = self.today + dt.timedelta(days=14), self.today + dt.timedelta(days=45)
         cb = len(cboe_option_chain("SPY", d0, d1))

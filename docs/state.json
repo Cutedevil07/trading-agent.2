@@ -2673,6 +2673,19 @@
    "fetchedOn": "2026-11-18",
    "missing": true
   },
+  "WELL": {
+   "epsGrowth": 31.7,
+   "epsTtm": 2.3,
+   "fetchedOn": "2026-11-18",
+   "grossMargin": 28.0,
+   "line": "Quarter ending 2026-09-30: revenue $3.12B (+51.4% vs a year earlier), net income $414.8M (+47.0%), diluted EPS $0.54 (+31.7%).",
+   "netMargin": 13.3,
+   "note": "",
+   "oneOff": false,
+   "opMargin": null,
+   "period": "2026-09-30",
+   "revGrowth": 51.4
+  },
   "WFC": {
    "epsGrowth": 12.7,
    "epsTtm": 7.08,
@@ -2702,8 +2715,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T14:51:48Z",
-   "count": 16
+   "at": "2026-11-18T15:01:59Z",
+   "count": 23
   },
   "messages": [
    {
@@ -4802,6 +4815,213 @@
     "t": "2026-11-18T14:51:48Z",
     "to": "pm",
     "x": "Watching XLK: a breakdown (short) would start below here, at $159.63."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 1 breakout, 1 breakdown. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "TSX scan: 54 Canadian charts checked. Strongest: TRP.TO, PPL.TO, MRU.TO."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 2,
+    "s": "WELL",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Long WELL: opening-range breakout, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 3,
+    "s": "WELL",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "WELL: no fresh headlines, neutral 12/25."
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 4,
+    "s": "WELL",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "WELL: sales +51%, P/E 108, debt/equity 0.4, target +7%; 13/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 5,
+    "s": "",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Stocks are cautious: 8/15 for a long."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 6,
+    "s": "WELL",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "all",
+    "x": "Long WELL scores 78, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 7,
+    "s": "WMT",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Long WMT: no clean setup yet, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 8,
+    "s": "WMT",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "WMT: 3 fresh headlines, mostly good; 25/25. Top: \"Walmart earnings expected to show market share gains as US...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 9,
+    "s": "WMT",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "WMT: filed: operating margin 5%, sales +6%, P/E 46, debt/equity 0.6, target +4%; 10/15."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 10,
+    "s": "WMT",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "all",
+    "x": "Long WMT scores 78, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 11,
+    "s": "MET",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Short MET: no clean setup yet, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 12,
+    "s": "MET",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "MET: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 13,
+    "s": "",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Futures are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 14,
+    "s": "MET",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "all",
+    "x": "Short MET scores 77 but no clean setup yet. Waiting."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 15,
+    "s": "XLK",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Short XLK: no clean setup yet, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 16,
+    "s": "XLK",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "XLK: 1 fresh headline, mixed; 13/25. Top: \"What State Street Tech Select SPDR (XLK) Bought: Apple Leads on...\""
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 17,
+    "s": "",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Stocks are cautious: 8/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 18,
+    "s": "XLK",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "all",
+    "x": "Short XLK scores 75, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 19,
+    "s": "XLP",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "Long XLP: no clean setup yet, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 20,
+    "s": "XLP",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "pm",
+    "x": "XLP: no fresh headlines, neutral 12/25."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 21,
+    "s": "XLP",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "all",
+    "x": "Long XLP scores 74, needs 80. Pass."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 22,
+    "s": "",
+    "t": "2026-11-18T15:01:59Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: long WELL at 78, needs 80."
    }
   ],
   "said": {
@@ -4814,7 +5034,7 @@
    "futures-fit:2026-11-18:MET,M6E": "2026-11-18T10:01:48Z",
    "idea:M6E:short:17:breakdown": "2026-11-18T13:31:48Z",
    "idea:MET:short:18:none": "2026-11-18T10:01:48Z",
-   "idea:MET:short:19:none": "2026-11-18T11:31:51Z",
+   "idea:MET:short:19:none": "2026-11-18T15:01:59Z",
    "idea:MGC:short:18:breakdown": "2026-11-18T09:01:47Z",
    "idea:MNQ:short:16:none": "2026-11-18T05:01:48Z",
    "idea:MNQ:short:18:none": "2026-11-18T05:31:44Z",
@@ -4830,15 +5050,18 @@
    "idea:VOO:short:19:breakdown": "2026-11-17T17:06:43Z",
    "idea:VOO:short:20:breakdown": "2026-11-17T15:46:35Z",
    "idea:VTV:long:18:breakout": "2026-11-17T15:01:42Z",
+   "idea:WELL:long:19:breakout": "2026-11-18T15:01:59Z",
    "idea:WFC:short:17:none": "2026-11-18T14:51:48Z",
+   "idea:WMT:long:19:none": "2026-11-18T15:01:59Z",
    "idea:XLI:short:18:breakdown": "2026-11-17T17:46:43Z",
    "idea:XLI:short:19:breakdown": "2026-11-17T15:46:35Z",
    "idea:XLK:short:18:breakdown": "2026-11-17T15:11:45Z",
-   "idea:XLK:short:18:none": "2026-11-17T15:01:42Z",
+   "idea:XLK:short:18:none": "2026-11-18T15:01:59Z",
    "idea:XLK:short:19:breakdown": "2026-11-17T18:16:44Z",
    "idea:XLK:short:20:breakdown": "2026-11-17T15:46:35Z",
    "idea:XLK:short:20:none": "2026-11-18T14:51:48Z",
    "idea:XLP:long:18:breakout": "2026-11-17T15:01:42Z",
+   "idea:XLP:long:18:none": "2026-11-18T15:01:59Z",
    "idea:XLV:long:18:breakout": "2026-11-17T15:36:46Z",
    "macro:futures:short:cautious:2026-11-17T17:31:41.123899": "2026-11-17T17:31:41Z",
    "macro:futures:short:neutral:2026-11-17T09:31:47.338494": "2026-11-17T09:31:47Z",
@@ -4859,10 +5082,13 @@
    "macro:futures:short:risk-off:2026-11-18T08:31:50.635439": "2026-11-18T08:31:50Z",
    "macro:futures:short:risk-off:2026-11-18T10:01:48.466111": "2026-11-18T10:01:48Z",
    "macro:futures:short:risk-off:2026-11-18T11:31:51.178629": "2026-11-18T11:31:51Z",
+   "macro:futures:short:risk-off:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
+   "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:short:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:short:cautious:2026-11-17T15:11:45.352677": "2026-11-17T15:11:45Z",
+   "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:short:risk-off:2026-11-17T15:46:35.193514": "2026-11-17T15:46:35Z",
    "macro:stocks:short:risk-off:2026-11-17T17:06:43.523499": "2026-11-17T17:06:43Z",
    "macro:stocks:short:risk-off:2026-11-17T17:46:43.136815": "2026-11-17T17:46:43Z",
@@ -4887,11 +5113,13 @@
    "nothing:SIL:18": "2026-11-18T00:31:42Z",
    "nothing:SNDK:19": "2026-11-17T15:11:45Z",
    "nothing:V:19": "2026-11-17T15:01:42Z",
+   "nothing:WELL:19": "2026-11-18T15:01:59Z",
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
    "nothing:XLK:18": "2026-11-17T17:26:44Z",
    "nothing:XLK:19": "2026-11-17T18:16:44Z",
    "nothing:XLK:20": "2026-11-18T14:51:48Z",
    "scan:stocks:XLP,XEL,WMT,XLK:0:0": "2026-11-18T14:51:48Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
@@ -4905,12 +5133,13 @@
    "scan:stocks:XLV,XLP,XLF,XLK:15:6": "2026-11-17T15:36:46Z",
    "scan:stocks:XLV,XLP,XLF,XLK:4:0": "2026-11-17T14:51:44Z",
    "scan:tsx:TRP.TO,PPL.TO,L.TO": "2026-11-18T14:51:48Z",
+   "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9497.65,
+  "benchmarkCad": 9546.86,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -4920,7 +5149,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9916.74,
+  "equityCad": 9919.64,
   "focus": {
    "active": [
     "NVDA",
@@ -5188,12 +5417,12 @@
   "halted": false,
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-18T14:31:46Z",
-  "lastRun": "2026-11-18T14:51:48Z",
+  "lastFuturesScan": "2026-11-18T15:01:59Z",
+  "lastRun": "2026-11-18T15:01:59Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 2.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,916.74 vs buy-and-hold $9,497.65.",
-  "lastSaved": "2026-11-18T14:51:48Z",
-  "lastStockScan": "2026-11-18T14:51:48Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood cautious. Bitcoin down 1.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,919.64 vs buy-and-hold $9,546.86.",
+  "lastSaved": "2026-11-18T15:01:59Z",
+  "lastStockScan": "2026-11-18T15:01:59Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5259,7 +5488,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4314,
+  "usdCad": 1.432,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -5502,52 +5731,52 @@
   {
    "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 57,
+   "dataCalls": 52,
    "date": "2026-11-18",
    "liquid": 2234,
-   "regime": "risk-off",
+   "regime": "cautious",
    "screened": 6225,
    "summary": "",
    "topCandidates": [
     {
-     "score": 82,
-     "symbol": "SHORT XLK",
-     "verdict": "82/100, no clean setup yet"
+     "score": 78,
+     "symbol": "LONG WELL",
+     "verdict": "78/100, below the 80 needed"
+    },
+    {
+     "score": 78,
+     "symbol": "LONG WMT",
+     "verdict": "78/100, below the 80 needed"
     },
     {
      "score": 77,
-     "symbol": "SHORT TSM",
+     "symbol": "SHORT MET",
      "verdict": "77/100, no clean setup yet"
     },
     {
-     "score": 71,
-     "symbol": "SHORT WFC",
-     "verdict": "71/100, no clean setup yet"
+     "score": 75,
+     "symbol": "SHORT XLK",
+     "verdict": "75/100, below the 80 needed"
     },
     {
-     "score": 66,
+     "score": 74,
      "symbol": "LONG XLP",
-     "verdict": "66/100, below the 80 needed"
+     "verdict": "74/100, below the 80 needed"
+    },
+    {
+     "score": 70,
+     "symbol": "SHORT M6E",
+     "verdict": "70/100, below the 75 needed"
+    },
+    {
+     "score": 69,
+     "symbol": "LONG VBIL",
+     "verdict": "69/100, below the 80 needed"
     },
     {
      "score": 66,
-     "symbol": "LONG L.TO",
+     "symbol": "SHORT WFC",
      "verdict": "66/100, below the 80 needed"
-    },
-    {
-     "score": 63,
-     "symbol": "LONG WMT",
-     "verdict": "63/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG XEL",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG WM",
-     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6227
@@ -5572,14 +5801,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T14:51:48Z"
+  "updated": "2026-11-18T15:01:59Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 09:51), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 0 breakouts, 0 breakdowns",
+  "Run 2026-11-18 WATCH (New York 10:01), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 1 breakouts, 1 breakdowns",
   "News model loaded",
-  "SEC filed numbers for WFC: sales 2.0% y/y, operating margin None%",
-  "SEC filed numbers for TSM: none ([]\nfacts: 1046179: no quarterly revenue or net income in the XBRL facts)"
+  "SEC filed numbers for WELL: sales 51.4% y/y, operating margin None%"
  ],
  "nav": [
   {
@@ -5607,10 +5835,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9497.65,
-   "cashCad": 9916.74,
+   "benchmarkCad": 9546.86,
+   "cashCad": 9919.64,
    "date": "2026-11-18",
-   "equityCad": 9916.74
+   "equityCad": 9919.64
   }
  ],
  "pack": {
@@ -5618,7 +5846,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T14:51:48Z",
+   "checkedAt": "2026-11-18T15:01:59Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

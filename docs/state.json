@@ -2672,8 +2672,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T14:01:42Z",
-   "count": 4
+   "at": "2026-11-18T14:31:46Z",
+   "count": 2
   },
   "messages": [
    {
@@ -4610,6 +4610,24 @@
     "t": "2026-11-18T14:01:42Z",
     "to": "all",
     "x": "Nothing to trade this scan. Short MET scores enough but has no clean setup yet."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T14:31:46Z",
+    "to": "pm",
+    "x": "Stocks are cautious: the S&P 500 fund is between its averages."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-18T14:31:46Z",
+    "to": "pm",
+    "x": "NYSE is open until 4:00 PM."
    }
   ],
   "said": {
@@ -4617,6 +4635,7 @@
    "clock:closed:2026-11-17:before the open": "2026-11-17T09:31:47Z",
    "clock:closed:2026-11-18:before the open": "2026-11-18T05:01:48Z",
    "clock:open:2026-11-17": "2026-11-17T14:31:41Z",
+   "clock:open:2026-11-18": "2026-11-18T14:31:46Z",
    "futures-closed:2026-11-17": "2026-11-17T23:01:44Z",
    "futures-fit:2026-11-18:MET,M6E": "2026-11-18T10:01:48Z",
    "idea:M6E:short:17:breakdown": "2026-11-18T13:31:48Z",
@@ -4676,6 +4695,7 @@
    "mood:crypto:risk-off:2026-11-17": "2026-11-17T09:31:47Z",
    "mood:crypto:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
    "mood:stocks:cautious:2026-11-17": "2026-11-17T09:31:47Z",
+   "mood:stocks:cautious:2026-11-18": "2026-11-18T14:31:46Z",
    "mood:stocks:risk-off:2026-11-17": "2026-11-17T15:46:35Z",
    "mood:stocks:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
    "nothing:MET:18": "2026-11-18T10:01:48Z",
@@ -4710,7 +4730,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9542.92,
+  "benchmarkCad": 9562.45,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -4720,7 +4740,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9913.85,
+  "equityCad": 9916.74,
   "focus": {
    "active": [
     "NVDA",
@@ -4988,11 +5008,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-18T14:01:42Z",
-  "lastRun": "2026-11-18T14:01:42Z",
+  "lastFuturesScan": "2026-11-18T14:31:46Z",
+  "lastRun": "2026-11-18T14:31:46Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,913.85 vs buy-and-hold $9,542.92.",
-  "lastSaved": "2026-11-18T14:01:42Z",
+  "lastRunNote": "The S&P 500 fund was up 0.3% today; market mood cautious. Bitcoin down 1.7% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,916.74 vs buy-and-hold $9,562.45.",
+  "lastSaved": "2026-11-18T14:31:46Z",
   "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
@@ -5059,7 +5079,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4308,
+  "usdCad": 1.4314,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -5294,7 +5314,7 @@
    "dataCalls": 17,
    "date": "2026-11-18",
    "liquid": 2234,
-   "regime": "risk-off",
+   "regime": "cautious",
    "screened": 6225,
    "summary": "",
    "topCandidates": [
@@ -5331,11 +5351,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T14:01:42Z"
+  "updated": "2026-11-18T14:31:46Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 09:01), stock market open day",
-  "Congress tracker: 1 new House reports, 1 read"
+  "Run 2026-11-18 WATCH (New York 09:31), stock market open day"
  ],
  "nav": [
   {
@@ -5363,10 +5382,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9542.92,
-   "cashCad": 9913.85,
+   "benchmarkCad": 9562.45,
+   "cashCad": 9916.74,
    "date": "2026-11-18",
-   "equityCad": 9913.85
+   "equityCad": 9916.74
   }
  ],
  "pack": {
@@ -5374,14 +5393,14 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T14:01:42Z",
+   "checkedAt": "2026-11-18T14:31:46Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,
-   "next_open": "2026-11-18 09:30",
-   "open": false,
+   "next_open": "2026-11-19 09:30",
+   "open": true,
    "opens": "09:30",
-   "reason": "before the open"
+   "reason": "regular session"
   }
  },
  "positions": {},

@@ -172,7 +172,7 @@ details.table th{font-weight:500;color:var(--muted)}
 .rules{display:grid !important;grid-template-columns:minmax(0,1fr);column-gap:28px}
 .rules li{display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--grid);font-size:14px;white-space:nowrap;min-width:0}
 .rules li:first-child{border-top:0}
-.rules li b{font-weight:600;min-width:66px;color:var(--ink)}
+.rules li b{font-weight:600;min-width:74px;color:var(--ink)}
 .rules li span{color:var(--ink2);overflow:hidden;text-overflow:ellipsis}
 @media (min-width:720px){.rules{grid-template-columns:repeat(2,minmax(0,1fr))}.rules li:nth-child(2){border-top:0}}
 
@@ -323,6 +323,15 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     <div class="chart" id="setupChart"><p class="empty">Bars appear once trades close.</p></div>
   </section>
 
+  <section class="panel c12" aria-labelledby="hBack">
+    <h2 id="hBack">Backtest</h2>
+    <p class="sub" id="backSub">The last 2 years of prices, rerun Saturdays</p>
+    <div class="rows two" id="backRows"><p class="empty">The first backtest runs tonight, while markets are closed.</p></div>
+    <div class="chart" id="backChart"></div>
+    <div class="legend" id="backLegend" hidden></div>
+    <p class="sub" id="backNote" hidden style="margin:10px 0 0">No past news or company data; filled next morning.</p>
+  </section>
+
   <section class="panel c7" aria-labelledby="hIdeas">
     <h2 id="hIdeas">Latest decisions</h2>
     <p class="sub" id="ideasSub">Top ideas against the score they need</p>
@@ -347,17 +356,19 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     <div class="seg" id="weights" role="img" aria-label="Score weights: chart 30, news 25, company 15, market 15, details 15"></div>
     <div class="seg-legend" id="weightsLegend"></div>
     <ul class="rules">
-      <li><b>Scans</b><span>All US stocks, ETFs, coins, futures</span></li>
+      <li><b>Scans</b><span>US/TSX stocks, ETFs, coins, futures</span></li>
       <li><b>Buys</b><span>Score 70+, or 80+ against the market</span></li>
       <li><b>Tests</b><span>10,000 replays before every trade</span></li>
-      <li><b>Sizes</b><span>Whole shares, 1% risk a trade</span></li>
-      <li><b>Limits</b><span>6% risk open, 4 new trades a day</span></li>
-      <li><b>Exits</b><span>Stop first, target twice as far</span></li>
-      <li><b>Shorts</b><span>Weak stocks; calls or puts on 80+</span></li>
+      <li><b>Sizes</b><span>Whole shares, 5% risk a trade</span></li>
+      <li><b>Limits</b><span>15% risk open, 4 new trades a day</span></li>
+      <li><b>Exits</b><span>Stop 2 day-ranges out, target 2×</span></li>
+      <li><b>Shorts</b><span>Weak US stocks; options on 80+</span></li>
+      <li><b>Same bet</b><span>Never two trades that move alike</span></li>
       <li><b>Company</b><span>Filed SEC numbers first</span></li>
       <li><b>Earnings</b><span>Never holds through a report</span></li>
+      <li><b>Calendar</b><span>Sits out CPI and jobs mornings</span></li>
       <li><b>Alerts</b><span>Phone alert on any big daily move</span></li>
-      <li><b>Pauses</b><span>At −2% a day or −5% a week</span></li>
+      <li><b>Pauses</b><span>At −5% a day or −10% a week</span></li>
       <li><b>Stops</b><span>For good at −15% from the start</span></li>
     </ul>
   </section>
@@ -679,7 +690,7 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     var start = +f.startEquityCad || 10000, eq = +f.equityCad || start;
     var t = eq - (+f.dayStartEquityCad || eq), tp = (+f.dayStartEquityCad ? t / f.dayStartEquityCad * 100 : 0);
     $("today").textContent = signed(t); $("today").className = "v num " + cls(t);
-    $("todayS").textContent = pct(tp, 2) + " today, limit −2%";
+    $("todayS").textContent = pct(tp, 2) + " today, limit −5%";
     var st = f.stats || {}, n = +st.closed || 0, w = +st.wins || 0, r = +st.totalR || 0;
     if (n){
       $("win").textContent = Math.round(w / n * 100) + "%"; $("winS").textContent = w + " of " + n + " trades won";
@@ -867,6 +878,52 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     ], 100, function(v){ return v + " points"; });
   }
 
+  // ---------- backtest
+  var BT = {"live rules": {label: "Our rules", color: "var(--agent)"}, "live rules at 1% risk": {label: "Our rules at 1% risk", color: "var(--s3)"},
+            "old rules": {label: "Old rules", color: "var(--bench)"}};
+  function showBacktest(bt){
+    var rows = clear($("backRows")), box = clear($("backChart")), lg = $("backLegend");
+    if (!bt || !bt.summary || !bt.summary.length){ rows.appendChild(el("p", "empty", "The first backtest runs tonight, while markets are closed.")); lg.hidden = true; $("backNote").hidden = true; return; }
+    var my = function(d){ var x = new Date(String(d).slice(0, 10) + "T12:00:00Z"); return isNaN(x) ? "" : x.toLocaleDateString("en-US", {month: "short", year: "numeric", timeZone: "UTC"}); };
+    $("backSub").textContent = my(bt.from) + " to " + my(bt.asOf) + ", " + bt.symbols + " symbols, rerun Saturdays";
+    $("backNote").hidden = false;
+    bt.summary.forEach(function(x){
+      var meta = BT[x.variant] || {label: x.variant, color: "var(--muted)"};
+      var label = meta.label + (x.variant === "live rules" && bt.riskPct ? " (" + Math.round(bt.riskPct) + "% risk)" : "");
+      var it = el("div", "item"), t = el("div", "t"), k = el("i", "key-line"); k.style.background = meta.color; k.style.width = "14px";
+      t.appendChild(k); t.appendChild(el("span", null, label));
+      if (x.halted) t.appendChild(el("span", "tag short", "HIT STOP"));
+      it.appendChild(t);
+      it.appendChild(el("div", "n " + cls(x.returnPct), (x.returnPct > 0 ? "+" : x.returnPct < 0 ? "−" : "") + Math.abs(x.returnPct).toFixed(1) + "%"));
+      it.appendChild(el("div", "s", x.trades + " trades, " + (x.avgR >= 0 ? "+" : "−") + Math.abs(x.avgR).toFixed(2) +
+        "R each, worst drop " + Math.round(x.maxDrawdownPct) + "%"));
+      rows.appendChild(it);
+    });
+    var names = Object.keys(bt.curves || {}).filter(function(n){ return (bt.curves[n] || []).length > 2; });
+    if (!names.length){ lg.hidden = true; return; }
+    var base = bt.curves[names[0]], n = base.length;
+    var W = Math.max(280, box.clientWidth), H = W < 520 ? 190 : 230, L = 46, R = 4, T = 10, B = 24, all = [];
+    names.forEach(function(nm){ bt.curves[nm].forEach(function(p){ all.push(+p[1]); }); });
+    var ticks = niceTicks(Math.min.apply(null, all), Math.max.apply(null, all), 4), lo = ticks[0], hi = ticks[ticks.length - 1];
+    var x = function(i){ return L + (W - L - R) * i / (n - 1); }, y = function(v){ return T + (H - T - B) * (1 - (v - lo) / (hi - lo)); };
+    var svg = sv("svg", {viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img", "aria-label": "Backtest value over two years"});
+    ticks.forEach(function(v){ var yy = Math.round(y(v)) + 0.5; sv("line", {x1: L, x2: W - R, y1: yy, y2: yy, stroke: "var(--grid)"}, svg);
+      var t = sv("text", {x: L - 8, y: yy + 4, "text-anchor": "end", "font-size": 11, fill: "var(--muted)"}, svg); t.textContent = compact(v); });
+    [0, n - 1].forEach(function(i, k){ var t = sv("text", {x: x(i), y: H - 6, "text-anchor": k ? "end" : "start", "font-size": 11, fill: "var(--muted)"}, svg); t.textContent = my(base[i][0]); });
+    var stopY = Math.round(y(8500)) + 0.5;
+    if (8500 >= lo && 8500 <= hi){ sv("line", {x1: L, x2: W - R, y1: stopY, y2: stopY, stroke: "var(--loss)", "stroke-dasharray": "4 4", "stroke-width": 1}, svg);
+      var st = sv("text", {x: W - R, y: stopY - 5, "text-anchor": "end", "font-size": 11, fill: "var(--loss)"}, svg); st.textContent = "−15% stop"; }
+    names.slice().reverse().forEach(function(nm){
+      var pts = bt.curves[nm], col = (BT[nm] || {}).color || "var(--muted)";
+      sv("path", {d: pts.map(function(p, i){ return (i ? "L" : "M") + x(Math.min(i, n - 1)).toFixed(1) + " " + y(+p[1]).toFixed(1); }).join(" "),
+                  fill: "none", stroke: col, "stroke-width": 2, "stroke-linejoin": "round"}, svg);
+    });
+    box.appendChild(svg);
+    clear(lg); lg.hidden = false;
+    names.forEach(function(nm){ var sp = el("span"), k = el("i", "key-line"); k.style.background = (BT[nm] || {}).color || "var(--muted)"; sp.appendChild(k);
+      sp.appendChild(document.createTextNode((BT[nm] || {label: nm}).label)); lg.appendChild(sp); });
+  }
+
   // ---------- the trading floor
   var ICON = {
     research: '<circle cx="11" cy="11" r="6"/><path d="M15.5 15.5L20 20"/>',
@@ -989,6 +1046,7 @@ footer{font-size:12.5px;color:var(--muted);margin:22px 0 0}
     showPositions(vals(st.positions), st.facts);
     dailyChart(st.nav || []);
     setupChart(f.stats);
+    showBacktest(st.backtest);
     showIdeas(st);
     showTrades((st.trades || []).slice().reverse());
     showRadar(st);

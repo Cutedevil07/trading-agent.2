@@ -2643,6 +2643,19 @@
   "SCO"
  ],
  "facts": {
+  "NFLX": {
+   "epsGrowth": 47.5,
+   "epsTtm": 3.46,
+   "fetchedOn": "2026-11-18",
+   "grossMargin": 52.8,
+   "line": "Quarter ending 2026-09-30: revenue $12.87B (+11.8% vs a year earlier), net income $3.66B (+43.9%), diluted EPS $0.87 (+47.5%).",
+   "netMargin": 28.5,
+   "note": "",
+   "oneOff": false,
+   "opMargin": 34.6,
+   "period": "2026-09-30",
+   "revGrowth": 11.8
+  },
   "SMCI": {
    "epsGrowth": 573.1,
    "epsTtm": 4.75,
@@ -2715,8 +2728,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T15:16:47Z",
-   "count": 2
+   "at": "2026-11-18T15:26:37Z",
+   "count": 7
   },
   "messages": [
    {
@@ -5148,6 +5161,69 @@
     "t": "2026-11-18T15:16:47Z",
     "to": "pm",
     "x": "Stock scan: 88 long and 61 short charts checked, 2 breakouts, 3 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 3 breakouts, 2 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "pm",
+    "x": "TSX scan: 68 Canadian charts checked. Strongest: TRP.TO, REI-UN.TO, PPL.TO."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 2,
+    "s": "NFLX",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "pm",
+    "x": "Short NFLX: fell below its opening range, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 3,
+    "s": "NFLX",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "pm",
+    "x": "NFLX: 3 fresh headlines, mostly bad; 18/25. Top: \"Netflix Just Hit a 52-Week Low. Where\u2019s the Bottom?\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 4,
+    "s": "NFLX",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "pm",
+    "x": "NFLX: filed: operating margin 35%, sales +12%, P/E 17, debt/equity 0.5, target +43%; 1/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 5,
+    "s": "",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 6,
+    "s": "NFLX",
+    "t": "2026-11-18T15:26:37Z",
+    "to": "all",
+    "x": "Short NFLX scores 69, needs 70. Pass."
    }
   ],
   "said": {
@@ -5168,6 +5244,7 @@
    "idea:MYM:short:18:none": "2026-11-18T08:01:58Z",
    "idea:MYM:short:19:none": "2026-11-18T08:31:50Z",
    "idea:MYM:short:20:breakdown": "2026-11-17T16:01:52Z",
+   "idea:NFLX:short:17:breakdown": "2026-11-18T15:26:37Z",
    "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
    "idea:SNDK:short:17:breakdown": "2026-11-18T15:11:44Z",
    "idea:SNDK:short:19:breakdown": "2026-11-17T15:11:45Z",
@@ -5223,6 +5300,7 @@
    "macro:stocks:short:risk-off:2026-11-17T18:16:44.452347": "2026-11-17T18:16:44Z",
    "macro:stocks:short:risk-off:2026-11-18T14:51:48.021733": "2026-11-18T14:51:48Z",
    "macro:stocks:short:risk-off:2026-11-18T15:11:44.108705": "2026-11-18T15:11:44Z",
+   "macro:stocks:short:risk-off:2026-11-18T15:26:37.270442": "2026-11-18T15:26:37Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
    "meeting:open:2026-11-18": "2026-11-18T15:16:47Z",
@@ -5252,6 +5330,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:2": "2026-11-18T15:11:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:3": "2026-11-18T15:16:47Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:3:2": "2026-11-18T15:26:37Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
@@ -5266,12 +5345,13 @@
    "scan:stocks:XLV,XLP,XLF,XLK:4:0": "2026-11-17T14:51:44Z",
    "scan:tsx:TRP.TO,PPL.TO,L.TO": "2026-11-18T14:51:48Z",
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
+   "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9539.74,
+  "benchmarkCad": 9526.1,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5281,7 +5361,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9923.51,
+  "equityCad": 9926.41,
   "focus": {
    "active": [
     "NVDA",
@@ -5550,11 +5630,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T15:01:59Z",
-  "lastRun": "2026-11-18T15:16:47Z",
+  "lastRun": "2026-11-18T15:26:37Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,539.74.",
-  "lastSaved": "2026-11-18T15:16:47Z",
-  "lastStockScan": "2026-11-18T15:16:47Z",
+  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 2.4% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,926.41 vs buy-and-hold $9,526.10.",
+  "lastSaved": "2026-11-18T15:26:37Z",
+  "lastStockScan": "2026-11-18T15:26:37Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5620,11 +5700,22 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4328,
+  "usdCad": 1.4334,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
  "fundamentals": {
+  "NFLX": {
+   "debtToEquity": 0.52,
+   "epsGrowthPct": 47.5,
+   "fetchedOn": "2026-11-18",
+   "freeCashFlow": 3441045.0,
+   "lastEps": 0.87,
+   "revGrowthPct": -16.6,
+   "sector": "Consumer Discretionary",
+   "target1y": 85.0,
+   "ttmEps": 3.46
+  },
   "SMCI": {
    "debtToEquity": 0.54,
    "epsGrowthPct": 438.7,
@@ -5870,7 +5961,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 48,
+   "dataCalls": 52,
    "date": "2026-11-18",
    "liquid": 2234,
    "regime": "risk-off",
@@ -5888,14 +5979,14 @@
      "verdict": "71/100, fell below its opening range"
     },
     {
-     "score": 68,
-     "symbol": "LONG WMT",
-     "verdict": "68/100, below the 80 needed"
+     "score": 69,
+     "symbol": "SHORT NFLX",
+     "verdict": "69/100, below the 70 needed"
     },
     {
      "score": 68,
-     "symbol": "SHORT SNDK",
-     "verdict": "68/100, below the 70 needed"
+     "symbol": "LONG WMT",
+     "verdict": "68/100, below the 80 needed"
     },
     {
      "score": 66,
@@ -5904,7 +5995,7 @@
     },
     {
      "score": 66,
-     "symbol": "LONG L.TO",
+     "symbol": "LONG REI-UN.TO",
      "verdict": "66/100, below the 80 needed"
     },
     {
@@ -5914,7 +6005,7 @@
     },
     {
      "score": 61,
-     "symbol": "LONG VBIL",
+     "symbol": "LONG USFR",
      "verdict": "61/100, below the 80 needed"
     }
    ],
@@ -5940,12 +6031,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T15:16:47Z"
+  "updated": "2026-11-18T15:26:37Z"
  },
  "log": [
-  "Run 2026-11-18 OPEN (New York 10:16), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 2 breakouts, 3 breakdowns",
+  "Run 2026-11-18 WATCH (New York 10:26), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 3 breakouts, 2 breakdowns",
   "News model loaded",
+  "SEC filed numbers for NFLX: sales 11.8% y/y, operating margin 34.6%",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for WFC unavailable (Remote end closed connection without response)",
   "BLOCK SHORT WFC: Time machine favourable"
@@ -5976,10 +6068,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9539.74,
-   "cashCad": 9923.51,
+   "benchmarkCad": 9526.1,
+   "cashCad": 9926.41,
    "date": "2026-11-18",
-   "equityCad": 9923.51
+   "equityCad": 9926.41
   }
  ],
  "pack": {
@@ -5987,7 +6079,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T15:16:47Z",
+   "checkedAt": "2026-11-18T15:26:37Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

@@ -2741,7 +2741,7 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T16:06:47Z",
+   "at": "2026-11-18T16:26:44Z",
    "count": 1
   },
   "messages": [
@@ -5399,6 +5399,15 @@
     "t": "2026-11-18T16:06:47Z",
     "to": "pm",
     "x": "Stock scan: 88 long and 61 short charts checked, 5 breakouts, 3 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T16:26:44Z",
+    "to": "pm",
+    "x": "TSX scan: 74 Canadian charts checked. Strongest: TRP.TO, SAP.TO, REI-UN.TO."
    }
   ],
   "said": {
@@ -5530,12 +5539,13 @@
    "scan:tsx:TRP.TO,PPL.TO,L.TO": "2026-11-18T14:51:48Z",
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
+   "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9467.79,
+  "benchmarkCad": 9461.94,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5545,7 +5555,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9924.48,
+  "equityCad": 9925.44,
   "focus": {
    "active": [
     "NVDA",
@@ -5814,11 +5824,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T16:01:39Z",
-  "lastRun": "2026-11-18T16:16:43Z",
+  "lastRun": "2026-11-18T16:26:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.5% today; market mood risk-off. Bitcoin down 2.2% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,924.48 vs buy-and-hold $9,467.79.",
-  "lastSaved": "2026-11-18T16:16:43Z",
-  "lastStockScan": "2026-11-18T16:16:43Z",
+  "lastRunNote": "The S&P 500 fund was down 0.5% today; market mood risk-off. Bitcoin down 2.1% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,461.94.",
+  "lastSaved": "2026-11-18T16:26:44Z",
+  "lastStockScan": "2026-11-18T16:26:44Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5884,7 +5894,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.433,
+  "usdCad": 1.4332,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6207,19 +6217,19 @@
      "verdict": "66/100, below the 80 needed"
     },
     {
-     "score": 66,
+     "score": 61,
      "symbol": "LONG REI-UN.TO",
-     "verdict": "66/100, below the 80 needed"
-    },
-    {
-     "score": 63,
-     "symbol": "LONG WMT",
-     "verdict": "63/100, below the 80 needed"
+     "verdict": "61/100, below the 80 needed"
     },
     {
      "score": 60,
      "symbol": "LONG WELL",
      "verdict": "60/100, below the 80 needed"
+    },
+    {
+     "score": 58,
+     "symbol": "LONG WMT",
+     "verdict": "58/100, below the 80 needed"
     },
     {
      "score": 56,
@@ -6249,10 +6259,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T16:16:43Z"
+  "updated": "2026-11-18T16:26:44Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 11:16), stock market open day",
+  "Run 2026-11-18 WATCH (New York 11:26), stock market open day",
   "Stock scan: 88 long and 61 short ideas pre-screened; 5 breakouts, 3 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
@@ -6289,10 +6299,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9467.79,
-   "cashCad": 9924.48,
+   "benchmarkCad": 9461.94,
+   "cashCad": 9925.44,
    "date": "2026-11-18",
-   "equityCad": 9924.48
+   "equityCad": 9925.44
   }
  ],
  "pack": {
@@ -6300,7 +6310,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T16:16:43Z",
+   "checkedAt": "2026-11-18T16:26:44Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

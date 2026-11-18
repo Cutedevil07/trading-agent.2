@@ -163,7 +163,7 @@ class Run:
             if p["side"] == "short" and p["kind"] in ("stock", "etf"):
                 last = parse_iso(p.get("lastFeeAt")) or self.now
                 days = max(0.0, (self.now - last).total_seconds() / 86400)
-                fee = p["units"] * p["lastPrice"] * RULES["borrow_rate"] * days / 365
+                fee = p["units"] * p["lastPrice"] * p.get("borrowRate", RULES["borrow_rate"]) * days / 365
                 f["usd"] -= fee
                 p["borrowFeeCad"] = r2(p.get("borrowFeeCad", 0) + fee * self.fx)
                 p["lastFeeAt"] = iso(self.now)
@@ -237,7 +237,7 @@ class Run:
     # ---------------------------------------------------------- closing
     def close(self, pid, price, reason, when=None, bid=None):
         p = self.s["positions"].pop(pid)
-        if self.live and p["kind"] in ("stock", "etf") and p["side"] == "long":
+        if self.live and p["kind"] in ("stock", "etf") and p["side"] == "long" and p.get("market") != "TSX":
             self.live.stock_exit(p["underlying"], reason)
         f, k, fx = self.f, p["kind"], self.fx
         when = when or self.ny
@@ -275,9 +275,13 @@ class Run:
         else:
             px = price * (1 - RULES["slip"][k])
             proceeds = p["units"] * px
-            f["usd"] += proceeds
-            pnl = proceeds * fx - p["costCad"]
-            value, side_lbl = proceeds * fx, "SELL"
+            pfx = 1.0 if p.get("currency") == "CAD" else fx
+            if p.get("sleeve") == "cad":
+                f["cad"] += proceeds
+            else:
+                f["usd"] += proceeds
+            pnl = proceeds * pfx - p["costCad"]
+            value, side_lbl = proceeds * pfx, "SELL"
             fees = p["units"] * price * RULES["slip"][k]
         r = pnl / p["riskCad"] if p.get("riskCad") else 0.0
         tid = "%s-%s-%s" % (when.strftime("%Y%m%d-%H%M"), pid.replace(" ", "_"), side_lbl)
@@ -583,15 +587,15 @@ class Run:
         if f.get("halted"):
             why.append("halted")
         if f["equityCad"] <= f["dayStartEquityCad"] * (1 - RULES["day_loss_pct"]):
-            why.append("down 2% today")
+            why.append("down %d%% today" % round(RULES["day_loss_pct"] * 100))
         if f["equityCad"] <= f["weekStartEquityCad"] * (1 - RULES["week_loss_pct"]):
-            why.append("down 5% this week")
+            why.append("down %d%% this week" % round(RULES["week_loss_pct"] * 100))
         if f["entriesToday"] >= RULES["entries_per_day"]:
             why.append("%d trades already today" % RULES["entries_per_day"])
         if f["entriesThisWeek"] >= RULES["entries_per_week"]:
             why.append("%d trades already this week" % RULES["entries_per_week"])
         if self.open_risk() >= RULES["max_open_risk_pct"] * f["equityCad"]:
-            why.append("6% of the account already at risk")
+            why.append("%d%% of the account already at risk" % round(RULES["max_open_risk_pct"] * 100))
         self.block_reason = ", ".join(why)
         self.stocks_ok = not why and self.scan_stocks and self.type != "CLOSE"
         fomc_late = self.today.isoformat() in FOMC_DAYS and 13 * 60 + 30 <= self.hm <= 15 * 60
@@ -600,6 +604,16 @@ class Run:
         self.stocks_ok = self.stocks_ok and not fomc_late
         self.crypto_ok = not why and self.scan_crypto and self.crypto_regime != "risk-off" and not fomc_late
         self.futures_ok = not why and self.scan_futures and not fomc_late
+        econ = self.econ_today() if self.market_day else []
+        if econ:
+            what = " and ".join(econ)
+            if self.hm < 10 * 60 + 30 and self.stocks_ok:
+                self.stocks_ok = False
+                self.notes.append("%s report at 8:30 today: no stock trades before 10:30" % what.capitalize())
+            if 8 * 60 <= self.hm < 9 * 60 + 30:
+                self.futures_ok = False
+            self.floor.say("strategy", "The %s report comes out at 8:30 this morning. No stock trades before 10:30, "
+                           "no futures trades 8:00 to 9:30." % what, to="pm", kind="mood", key="econ:%s" % self.today, hours=20)
         self.floor_gate(fomc_late)
 
     # ---------------------------------------------------------- the whole market, once a day
@@ -1052,8 +1066,14 @@ class Run:
             dv = daily_view(spark.get(sym), self.today, False, 1.0)
             if dv and dv["price"] >= 5:
                 pre_s.append((tech_score(dv, "short") + (5 if sym in hit_short else 0), sym))
-        top_l = [s for _, s in sorted(pre_l, reverse=True)[:20]]
-        top_s = [s for _, s in sorted(pre_s, reverse=True)[:8]]
+        def quota(pre, n_stock, n_etf):
+            """Individual stocks get their own places, so smooth fund charts can't crowd them out."""
+            ranked = [s for _, s in sorted(pre, reverse=True)]
+            st = [s for s in ranked if s not in etfset][:n_stock]
+            et = [s for s in ranked if s in etfset][:n_etf]
+            return [s for s in ranked if s in st or s in et]
+        top_l = quota(pre_l, 14, 6)
+        top_s = quota(pre_s, 5, 3)
         if self.packmode and top_l and self.hm >= 9 * 60 + 50:
             argv = ["orb", "--symbols", ",".join(top_l), "--json", "--no-write", "--max-confirm", "20", "--quiet"]
             if self.ny_arg():
@@ -1074,8 +1094,13 @@ class Run:
             len(pre_l), len(pre_s), nb, "" if nb == 1 else "s", len(orb_s), "" if len(orb_s) == 1 else "s",
             ", ".join(top_l[:3] + top_s[:1]) or "none"), to="pm", kind="info",
             key="scan:stocks:%s:%d:%d" % (",".join(top_l[:3] + top_s[:1]), nb, len(orb_s)), hours=1)
-        short_l = ([s for s in top_l if s in self.orb] + [s for s in top_l if s not in self.orb])[:5]
-        short_s = ([s for s in top_s if s in orb_s] + [s for s in top_s if s not in orb_s])[:3]
+        def pick(top, hits, n_stock, n_etf):
+            order = [s for s in top if s in hits] + [s for s in top if s not in hits]
+            st = [s for s in order if s not in etfset][:n_stock]
+            et = [s for s in order if s in etfset][:n_etf]
+            return [s for s in order if s in st or s in et]
+        short_l = pick(top_l, self.orb, 3, 2)
+        short_s = pick(top_s, orb_s, 2, 1)
         for s in short_l + short_s:
             self.names.setdefault(s, names.get(s, s))
         self.fetch_news([(s, s) for s in dict.fromkeys(short_l + short_s)])
@@ -1091,6 +1116,38 @@ class Run:
                      "orb": self.orb.get(sym) if side == "long" else orb_s.get(sym)}
                 self.score(c)
                 cands.append(c)
+        return cands
+
+    @addon(list)
+    def tsx_candidates(self):
+        """Canadian stocks and ETFs on the TSX: bought in Canadian dollars, so no currency conversion. Buy-only for now."""
+        if self.today.isoformat() in TSX_HOLIDAYS:
+            self.floor.say("strategy", "The TSX is closed today for a Canadian holiday.", to="pm", kind="mood",
+                           key="tsx-closed:%s" % self.today, hours=20)
+            return []
+        etfs = {s + ".TO" for s in self.cfg.get("tsx_etfs", [])}
+        syms = [s + ".TO" for s in self.cfg.get("tsx", []) + self.cfg.get("tsx_etfs", [])]
+        held = {p["underlying"] for p in self.s["positions"].values()}
+        spark = yahoo_spark_daily([s for s in syms if s not in held], self.replay_now)
+        pre = []
+        for sym, ch in spark.items():
+            dv = daily_view(ch, self.today, False, 1.0)
+            if dv and dv["price"] >= 5 and dv["dollarVol"] >= 5e6:
+                pre.append((tech_score(dv, "long"), sym))
+        top = [s for _, s in sorted(pre, reverse=True)[:3]]
+        self.floor.say("research", "TSX scan: %d Canadian charts checked. Strongest: %s." % (len(pre), ", ".join(top) or "none"),
+                       to="pm", kind="info", key="scan:tsx:%s" % ",".join(top), hours=2)
+        self.fetch_news([(s, s) for s in top])
+        cands = []
+        for sym in top:
+            dv = self.dview(sym)
+            if not dv:
+                continue
+            c = {"symbol": sym, "kind": "etf" if sym in etfs else "stock", "market": "TSX", "side": "long", "dv": dv,
+                 "news": self.news.get(sym, {"score": 12}), "yahoo": sym}
+            self.names.setdefault(sym, sym)
+            self.score(c)
+            cands.append(c)
         return cands
 
     def crypto_candidates(self):
@@ -1127,13 +1184,23 @@ class Run:
                            key="futures-closed:%s" % self.today, hours=12)
             return []
         spark = yahoo_spark_daily([v[0] for v in FUTURES.values()], self.replay_now)
-        pre = []
+        pre, fits, too_big = [], [], []
+        risk_usd = RULES["risk_pct"] * self.f["equityCad"] / self.fx
+        margin_cap = RULES["future_margin_cap_pct"] * self.sleeve_value("usd") / self.fx
         for code, (y, mult, mfrac, name) in FUTURES.items():
             dv = daily_view(spark.get(y), self.today, False, 1.0)
             if not dv:
                 continue
+            one = stop_distance("future", dv["atrPct"]) * dv["price"] * mult
+            if one > risk_usd or dv["price"] * mult * mfrac > margin_cap:
+                too_big.append(code)
+                continue
+            fits.append(code)
             tl, ts = tech_score(dv, "long"), tech_score(dv, "short")
             pre.append((max(tl, ts), code, "long" if tl >= ts else "short"))
+        self.floor.say("risk", "Futures that fit the account today: %s. Too big for one contract: %s." % (
+            ", ".join(fits) or "none", ", ".join(too_big) or "none"), to="research", kind="check",
+            key="futures-fit:%s:%s" % (self.today, ",".join(fits)), hours=20)
         pre.sort(reverse=True)
         cands = []
         for _, code, side in pre[:2]:
@@ -1151,6 +1218,7 @@ class Run:
             self.f["lastStockScan"] = iso(self.now)
             self.scanned = True
             cands += self.stock_candidates(alert_hits)
+            cands += self.tsx_candidates()
         if self.crypto_ok:
             self.f["lastCryptoScan"] = iso(self.now)
             self.scanned = True
@@ -1207,13 +1275,7 @@ class Run:
                     rep = {"pTarget": pt, "pStop": ps, "meanR": tm["mc"].get("avg_R"), "source": "pack-5m",
                            "favourable": (pt / (pt + ps) >= 0.40 if pt + ps > 0 else False) and "toward the stop" not in v}
         if stop is None:
-            atr = dv["atrPct"] or {"crypto": 4.0, "future": 1.5}.get(kind, 2.0)
-            if kind == "crypto":
-                d = min(0.15, max(0.04, atr / 100))
-            elif kind == "future":
-                d = min(0.05, max(0.006, atr / 200))
-            else:
-                d = min(0.08, max(0.015, atr / 200))
+            d = stop_distance(kind, dv["atrPct"])   # 2 average daily ranges (backtest, Nov 18 2026)
             if side == "long":
                 stop, target = price * (1 - d), price * (1 + 2 * d)
             else:
@@ -1231,8 +1293,12 @@ class Run:
         d1 = self.today + dt.timedelta(days=RULES["option_max_dte"])
         chain = [r for r in nasdaq_option_chain(sym, d0, d1, "at") if d0 <= r["expiry"] <= d1 and r["strike"]]
         if not chain:
+            chain = [r for r in cboe_option_chain(sym, d0, d1) if r["strike"] and abs(r["strike"] / price - 1) <= 0.2]
+            if chain:
+                log("Options for %s from Cboe (Nasdaq had none)" % sym)
+        if not chain:
             why = OPTION_ERRORS.get(sym)
-            return None, "no options data from Nasdaq (%s)" % why if why else "no options expiring in 2-6 weeks"
+            return None, "no options data from Nasdaq or Cboe (%s)" % why if why else "no options expiring in 2-6 weeks"
         exp = min({r["expiry"] for r in chain}, key=lambda e: abs((e - self.today).days - 30))
         rows = sorted([r for r in chain if r["expiry"] == exp], key=lambda r: r["strike"])
         right = "call" if side == "long" else "put"
@@ -1267,6 +1333,12 @@ class Run:
         self.floor_idea(c, need, setup, why)
         if c["score"] < need or not setup:
             return
+        if setup in RULES["setups_off"]:
+            self.blocked.append({"symbol": label, "failed": ["Setup switched off by the backtest"]})
+            if c.get("talk"):
+                self.floor.say("pm", "Pass on %s: the %s setup is switched off. It lost money in both years of the backtest." % (
+                    sym, setup.replace("_", " ")), sym=sym, kind="block")
+            return
         if f["stats"]["bySetup"].setdefault(setup, {"n": 0, "wins": 0, "r": 0.0, "disabled": False})["disabled"]:
             self.blocked.append({"symbol": label, "failed": ["Setup switched off"]})
             if c.get("talk"):
@@ -1277,7 +1349,7 @@ class Run:
         risk_cad = RULES["risk_pct"] * f["equityCad"]
         fx = self.fx
         inst, opt = kind, None
-        if kind == "stock" and c["score"] >= RULES["option_score"] and self.count("option") < RULES["max_pos"]["option"]:
+        if kind == "stock" and not c.get("market") and c["score"] >= RULES["option_score"] and self.count("option") < RULES["max_pos"]["option"]:
             cap = RULES["option_cap_pct"] * f["equityCad"] / fx
             opt, owhy = self.pick_option(sym, side, price, risk_cad / fx, min(cap, max(0.0, self.free_usd())))
             if opt:
@@ -1320,6 +1392,17 @@ class Run:
             o.update({"sizeCad": value, "sizeCapCad": RULES["crypto_cap_pct"] * sleeve, "cashNeededCad": value,
                       "cashFreeCad": f["cad"], "lossAtStopCad": value * d + value * 0.016})
             c["value"] = value
+        elif c.get("market") == "TSX":
+            sleeve = self.sleeve_value("cad")
+            cap = RULES["equity_cap_pct"] * sleeve
+            slip = RULES["slip"][kind]
+            value = min(risk_cad / d, cap, f["cad"] / (1 + slip))
+            shares = int(value // (price * (1 + slip))) if price else 0
+            c["shares"] = shares
+            value = shares * price * (1 + slip)
+            o.update({"sizeCad": value, "sizeCapCad": cap, "cashNeededCad": value, "cashFreeCad": f["cad"],
+                      "lossAtStopCad": value * d + value * 0.002})
+            c["value"] = value
         else:
             sleeve = self.sleeve_value("usd")
             cap = RULES["equity_cap_pct"] * sleeve
@@ -1341,11 +1424,22 @@ class Run:
         chk = order_check(o)
         failed = list(chk["failed"])
         if kind == "future" and c.get("contracts", 0) < 1:
-            failed.append("One contract risks more than 1% of the account")
+            failed.append("One contract risks more than %d%% of the account" % round(RULES["risk_pct"] * 100))
         if c.get("sizing") is not None and not c.get("shares"):
             failed.append("Sizing: %s" % str(c["sizing"].get("refusal") or "not even one whole share fits")[:120])
         passed = sum(1 for r in chk["rules"] if r["ok"])
-        if inst in ("stock", "etf") and self.packmode and not failed:
+        if side == "short" and inst in ("stock", "etf"):
+            ok, why_b = self.borrow_check(sym, c["value"] / fx / price if price else 0, c)
+            if ok:
+                passed += 1
+            else:
+                failed.append(why_b)
+        same = self.same_bet(c, inst)
+        if same:
+            failed.append("Same bet as %s (moves together %.0f%% of the time)" % same)
+        else:
+            passed += 1
+        if inst in ("stock", "etf") and self.packmode and not failed and not c.get("market"):
             if self.pack_risk(sym, side, c["value"] / fx, price, stop, target, setup, c.get("shares")):
                 passed += 1
                 if c.get("shares"):
@@ -1357,7 +1451,118 @@ class Run:
             self.blocked.append({"symbol": label, "failed": failed})
             log("BLOCK %s: %s" % (label, ", ".join(failed)))
             return
-        self.enter(c, inst, setup, price, stop, target, risk_cad, rep, passed, opt)
+        # Record the real loss if the stop is hit (not the whole budget), so open risk and R are measured honestly
+        actual = o.get("lossAtStopCad") or risk_cad
+        self.enter(c, inst, setup, price, stop, target, min(actual, risk_cad * 1.5), rep, passed, opt)
+
+    @addon(None)
+    def weekly_backtest(self, force=False):
+        """The agent's own rules replayed over two years of past prices: every Saturday, and once soon after it's added.
+        Runs only while US markets are closed. Takes about ten minutes on GitHub."""
+        b = self.s.get("backtest") or {}
+        if self.replay_now or self.dry:
+            return
+        if not force:
+            in_hours = self.market_day and 9 * 60 <= self.hm <= 16 * 60 + 30
+            due = not b.get("ranOn") or (self.ny.weekday() == 5 and (self.today - dt.date.fromisoformat(b["ranOn"])).days >= 6)
+            if in_hours or not due:
+                return
+        import backtest
+        res = backtest.run(self.s, self.cfg, years=2)
+        if res.get("error"):
+            log("Backtest skipped: %s" % res["error"])
+            return
+        keep = ("variant", "trades", "winRate", "avgR", "totalR", "returnPct", "maxDrawdownPct", "halted", "firstHalfAvgR",
+                "secondHalfAvgR", "byKind", "bySetup", "exits")
+        self.s["backtest"] = {"ranOn": self.today.isoformat(), "asOf": res["asOf"], "from": res["from"], "symbols": res["symbols"],
+                              "kinds": res["kinds"], "seconds": res["seconds"], "riskPct": RULES["risk_pct"] * 100,
+                              "summary": [{k: x.get(k) for k in keep} for x in res["summary"]], "curves": res["curves"]}
+        self.scanned = True   # make sure this run is saved
+        live = next((x for x in res["summary"] if x["variant"] == "live rules"), None)
+        one = next((x for x in res["summary"] if x["variant"] == "live rules at 1% risk"), None)
+        if live and one:
+            self.floor.say("quant", "Backtest, last 2 years: our rules made %d trades, %+.2fR a trade, %+.1f%% overall, worst drop %.0f%%%s. "
+                           "At 1%% risk: %+.2fR, %+.1f%%." % (live["trades"], live["avgR"], live["returnPct"], live["maxDrawdownPct"],
+                                                           ", and hit the -15% stop" if live["halted"] else "", one["avgR"], one["returnPct"]),
+                           to="pm", kind="meeting")
+
+    @addon(None)
+    def econ_refresh(self):
+        """Inflation (CPI) and jobs report dates from the BLS schedule, refreshed weekly."""
+        e = self.s.setdefault("econ", {})
+        if self.replay_now or (e.get("fetched") and (self.today - dt.date.fromisoformat(e["fetched"])).days < 7):
+            return
+        lo, hi = self.today - dt.timedelta(days=1), self.today + dt.timedelta(days=400)
+        cpi = [d.isoformat() for d in bls_release_dates("cpi", self.sec_contact) if lo <= d <= hi]
+        jobs = [d.isoformat() for d in bls_release_dates("empsit", self.sec_contact) if lo <= d <= hi]
+        fetched = self.today if (cpi or jobs) else self.today - dt.timedelta(days=6)   # no answer: try again tomorrow
+        e.update({"fetched": fetched.isoformat(), "cpi": cpi or e.get("cpi") or [], "jobs": jobs or e.get("jobs") or [],
+                  "source": "BLS" if cpi or jobs else "rule of thumb (jobs report on the first Friday)"})
+
+    def econ_today(self):
+        e = self.s.get("econ") or {}
+        t = self.today.isoformat()
+        out = []
+        if t in (e.get("cpi") or []):
+            out.append("inflation (CPI)")
+        jobs = e.get("jobs") or []
+        if t in jobs or (not jobs and self.today == first_friday(self.today.year, self.today.month)):
+            out.append("jobs")
+        return out
+
+    @addon(None)
+    def source_check(self):
+        """Once a day: do the backup and extra data sources answer? Saved, logged and said on the floor."""
+        src = self.s.setdefault("sources", {})
+        if self.replay_now or src.get("date") == self.today.isoformat():
+            return
+        d0, d1 = self.today + dt.timedelta(days=14), self.today + dt.timedelta(days=45)
+        cb = len(cboe_option_chain("SPY", d0, d1))
+        bt = borrow_table()
+        e = self.s.get("econ") or {}
+        src.update({"date": self.today.isoformat(), "cboeOptions": cb, "borrowNames": len(bt) if bt else 0,
+                    "cpiDates": len(e.get("cpi") or []), "jobsDates": len(e.get("jobs") or []), "secContact": "@" in self.sec_contact})
+        log("Data sources: Cboe options %d rows, borrow list %d names, CPI dates %d, jobs dates %d, SEC contact %s" % (
+            cb, src["borrowNames"], src["cpiDates"], src["jobsDates"], "set" if src["secContact"] else "missing"))
+        ok = lambda v: "ok" if v else "not answering"
+        self.floor.say("research", "Data check: options backup %s, borrow list %s, economic calendar %s, SEC filings %s." % (
+            ok(cb), ("%s names" % "{:,}".format(src["borrowNames"])) if bt else "not answering",
+            ok(src["cpiDates"] or src["jobsDates"]), "on" if src["secContact"] else "off (no SEC_CONTACT secret)"),
+            to="pm", kind="info", key="sources:%s" % self.today, hours=20)
+
+    def borrow_check(self, sym, shares, c):
+        """Shorts need shares to borrow and a fee under 20% a year (Interactive Brokers' public list)."""
+        bt = borrow_table()
+        if bt is None:
+            return True, ""
+        b = bt.get(sym.upper())
+        if not b or b["available"] <= 0:
+            return False, "No shares available to borrow"
+        if b["available"] < shares:
+            return False, "Only %s shares available to borrow" % "{:,}".format(b["available"])
+        if b["feePct"] > 20:
+            return False, "Borrowing costs %.0f%% a year" % b["feePct"]
+        c["borrowRate"] = max(0.0025, b["feePct"] / 100)
+        return True, ""
+
+    def same_bet(self, c, inst):
+        """A new trade can't repeat a bet already held: same direction and daily moves 80%+ alike."""
+        mine = [r[3] for r in c["dv"]["ohlc"]] + [c["dv"]["price"]]
+        long_me = c["side"] == "long"
+        crypto_me = c["kind"] == "crypto"
+        for p in self.s["positions"].values():
+            if (p["kind"] == "crypto") != crypto_me:
+                continue
+            long_p = (p["right"] == "call") if p["kind"] == "option" else p["side"] == "long"
+            if long_p != long_me or p["underlying"] == c["symbol"]:
+                continue
+            dv = self.dview(p["yahoo"] if p["kind"] in ("crypto", "future") else p["underlying"], p["kind"] == "crypto")
+            if not dv:
+                continue
+            r = returns_corr(mine, [x[3] for x in dv["ohlc"]] + [dv["price"]])
+            if r is not None and r >= 0.8:
+                return p["underlying"], r * 100
+        return None
 
     def pack_cfg(self, max_loss_usd):
         """The agent's limits written in the Day Trader pack's config format."""
@@ -1597,11 +1802,16 @@ class Run:
             slip = RULES["slip"][inst]
             value = c["value"]
             usd = value / fx
+            tsx = c.get("market") == "TSX"
             if side == "long":
                 fill = price * (1 + slip)
                 units = c.get("shares") or usd / fill
-                f["usd"] -= units * fill
-                costcad = units * fill * fx
+                if tsx:
+                    f["cad"] -= units * fill
+                    costcad = units * fill
+                else:
+                    f["usd"] -= units * fill
+                    costcad = units * fill * fx
                 trade_side, verb = "BUY", "Bought"
             else:
                 fill = price * (1 - slip)
@@ -1613,12 +1823,16 @@ class Run:
             p = dict(base, symbol=sym, units=units, mult=1, sleeve="usd", entryPrice=fill, yahoo=sym,
                      stopPrice=fill * stop / price, targetPrice=fill * target / price, initialStop=fill * stop / price,
                      costCad=r2(costcad), lastPrice=price, lastFeeAt=iso(self.now), borrowFeeCad=0.0)
+            if side == "short" and c.get("borrowRate"):
+                p["borrowRate"] = round(c["borrowRate"], 4)
+            if tsx:
+                p.update({"sleeve": "cad", "currency": "CAD", "market": "TSX"})
             label, fillpx, cost_fee = "%s %s %s" % (verb, money(value), sym), fill, value * slip
         self.s["positions"][pid] = p
         if self.live:
             if inst == "crypto":
                 self.live.enter_crypto(sym, price, stop, target, setup, c["score"])
-            elif inst in ("stock", "etf") and side == "long":
+            elif inst in ("stock", "etf") and side == "long" and not c.get("market"):
                 self.live.stock_entry(sym, price, stop, target, setup, c["score"], p.get("name", sym))
         self.value_position(p)
         f["entriesToday"] += 1
@@ -1693,6 +1907,8 @@ class Run:
         self.exits()
         self.live.manage()
         self.regimes()
+        self.econ_refresh()
+        self.source_check()
         self.gate()
         self.pack_clock()
         if self.type == "OPEN":
@@ -1708,6 +1924,7 @@ class Run:
         elif self.type != "WATCH" or self.scan_stocks:
             log("No new trades this run: %s" % (self.block_reason or "markets closed or nothing due"))
         self.pack_alerts()
+        self.weekly_backtest()
         self.review()
         self.live.finish()
         self.record()
@@ -1985,6 +2202,21 @@ def cmd_probe(a):
     return 0
 
 
+def cmd_backtest(a):
+    """Run the two-year backtest now and save it with the records."""
+    cfg = load_config()
+    now = utcnow()
+    store = make_store(a)
+    state, version = store.load()
+    state = migrate(state, now)
+    run = Run(state, cfg, now, a.dry_run)
+    run.weekly_backtest(force=True)
+    if not a.dry_run and state.get("backtest", {}).get("ranOn"):
+        ok, msg = store.save(state, version, "Agent backtest %s" % now.strftime("%Y-%m-%d %H:%MZ"))
+        log(msg)
+    return 0
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="Trading agent, paper trading only")
     sub = p.add_subparsers(dest="cmd")
@@ -1996,7 +2228,12 @@ def main(argv=None):
             sp.add_argument("--now", help="replay a past moment, UTC ISO time (for testing)")
             sp.add_argument("--mode", choices=["OPEN", "CLOSE", "WATCH"], help="force the run type (testing)")
     sub.add_parser("probe")
+    sp = sub.add_parser("backtest")
+    sp.add_argument("--state", help="keep the records in this local file instead of GitHub")
+    sp.add_argument("--dry-run", action="store_true", help="save nothing")
     a = p.parse_args(argv)
+    if a.cmd == "backtest":
+        return cmd_backtest(a)
     if a.cmd == "probe":
         return cmd_probe(a)
     if a.cmd == "run":

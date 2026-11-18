@@ -20,7 +20,8 @@ It never places a real order. There is no broker code in this repository.
 | every US-listed stock (about 6,000) | read each market morning before the open; the liquid ones (over $20M a day, $5 or more) ranked for buys and shorts; the best 100 rescanned every 10 minutes from 9:50 AM to 2:55 PM New York |
 | ETFs | every US-listed ETF read weekly; the 300 most traded, without leveraged, inverse or volatility funds, join the daily screen |
 | options | strong stock ideas (80+ points) may buy a call or a put instead of shares, 2 to 6 weeks out, near the money, liquid only |
-| futures | micro S&P 500, Nasdaq, Dow, Russell, gold, silver, oil, bitcoin, ether, euro, long or short, when one contract fits the 1% risk |
+| Canadian stocks and ETFs | about 70 large TSX companies and 12 main TSX ETFs, bought in Canadian dollars (no currency cost), buy-only for now, Canadian holidays respected |
+| futures | micro S&P 500, Nasdaq, Dow, Russell, gold, silver, oil, bitcoin, ether, euro, long or short, only when one contract fits the 5% risk and the margin cap |
 | crypto | the 100 largest coins without stablecoins, wrapped copies, meme coins or exchange tokens, long only |
 
 ## Judgement
@@ -39,6 +40,29 @@ It never places a real order. There is no broker code in this repository.
   max loss). It never records a yes and never contacts a broker.
 - **Market clock and alerts:** the pack's NYSE clock double-checks the market is open before a stock trade,
   and a phone alert goes out when anything held moves a lot in a day (4% stocks, 6% crypto, 2.5% futures).
+- **Same bet:** a new trade is blocked when it moves with something already held, in the same direction, 80% of the time.
+- **Calendar:** on inflation (CPI) and jobs report mornings (BLS schedule), no stock trades before 10:30 and no futures 8:00 to 9:30.
+- **Shorts:** only when Interactive Brokers' public list shows shares to borrow, at under 20% a year; the real fee is charged.
+- **Options data:** Nasdaq first, Cboe's free delayed quotes when Nasdaq has none; bought at the ask, sold at the bid.
+
+## Risk and the backtest
+
+Each trade risks up to 5% of the account (your choice, Nov 18 2026), with at most 15% at risk across all open trades.
+The agent pauses after losing 5% in a day or 10% in a week, and stops for good at -15%. A stock or ETF position is
+also capped at 25% of its currency's share of the account, so most stock trades risk well under 5%.
+
+`backtest.py` replays the agent's own daily rules over the last two years of prices for about 400 symbols, every
+Saturday (and once soon after it was added), and the results show on the page. What it found on Nov 18 2026:
+
+- the old rules lost money: stops half a day's range away were hit by normal noise
+- stops two daily ranges away roughly broke even, so the agent now uses them
+- pullback trades lost money in both years, so that setup is switched off
+- easing the score bar on cautious days and selling half at +1R both made results worse, so neither is used
+- none of the versions shows a reliable edge: at 1% risk the best was about break-even; at 5% risk the agent hit
+  the -15% stop in one of the two universes tested
+
+The backtest can't see past headlines or company numbers, can't replay opening-range day trades or options, and uses
+today's list of companies. Run it by hand from Actions with the command `backtest`.
 
 **Trading floor:** eight desks (Research, News, Analyst, Strategy, Quant, Risk, Trader and the Portfolio manager)
 report each real step of a run to each other, one line at a time: scans, headlines, scores, replays, risk checks, fills
@@ -86,6 +110,7 @@ To stop it: **Actions → agent → ⋯ → Disable workflow**.
 | file | what |
 | --- | --- |
 | `agent.py` | the trading logic: one run per call |
+| `backtest.py` | the two-year backtest of the agent's own daily rules |
 | `floor.py` | the trading floor: the eight desks and what they say to each other |
 | `core.py` | clock, free data sources, judgement, paper-trading maths, storage, alerts |
 | `config.json` | fallback lists and the names used to match headlines |

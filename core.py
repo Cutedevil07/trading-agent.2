@@ -34,8 +34,8 @@ START_CAD = 10000.0
 
 # ---------------------------------------------------------------- the rules
 RULES = {
-    "risk_pct": 0.01,              # risk 1% of the account per trade
-    "max_open_risk_pct": 0.06,     # all open trades together may risk at most 6%
+    "risk_pct": 0.05,              # risk 5% of the account per trade (owner's choice, Nov 18 2026)
+    "max_open_risk_pct": 0.15,     # all open trades together may risk at most 15%
     "score_min": 70,               # when the market mood favours the trade's direction
     "score_min_against": 80,       # when it does not
     "max_move_today_pct": 10.0,    # never chase a move already over 10% today
@@ -46,7 +46,7 @@ RULES = {
     "option_cap_pct": 0.05,        # one options position: at most 5% of the account in premium
     "future_margin_cap_pct": 0.30, # one futures position: margin at most 30% of the USD sleeve
     "short_collateral": 0.5,       # extra cash set aside on a short (Reg T 150%)
-    "day_loss_pct": 0.02, "week_loss_pct": 0.05, "halt_pct": 0.85,
+    "day_loss_pct": 0.05, "week_loss_pct": 0.10, "halt_pct": 0.85,   # pause at -5% a day, -10% a week; stop for good at -15%
     "hold_days": {"stock": 5, "etf": 5, "crypto": 10, "option": 10, "future": 5},
     "fx_cost": 0.015, "slip": {"stock": 0.001, "etf": 0.001, "crypto": 0.008, "future": 0.0002},
     "borrow_rate": 0.05,           # yearly cost of borrowing shares to short
@@ -55,6 +55,9 @@ RULES = {
     "option_score": 80,            # a signal this strong may use options instead of shares
     "alert_max": 8, "alert_days": 5, "alerts_per_run": 3,
     "paper_days_goal": 20,
+    # From the two-year backtest (Nov 18 2026): half-ATR stops lost money; 2 ATR stops roughly broke even.
+    "stop_atr": 2.0,               # daily setups: stop 2 average daily ranges away, target twice as far
+    "setups_off": ("pullback",),   # pullbacks lost money in both years of the backtest
 }
 LONG_SETUPS = ("pullback", "breakout", "news", "earnings")
 SHORT_SETUPS = ("rally_short", "breakdown", "news_short", "earnings_short")
@@ -63,6 +66,11 @@ SETUP_NAMES = {"pullback": "Pullback in an uptrend", "breakout": "Breakout", "ne
                "earnings": "Strong earnings", "rally_short": "Short a rally in a downtrend",
                "breakdown": "Breakdown (short)", "news_short": "Bad-news move (short)",
                "earnings_short": "Weak earnings (short)"}
+
+# Toronto Stock Exchange closed days (checked against the 2026-27 calendar)
+TSX_HOLIDAYS = {"2026-01-01", "2026-02-16", "2026-04-03", "2026-05-18", "2026-07-01", "2026-08-03", "2026-09-07",
+                "2026-10-12", "2026-12-25", "2026-12-28", "2027-01-01", "2027-02-15", "2027-03-26", "2027-05-24",
+                "2027-07-01", "2027-08-02", "2027-09-06", "2027-10-11", "2027-12-27", "2027-12-28"}
 
 # Micro futures: Yahoo symbol, dollars per point, approximate margin as a share of the contract's value
 FUTURES = {
@@ -217,8 +225,13 @@ _YCACHE = {}
 
 
 def ysym(sym):
-    """Yahoo writes share classes with a dash: BRK.B -> BRK-B."""
-    return sym.replace(".", "-") if not sym.endswith(("=F", "=X")) else sym
+    """Yahoo writes share classes with a dash: BRK.B -> BRK-B. Exchange endings (.TO for Toronto) stay as they are."""
+    if sym.endswith(("=F", "=X")):
+        return sym
+    for ending in (".TO", ".V", ".NE", ".CN"):
+        if sym.endswith(ending):
+            return sym[:-len(ending)].replace(".", "-") + ending
+    return sym.replace(".", "-")
 
 
 def yahoo_chart(sym, rng, interval, now=None):
@@ -352,6 +365,18 @@ def daily_view(chart, today, utc_days=False, frac_elapsed=1.0):
         "dollarVol": float(meta.get("regularMarketVolume") or vol_today or 0) * price,
         "ohlc": [[b["o"], b["h"], b["l"], b["c"]] for b in hist[-100:]],
     }
+
+
+def stop_distance(kind, atr_pct, mult=None):
+    """How far the stop sits for a daily setup, as a fraction of the price. Shared by the agent and the backtest.
+    mult 0.5 reproduces the old rule (half an average daily range for stocks and futures, one for crypto)."""
+    mult = RULES["stop_atr"] if mult is None else mult
+    atr = atr_pct or {"crypto": 4.0, "future": 1.5}.get(kind, 2.0)
+    if kind == "crypto":
+        return min(0.15, max(0.04, atr * max(1.0, mult) / 100))
+    if kind == "future":
+        return min(0.05 * mult / 0.5, max(0.006, atr * mult / 100))
+    return min(0.08 * max(1.0, mult / 0.5 * 0.75), max(0.015, atr * mult / 100))
 
 
 def tech_score(dv, side):
@@ -644,6 +669,121 @@ def nasdaq_option_chain(sym, d0, d1, money="at"):
                     "vol": _num(r.get(p + "_Volume")) or 0.0}
         out.append({"expiry": exp, "strike": _num(r["strike"]), "call": leg("c"), "put": leg("p")})
     return out
+
+
+def cboe_option_chain(sym, d0, d1):
+    """Backup options source: Cboe's free delayed quotes. Same shape as nasdaq_option_chain."""
+    d, err = get_json("https://cdn.cboe.com/api/global/delayed_quotes/options/%s.json" % urllib.parse.quote(sym.upper()),
+                      {"Accept": "application/json"})
+    opts = (((d or {}).get("data") or {}).get("options")) or []
+    if not opts:
+        OPTION_ERRORS[sym] = ("%s; Cboe: %s" % (OPTION_ERRORS.get(sym, ""), err or "empty")).strip("; ")
+        return []
+    blank = {"bid": 0.0, "ask": 0.0, "last": 0.0, "oi": 0.0, "vol": 0.0}
+    by = {}
+    for o in opts:
+        m = re.match(r"^([A-Z.]+)(\d{6})([CP])(\d{8})$", str(o.get("option", "")))
+        if not m or m.group(1) != sym.upper():
+            continue
+        try:
+            exp = dt.datetime.strptime(m.group(2), "%y%m%d").date()
+        except ValueError:
+            continue
+        if not (d0 <= exp <= d1):
+            continue
+        strike = int(m.group(4)) / 1000.0
+        leg = {"bid": float(o.get("bid") or 0), "ask": float(o.get("ask") or 0), "last": float(o.get("last_trade_price") or 0),
+               "oi": float(o.get("open_interest") or 0), "vol": float(o.get("volume") or 0)}
+        row = by.setdefault((exp, strike), {"expiry": exp, "strike": strike, "call": dict(blank), "put": dict(blank)})
+        row["call" if m.group(3) == "C" else "put"] = leg
+    if by:
+        OPTION_ERRORS.pop(sym, None)
+    return sorted(by.values(), key=lambda r: (r["expiry"], r["strike"]))
+
+
+# ---------------------------------------------------------------- shares to borrow for shorts
+_BORROW = {}
+
+
+def borrow_table():
+    """{symbol: {"available": shares, "feePct": yearly %}} from Interactive Brokers' public short-stock file,
+    or None when the file can't be read (then shorts use the flat 5% fee and aren't blocked)."""
+    if "rows" in _BORROW:
+        return _BORROW["rows"]
+    rows = None
+    try:
+        import ftplib
+        import io
+        f = ftplib.FTP("ftp3.interactivebrokers.com", timeout=25)
+        f.login("shortstock", "")
+        buf = io.BytesIO()
+        f.retrbinary("RETR usa.txt", buf.write)
+        f.quit()
+        rows = {}
+        for line in buf.getvalue().decode("utf-8", "replace").splitlines():
+            if line.startswith("#") or "|" not in line:
+                continue
+            p = line.split("|")
+            if len(p) < 8 or not p[0].strip():
+                continue
+            avail = p[7].strip()
+            try:
+                n = 10 ** 8 if avail.startswith(">") else int(float(avail or 0))
+                fee = float(p[6] or 0)
+            except ValueError:
+                continue
+            rows[p[0].strip().upper().replace(" ", "-")] = {"available": n, "feePct": fee}
+        if len(rows) < 1000:
+            rows = None
+    except Exception as e:
+        log("Borrow list unavailable: %s: %s" % (type(e).__name__, str(e)[:80]))
+        rows = None
+    _BORROW["rows"] = rows
+    return rows
+
+
+# ---------------------------------------------------------------- the economic calendar (inflation and jobs reports)
+MONTHS = {m: i + 1 for i, m in enumerate(("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"))}
+
+
+def bls_release_dates(page, contact=""):
+    """Upcoming release dates from a BLS schedule page (cpi or empsit). [] when BLS can't be read."""
+    try:
+        s, b = http("https://www.bls.gov/schedule/news_release/%s.htm" % page,
+                    {"User-Agent": "trading-agent research %s" % (contact or "github-actions"), "Accept": "text/html"}, timeout=20, tries=2)
+    except ConnectionError as e:
+        s, b = "no connection", None
+    if s != 200 or not b:
+        log("BLS %s schedule unavailable (HTTP %s)" % (page, s))
+        return []
+    text = re.sub(r"<[^>]+>", " ", b.decode("utf-8", "replace") if isinstance(b, bytes) else b)
+    out = set()
+    for m in re.finditer(r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),\s+(20\d\d)", text):
+        try:
+            out.add(dt.date(int(m.group(3)), MONTHS[m.group(1).lower()], int(m.group(2))))
+        except ValueError:
+            continue
+    return sorted(out)
+
+
+def first_friday(y, m):
+    d = dt.date(y, m, 1)
+    return d + dt.timedelta(days=(4 - d.weekday()) % 7)
+
+
+def returns_corr(a, b, n=60):
+    """Correlation of the last n daily returns of two close-price lists (aligned from the end)."""
+    ra = [a[i] / a[i - 1] - 1 for i in range(1, len(a)) if a[i - 1]]
+    rb = [b[i] / b[i - 1] - 1 for i in range(1, len(b)) if b[i - 1]]
+    k = min(n, len(ra), len(rb))
+    if k < 20:
+        return None
+    ra, rb = ra[-k:], rb[-k:]
+    ma, mb = sum(ra) / k, sum(rb) / k
+    cov = sum((x - ma) * (y - mb) for x, y in zip(ra, rb))
+    va = sum((x - ma) ** 2 for x in ra)
+    vb = sum((y - mb) ** 2 for y in rb)
+    return cov / math.sqrt(va * vb) if va > 0 and vb > 0 else None
 
 
 # ---------------------------------------------------------------- SEC earnings releases (needs a contact email)

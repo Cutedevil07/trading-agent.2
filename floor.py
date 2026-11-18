@@ -35,10 +35,12 @@ FAILS = {
     "Cash or margin available": "there isn't enough cash",
     "Position count": "we hold the most of that kind already",
     "Trades today and this week": "the trade limit is reached",
-    "Daily loss limit": "the daily loss limit is hit",
-    "Total open risk": "6% of the account is already at risk",
+    "Daily loss limit": "a stop-out would break today's loss limit",
+    "Total open risk": "it would push open risk past the 15% cap",
     "Time machine favourable": "the replays favour the stop",
     "Pack risk check": "the pack's risk check said no",
+    "No shares available to borrow": "there are no shares to borrow",
+    "Setup switched off by the backtest": "that setup is switched off after the backtest",
 }
 
 

@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: "run, selftest or probe"
+        description: "run, selftest, probe or backtest"
         default: "run"
         required: true
 

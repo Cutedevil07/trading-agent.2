@@ -5618,7 +5618,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9508.65,
+  "benchmarkCad": 9513.18,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5628,7 +5628,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9924.48,
+  "equityCad": 9922.54,
   "focus": {
    "active": [
     "NVDA",
@@ -5897,11 +5897,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T18:01:53Z",
-  "lastRun": "2026-11-18T18:16:41Z",
+  "lastRun": "2026-11-18T18:26:39Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 1.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,924.48 vs buy-and-hold $9,508.65.",
-  "lastSaved": "2026-11-18T18:16:41Z",
-  "lastStockScan": "2026-11-18T18:16:41Z",
+  "lastRunNote": "The S&P 500 fund was down 0.1% today; market mood risk-off. Bitcoin down 1.3% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,922.54 vs buy-and-hold $9,513.18.",
+  "lastSaved": "2026-11-18T18:26:39Z",
+  "lastStockScan": "2026-11-18T18:26:39Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5967,7 +5967,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.433,
+  "usdCad": 1.4326,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6348,11 +6348,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T18:16:41Z"
+  "updated": "2026-11-18T18:26:39Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 13:16), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 7 breakouts, 6 breakdowns",
+  "Run 2026-11-18 WATCH (New York 13:26), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 6 breakouts, 6 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
@@ -6386,10 +6386,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9508.65,
-   "cashCad": 9924.48,
+   "benchmarkCad": 9513.18,
+   "cashCad": 9922.54,
    "date": "2026-11-18",
-   "equityCad": 9924.48
+   "equityCad": 9922.54
   }
  ],
  "pack": {
@@ -6397,7 +6397,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T18:16:41Z",
+   "checkedAt": "2026-11-18T18:26:39Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

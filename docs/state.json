@@ -935,7 +935,7 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T01:01:39Z",
+   "at": "2026-11-18T01:31:30Z",
    "count": 1
   },
   "messages": [
@@ -2306,6 +2306,15 @@
     "t": "2026-11-18T01:01:39Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short MGC at 65, needs 75."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T01:31:30Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short MYM at 65, needs 80."
    }
   ],
   "said": {
@@ -2355,6 +2364,7 @@
    "mood:stocks:cautious:2026-11-17": "2026-11-17T09:31:47Z",
    "mood:stocks:risk-off:2026-11-17": "2026-11-17T15:46:35Z",
    "nothing:MGC:16": "2026-11-18T01:01:39Z",
+   "nothing:MYM:16": "2026-11-18T01:31:30Z",
    "nothing:MYM:19": "2026-11-17T19:01:50Z",
    "nothing:MYM:20": "2026-11-17T16:01:52Z",
    "nothing:SIL:18": "2026-11-18T00:31:42Z",
@@ -2380,7 +2390,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9570.85,
+  "benchmarkCad": 9571.78,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2390,7 +2400,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9911.43,
+  "equityCad": 9913.85,
   "focus": {
    "active": [
     "NVDA",
@@ -2658,11 +2668,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-18T01:01:39Z",
-  "lastRun": "2026-11-18T01:01:39Z",
+  "lastFuturesScan": "2026-11-18T01:31:30Z",
+  "lastRun": "2026-11-18T01:31:30Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 0.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,911.43 vs buy-and-hold $9,570.85.",
-  "lastSaved": "2026-11-18T01:01:39Z",
+  "lastRunNote": "The S&P 500 fund was down 1.0% today; market mood cautious. Bitcoin down 0.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,913.85 vs buy-and-hold $9,571.78.",
+  "lastSaved": "2026-11-18T01:31:30Z",
   "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
@@ -2729,7 +2739,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4303,
+  "usdCad": 1.4308,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -2947,8 +2957,8 @@
    "topCandidates": [
     {
      "score": 65,
-     "symbol": "SHORT MGC",
-     "verdict": "65/100, below the 75 needed"
+     "symbol": "SHORT MYM",
+     "verdict": "65/100, below the 80 needed"
     },
     {
      "score": 60,
@@ -2978,10 +2988,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T01:01:39Z"
+  "updated": "2026-11-18T01:31:30Z"
  },
  "log": [
-  "Run 2026-11-17 WATCH (New York 20:01), stock market open day"
+  "Run 2026-11-17 WATCH (New York 20:31), stock market open day"
  ],
  "nav": [
   {
@@ -3003,10 +3013,10 @@
    "equityCad": 9911.43
   },
   {
-   "benchmarkCad": 9570.85,
-   "cashCad": 9911.43,
+   "benchmarkCad": 9571.78,
+   "cashCad": 9913.85,
    "date": "2026-11-17",
-   "equityCad": 9911.43
+   "equityCad": 9913.85
   }
  ],
  "pack": {
@@ -3014,7 +3024,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T01:01:39Z",
+   "checkedAt": "2026-11-18T01:31:30Z",
    "closes": "16:00",
    "date": "2026-11-17",
    "early_close": null,

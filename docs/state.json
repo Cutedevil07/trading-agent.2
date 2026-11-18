@@ -2754,19 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T19:06:53Z",
-   "count": 9
+   "at": "2026-11-18T19:26:45Z",
+   "count": 1
   },
   "messages": [
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 5,
-    "s": "MYM",
-    "t": "2026-11-17T16:01:52Z",
-    "to": "pm",
-    "x": "Blocked MYM: the loss at the stop is too big; it's too big for its limit; the daily loss limit is hit."
-   },
    {
     "d": "research",
     "k": "idea",
@@ -5457,6 +5448,15 @@
     "t": "2026-11-18T19:06:53Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short WFC at 76, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T19:26:45Z",
+    "to": "pm",
+    "x": "TSX scan: 79 Canadian charts checked. Strongest: X.TO, WN.TO, TRP.TO."
    }
   ],
   "said": {
@@ -5621,13 +5621,13 @@
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
    "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T16:56:44Z",
-   "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T17:26:43Z",
+   "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T19:26:45Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9495.75,
+  "benchmarkCad": 9491.24,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5637,7 +5637,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9925.44,
+  "equityCad": 9924.96,
   "focus": {
    "active": [
     "NVDA",
@@ -5906,11 +5906,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T19:01:32Z",
-  "lastRun": "2026-11-18T19:16:52Z",
+  "lastRun": "2026-11-18T19:26:45Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 1.5% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,495.75.",
-  "lastSaved": "2026-11-18T19:16:52Z",
-  "lastStockScan": "2026-11-18T19:16:52Z",
+  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 1.5% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,924.96 vs buy-and-hold $9,491.24.",
+  "lastSaved": "2026-11-18T19:26:45Z",
+  "lastStockScan": "2026-11-18T19:26:45Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -5976,7 +5976,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4332,
+  "usdCad": 1.4331,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6331,7 +6331,7 @@
     },
     {
      "score": 55,
-     "symbol": "LONG WMT",
+     "symbol": "LONG WEC",
      "verdict": "55/100, below the 80 needed"
     }
    ],
@@ -6357,10 +6357,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T19:16:52Z"
+  "updated": "2026-11-18T19:26:45Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 14:16), stock market open day",
+  "Run 2026-11-18 WATCH (New York 14:26), stock market open day",
   "Stock scan: 88 long and 61 short ideas pre-screened; 6 breakouts, 6 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
@@ -6395,10 +6395,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9495.75,
-   "cashCad": 9925.44,
+   "benchmarkCad": 9491.24,
+   "cashCad": 9924.96,
    "date": "2026-11-18",
-   "equityCad": 9925.44
+   "equityCad": 9924.96
   }
  ],
  "pack": {
@@ -6406,7 +6406,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T19:16:52Z",
+   "checkedAt": "2026-11-18T19:26:45Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

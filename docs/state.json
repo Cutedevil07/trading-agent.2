@@ -935,8 +935,8 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T08:31:50Z",
-   "count": 5
+   "at": "2026-11-18T09:01:47Z",
+   "count": 6
   },
   "messages": [
    {
@@ -2585,6 +2585,60 @@
     "t": "2026-11-18T08:31:50Z",
     "to": "all",
     "x": "Nothing to trade this scan. Short MYM scores enough but has no clean setup yet."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "MGC",
+    "t": "2026-11-18T09:01:47Z",
+    "to": "pm",
+    "x": "Short MGC: new 20-day low on heavy volume, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "MGC",
+    "t": "2026-11-18T09:01:47Z",
+    "to": "pm",
+    "x": "MGC: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-18T09:01:47Z",
+    "to": "pm",
+    "x": "Futures are neutral: 8/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "MGC",
+    "t": "2026-11-18T09:01:47Z",
+    "to": "all",
+    "x": "Short MGC scores 75, needs 75. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 4,
+    "s": "MGC",
+    "t": "2026-11-18T09:01:47Z",
+    "to": "pm",
+    "x": "MGC: in 10,000 daily replays the target comes first 27%, the stop 55%. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 5,
+    "s": "MGC",
+    "t": "2026-11-18T09:01:47Z",
+    "to": "pm",
+    "x": "Blocked MGC: the loss at the stop is too big; it's too big for its limit; the daily loss limit is hit."
    }
   ],
   "said": {
@@ -2593,6 +2647,7 @@
    "clock:closed:2026-11-18:before the open": "2026-11-18T05:01:48Z",
    "clock:open:2026-11-17": "2026-11-17T14:31:41Z",
    "futures-closed:2026-11-17": "2026-11-17T23:01:44Z",
+   "idea:MGC:short:18:breakdown": "2026-11-18T09:01:47Z",
    "idea:MNQ:short:16:none": "2026-11-18T05:01:48Z",
    "idea:MNQ:short:18:none": "2026-11-18T05:31:44Z",
    "idea:MNQ:short:19:none": "2026-11-18T07:31:59Z",
@@ -2620,6 +2675,7 @@
    "macro:futures:short:neutral:2026-11-17T16:01:52.768649": "2026-11-17T16:01:52Z",
    "macro:futures:short:neutral:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
    "macro:futures:short:neutral:2026-11-17T23:31:48.877253": "2026-11-17T23:31:48Z",
+   "macro:futures:short:neutral:2026-11-18T09:01:47.761465": "2026-11-18T09:01:47Z",
    "macro:futures:short:risk-off:2026-11-17T16:01:52.768649": "2026-11-17T16:01:52Z",
    "macro:futures:short:risk-off:2026-11-17T19:01:50.565495": "2026-11-17T19:01:50Z",
    "macro:futures:short:risk-off:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
@@ -2672,7 +2728,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9590.67,
+  "benchmarkCad": 9589.06,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -2682,7 +2738,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9922.54,
+  "equityCad": 9922.06,
   "focus": {
    "active": [
     "NVDA",
@@ -2950,11 +3006,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-17",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-18T08:31:50Z",
-  "lastRun": "2026-11-18T08:31:50Z",
+  "lastFuturesScan": "2026-11-18T09:01:47Z",
+  "lastRun": "2026-11-18T09:01:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin up 0.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,922.54 vs buy-and-hold $9,590.67.",
-  "lastSaved": "2026-11-18T08:31:50Z",
+  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin up 0.8% in 24 hours (risk-off). No trades: SHORT MGC came closest but failed loss at stop fits budget, size within limit. Holding 0 positions. Value $9,922.06 vs buy-and-ho",
+  "lastSaved": "2026-11-18T09:01:47Z",
   "lastStockScan": "2026-11-17T19:46:30Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-17T13:01:43Z",
@@ -3021,7 +3077,7 @@
   },
   "tradingDays": 2,
   "usd": 4832.15361973509,
-  "usdCad": 1.4326,
+  "usdCad": 1.4325,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -3251,7 +3307,19 @@
    "universe": 6228
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Loss at stop fits budget",
+      "Size within limit",
+      "Daily loss limit",
+      "Total open risk",
+      "Time machine favourable",
+      "One contract risks more than 1% of the account"
+     ],
+     "symbol": "SHORT MGC"
+    }
+   ],
    "cryptoRegime": "risk-off",
    "dataCalls": 17,
    "date": "2026-11-18",
@@ -3262,13 +3330,13 @@
    "topCandidates": [
     {
      "score": 77,
-     "symbol": "SHORT MYM",
+     "symbol": "SHORT MNQ",
      "verdict": "77/100, no clean setup yet"
     },
     {
-     "score": 77,
-     "symbol": "SHORT MNQ",
-     "verdict": "77/100, no clean setup yet"
+     "score": 75,
+     "symbol": "SHORT MGC",
+     "verdict": "75/100, new 20-day low on heavy volume"
     }
    ],
    "universe": 6228
@@ -3293,10 +3361,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T08:31:50Z"
+  "updated": "2026-11-18T09:01:47Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 03:31), stock market open day"
+  "Run 2026-11-18 WATCH (New York 04:01), stock market open day",
+  "BLOCK SHORT MGC: Loss at stop fits budget, Size within limit, Daily loss limit, Total open risk, Time machine favourable, One contract risks more than 1% of the account"
  ],
  "nav": [
   {
@@ -3324,10 +3393,10 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9590.67,
-   "cashCad": 9922.54,
+   "benchmarkCad": 9589.06,
+   "cashCad": 9922.06,
    "date": "2026-11-18",
-   "equityCad": 9922.54
+   "equityCad": 9922.06
   }
  ],
  "pack": {
@@ -3335,7 +3404,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T08:31:50Z",
+   "checkedAt": "2026-11-18T09:01:47Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

@@ -2741,19 +2741,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T17:06:44Z",
+   "at": "2026-11-18T17:16:42Z",
    "count": 1
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-17T14:51:44Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 62 short charts checked, 4 breakouts, 0 breakdowns. Strongest: XLV, XLP, XLF, XLK."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5444,6 +5435,15 @@
     "t": "2026-11-18T17:06:44Z",
     "to": "pm",
     "x": "Stock scan: 88 long and 61 short charts checked, 4 breakouts, 7 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-18T17:16:42Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 61 short charts checked, 5 breakouts, 7 breakdowns. Strongest: XLP, XEL, WMT, XLK."
    }
   ],
   "said": {
@@ -5568,6 +5568,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:5:2": "2026-11-18T15:46:31Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:3": "2026-11-18T16:06:47Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:4": "2026-11-18T15:56:44Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:5:7": "2026-11-18T17:16:42Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
@@ -5590,7 +5591,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9495.51,
+  "benchmarkCad": 9485.21,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5869,11 +5870,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T17:01:37Z",
-  "lastRun": "2026-11-18T17:06:44Z",
+  "lastRun": "2026-11-18T17:16:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,927.86 vs buy-and-hold $9,495.51.",
-  "lastSaved": "2026-11-18T17:06:44Z",
-  "lastStockScan": "2026-11-18T17:06:44Z",
+  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 2.1% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,927.86 vs buy-and-hold $9,485.21.",
+  "lastSaved": "2026-11-18T17:16:42Z",
+  "lastStockScan": "2026-11-18T17:16:42Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -6245,7 +6246,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 53,
+   "dataCalls": 50,
    "date": "2026-11-18",
    "liquid": 2234,
    "regime": "risk-off",
@@ -6315,11 +6316,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T17:06:44Z"
+  "updated": "2026-11-18T17:16:42Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 12:06), stock market open day",
-  "Stock scan: 88 long and 61 short ideas pre-screened; 4 breakouts, 7 breakdowns",
+  "Run 2026-11-18 WATCH (New York 12:16), stock market open day",
+  "Stock scan: 88 long and 61 short ideas pre-screened; 5 breakouts, 7 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
@@ -6355,7 +6356,7 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9495.51,
+   "benchmarkCad": 9485.21,
    "cashCad": 9927.86,
    "date": "2026-11-18",
    "equityCad": 9927.86
@@ -6366,7 +6367,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T17:06:44Z",
+   "checkedAt": "2026-11-18T17:16:42Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

@@ -2754,73 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-18T17:56:46Z",
+   "at": "2026-11-18T18:16:41Z",
    "count": 7
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "info",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-17T15:36:46Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 62 short charts checked, 15 breakouts, 6 breakdowns. Strongest: XLV, XLP, XLF, XLK."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 2,
-    "s": "XLV",
-    "t": "2026-11-17T15:36:46Z",
-    "to": "pm",
-    "x": "Long XLV: opening-range breakout, chart 30/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 3,
-    "s": "XLV",
-    "t": "2026-11-17T15:36:46Z",
-    "to": "pm",
-    "x": "XLV: no fresh headlines, neutral 12/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 4,
-    "s": "",
-    "t": "2026-11-17T15:36:46Z",
-    "to": "pm",
-    "x": "Stocks are cautious: 8/15 for a long."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 5,
-    "s": "XLV",
-    "t": "2026-11-17T15:36:46Z",
-    "to": "all",
-    "x": "Long XLV scores 74, needs 80. Pass."
-   },
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-17T15:46:35Z",
-    "to": "pm",
-    "x": "Stocks are risk off: the S&P 500 fund is below its 200-day average."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-17T15:46:35Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 62 short charts checked, 14 breakouts, 7 breakdowns. Strongest: XLV, XLP, XEL, XLK."
-   },
    {
     "d": "research",
     "k": "idea",
@@ -5457,6 +5394,69 @@
     "t": "2026-11-18T17:56:46Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short XLK at 77, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "WFC",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "pm",
+    "x": "Short WFC: fell below its opening range, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "WFC",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "pm",
+    "x": "WFC: 3 fresh headlines, mostly bad; 17/25. Top: \"Wells Fargo reportedly taps JPMorgan executive Allison Beer as...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 2,
+    "s": "WFC",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "pm",
+    "x": "WFC: sales +2%, P/E 11, debt/equity 1.8, target +23%; 4/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 3,
+    "s": "",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "WFC",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "all",
+    "x": "Short WFC scores 71, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 5,
+    "s": "WFC",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "pm",
+    "x": "WFC: in 10,000 5-minute replays the target comes first 0%, the stop 5%. Most run out of time first. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 6,
+    "s": "WFC",
+    "t": "2026-11-18T18:16:41Z",
+    "to": "pm",
+    "x": "Blocked WFC: the replays favour the stop."
    }
   ],
   "said": {
@@ -5494,7 +5494,7 @@
    "idea:VTV:long:18:breakout": "2026-11-17T15:01:42Z",
    "idea:VUG:short:18:breakdown": "2026-11-18T15:56:44Z",
    "idea:WELL:long:19:breakout": "2026-11-18T15:01:59Z",
-   "idea:WFC:short:17:breakdown": "2026-11-18T15:11:44Z",
+   "idea:WFC:short:17:breakdown": "2026-11-18T18:16:41Z",
    "idea:WFC:short:17:none": "2026-11-18T14:51:48Z",
    "idea:WMT:long:19:none": "2026-11-18T15:01:59Z",
    "idea:XLI:short:18:breakdown": "2026-11-17T17:46:43Z",
@@ -5549,6 +5549,7 @@
    "macro:stocks:short:risk-off:2026-11-18T16:46:44.358597": "2026-11-18T16:46:44Z",
    "macro:stocks:short:risk-off:2026-11-18T17:46:46.544641": "2026-11-18T17:46:46Z",
    "macro:stocks:short:risk-off:2026-11-18T17:56:46.685476": "2026-11-18T17:56:46Z",
+   "macro:stocks:short:risk-off:2026-11-18T18:16:41.153080": "2026-11-18T18:16:41Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
    "meeting:open:2026-11-18": "2026-11-18T15:16:47Z",
@@ -5617,7 +5618,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9505.85,
+  "benchmarkCad": 9508.65,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5896,11 +5897,11 @@
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-18T18:01:53Z",
-  "lastRun": "2026-11-18T18:06:51Z",
+  "lastRun": "2026-11-18T18:16:41Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 1.0% in 24 hours (risk-off). No trades: SHORT UNH came closest but failed time machine favourable. Holding 0 positions. Value $9,924.48 vs buy-and-hold $9,505.85.",
-  "lastSaved": "2026-11-18T18:06:51Z",
-  "lastStockScan": "2026-11-18T18:06:51Z",
+  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 1.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,924.48 vs buy-and-hold $9,508.65.",
+  "lastSaved": "2026-11-18T18:16:41Z",
+  "lastStockScan": "2026-11-18T18:16:41Z",
   "lastTradingDay": "2026-11-17",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
   "maxDrawdownPct": 1.06,
@@ -6267,12 +6268,6 @@
      "failed": [
       "Time machine favourable"
      ],
-     "symbol": "SHORT UNH"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
      "symbol": "SHORT XLK"
     },
     {
@@ -6283,18 +6278,13 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 51,
+   "dataCalls": 50,
    "date": "2026-11-18",
    "liquid": 2234,
    "regime": "risk-off",
    "screened": 6225,
    "summary": "Morning: The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: SHORT WFC came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,539.74.",
    "topCandidates": [
-    {
-     "score": 83,
-     "symbol": "SHORT UNH",
-     "verdict": "83/100, fell below its opening range"
-    },
     {
      "score": 77,
      "symbol": "SHORT XLK",
@@ -6306,9 +6296,14 @@
      "verdict": "71/100, fell below its opening range"
     },
     {
-     "score": 66,
+     "score": 67,
+     "symbol": "SHORT TSM",
+     "verdict": "67/100, below the 70 needed"
+    },
+    {
+     "score": 61,
      "symbol": "LONG XLP",
-     "verdict": "66/100, below the 80 needed"
+     "verdict": "61/100, below the 80 needed"
     },
     {
      "score": 56,
@@ -6353,16 +6348,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-18T18:06:51Z"
+  "updated": "2026-11-18T18:16:41Z"
  },
  "log": [
-  "Run 2026-11-18 WATCH (New York 13:06), stock market open day",
+  "Run 2026-11-18 WATCH (New York 13:16), stock market open day",
   "Stock scan: 88 long and 61 short ideas pre-screened; 7 breakouts, 6 breakdowns",
   "News model loaded",
-  "UNH: options not used (one contract costs too much for the risk budget ($1,995.00)); shares instead",
   "Borrow list unavailable: TimeoutError: timed out",
-  "Borrow data for UNH unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT UNH: Time machine favourable",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLK: Time machine favourable",
   "Borrow data for WFC unavailable (Remote end closed connection without response)",
@@ -6394,7 +6386,7 @@
    "equityCad": 9915.78
   },
   {
-   "benchmarkCad": 9505.85,
+   "benchmarkCad": 9508.65,
    "cashCad": 9924.48,
    "date": "2026-11-18",
    "equityCad": 9924.48
@@ -6405,7 +6397,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-18T18:06:51Z",
+   "checkedAt": "2026-11-18T18:16:41Z",
    "closes": "16:00",
    "date": "2026-11-18",
    "early_close": null,

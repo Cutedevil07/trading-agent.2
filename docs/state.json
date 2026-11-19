@@ -2676,6 +2676,19 @@
    "period": "2026-09-30",
    "revGrowth": 11.8
   },
+  "ORCL": {
+   "epsGrowth": 54.5,
+   "epsTtm": 6.38,
+   "fetchedOn": "2026-11-19",
+   "grossMargin": null,
+   "line": "Quarter ending 2026-08-31: revenue $19.34B (+29.6% vs a year earlier), net income $4.76B (+62.6%), diluted EPS $1.56 (+54.5%).",
+   "netMargin": 24.6,
+   "note": "",
+   "oneOff": false,
+   "opMargin": 34.8,
+   "period": "2026-08-31",
+   "revGrowth": 29.6
+  },
   "SBUX": {
    "epsGrowth": 436.4,
    "epsTtm": 2.21,
@@ -2774,19 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T15:36:49Z",
-   "count": 8
+   "at": "2026-11-19T15:46:37Z",
+   "count": 1
   },
   "messages": [
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "M6E",
-    "t": "2026-11-18T13:31:48Z",
-    "to": "all",
-    "x": "Short M6E scores 70, needs 75. Pass."
-   },
    {
     "d": "analyst",
     "k": "info",
@@ -5477,6 +5481,15 @@
     "t": "2026-11-19T15:36:49Z",
     "to": "pm",
     "x": "Blocked TSM: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T15:46:37Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 4 breakouts, 8 breakdowns. Strongest: XEL, WM, WELL, XLK."
    }
   ],
   "said": {
@@ -5646,6 +5659,7 @@
    "nothing:XLP:17": "2026-11-18T18:46:47Z",
    "nothing:XLP:18": "2026-11-18T17:26:43Z",
    "nothing:XLY:18": "2026-11-19T14:51:39Z",
+   "scan:stocks:XEL,WM,WELL,XLK:4:8": "2026-11-19T15:46:37Z",
    "scan:stocks:XEL,WMT,WM,XLK:3:8": "2026-11-19T15:26:43Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:5": "2026-11-19T15:16:42Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:8": "2026-11-19T15:36:49Z",
@@ -5695,7 +5709,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9469.3,
+  "benchmarkCad": 9457.73,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5705,7 +5719,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9918.68,
+  "equityCad": 9920.61,
   "focus": {
    "active": [
     "NVDA",
@@ -5971,11 +5985,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T15:31:49Z",
-  "lastRun": "2026-11-19T15:36:49Z",
+  "lastRun": "2026-11-19T15:46:37Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 0.6% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,918.68 vs buy-and-hold $9,469.30.",
-  "lastSaved": "2026-11-19T15:36:49Z",
-  "lastStockScan": "2026-11-19T15:36:49Z",
+  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 0.3% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,920.61 vs buy-and-hold $9,457.73.",
+  "lastSaved": "2026-11-19T15:46:37Z",
+  "lastStockScan": "2026-11-19T15:46:37Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6041,7 +6055,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4318,
+  "usdCad": 1.4322,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6430,7 +6444,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 53,
+   "dataCalls": 51,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "risk-off",
@@ -6448,11 +6462,6 @@
      "verdict": "77/100, fell below its opening range"
     },
     {
-     "score": 68,
-     "symbol": "LONG WMT",
-     "verdict": "68/100, below the 80 needed"
-    },
-    {
      "score": 66,
      "symbol": "LONG L.TO",
      "verdict": "66/100, below the 80 needed"
@@ -6461,6 +6470,11 @@
      "score": 61,
      "symbol": "LONG USFR",
      "verdict": "61/100, below the 80 needed"
+    },
+    {
+     "score": 59,
+     "symbol": "SHORT ORCL",
+     "verdict": "59/100, below the 70 needed"
     },
     {
      "score": 56,
@@ -6500,12 +6514,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T15:36:49Z"
+  "updated": "2026-11-19T15:46:37Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 10:36), stock market open day",
+  "Run 2026-11-19 WATCH (New York 10:46), stock market open day",
   "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
   "News model loaded",
+  "SEC filed numbers for ORCL: sales 29.6% y/y, operating margin 34.8%",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLK: Time machine favourable",
@@ -6544,10 +6559,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9469.3,
-   "cashCad": 9918.68,
+   "benchmarkCad": 9457.73,
+   "cashCad": 9920.61,
    "date": "2026-11-19",
-   "equityCad": 9918.68
+   "equityCad": 9920.61
   }
  ],
  "pack": {
@@ -6555,7 +6570,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T15:36:49Z",
+   "checkedAt": "2026-11-19T15:46:37Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

@@ -2754,91 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T05:31:43Z",
-   "count": 5
+   "at": "2026-11-19T07:31:42Z",
+   "count": 9
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 3,
-    "s": "",
-    "t": "2026-11-17T18:16:44Z",
-    "to": "pm",
-    "x": "Stocks are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 4,
-    "s": "XLK",
-    "t": "2026-11-17T18:16:44Z",
-    "to": "all",
-    "x": "Short XLK scores 77, needs 70. Quant and Risk, check it."
-   },
-   {
-    "d": "quant",
-    "k": "vote",
-    "n": 5,
-    "s": "XLK",
-    "t": "2026-11-17T18:16:44Z",
-    "to": "pm",
-    "x": "XLK: in 10,000 daily replays the target comes first 12%, the stop 34%. Most run out of time first. Odds are against us."
-   },
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 6,
-    "s": "XLK",
-    "t": "2026-11-17T18:16:44Z",
-    "to": "pm",
-    "x": "Blocked XLK: the replays favour the stop."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 7,
-    "s": "",
-    "t": "2026-11-17T18:16:44Z",
-    "to": "all",
-    "x": "Nothing good enough this scan. Closest: short XLK at 77, needs 70."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-17T18:26:52Z",
-    "to": "all",
-    "x": "Nothing good enough this scan. Closest: short XLK at 70, needs 80."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-17T18:56:53Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 62 short charts checked, 10 breakouts, 7 breakdowns. Strongest: XLV, XLP, XEL, XLK."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 0,
-    "s": "MYM",
-    "t": "2026-11-17T19:01:50Z",
-    "to": "pm",
-    "x": "Short MYM: no clean setup yet, chart 30/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 1,
-    "s": "MYM",
-    "t": "2026-11-17T19:01:50Z",
-    "to": "pm",
-    "x": "MYM: no fresh headlines, neutral 13/25."
-   },
    {
     "d": "strategy",
     "k": "vote",
@@ -5457,6 +5376,87 @@
     "t": "2026-11-19T05:31:43Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short M6E at 70, needs 75."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "M6E",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "pm",
+    "x": "Short M6E: no clean setup yet, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "M6E",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "pm",
+    "x": "M6E: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "pm",
+    "x": "Futures are neutral: 8/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "M6E",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "all",
+    "x": "Short M6E scores 75 but no clean setup yet. Waiting."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 4,
+    "s": "MET",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "pm",
+    "x": "Short MET: no clean setup yet, chart 20/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 5,
+    "s": "MET",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "pm",
+    "x": "MET: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 6,
+    "s": "",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "pm",
+    "x": "Futures are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 7,
+    "s": "MET",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "all",
+    "x": "Short MET scores 67, needs 70. Pass."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 8,
+    "s": "",
+    "t": "2026-11-19T07:31:42Z",
+    "to": "all",
+    "x": "Nothing to trade this scan. Short M6E scores enough but has no clean setup yet."
    }
   ],
   "said": {
@@ -5473,7 +5473,8 @@
    "futures-fit:2026-11-19:MET,M6E": "2026-11-19T05:01:45Z",
    "idea:M6E:short:17:breakdown": "2026-11-18T20:31:41Z",
    "idea:M6E:short:17:none": "2026-11-19T05:31:43Z",
-   "idea:MET:short:16:none": "2026-11-19T01:31:29Z",
+   "idea:M6E:short:18:none": "2026-11-19T07:31:42Z",
+   "idea:MET:short:16:none": "2026-11-19T07:31:42Z",
    "idea:MET:short:18:none": "2026-11-18T17:31:42Z",
    "idea:MET:short:19:breakdown": "2026-11-18T16:31:41Z",
    "idea:MET:short:19:none": "2026-11-18T15:01:59Z",
@@ -5526,6 +5527,7 @@
    "macro:futures:short:neutral:2026-11-18T17:01:37.744722": "2026-11-18T17:01:37Z",
    "macro:futures:short:neutral:2026-11-18T20:31:41.208152": "2026-11-18T20:31:41Z",
    "macro:futures:short:neutral:2026-11-19T05:31:43.351476": "2026-11-19T05:31:43Z",
+   "macro:futures:short:neutral:2026-11-19T07:31:42.317590": "2026-11-19T07:31:42Z",
    "macro:futures:short:risk-off:2026-11-17T16:01:52.768649": "2026-11-17T16:01:52Z",
    "macro:futures:short:risk-off:2026-11-17T19:01:50.565495": "2026-11-17T19:01:50Z",
    "macro:futures:short:risk-off:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
@@ -5542,6 +5544,7 @@
    "macro:futures:short:risk-off:2026-11-18T18:31:44.159598": "2026-11-18T18:31:44Z",
    "macro:futures:short:risk-off:2026-11-18T22:01:48.912015": "2026-11-18T22:01:48Z",
    "macro:futures:short:risk-off:2026-11-19T01:31:29.023653": "2026-11-19T01:31:29Z",
+   "macro:futures:short:risk-off:2026-11-19T07:31:42.317590": "2026-11-19T07:31:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5577,6 +5580,7 @@
    "mood:stocks:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
    "mood:stocks:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
    "nothing:M6E:17": "2026-11-19T05:31:43Z",
+   "nothing:M6E:18": "2026-11-19T07:31:42Z",
    "nothing:MET:15": "2026-11-19T04:01:42Z",
    "nothing:MET:16": "2026-11-19T02:01:44Z",
    "nothing:MET:18": "2026-11-18T17:31:42Z",
@@ -5642,7 +5646,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9528.73,
+  "benchmarkCad": 9520.49,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5920,11 +5924,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-18",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-19T07:01:34Z",
-  "lastRun": "2026-11-19T07:01:34Z",
+  "lastFuturesScan": "2026-11-19T07:31:42Z",
+  "lastRun": "2026-11-19T07:31:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,528.73.",
-  "lastSaved": "2026-11-19T07:01:34Z",
+  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin down 1.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,520.49.",
+  "lastSaved": "2026-11-19T07:31:42Z",
   "lastStockScan": "2026-11-18T19:46:44Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-18T13:01:44Z",
@@ -6320,14 +6324,14 @@
    "summary": "",
    "topCandidates": [
     {
-     "score": 70,
+     "score": 75,
      "symbol": "SHORT M6E",
-     "verdict": "70/100, below the 75 needed"
+     "verdict": "75/100, no clean setup yet"
     },
     {
-     "score": 62,
+     "score": 67,
      "symbol": "SHORT MET",
-     "verdict": "62/100, below the 70 needed"
+     "verdict": "67/100, below the 70 needed"
     }
    ],
    "universe": 6227
@@ -6352,10 +6356,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T07:01:34Z"
+  "updated": "2026-11-19T07:31:42Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 02:01), stock market open day"
+  "Run 2026-11-19 WATCH (New York 02:31), stock market open day"
  ],
  "nav": [
   {
@@ -6389,7 +6393,7 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9528.73,
+   "benchmarkCad": 9520.49,
    "cashCad": 9923.51,
    "date": "2026-11-19",
    "equityCad": 9923.51
@@ -6400,7 +6404,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T07:01:34Z",
+   "checkedAt": "2026-11-19T07:31:42Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

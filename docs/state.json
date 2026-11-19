@@ -2787,55 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T15:56:44Z",
-   "count": 1
+   "at": "2026-11-19T16:01:47Z",
+   "count": 5
   },
   "messages": [
-   {
-    "d": "analyst",
-    "k": "info",
-    "n": 1,
-    "s": "ADSK",
-    "t": "2026-11-18T14:01:42Z",
-    "to": "research",
-    "x": "House filing: Byron Donalds sold ADSK ($1,001 - $15,000), traded Oct 2."
-   },
-   {
-    "d": "analyst",
-    "k": "info",
-    "n": 2,
-    "s": "IBKR",
-    "t": "2026-11-18T14:01:42Z",
-    "to": "research",
-    "x": "House filing: Byron Donalds bought IBKR ($1,001 - $15,000), traded Oct 2."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "",
-    "t": "2026-11-18T14:01:42Z",
-    "to": "all",
-    "x": "Nothing to trade this scan. Short MET scores enough but has no clean setup yet."
-   },
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T14:31:46Z",
-    "to": "pm",
-    "x": "Stocks are cautious: the S&P 500 fund is between its averages."
-   },
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-18T14:31:46Z",
-    "to": "pm",
-    "x": "NYSE is open until 4:00 PM."
-   },
    {
     "d": "research",
     "k": "info",
@@ -5490,6 +5445,51 @@
     "t": "2026-11-19T15:56:44Z",
     "to": "pm",
     "x": "Stock scan: 87 long and 59 short charts checked, 3 breakouts, 8 breakdowns. Strongest: XEL, WELL, WEC, XLK."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "MET",
+    "t": "2026-11-19T16:01:47Z",
+    "to": "pm",
+    "x": "Short MET: no clean setup yet, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "MET",
+    "t": "2026-11-19T16:01:47Z",
+    "to": "pm",
+    "x": "MET: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-19T16:01:47Z",
+    "to": "pm",
+    "x": "Futures are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "MET",
+    "t": "2026-11-19T16:01:47Z",
+    "to": "all",
+    "x": "Short MET scores 77 but no clean setup yet. Waiting."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-19T16:01:47Z",
+    "to": "all",
+    "x": "Nothing to trade this scan. Short MET scores enough but has no clean setup yet."
    }
   ],
   "said": {
@@ -5512,7 +5512,7 @@
    "idea:MET:short:16:none": "2026-11-19T07:31:42Z",
    "idea:MET:short:18:none": "2026-11-19T15:31:49Z",
    "idea:MET:short:19:breakdown": "2026-11-18T16:31:41Z",
-   "idea:MET:short:19:none": "2026-11-18T15:01:59Z",
+   "idea:MET:short:19:none": "2026-11-19T16:01:47Z",
    "idea:MGC:short:18:breakdown": "2026-11-18T09:01:47Z",
    "idea:MNQ:short:16:none": "2026-11-18T05:01:48Z",
    "idea:MNQ:short:18:none": "2026-11-18T05:31:44Z",
@@ -5590,6 +5590,7 @@
    "macro:futures:short:risk-off:2026-11-19T09:01:46.686792": "2026-11-19T09:01:46Z",
    "macro:futures:short:risk-off:2026-11-19T12:31:44.415281": "2026-11-19T12:31:44Z",
    "macro:futures:short:risk-off:2026-11-19T15:31:49.613020": "2026-11-19T15:31:49Z",
+   "macro:futures:short:risk-off:2026-11-19T16:01:47.202724": "2026-11-19T16:01:47Z",
    "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5637,7 +5638,7 @@
    "nothing:MET:15": "2026-11-19T04:01:42Z",
    "nothing:MET:16": "2026-11-19T02:01:44Z",
    "nothing:MET:18": "2026-11-18T17:31:42Z",
-   "nothing:MET:19": "2026-11-18T16:31:41Z",
+   "nothing:MET:19": "2026-11-19T16:01:47Z",
    "nothing:MGC:16": "2026-11-18T01:01:39Z",
    "nothing:MNQ:19": "2026-11-18T07:31:59Z",
    "nothing:MYM:16": "2026-11-18T03:31:46Z",
@@ -5710,7 +5711,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9462.69,
+  "benchmarkCad": 9470.6,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5720,7 +5721,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9917.71,
+  "equityCad": 9916.26,
   "focus": {
    "active": [
     "NVDA",
@@ -5985,11 +5986,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-19T15:31:49Z",
-  "lastRun": "2026-11-19T15:56:44Z",
+  "lastFuturesScan": "2026-11-19T16:01:47Z",
+  "lastRun": "2026-11-19T16:01:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,917.71 vs buy-and-hold $9,462.69.",
-  "lastSaved": "2026-11-19T15:56:44Z",
+  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin up 0.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,916.26 vs buy-and-hold $9,470.60.",
+  "lastSaved": "2026-11-19T16:01:47Z",
   "lastStockScan": "2026-11-19T15:56:44Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
@@ -6056,7 +6057,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4316,
+  "usdCad": 1.4313,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6430,22 +6431,9 @@
    "universe": 6227
   },
   {
-   "blocked": [
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT XLK"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT TSM"
-    }
-   ],
+   "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 50,
+   "dataCalls": 18,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "risk-off",
@@ -6453,44 +6441,14 @@
    "summary": "Morning: The S&P 500 fund was up 0.5% today; market mood cautious. Bitcoin down 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,532.20.",
    "topCandidates": [
     {
-     "score": 82,
-     "symbol": "SHORT XLK",
-     "verdict": "82/100, fell below its opening range"
-    },
-    {
      "score": 77,
-     "symbol": "SHORT TSM",
-     "verdict": "77/100, fell below its opening range"
+     "symbol": "SHORT MET",
+     "verdict": "77/100, no clean setup yet"
     },
     {
-     "score": 61,
-     "symbol": "LONG USFR",
-     "verdict": "61/100, below the 80 needed"
-    },
-    {
-     "score": 61,
-     "symbol": "LONG L.TO",
-     "verdict": "61/100, below the 80 needed"
-    },
-    {
-     "score": 59,
-     "symbol": "SHORT ORCL",
-     "verdict": "59/100, below the 70 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG VBIL",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG TRP.TO",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 55,
-     "symbol": "LONG WELL",
-     "verdict": "55/100, below the 80 needed"
+     "score": 75,
+     "symbol": "SHORT M6E",
+     "verdict": "75/100, no clean setup yet"
     }
    ],
    "universe": 6226
@@ -6515,17 +6473,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T15:56:44Z"
+  "updated": "2026-11-19T16:01:47Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 10:56), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 3 breakouts, 8 breakdowns",
-  "News model loaded",
-  "Borrow list unavailable: TimeoutError: timed out",
-  "Borrow data for XLK unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT XLK: Time machine favourable",
-  "Borrow data for TSM unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT TSM: Time machine favourable"
+  "Run 2026-11-19 WATCH (New York 11:01), stock market open day"
  ],
  "nav": [
   {
@@ -6559,10 +6510,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9462.69,
-   "cashCad": 9917.71,
+   "benchmarkCad": 9470.6,
+   "cashCad": 9916.26,
    "date": "2026-11-19",
-   "equityCad": 9917.71
+   "equityCad": 9916.26
   }
  ],
  "pack": {
@@ -6570,7 +6521,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T15:56:44Z",
+   "checkedAt": "2026-11-19T16:01:47Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

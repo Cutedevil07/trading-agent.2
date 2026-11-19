@@ -2774,136 +2774,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T15:16:42Z",
-   "count": 6
+   "at": "2026-11-19T15:26:43Z",
+   "count": 14
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 0,
-    "s": "MGC",
-    "t": "2026-11-18T09:01:47Z",
-    "to": "pm",
-    "x": "Short MGC: new 20-day low on heavy volume, chart 30/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 1,
-    "s": "MGC",
-    "t": "2026-11-18T09:01:47Z",
-    "to": "pm",
-    "x": "MGC: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-18T09:01:47Z",
-    "to": "pm",
-    "x": "Futures are neutral: 8/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "MGC",
-    "t": "2026-11-18T09:01:47Z",
-    "to": "all",
-    "x": "Short MGC scores 75, needs 75. Quant and Risk, check it."
-   },
-   {
-    "d": "quant",
-    "k": "vote",
-    "n": 4,
-    "s": "MGC",
-    "t": "2026-11-18T09:01:47Z",
-    "to": "pm",
-    "x": "MGC: in 10,000 daily replays the target comes first 27%, the stop 55%. Odds are against us."
-   },
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 5,
-    "s": "MGC",
-    "t": "2026-11-18T09:01:47Z",
-    "to": "pm",
-    "x": "Blocked MGC: the loss at the stop is too big; it's too big for its limit; the daily loss limit is hit."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "pm",
-    "x": "Data check: options backup ok, borrow list not answering, economic calendar ok, SEC filings on."
-   },
-   {
-    "d": "risk",
-    "k": "check",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "research",
-    "x": "Futures that fit the account today: MET, M6E. Too big for one contract: MES, MNQ, MYM, M2K, MGC, SIL, MCL, MBT."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 2,
-    "s": "MET",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "pm",
-    "x": "Short MET: no clean setup yet, chart 20/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 3,
-    "s": "MET",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "pm",
-    "x": "MET: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 4,
-    "s": "",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "pm",
-    "x": "Futures are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 5,
-    "s": "MET",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "all",
-    "x": "Short MET scores 72 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 6,
-    "s": "M6E",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "pm",
-    "x": "Short M6E: new 20-day low on heavy volume, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 7,
-    "s": "M6E",
-    "t": "2026-11-18T10:01:48Z",
-    "to": "pm",
-    "x": "M6E: no fresh headlines, neutral 13/25."
-   },
    {
     "d": "strategy",
     "k": "vote",
@@ -5477,6 +5351,132 @@
     "t": "2026-11-19T15:16:42Z",
     "to": "all",
     "x": "Long USFR scores 74, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 3 breakouts, 8 breakdowns. Strongest: XEL, WMT, WM, XLK."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "XLK",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "Short XLK: fell below its opening range, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "XLK",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "XLK: 1 fresh headline, mostly bad; 18/25. Top: \"What State Street Technology SPDR (XLK) Sold: Apple Leads on...\""
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 3,
+    "s": "",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "XLK",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "all",
+    "x": "Short XLK scores 82, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 5,
+    "s": "XLK",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "XLK: in 10,000 5-minute replays the target comes first 1%, the stop 14%. Most run out of time first. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 6,
+    "s": "XLK",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "Blocked XLK: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 7,
+    "s": "NFLX",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "Short NFLX: fell below its opening range, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 8,
+    "s": "NFLX",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "NFLX: 3 fresh headlines, mostly bad; 23/25. Top: \"With Netflix Stock Down Nearly 46% In The Last Year, Michael...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 9,
+    "s": "NFLX",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "NFLX: filed: operating margin 35%, sales +12%, P/E 17, debt/equity 0.5, target +43%; 1/15."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 10,
+    "s": "NFLX",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "all",
+    "x": "Short NFLX scores 74, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 11,
+    "s": "NFLX",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "NFLX: in 10,000 5-minute replays the target comes first 1%, the stop 16%. Most run out of time first. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 12,
+    "s": "NFLX",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "pm",
+    "x": "Blocked NFLX: the replays favour the stop."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 13,
+    "s": "",
+    "t": "2026-11-19T15:26:43Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short XLK at 82, needs 70."
    }
   ],
   "said": {
@@ -5508,6 +5508,7 @@
    "idea:MYM:short:19:none": "2026-11-18T08:31:50Z",
    "idea:MYM:short:20:breakdown": "2026-11-17T16:01:52Z",
    "idea:NFLX:short:17:breakdown": "2026-11-18T15:26:37Z",
+   "idea:NFLX:short:18:breakdown": "2026-11-19T15:26:43Z",
    "idea:SBUX:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
    "idea:SNDK:short:17:breakdown": "2026-11-18T15:11:44Z",
@@ -5534,7 +5535,7 @@
    "idea:XLK:short:18:breakdown": "2026-11-18T18:36:35Z",
    "idea:XLK:short:18:none": "2026-11-18T15:01:59Z",
    "idea:XLK:short:19:breakdown": "2026-11-18T17:46:46Z",
-   "idea:XLK:short:20:breakdown": "2026-11-18T16:46:44Z",
+   "idea:XLK:short:20:breakdown": "2026-11-19T15:26:43Z",
    "idea:XLK:short:20:none": "2026-11-18T14:51:48Z",
    "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:XLP:long:18:none": "2026-11-18T15:01:59Z",
@@ -5600,6 +5601,7 @@
    "macro:stocks:short:risk-off:2026-11-18T18:16:41.153080": "2026-11-18T18:16:41Z",
    "macro:stocks:short:risk-off:2026-11-18T18:36:35.348648": "2026-11-18T18:36:35Z",
    "macro:stocks:short:risk-off:2026-11-18T19:06:53.584775": "2026-11-18T19:06:53Z",
+   "macro:stocks:short:risk-off:2026-11-19T15:26:43.629295": "2026-11-19T15:26:43Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
@@ -5637,10 +5639,11 @@
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
    "nothing:XLK:18": "2026-11-18T18:36:35Z",
    "nothing:XLK:19": "2026-11-18T17:56:46Z",
-   "nothing:XLK:20": "2026-11-18T16:56:44Z",
+   "nothing:XLK:20": "2026-11-19T15:26:43Z",
    "nothing:XLP:17": "2026-11-18T18:46:47Z",
    "nothing:XLP:18": "2026-11-18T17:26:43Z",
    "nothing:XLY:18": "2026-11-19T14:51:39Z",
+   "scan:stocks:XEL,WMT,WM,XLK:3:8": "2026-11-19T15:26:43Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:5": "2026-11-19T15:16:42Z",
    "scan:stocks:XLP,XEL,WMT,XLK:0:0": "2026-11-18T14:51:48Z",
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
@@ -5688,7 +5691,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9532.2,
+  "benchmarkCad": 9511.87,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5698,7 +5701,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9914.33,
+  "equityCad": 9916.26,
   "focus": {
    "active": [
     "NVDA",
@@ -5964,11 +5967,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T15:01:42Z",
-  "lastRun": "2026-11-19T15:16:42Z",
+  "lastRun": "2026-11-19T15:26:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.5% today; market mood cautious. Bitcoin down 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,532.20.",
-  "lastSaved": "2026-11-19T15:16:42Z",
-  "lastStockScan": "2026-11-19T15:16:42Z",
+  "lastRunNote": "The S&P 500 fund was up 0.1% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,916.26 vs buy-and-hold $9,511.87.",
+  "lastSaved": "2026-11-19T15:26:43Z",
+  "lastStockScan": "2026-11-19T15:26:43Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6034,7 +6037,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4309,
+  "usdCad": 1.4313,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6397,54 +6400,67 @@
    "universe": 6227
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLK"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT NFLX"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 47,
+   "dataCalls": 49,
    "date": "2026-11-19",
    "liquid": 2254,
-   "regime": "cautious",
+   "regime": "risk-off",
    "screened": 6224,
    "summary": "Morning: The S&P 500 fund was up 0.5% today; market mood cautious. Bitcoin down 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,532.20.",
    "topCandidates": [
     {
-     "score": 78,
-     "symbol": "LONG WMT",
-     "verdict": "78/100, below the 80 needed"
-    },
-    {
-     "score": 75,
-     "symbol": "SHORT XLI",
-     "verdict": "75/100, below the 80 needed"
+     "score": 82,
+     "symbol": "SHORT XLK",
+     "verdict": "82/100, fell below its opening range"
     },
     {
      "score": 74,
-     "symbol": "LONG USFR",
-     "verdict": "74/100, below the 80 needed"
-    },
-    {
-     "score": 74,
-     "symbol": "LONG L.TO",
-     "verdict": "74/100, below the 80 needed"
+     "symbol": "SHORT NFLX",
+     "verdict": "74/100, fell below its opening range"
     },
     {
      "score": 68,
-     "symbol": "LONG WELL",
+     "symbol": "LONG WMT",
      "verdict": "68/100, below the 80 needed"
     },
     {
-     "score": 67,
-     "symbol": "SHORT NFLX",
-     "verdict": "67/100, below the 80 needed"
+     "score": 66,
+     "symbol": "LONG L.TO",
+     "verdict": "66/100, below the 80 needed"
     },
     {
-     "score": 64,
+     "score": 61,
+     "symbol": "LONG USFR",
+     "verdict": "61/100, below the 80 needed"
+    },
+    {
+     "score": 60,
+     "symbol": "LONG WELL",
+     "verdict": "60/100, below the 80 needed"
+    },
+    {
+     "score": 56,
      "symbol": "LONG VBIL",
-     "verdict": "64/100, below the 80 needed"
+     "verdict": "56/100, below the 80 needed"
     },
     {
-     "score": 64,
+     "score": 56,
      "symbol": "LONG TRP.TO",
-     "verdict": "64/100, below the 80 needed"
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6226
@@ -6469,12 +6485,17 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T15:16:42Z"
+  "updated": "2026-11-19T15:26:43Z"
  },
  "log": [
-  "Run 2026-11-19 OPEN (New York 10:16), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 5 breakdowns",
-  "News model loaded"
+  "Run 2026-11-19 WATCH (New York 10:26), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 3 breakouts, 8 breakdowns",
+  "News model loaded",
+  "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for XLK unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT XLK: Time machine favourable",
+  "Borrow data for NFLX unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT NFLX: Time machine favourable"
  ],
  "nav": [
   {
@@ -6508,10 +6529,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9532.2,
-   "cashCad": 9914.33,
+   "benchmarkCad": 9511.87,
+   "cashCad": 9916.26,
    "date": "2026-11-19",
-   "equityCad": 9914.33
+   "equityCad": 9916.26
   }
  ],
  "pack": {
@@ -6519,7 +6540,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T15:16:42Z",
+   "checkedAt": "2026-11-19T15:26:43Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

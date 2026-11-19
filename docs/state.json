@@ -2787,64 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T17:16:43Z",
-   "count": 7
+   "at": "2026-11-19T17:26:37Z",
+   "count": 6
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 9,
-    "s": "SNDK",
-    "t": "2026-11-18T15:11:44Z",
-    "to": "pm",
-    "x": "SNDK: 1 fresh headline, mixed; 13/25. Top: \"ETFs Are Net Sellers of SanDisk (SNDK) on Nov. 16\""
-   },
-   {
-    "d": "analyst",
-    "k": "vote",
-    "n": 10,
-    "s": "SNDK",
-    "t": "2026-11-18T15:11:44Z",
-    "to": "pm",
-    "x": "SNDK: filed: operating margin 80%, sales +378%, P/E 11, debt/equity 0.0, target +160%; 0/15."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 11,
-    "s": "SNDK",
-    "t": "2026-11-18T15:11:44Z",
-    "to": "all",
-    "x": "Short SNDK scores 68, needs 70. Pass."
-   },
-   {
-    "d": "pm",
-    "k": "meeting",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T15:16:47Z",
-    "to": "all",
-    "x": "Morning meeting: value $9,923.51, 0 positions held, stocks risk off, crypto risk off. Let's find setups."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-18T15:16:47Z",
-    "to": "pm",
-    "x": "Stock scan: 88 long and 61 short charts checked, 2 breakouts, 3 breakdowns. Strongest: XLP, XEL, WMT, XLK."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T15:26:37Z",
-    "to": "pm",
-    "x": "Stock scan: 88 long and 61 short charts checked, 3 breakouts, 2 breakdowns. Strongest: XLP, XEL, WMT, XLK."
-   },
    {
     "d": "research",
     "k": "info",
@@ -5490,6 +5436,60 @@
     "t": "2026-11-19T17:16:43Z",
     "to": "pm",
     "x": "Blocked ORCL: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T17:26:37Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 2 breakouts, 8 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "ORCL",
+    "t": "2026-11-19T17:26:37Z",
+    "to": "pm",
+    "x": "Short ORCL: fell below its opening range, chart 20/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "ORCL",
+    "t": "2026-11-19T17:26:37Z",
+    "to": "pm",
+    "x": "ORCL: 3 fresh headlines, mostly bad; 23/25. Top: \"Why Is Oracle Spending $1.61 For Every Cash Dollar?\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 3,
+    "s": "ORCL",
+    "t": "2026-11-19T17:26:37Z",
+    "to": "pm",
+    "x": "ORCL: filed: operating margin 35%, sales +30%, P/E 20, debt/equity 1.9, target +98%; 1/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-19T17:26:37Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 5,
+    "s": "ORCL",
+    "t": "2026-11-19T17:26:37Z",
+    "to": "all",
+    "x": "Short ORCL scores 69, needs 70. Pass."
    }
   ],
   "said": {
@@ -5524,6 +5524,7 @@
    "idea:NFLX:short:18:breakdown": "2026-11-19T15:26:43Z",
    "idea:NFLX:short:19:breakdown": "2026-11-19T16:06:46Z",
    "idea:ORCL:short:16:breakdown": "2026-11-19T17:06:37Z",
+   "idea:ORCL:short:17:breakdown": "2026-11-19T17:26:37Z",
    "idea:ORCL:short:18:breakdown": "2026-11-19T17:16:43Z",
    "idea:SBUX:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
@@ -5630,6 +5631,7 @@
    "macro:stocks:short:risk-off:2026-11-19T16:56:55.259466": "2026-11-19T16:56:55Z",
    "macro:stocks:short:risk-off:2026-11-19T17:06:37.289703": "2026-11-19T17:06:37Z",
    "macro:stocks:short:risk-off:2026-11-19T17:16:43.249245": "2026-11-19T17:16:43Z",
+   "macro:stocks:short:risk-off:2026-11-19T17:26:37.456377": "2026-11-19T17:26:37Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
@@ -5683,6 +5685,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:2": "2026-11-18T15:11:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:3": "2026-11-18T15:16:47Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:2:8": "2026-11-19T17:26:37Z",
    "scan:stocks:XLP,XEL,WMT,XLK:3:2": "2026-11-18T15:26:37Z",
    "scan:stocks:XLP,XEL,WMT,XLK:3:6": "2026-11-18T16:56:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:2": "2026-11-18T15:36:37Z",
@@ -5728,7 +5731,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9352.35,
+  "benchmarkCad": 9438.04,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5738,7 +5741,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9918.68,
+  "equityCad": 9916.26,
   "focus": {
    "active": [
     "NVDA",
@@ -6004,11 +6007,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T17:01:44Z",
-  "lastRun": "2026-11-19T17:16:43Z",
+  "lastRun": "2026-11-19T17:26:37Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.5% today; market mood risk-off. Bitcoin down 1.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,918.68 vs buy-and-hold $9,352.35.",
-  "lastSaved": "2026-11-19T17:16:43Z",
-  "lastStockScan": "2026-11-19T17:16:43Z",
+  "lastRunNote": "The S&P 500 fund was down 0.7% today; market mood risk-off. Bitcoin down 0.6% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,916.26 vs buy-and-hold $9,438.04.",
+  "lastSaved": "2026-11-19T17:26:37Z",
+  "lastStockScan": "2026-11-19T17:26:37Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6074,7 +6077,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4318,
+  "usdCad": 1.4313,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6454,16 +6457,10 @@
       "Time machine favourable"
      ],
      "symbol": "SHORT XLK"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT ORCL"
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 50,
+   "dataCalls": 49,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "risk-off",
@@ -6476,9 +6473,9 @@
      "verdict": "87/100, fell below its opening range"
     },
     {
-     "score": 74,
+     "score": 69,
      "symbol": "SHORT ORCL",
-     "verdict": "74/100, fell below its opening range"
+     "verdict": "69/100, below the 70 needed"
     },
     {
      "score": 67,
@@ -6492,7 +6489,7 @@
     },
     {
      "score": 61,
-     "symbol": "LONG USFR",
+     "symbol": "LONG XLP",
      "verdict": "61/100, below the 80 needed"
     },
     {
@@ -6533,17 +6530,15 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T17:16:43Z"
+  "updated": "2026-11-19T17:26:37Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 12:16), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
+  "Run 2026-11-19 WATCH (New York 12:26), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 2 breakouts, 8 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT XLK: Time machine favourable",
-  "Borrow data for ORCL unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT ORCL: Time machine favourable"
+  "BLOCK SHORT XLK: Time machine favourable"
  ],
  "nav": [
   {
@@ -6577,10 +6572,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9352.35,
-   "cashCad": 9918.68,
+   "benchmarkCad": 9438.04,
+   "cashCad": 9916.26,
    "date": "2026-11-19",
-   "equityCad": 9918.68
+   "equityCad": 9916.26
   }
  ],
  "pack": {
@@ -6588,7 +6583,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T17:16:43Z",
+   "checkedAt": "2026-11-19T17:26:37Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

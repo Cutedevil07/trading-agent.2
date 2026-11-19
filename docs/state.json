@@ -5736,7 +5736,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9393.16,
+  "benchmarkCad": 9397.13,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6012,11 +6012,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T19:31:36Z",
-  "lastRun": "2026-11-19T19:31:36Z",
+  "lastRun": "2026-11-19T19:36:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin down 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,393.16.",
-  "lastSaved": "2026-11-19T19:31:36Z",
-  "lastStockScan": "2026-11-19T19:26:47Z",
+  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,397.13.",
+  "lastSaved": "2026-11-19T19:36:42Z",
+  "lastStockScan": "2026-11-19T19:36:42Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6456,9 +6456,22 @@
    "universe": 6227
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLK"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT ORCL"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 18,
+   "dataCalls": 50,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "risk-off",
@@ -6466,14 +6479,44 @@
    "summary": "Morning: The S&P 500 fund was up 0.5% today; market mood cautious. Bitcoin down 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,532.20.",
    "topCandidates": [
     {
-     "score": 75,
-     "symbol": "SHORT M6E",
-     "verdict": "75/100, no clean setup yet"
+     "score": 82,
+     "symbol": "SHORT XLK",
+     "verdict": "82/100, fell below its opening range"
     },
     {
-     "score": 67,
-     "symbol": "SHORT MET",
-     "verdict": "67/100, below the 70 needed"
+     "score": 74,
+     "symbol": "SHORT ORCL",
+     "verdict": "74/100, fell below its opening range"
+    },
+    {
+     "score": 59,
+     "symbol": "SHORT TSM",
+     "verdict": "59/100, below the 70 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG PG",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG XLP",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG VBIL",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WN.TO",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG TRP.TO",
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6226
@@ -6498,10 +6541,17 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T19:31:36Z"
+  "updated": "2026-11-19T19:36:42Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 14:31), stock market open day"
+  "Run 2026-11-19 WATCH (New York 14:36), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
+  "News model loaded",
+  "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for XLK unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT XLK: Time machine favourable",
+  "Borrow data for ORCL unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT ORCL: Time machine favourable"
  ],
  "nav": [
   {
@@ -6535,7 +6585,7 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9393.16,
+   "benchmarkCad": 9397.13,
    "cashCad": 9925.44,
    "date": "2026-11-19",
    "equityCad": 9925.44
@@ -6546,7 +6596,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T19:31:36Z",
+   "checkedAt": "2026-11-19T19:36:42Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

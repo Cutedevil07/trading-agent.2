@@ -2787,19 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T15:46:37Z",
+   "at": "2026-11-19T15:56:44Z",
    "count": 1
   },
   "messages": [
-   {
-    "d": "analyst",
-    "k": "info",
-    "n": 0,
-    "s": "ADSK",
-    "t": "2026-11-18T14:01:42Z",
-    "to": "research",
-    "x": "House filing: Byron Donalds sold ADSK ($1,001 - $15,000), traded Oct 2."
-   },
    {
     "d": "analyst",
     "k": "info",
@@ -5490,6 +5481,15 @@
     "t": "2026-11-19T15:46:37Z",
     "to": "pm",
     "x": "Stock scan: 87 long and 59 short charts checked, 4 breakouts, 8 breakdowns. Strongest: XEL, WM, WELL, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T15:56:44Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 3 breakouts, 8 breakdowns. Strongest: XEL, WELL, WEC, XLK."
    }
   ],
   "said": {
@@ -5659,6 +5659,7 @@
    "nothing:XLP:17": "2026-11-18T18:46:47Z",
    "nothing:XLP:18": "2026-11-18T17:26:43Z",
    "nothing:XLY:18": "2026-11-19T14:51:39Z",
+   "scan:stocks:XEL,WELL,WEC,XLK:3:8": "2026-11-19T15:56:44Z",
    "scan:stocks:XEL,WM,WELL,XLK:4:8": "2026-11-19T15:46:37Z",
    "scan:stocks:XEL,WMT,WM,XLK:3:8": "2026-11-19T15:26:43Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:5": "2026-11-19T15:16:42Z",
@@ -5709,7 +5710,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9457.73,
+  "benchmarkCad": 9462.69,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5719,7 +5720,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9920.61,
+  "equityCad": 9917.71,
   "focus": {
    "active": [
     "NVDA",
@@ -5985,11 +5986,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T15:31:49Z",
-  "lastRun": "2026-11-19T15:46:37Z",
+  "lastRun": "2026-11-19T15:56:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 0.3% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,920.61 vs buy-and-hold $9,457.73.",
-  "lastSaved": "2026-11-19T15:46:37Z",
-  "lastStockScan": "2026-11-19T15:46:37Z",
+  "lastRunNote": "The S&P 500 fund was down 0.4% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,917.71 vs buy-and-hold $9,462.69.",
+  "lastSaved": "2026-11-19T15:56:44Z",
+  "lastStockScan": "2026-11-19T15:56:44Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6055,7 +6056,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4322,
+  "usdCad": 1.4316,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6444,7 +6445,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 51,
+   "dataCalls": 50,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "risk-off",
@@ -6462,13 +6463,13 @@
      "verdict": "77/100, fell below its opening range"
     },
     {
-     "score": 66,
-     "symbol": "LONG L.TO",
-     "verdict": "66/100, below the 80 needed"
+     "score": 61,
+     "symbol": "LONG USFR",
+     "verdict": "61/100, below the 80 needed"
     },
     {
      "score": 61,
-     "symbol": "LONG USFR",
+     "symbol": "LONG L.TO",
      "verdict": "61/100, below the 80 needed"
     },
     {
@@ -6487,9 +6488,9 @@
      "verdict": "56/100, below the 80 needed"
     },
     {
-     "score": 56,
-     "symbol": "LONG PPL.TO",
-     "verdict": "56/100, below the 80 needed"
+     "score": 55,
+     "symbol": "LONG WELL",
+     "verdict": "55/100, below the 80 needed"
     }
    ],
    "universe": 6226
@@ -6514,13 +6515,12 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T15:46:37Z"
+  "updated": "2026-11-19T15:56:44Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 10:46), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
+  "Run 2026-11-19 WATCH (New York 10:56), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 3 breakouts, 8 breakdowns",
   "News model loaded",
-  "SEC filed numbers for ORCL: sales 29.6% y/y, operating margin 34.8%",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLK: Time machine favourable",
@@ -6559,10 +6559,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9457.73,
-   "cashCad": 9920.61,
+   "benchmarkCad": 9462.69,
+   "cashCad": 9917.71,
    "date": "2026-11-19",
-   "equityCad": 9920.61
+   "equityCad": 9917.71
   }
  ],
  "pack": {
@@ -6570,7 +6570,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T15:46:37Z",
+   "checkedAt": "2026-11-19T15:56:44Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

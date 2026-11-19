@@ -5714,7 +5714,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9467.8,
+  "benchmarkCad": 9464.22,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5990,11 +5990,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T16:01:47Z",
-  "lastRun": "2026-11-19T16:16:52Z",
+  "lastRun": "2026-11-19T16:26:33Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin up 1.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,467.80.",
-  "lastSaved": "2026-11-19T16:16:52Z",
-  "lastStockScan": "2026-11-19T16:16:52Z",
+  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin up 0.8% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,464.22.",
+  "lastSaved": "2026-11-19T16:26:33Z",
+  "lastStockScan": "2026-11-19T16:26:33Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6492,9 +6492,9 @@
      "verdict": "56/100, below the 80 needed"
     },
     {
-     "score": 56,
-     "symbol": "LONG PPL.TO",
-     "verdict": "56/100, below the 80 needed"
+     "score": 55,
+     "symbol": "LONG WELL",
+     "verdict": "55/100, below the 80 needed"
     }
    ],
    "universe": 6226
@@ -6519,10 +6519,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T16:16:52Z"
+  "updated": "2026-11-19T16:26:33Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 11:16), stock market open day",
+  "Run 2026-11-19 WATCH (New York 11:26), stock market open day",
   "Stock scan: 87 long and 59 short ideas pre-screened; 3 breakouts, 8 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
@@ -6563,7 +6563,7 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9467.8,
+   "benchmarkCad": 9464.22,
    "cashCad": 9914.33,
    "date": "2026-11-19",
    "equityCad": 9914.33
@@ -6574,7 +6574,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T16:16:52Z",
+   "checkedAt": "2026-11-19T16:26:33Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

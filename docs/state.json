@@ -2754,28 +2754,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T14:01:44Z",
-   "count": 4
+   "at": "2026-11-19T14:31:36Z",
+   "count": 2
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 1,
-    "s": "SIL",
-    "t": "2026-11-17T23:31:48Z",
-    "to": "pm",
-    "x": "SIL: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-17T23:31:48Z",
-    "to": "pm",
-    "x": "Futures are neutral: 8/15 for a short."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5457,6 +5439,24 @@
     "t": "2026-11-19T14:01:44Z",
     "to": "all",
     "x": "Short M6E scores 75 but no clean setup yet. Waiting."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T14:31:36Z",
+    "to": "pm",
+    "x": "Stocks are cautious: the S&P 500 fund is between its averages."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-19T14:31:36Z",
+    "to": "pm",
+    "x": "NYSE is open until 4:00 PM."
    }
   ],
   "said": {
@@ -5467,6 +5467,7 @@
    "clock:closed:2026-11-19:before the open": "2026-11-19T05:01:45Z",
    "clock:open:2026-11-17": "2026-11-17T14:31:41Z",
    "clock:open:2026-11-18": "2026-11-18T14:31:46Z",
+   "clock:open:2026-11-19": "2026-11-19T14:31:36Z",
    "futures-closed:2026-11-17": "2026-11-17T23:01:44Z",
    "futures-closed:2026-11-18": "2026-11-18T23:01:38Z",
    "futures-fit:2026-11-18:MET,M6E": "2026-11-18T10:01:48Z",
@@ -5580,6 +5581,7 @@
    "mood:crypto:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
    "mood:stocks:cautious:2026-11-17": "2026-11-17T09:31:47Z",
    "mood:stocks:cautious:2026-11-18": "2026-11-18T14:31:46Z",
+   "mood:stocks:cautious:2026-11-19": "2026-11-19T14:31:36Z",
    "mood:stocks:risk-off:2026-11-17": "2026-11-17T15:46:35Z",
    "mood:stocks:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
    "mood:stocks:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
@@ -5650,7 +5652,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9517.23,
+  "benchmarkCad": 9587.31,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5925,11 +5927,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-19T14:01:44Z",
-  "lastRun": "2026-11-19T14:01:44Z",
+  "lastFuturesScan": "2026-11-19T14:31:36Z",
+  "lastRun": "2026-11-19T14:31:36Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin up 0.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,908.53 vs buy-and-hold $9,517.23.",
-  "lastSaved": "2026-11-19T14:01:44Z",
+  "lastRunNote": "The S&P 500 fund was up 1.1% today; market mood cautious. Bitcoin up 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,908.53 vs buy-and-hold $9,587.31.",
+  "lastSaved": "2026-11-19T14:31:36Z",
   "lastStockScan": "2026-11-18T19:46:44Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
@@ -6320,7 +6322,7 @@
    "dataCalls": 18,
    "date": "2026-11-19",
    "liquid": 2254,
-   "regime": "risk-off",
+   "regime": "cautious",
    "screened": 6224,
    "summary": "",
    "topCandidates": [
@@ -6357,11 +6359,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T14:01:44Z"
+  "updated": "2026-11-19T14:31:36Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 09:01), stock market open day",
-  "Congress tracker: 0 new House reports, 0 read"
+  "Run 2026-11-19 WATCH (New York 09:31), stock market open day"
  ],
  "nav": [
   {
@@ -6395,7 +6396,7 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9517.23,
+   "benchmarkCad": 9587.31,
    "cashCad": 9908.53,
    "date": "2026-11-19",
    "equityCad": 9908.53
@@ -6406,14 +6407,14 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T14:01:44Z",
+   "checkedAt": "2026-11-19T14:31:36Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,
-   "next_open": "2026-11-19 09:30",
-   "open": false,
+   "next_open": "2026-11-20 09:30",
+   "open": true,
    "opens": "09:30",
-   "reason": "before the open"
+   "reason": "regular session"
   }
  },
  "positions": {},

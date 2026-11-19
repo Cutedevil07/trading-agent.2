@@ -2787,64 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T16:36:43Z",
-   "count": 1
+   "at": "2026-11-19T16:46:43Z",
+   "count": 6
   },
   "messages": [
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 9,
-    "s": "TSM",
-    "t": "2026-11-18T14:51:48Z",
-    "to": "all",
-    "x": "Short TSM scores 77 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 10,
-    "s": "WFC",
-    "t": "2026-11-18T14:51:48Z",
-    "to": "pm",
-    "x": "Short WFC: no clean setup yet, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 11,
-    "s": "WFC",
-    "t": "2026-11-18T14:51:48Z",
-    "to": "pm",
-    "x": "WFC: 2 fresh headlines, mostly bad; 17/25. Top: \"Investors Heavily Search Wells Fargo & Company (WFC): Here is...\""
-   },
-   {
-    "d": "analyst",
-    "k": "vote",
-    "n": 12,
-    "s": "WFC",
-    "t": "2026-11-18T14:51:48Z",
-    "to": "pm",
-    "x": "WFC: sales +2%, P/E 12, debt/equity 1.8, target +22%; 4/15."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 13,
-    "s": "WFC",
-    "t": "2026-11-18T14:51:48Z",
-    "to": "all",
-    "x": "Short WFC scores 71 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 14,
-    "s": "",
-    "t": "2026-11-18T14:51:48Z",
-    "to": "all",
-    "x": "Nothing to trade this scan. Short XLK scores enough but has no clean setup yet."
-   },
    {
     "d": "research",
     "k": "info",
@@ -5490,6 +5436,60 @@
     "t": "2026-11-19T16:36:43Z",
     "to": "pm",
     "x": "Stock scan: 87 long and 59 short charts checked, 4 breakouts, 8 breakdowns. Strongest: XEL, WMT, WELL, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T16:46:43Z",
+    "to": "pm",
+    "x": "TSX scan: 76 Canadian charts checked. Strongest: WN.TO, TRP.TO, SAP.TO."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "TSM",
+    "t": "2026-11-19T16:46:43Z",
+    "to": "pm",
+    "x": "Short TSM: fell below its opening range, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "TSM",
+    "t": "2026-11-19T16:46:43Z",
+    "to": "pm",
+    "x": "TSM: 2 fresh headlines, mostly good; 8/25. Top: \"Here\u2019s What Weighed on Taiwan Semiconductor Manufacturing...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 3,
+    "s": "TSM",
+    "t": "2026-11-19T16:46:43Z",
+    "to": "pm",
+    "x": "TSM: company numbers unavailable today, neutral 9/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-19T16:46:43Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 5,
+    "s": "TSM",
+    "t": "2026-11-19T16:46:43Z",
+    "to": "all",
+    "x": "Short TSM scores 67, needs 70. Pass."
    }
   ],
   "said": {
@@ -5527,7 +5527,7 @@
    "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
    "idea:SNDK:short:17:breakdown": "2026-11-18T15:11:44Z",
    "idea:SNDK:short:19:breakdown": "2026-11-17T15:11:45Z",
-   "idea:TSM:short:16:breakdown": "2026-11-18T17:56:46Z",
+   "idea:TSM:short:16:breakdown": "2026-11-19T16:46:43Z",
    "idea:TSM:short:19:breakdown": "2026-11-19T15:36:49Z",
    "idea:TSM:short:19:none": "2026-11-18T14:51:48Z",
    "idea:UNH:short:19:breakdown": "2026-11-18T15:46:31Z",
@@ -5621,6 +5621,7 @@
    "macro:stocks:short:risk-off:2026-11-19T15:26:43.629295": "2026-11-19T15:26:43Z",
    "macro:stocks:short:risk-off:2026-11-19T15:36:49.046547": "2026-11-19T15:36:49Z",
    "macro:stocks:short:risk-off:2026-11-19T16:06:46.406397": "2026-11-19T16:06:46Z",
+   "macro:stocks:short:risk-off:2026-11-19T16:46:43.621964": "2026-11-19T16:46:43Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
@@ -5708,6 +5709,7 @@
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
    "scan:tsx:WN.TO,TRP.TO,PPL.TO": "2026-11-19T16:06:46Z",
    "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T19:36:38Z",
+   "scan:tsx:WN.TO,TRP.TO,SAP.TO": "2026-11-19T16:46:43Z",
    "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T19:26:45Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z",
    "sources:2026-11-19": "2026-11-19T05:01:45Z"
@@ -5715,7 +5717,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9494.33,
+  "benchmarkCad": 9480.21,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5725,7 +5727,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9913.36,
+  "equityCad": 9911.43,
   "focus": {
    "active": [
     "NVDA",
@@ -5991,11 +5993,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T16:31:42Z",
-  "lastRun": "2026-11-19T16:36:43Z",
+  "lastRun": "2026-11-19T16:46:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood risk-off. Bitcoin up 1.5% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,913.36 vs buy-and-hold $9,494.33.",
-  "lastSaved": "2026-11-19T16:36:43Z",
-  "lastStockScan": "2026-11-19T16:36:43Z",
+  "lastRunNote": "The S&P 500 fund was down 0.0% today; market mood risk-off. Bitcoin up 1.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,911.43 vs buy-and-hold $9,480.21.",
+  "lastSaved": "2026-11-19T16:46:43Z",
+  "lastStockScan": "2026-11-19T16:46:43Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6061,7 +6063,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4307,
+  "usdCad": 1.4303,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6441,12 +6443,6 @@
       "Time machine favourable"
      ],
      "symbol": "SHORT XLK"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT NFLX"
     }
    ],
    "cryptoRegime": "risk-off",
@@ -6463,14 +6459,14 @@
      "verdict": "82/100, fell below its opening range"
     },
     {
-     "score": 76,
-     "symbol": "SHORT NFLX",
-     "verdict": "76/100, fell below its opening range"
+     "score": 67,
+     "symbol": "SHORT TSM",
+     "verdict": "67/100, below the 70 needed"
     },
     {
-     "score": 68,
+     "score": 65,
      "symbol": "LONG WMT",
-     "verdict": "68/100, below the 80 needed"
+     "verdict": "65/100, below the 80 needed"
     },
     {
      "score": 59,
@@ -6489,13 +6485,13 @@
     },
     {
      "score": 56,
-     "symbol": "LONG TRP.TO",
+     "symbol": "LONG WN.TO",
      "verdict": "56/100, below the 80 needed"
     },
     {
-     "score": 55,
-     "symbol": "LONG WELL",
-     "verdict": "55/100, below the 80 needed"
+     "score": 56,
+     "symbol": "LONG TRP.TO",
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6226
@@ -6520,17 +6516,15 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T16:36:43Z"
+  "updated": "2026-11-19T16:46:43Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 11:36), stock market open day",
+  "Run 2026-11-19 WATCH (New York 11:46), stock market open day",
   "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT XLK: Time machine favourable",
-  "Borrow data for NFLX unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT NFLX: Time machine favourable"
+  "BLOCK SHORT XLK: Time machine favourable"
  ],
  "nav": [
   {
@@ -6564,10 +6558,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9494.33,
-   "cashCad": 9913.36,
+   "benchmarkCad": 9480.21,
+   "cashCad": 9911.43,
    "date": "2026-11-19",
-   "equityCad": 9913.36
+   "equityCad": 9911.43
   }
  ],
  "pack": {
@@ -6575,7 +6569,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T16:36:43Z",
+   "checkedAt": "2026-11-19T16:46:43Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

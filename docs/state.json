@@ -2787,19 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T18:06:43Z",
+   "at": "2026-11-19T18:16:35Z",
    "count": 1
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 5,
-    "s": "",
-    "t": "2026-11-18T15:26:37Z",
-    "to": "pm",
-    "x": "Stocks are risk off: 15/15 for a short."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5490,6 +5481,15 @@
     "t": "2026-11-19T18:06:43Z",
     "to": "pm",
     "x": "Stock scan: 87 long and 59 short charts checked, 3 breakouts, 8 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T18:16:35Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 4 breakouts, 8 breakdowns. Strongest: XEL, WMT, WM, XLK."
    }
   ],
   "said": {
@@ -5681,7 +5681,7 @@
    "scan:stocks:XEL,WMT,WM,XLK:2:8": "2026-11-19T17:36:44Z",
    "scan:stocks:XEL,WMT,WM,XLK:3:8": "2026-11-19T15:26:43Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:5": "2026-11-19T15:16:42Z",
-   "scan:stocks:XEL,WMT,WM,XLK:4:8": "2026-11-19T16:56:55Z",
+   "scan:stocks:XEL,WMT,WM,XLK:4:8": "2026-11-19T18:16:35Z",
    "scan:stocks:XLP,XEL,WMT,XLK:0:0": "2026-11-18T14:51:48Z",
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:2": "2026-11-18T15:11:44Z",
@@ -5733,7 +5733,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9404.68,
+  "benchmarkCad": 9384.77,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5743,7 +5743,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9923.99,
+  "equityCad": 9924.48,
   "focus": {
    "active": [
     "NVDA",
@@ -6009,11 +6009,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T18:01:36Z",
-  "lastRun": "2026-11-19T18:06:43Z",
+  "lastRun": "2026-11-19T18:16:35Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 0.6% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,923.99 vs buy-and-hold $9,404.68.",
-  "lastSaved": "2026-11-19T18:06:43Z",
-  "lastStockScan": "2026-11-19T18:06:43Z",
+  "lastRunNote": "The S&P 500 fund was down 1.5% today; market mood risk-off. Bitcoin down 0.5% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,924.48 vs buy-and-hold $9,384.77.",
+  "lastSaved": "2026-11-19T18:16:35Z",
+  "lastStockScan": "2026-11-19T18:16:35Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6079,7 +6079,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4329,
+  "usdCad": 1.433,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6492,7 +6492,7 @@
     },
     {
      "score": 61,
-     "symbol": "LONG XLP",
+     "symbol": "LONG USFR",
      "verdict": "61/100, below the 80 needed"
     },
     {
@@ -6538,11 +6538,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T18:06:43Z"
+  "updated": "2026-11-19T18:16:35Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 13:06), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 3 breakouts, 8 breakdowns",
+  "Run 2026-11-19 WATCH (New York 13:16), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
@@ -6582,10 +6582,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9404.68,
-   "cashCad": 9923.99,
+   "benchmarkCad": 9384.77,
+   "cashCad": 9924.48,
    "date": "2026-11-19",
-   "equityCad": 9923.99
+   "equityCad": 9924.48
   }
  ],
  "pack": {
@@ -6593,7 +6593,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T18:06:43Z",
+   "checkedAt": "2026-11-19T18:16:35Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

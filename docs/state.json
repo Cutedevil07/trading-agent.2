@@ -2787,82 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T19:06:47Z",
-   "count": 1
+   "at": "2026-11-19T19:26:47Z",
+   "count": 8
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 4,
-    "s": "",
-    "t": "2026-11-18T15:46:31Z",
-    "to": "pm",
-    "x": "Stocks are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 5,
-    "s": "UNH",
-    "t": "2026-11-18T15:46:31Z",
-    "to": "all",
-    "x": "Short UNH scores 78, needs 70. Quant and Risk, check it."
-   },
-   {
-    "d": "quant",
-    "k": "vote",
-    "n": 6,
-    "s": "UNH",
-    "t": "2026-11-18T15:46:31Z",
-    "to": "pm",
-    "x": "UNH: in 10,000 daily replays the target comes first 0%, the stop 3%. Most run out of time first. Odds are against us."
-   },
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 7,
-    "s": "UNH",
-    "t": "2026-11-18T15:46:31Z",
-    "to": "pm",
-    "x": "Blocked UNH: the replays favour the stop."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T15:56:44Z",
-    "to": "pm",
-    "x": "Stock scan: 88 long and 61 short charts checked, 5 breakouts, 4 breakdowns. Strongest: XLP, XEL, WMT, XLK."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 1,
-    "s": "VUG",
-    "t": "2026-11-18T15:56:44Z",
-    "to": "pm",
-    "x": "Short VUG: fell below its opening range, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 2,
-    "s": "VUG",
-    "t": "2026-11-18T15:56:44Z",
-    "to": "pm",
-    "x": "VUG: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 3,
-    "s": "",
-    "t": "2026-11-18T15:56:44Z",
-    "to": "pm",
-    "x": "Stocks are risk off: 15/15 for a short."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5490,6 +5418,78 @@
     "t": "2026-11-19T19:06:47Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short XLK at 87, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 4 breakouts, 8 breakdowns. Strongest: XLP, XEL, WMT, XLK."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "XLK",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "pm",
+    "x": "Short XLK: fell below its opening range, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "XLK",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "pm",
+    "x": "XLK: 1 fresh headline, mostly bad; 18/25. Top: \"What State Street Technology SPDR (XLK) Sold: Apple Leads on...\""
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 3,
+    "s": "",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "XLK",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "all",
+    "x": "Short XLK scores 82, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 5,
+    "s": "XLK",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "pm",
+    "x": "XLK: in 10,000 daily replays the target comes first 0%, the stop 0%. Most run out of time first. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 6,
+    "s": "XLK",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "pm",
+    "x": "Blocked XLK: the replays favour the stop."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 7,
+    "s": "",
+    "t": "2026-11-19T19:26:47Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short XLK at 82, needs 70."
    }
   ],
   "said": {
@@ -5554,7 +5554,7 @@
    "idea:XLK:short:18:breakdown": "2026-11-18T18:36:35Z",
    "idea:XLK:short:18:none": "2026-11-18T15:01:59Z",
    "idea:XLK:short:19:breakdown": "2026-11-18T17:46:46Z",
-   "idea:XLK:short:20:breakdown": "2026-11-19T15:26:43Z",
+   "idea:XLK:short:20:breakdown": "2026-11-19T19:26:47Z",
    "idea:XLK:short:20:none": "2026-11-18T14:51:48Z",
    "idea:XLK:short:21:breakdown": "2026-11-19T16:56:55Z",
    "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
@@ -5633,6 +5633,7 @@
    "macro:stocks:short:risk-off:2026-11-19T17:06:37.289703": "2026-11-19T17:06:37Z",
    "macro:stocks:short:risk-off:2026-11-19T17:16:43.249245": "2026-11-19T17:16:43Z",
    "macro:stocks:short:risk-off:2026-11-19T17:26:37.456377": "2026-11-19T17:26:37Z",
+   "macro:stocks:short:risk-off:2026-11-19T19:26:47.386935": "2026-11-19T19:26:47Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
@@ -5670,7 +5671,7 @@
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
    "nothing:XLK:18": "2026-11-18T18:36:35Z",
    "nothing:XLK:19": "2026-11-18T17:56:46Z",
-   "nothing:XLK:20": "2026-11-19T15:26:43Z",
+   "nothing:XLK:20": "2026-11-19T19:26:47Z",
    "nothing:XLK:21": "2026-11-19T19:06:47Z",
    "nothing:XLP:17": "2026-11-18T18:46:47Z",
    "nothing:XLP:18": "2026-11-18T17:26:43Z",
@@ -5695,7 +5696,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:4:3": "2026-11-18T16:36:45Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:4": "2026-11-18T16:46:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:7": "2026-11-18T17:06:44Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:4:8": "2026-11-19T18:26:40Z",
+   "scan:stocks:XLP,XEL,WMT,XLK:4:8": "2026-11-19T19:26:47Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:2": "2026-11-18T15:46:31Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:3": "2026-11-18T16:06:47Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:4": "2026-11-18T15:56:44Z",
@@ -5735,7 +5736,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9378.6,
+  "benchmarkCad": 9404.71,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5745,7 +5746,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9926.41,
+  "equityCad": 9924.96,
   "focus": {
    "active": [
     "NVDA",
@@ -6011,11 +6012,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T19:01:43Z",
-  "lastRun": "2026-11-19T19:16:54Z",
+  "lastRun": "2026-11-19T19:26:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.6% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,926.41 vs buy-and-hold $9,378.60.",
-  "lastSaved": "2026-11-19T19:16:54Z",
-  "lastStockScan": "2026-11-19T19:16:54Z",
+  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin up 0.0% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,924.96 vs buy-and-hold $9,404.71.",
+  "lastSaved": "2026-11-19T19:26:47Z",
+  "lastStockScan": "2026-11-19T19:26:47Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6081,7 +6082,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4334,
+  "usdCad": 1.4331,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6478,9 +6479,9 @@
    "summary": "Morning: The S&P 500 fund was up 0.5% today; market mood cautious. Bitcoin down 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,532.20.",
    "topCandidates": [
     {
-     "score": 87,
+     "score": 82,
      "symbol": "SHORT XLK",
-     "verdict": "87/100, fell below its opening range"
+     "verdict": "82/100, fell below its opening range"
     },
     {
      "score": 74,
@@ -6540,13 +6541,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T19:16:54Z"
+  "updated": "2026-11-19T19:26:47Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 14:16), stock market open day",
+  "Run 2026-11-19 WATCH (New York 14:26), stock market open day",
   "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
   "News model loaded",
-  "Borrow list unavailable: OSError: [Errno 113] No route to host",
+  "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLK: Time machine favourable",
   "Borrow data for ORCL unavailable (Remote end closed connection without response)",
@@ -6584,10 +6585,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9378.6,
-   "cashCad": 9926.41,
+   "benchmarkCad": 9404.71,
+   "cashCad": 9924.96,
    "date": "2026-11-19",
-   "equityCad": 9926.41
+   "equityCad": 9924.96
   }
  ],
  "pack": {
@@ -6595,7 +6596,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T19:16:54Z",
+   "checkedAt": "2026-11-19T19:26:47Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

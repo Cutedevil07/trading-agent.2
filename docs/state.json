@@ -2787,19 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T19:26:47Z",
-   "count": 8
+   "at": "2026-11-19T19:46:47Z",
+   "count": 1
   },
   "messages": [
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 4,
-    "s": "VUG",
-    "t": "2026-11-18T15:56:44Z",
-    "to": "all",
-    "x": "Short VUG scores 72, needs 70. Quant and Risk, check it."
-   },
    {
     "d": "quant",
     "k": "vote",
@@ -5490,6 +5481,15 @@
     "t": "2026-11-19T19:26:47Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short XLK at 82, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T19:46:47Z",
+    "to": "pm",
+    "x": "TSX scan: 79 Canadian charts checked. Strongest: TRP.TO, REI-UN.TO, PPL.TO."
    }
   ],
   "said": {
@@ -5723,7 +5723,7 @@
    "scan:tsx:TRP.TO,L.TO,IAG.TO": "2026-11-19T14:51:39Z",
    "scan:tsx:TRP.TO,PPL.TO,L.TO": "2026-11-19T15:01:42Z",
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
-   "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-19T16:56:55Z",
+   "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-19T19:46:47Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
    "scan:tsx:WN.TO,TRP.TO,PPL.TO": "2026-11-19T16:06:46Z",
    "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-19T17:46:52Z",
@@ -5736,7 +5736,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9397.13,
+  "benchmarkCad": 9393.43,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6012,11 +6012,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T19:31:36Z",
-  "lastRun": "2026-11-19T19:36:42Z",
+  "lastRun": "2026-11-19T19:46:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,397.13.",
-  "lastSaved": "2026-11-19T19:36:42Z",
-  "lastStockScan": "2026-11-19T19:36:42Z",
+  "lastRunNote": "The S&P 500 fund was down 1.3% today; market mood risk-off. Bitcoin down 0.1% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,393.43.",
+  "lastSaved": "2026-11-19T19:46:47Z",
+  "lastStockScan": "2026-11-19T19:46:47Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6510,12 +6510,12 @@
     },
     {
      "score": 56,
-     "symbol": "LONG WN.TO",
+     "symbol": "LONG TRP.TO",
      "verdict": "56/100, below the 80 needed"
     },
     {
      "score": 56,
-     "symbol": "LONG TRP.TO",
+     "symbol": "LONG REI-UN.TO",
      "verdict": "56/100, below the 80 needed"
     }
    ],
@@ -6541,10 +6541,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T19:36:42Z"
+  "updated": "2026-11-19T19:46:47Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 14:36), stock market open day",
+  "Run 2026-11-19 WATCH (New York 14:46), stock market open day",
   "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
@@ -6585,7 +6585,7 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9397.13,
+   "benchmarkCad": 9393.43,
    "cashCad": 9925.44,
    "date": "2026-11-19",
    "equityCad": 9925.44
@@ -6596,7 +6596,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T19:36:42Z",
+   "checkedAt": "2026-11-19T19:46:47Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

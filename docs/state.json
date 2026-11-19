@@ -2787,46 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T21:01:38Z",
-   "count": 1
+   "at": "2026-11-19T22:01:35Z",
+   "count": 4
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T16:36:45Z",
-    "to": "pm",
-    "x": "Stock scan: 88 long and 61 short charts checked, 4 breakouts, 3 breakdowns. Strongest: XLP, XEL, WMT, XLK."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T16:46:44Z",
-    "to": "pm",
-    "x": "Stock scan: 88 long and 61 short charts checked, 4 breakouts, 4 breakdowns. Strongest: XLP, XEL, WMT, XLK."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 1,
-    "s": "XLK",
-    "t": "2026-11-18T16:46:44Z",
-    "to": "pm",
-    "x": "Short XLK: fell below its opening range, chart 30/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 2,
-    "s": "XLK",
-    "t": "2026-11-18T16:46:44Z",
-    "to": "pm",
-    "x": "XLK: 1 fresh headline, mixed; 13/25. Top: \"What State Street Tech Select SPDR (XLK) Bought: Apple Leads on...\""
-   },
    {
     "d": "strategy",
     "k": "vote",
@@ -5490,6 +5454,42 @@
     "t": "2026-11-19T21:01:38Z",
     "to": "pm",
     "x": "NYSE is closed (after the close). Opens Nov 20 at 9:30 AM."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "MET",
+    "t": "2026-11-19T22:01:35Z",
+    "to": "pm",
+    "x": "Short MET: no clean setup yet, chart 20/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "MET",
+    "t": "2026-11-19T22:01:35Z",
+    "to": "pm",
+    "x": "MET: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-19T22:01:35Z",
+    "to": "pm",
+    "x": "Futures are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "MET",
+    "t": "2026-11-19T22:01:35Z",
+    "to": "all",
+    "x": "Short MET scores 67, needs 70. Pass."
    }
   ],
   "said": {
@@ -5510,7 +5510,7 @@
    "idea:M6E:short:17:breakdown": "2026-11-18T20:31:41Z",
    "idea:M6E:short:17:none": "2026-11-19T20:01:54Z",
    "idea:M6E:short:18:none": "2026-11-19T20:31:38Z",
-   "idea:MET:short:16:none": "2026-11-19T18:31:54Z",
+   "idea:MET:short:16:none": "2026-11-19T22:01:35Z",
    "idea:MET:short:18:none": "2026-11-19T15:31:49Z",
    "idea:MET:short:19:breakdown": "2026-11-18T16:31:41Z",
    "idea:MET:short:19:none": "2026-11-19T16:01:47Z",
@@ -5602,6 +5602,7 @@
    "macro:futures:short:risk-off:2026-11-19T15:31:49.613020": "2026-11-19T15:31:49Z",
    "macro:futures:short:risk-off:2026-11-19T16:01:47.202724": "2026-11-19T16:01:47Z",
    "macro:futures:short:risk-off:2026-11-19T18:31:54.656835": "2026-11-19T18:31:54Z",
+   "macro:futures:short:risk-off:2026-11-19T22:01:35.946829": "2026-11-19T22:01:35Z",
    "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5740,7 +5741,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9311.16,
+  "benchmarkCad": 9309.03,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5750,7 +5751,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9933.66,
+  "equityCad": 9929.31,
   "focus": {
    "active": [
     "NVDA",
@@ -6015,11 +6016,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-19T21:31:37Z",
-  "lastRun": "2026-11-19T21:31:37Z",
+  "lastFuturesScan": "2026-11-19T22:01:35Z",
+  "lastRun": "2026-11-19T22:01:35Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.0% today; market mood risk-off. Bitcoin down 1.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,933.66 vs buy-and-hold $9,311.16.",
-  "lastSaved": "2026-11-19T21:31:37Z",
+  "lastRunNote": "The S&P 500 fund was down 2.0% today; market mood risk-off. Bitcoin down 1.3% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,309.03.",
+  "lastSaved": "2026-11-19T22:01:35Z",
   "lastStockScan": "2026-11-19T19:46:47Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
@@ -6086,7 +6087,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4349,
+  "usdCad": 1.434,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6502,10 +6503,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T21:31:37Z"
+  "updated": "2026-11-19T22:01:35Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 16:31), stock market open day"
+  "Run 2026-11-19 WATCH (New York 17:01), stock market open day"
  ],
  "nav": [
   {
@@ -6539,10 +6540,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9311.16,
-   "cashCad": 9933.66,
+   "benchmarkCad": 9309.03,
+   "cashCad": 9929.31,
    "date": "2026-11-19",
-   "equityCad": 9933.66
+   "equityCad": 9929.31
   }
  ],
  "pack": {
@@ -6550,7 +6551,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T21:31:37Z",
+   "checkedAt": "2026-11-19T22:01:35Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

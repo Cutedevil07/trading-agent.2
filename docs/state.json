@@ -2787,19 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T17:36:44Z",
+   "at": "2026-11-19T17:46:52Z",
    "count": 1
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 3,
-    "s": "NFLX",
-    "t": "2026-11-18T15:26:37Z",
-    "to": "pm",
-    "x": "NFLX: 3 fresh headlines, mostly bad; 18/25. Top: \"Netflix Just Hit a 52-Week Low. Where\u2019s the Bottom?\""
-   },
    {
     "d": "analyst",
     "k": "vote",
@@ -5490,6 +5481,15 @@
     "t": "2026-11-19T17:36:44Z",
     "to": "pm",
     "x": "Stock scan: 87 long and 59 short charts checked, 2 breakouts, 8 breakdowns. Strongest: XEL, WMT, WM, XLK."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T17:46:52Z",
+    "to": "pm",
+    "x": "TSX scan: 79 Canadian charts checked. Strongest: WN.TO, TRP.TO, REI-UN.TO."
    }
   ],
   "said": {
@@ -5722,7 +5722,7 @@
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-19T16:56:55Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
    "scan:tsx:WN.TO,TRP.TO,PPL.TO": "2026-11-19T16:06:46Z",
-   "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-18T19:36:38Z",
+   "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-19T17:46:52Z",
    "scan:tsx:WN.TO,TRP.TO,SAP.TO": "2026-11-19T16:46:43Z",
    "scan:tsx:WN.TO,TRP.TO,STN.TO": "2026-11-19T17:06:37Z",
    "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T19:26:45Z",
@@ -5732,7 +5732,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9446.82,
+  "benchmarkCad": 9408.75,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5742,7 +5742,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9915.3,
+  "equityCad": 9917.23,
   "focus": {
    "active": [
     "NVDA",
@@ -6008,11 +6008,11 @@
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-19T17:31:54Z",
-  "lastRun": "2026-11-19T17:36:44Z",
+  "lastRun": "2026-11-19T17:46:52Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.7% today; market mood risk-off. Bitcoin down 0.2% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,915.30 vs buy-and-hold $9,446.82.",
-  "lastSaved": "2026-11-19T17:36:44Z",
-  "lastStockScan": "2026-11-19T17:36:44Z",
+  "lastRunNote": "The S&P 500 fund was down 1.1% today; market mood risk-off. Bitcoin down 0.4% in 24 hours (risk-off). No trades: SHORT XLK came closest but failed time machine favourable. Holding 0 positions. Value $9,917.23 vs buy-and-hold $9,408.75.",
+  "lastSaved": "2026-11-19T17:46:52Z",
+  "lastStockScan": "2026-11-19T17:46:52Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6078,7 +6078,7 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4311,
+  "usdCad": 1.4315,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6505,7 +6505,7 @@
     },
     {
      "score": 56,
-     "symbol": "LONG SAP.TO",
+     "symbol": "LONG REI-UN.TO",
      "verdict": "56/100, below the 80 needed"
     }
    ],
@@ -6531,13 +6531,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T17:36:44Z"
+  "updated": "2026-11-19T17:46:52Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 12:36), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 2 breakouts, 8 breakdowns",
+  "Run 2026-11-19 WATCH (New York 12:46), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 4 breakouts, 8 breakdowns",
   "News model loaded",
-  "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow list unavailable: OSError: [Errno 113] No route to host",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLK: Time machine favourable"
  ],
@@ -6573,10 +6573,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9446.82,
-   "cashCad": 9915.3,
+   "benchmarkCad": 9408.75,
+   "cashCad": 9917.23,
    "date": "2026-11-19",
-   "equityCad": 9915.3
+   "equityCad": 9917.23
   }
  ],
  "pack": {
@@ -6584,7 +6584,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T17:36:44Z",
+   "checkedAt": "2026-11-19T17:46:52Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

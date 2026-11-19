@@ -2659,6 +2659,10 @@
   "SCO"
  ],
  "facts": {
+  "L.TO": {
+   "fetchedOn": "2026-11-19",
+   "missing": true
+  },
   "NFLX": {
    "epsGrowth": 47.5,
    "epsTtm": 3.46,
@@ -2770,154 +2774,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T14:51:39Z",
-   "count": 7
+   "at": "2026-11-19T15:01:42Z",
+   "count": 16
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "pm",
-    "x": "NYSE is closed (before the open). Opens today at 9:30 AM."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 3,
-    "s": "MYM",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "pm",
-    "x": "Short MYM: no clean setup yet, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 4,
-    "s": "MYM",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "pm",
-    "x": "MYM: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 5,
-    "s": "",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "pm",
-    "x": "Futures are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 6,
-    "s": "MYM",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "all",
-    "x": "Short MYM scores 72 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 7,
-    "s": "MNQ",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "pm",
-    "x": "Short MNQ: no clean setup yet, chart 20/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 8,
-    "s": "MNQ",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "pm",
-    "x": "MNQ: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 9,
-    "s": "MNQ",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "all",
-    "x": "Short MNQ scores 67, needs 70. Pass."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 10,
-    "s": "",
-    "t": "2026-11-18T05:01:48Z",
-    "to": "all",
-    "x": "Nothing to trade this scan. Short MYM scores enough but has no clean setup yet."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 0,
-    "s": "MNQ",
-    "t": "2026-11-18T05:31:44Z",
-    "to": "pm",
-    "x": "Short MNQ: no clean setup yet, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 1,
-    "s": "MNQ",
-    "t": "2026-11-18T05:31:44Z",
-    "to": "pm",
-    "x": "MNQ: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-18T05:31:44Z",
-    "to": "pm",
-    "x": "Futures are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "MNQ",
-    "t": "2026-11-18T05:31:44Z",
-    "to": "all",
-    "x": "Short MNQ scores 72 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 0,
-    "s": "MNQ",
-    "t": "2026-11-18T07:31:59Z",
-    "to": "pm",
-    "x": "Short MNQ: no clean setup yet, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 1,
-    "s": "MNQ",
-    "t": "2026-11-18T07:31:59Z",
-    "to": "pm",
-    "x": "MNQ: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-18T07:31:59Z",
-    "to": "pm",
-    "x": "Futures are risk off: 15/15 for a short."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5473,6 +5333,150 @@
     "t": "2026-11-19T14:51:39Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: long XLY at 74, needs 80."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "Stock scan: 87 long and 59 short charts checked, 3 breakouts, 2 breakdowns. Strongest: XLY, XEL, WMT, XLI."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "TSX scan: 50 Canadian charts checked. Strongest: TRP.TO, PPL.TO, L.TO."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 2,
+    "s": "WMT",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "Long WMT: opening-range breakout, chart 25/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 3,
+    "s": "WMT",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "WMT: 3 fresh headlines, mostly good; 25/25. Top: \"Walmart Stock Slips as Raised Outlook Meets Slower U.S. Sales\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 4,
+    "s": "WMT",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "WMT: filed: operating margin 5%, sales +6%, P/E 46, debt/equity 0.6, target +5%; 10/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 5,
+    "s": "",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "Stocks are cautious: 8/15 for a long."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 6,
+    "s": "WMT",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "all",
+    "x": "Long WMT scores 78, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 7,
+    "s": "WELL",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "Long WELL: opening-range breakout, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 8,
+    "s": "WELL",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "WELL: no fresh headlines, neutral 12/25."
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 9,
+    "s": "WELL",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "WELL: sales +51%, P/E 107, debt/equity 0.4, target +8%; 13/15."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 10,
+    "s": "WELL",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "all",
+    "x": "Long WELL scores 78, needs 80. Pass."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 11,
+    "s": "L.TO",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "Long L.TO: new 20-day high on heavy volume, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 12,
+    "s": "L.TO",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "L.TO: no fresh headlines, neutral 12/25."
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 13,
+    "s": "L.TO",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "pm",
+    "x": "L.TO: company numbers unavailable today, neutral 9/15."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 14,
+    "s": "L.TO",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "all",
+    "x": "Long L.TO scores 74, needs 80. Pass."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 15,
+    "s": "",
+    "t": "2026-11-19T15:01:42Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: long WMT at 78, needs 80."
    }
   ],
   "said": {
@@ -5488,6 +5492,7 @@
    "futures-closed:2026-11-18": "2026-11-18T23:01:38Z",
    "futures-fit:2026-11-18:MET,M6E": "2026-11-18T10:01:48Z",
    "futures-fit:2026-11-19:MET,M6E": "2026-11-19T05:01:45Z",
+   "idea:L.TO:long:18:breakout": "2026-11-19T15:01:42Z",
    "idea:M6E:short:17:breakdown": "2026-11-18T20:31:41Z",
    "idea:M6E:short:17:none": "2026-11-19T05:31:43Z",
    "idea:M6E:short:18:none": "2026-11-19T14:01:44Z",
@@ -5517,10 +5522,11 @@
    "idea:VOO:short:20:breakdown": "2026-11-17T15:46:35Z",
    "idea:VTV:long:18:breakout": "2026-11-17T15:01:42Z",
    "idea:VUG:short:18:breakdown": "2026-11-18T15:56:44Z",
-   "idea:WELL:long:19:breakout": "2026-11-18T15:01:59Z",
+   "idea:WELL:long:19:breakout": "2026-11-19T15:01:42Z",
    "idea:WFC:short:17:breakdown": "2026-11-18T18:16:41Z",
    "idea:WFC:short:17:none": "2026-11-18T14:51:48Z",
    "idea:WFC:short:19:breakdown": "2026-11-18T19:06:53Z",
+   "idea:WMT:long:19:breakout": "2026-11-19T15:01:42Z",
    "idea:WMT:long:19:none": "2026-11-18T15:01:59Z",
    "idea:XLI:short:18:breakdown": "2026-11-17T17:46:43Z",
    "idea:XLI:short:19:breakdown": "2026-11-17T15:46:35Z",
@@ -5572,6 +5578,7 @@
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:long:cautious:2026-11-18T17:26:43.384713": "2026-11-18T17:26:43Z",
    "macro:stocks:long:cautious:2026-11-19T14:51:39.399557": "2026-11-19T14:51:39Z",
+   "macro:stocks:long:cautious:2026-11-19T15:01:42.070783": "2026-11-19T15:01:42Z",
    "macro:stocks:short:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:short:cautious:2026-11-17T15:11:45.352677": "2026-11-17T15:11:45Z",
    "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5622,6 +5629,7 @@
    "nothing:V:19": "2026-11-17T15:01:42Z",
    "nothing:WELL:19": "2026-11-18T15:01:59Z",
    "nothing:WFC:19": "2026-11-18T19:06:53Z",
+   "nothing:WMT:19": "2026-11-19T15:01:42Z",
    "nothing:XLK:17": "2026-11-17T18:26:52Z",
    "nothing:XLK:18": "2026-11-18T18:36:35Z",
    "nothing:XLK:19": "2026-11-18T17:56:46Z",
@@ -5660,8 +5668,9 @@
    "scan:stocks:XLV,XLP,XLF,XLK:15:6": "2026-11-17T15:36:46Z",
    "scan:stocks:XLV,XLP,XLF,XLK:4:0": "2026-11-17T14:51:44Z",
    "scan:stocks:XLY,XEL,WM,XLI:0:0": "2026-11-19T14:51:39Z",
+   "scan:stocks:XLY,XEL,WMT,XLI:3:2": "2026-11-19T15:01:42Z",
    "scan:tsx:TRP.TO,L.TO,IAG.TO": "2026-11-19T14:51:39Z",
-   "scan:tsx:TRP.TO,PPL.TO,L.TO": "2026-11-18T14:51:48Z",
+   "scan:tsx:TRP.TO,PPL.TO,L.TO": "2026-11-19T15:01:42Z",
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-18T15:01:59Z",
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-18T15:26:37Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
@@ -5673,7 +5682,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9595.01,
+  "benchmarkCad": 9568.59,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5683,7 +5692,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9911.43,
+  "equityCad": 9911.91,
   "focus": {
    "active": [
     "NVDA",
@@ -5948,12 +5957,12 @@
   "halted": false,
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-19T14:31:36Z",
-  "lastRun": "2026-11-19T14:51:39Z",
+  "lastFuturesScan": "2026-11-19T15:01:42Z",
+  "lastRun": "2026-11-19T15:01:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 1.2% today; market mood cautious. Bitcoin up 0.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,911.43 vs buy-and-hold $9,595.01.",
-  "lastSaved": "2026-11-19T14:51:39Z",
-  "lastStockScan": "2026-11-19T14:51:39Z",
+  "lastRunNote": "The S&P 500 fund was up 0.9% today; market mood cautious. Bitcoin up 0.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,911.91 vs buy-and-hold $9,568.59.",
+  "lastSaved": "2026-11-19T15:01:42Z",
+  "lastStockScan": "2026-11-19T15:01:42Z",
   "lastTradingDay": "2026-11-18",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
   "maxDrawdownPct": 1.06,
@@ -6019,11 +6028,22 @@
   },
   "tradingDays": 3,
   "usd": 4832.15361973509,
-  "usdCad": 1.4303,
+  "usdCad": 1.4304,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
  "fundamentals": {
+  "LIN": {
+   "debtToEquity": 0.68,
+   "epsGrowthPct": -10.7,
+   "fetchedOn": "2026-11-19",
+   "freeCashFlow": 4561000.0,
+   "lastEps": 3.66,
+   "revGrowthPct": -19.2,
+   "sector": "Basic Materials",
+   "target1y": 568.5,
+   "ttmEps": 15.06
+  },
   "MS": {
    "debtToEquity": 6.35,
    "epsGrowthPct": 8.2,
@@ -6045,6 +6065,17 @@
    "sector": "Consumer Discretionary",
    "target1y": 85.0,
    "ttmEps": 3.46
+  },
+  "ORCL": {
+   "debtToEquity": 1.88,
+   "epsGrowthPct": 21.8,
+   "fetchedOn": "2026-11-19",
+   "freeCashFlow": 51602000.0,
+   "lastEps": 1.45,
+   "revGrowthPct": 17.3,
+   "sector": "Technology",
+   "target1y": 225.0,
+   "ttmEps": 5.83
   },
   "ORLY": {
    "debtToEquity": 3.69,
@@ -6351,7 +6382,7 @@
   {
    "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 56,
+   "dataCalls": 58,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "cautious",
@@ -6359,9 +6390,29 @@
    "summary": "",
    "topCandidates": [
     {
+     "score": 78,
+     "symbol": "LONG WMT",
+     "verdict": "78/100, below the 80 needed"
+    },
+    {
+     "score": 78,
+     "symbol": "LONG WELL",
+     "verdict": "78/100, below the 80 needed"
+    },
+    {
+     "score": 75,
+     "symbol": "SHORT M6E",
+     "verdict": "75/100, no clean setup yet"
+    },
+    {
      "score": 74,
-     "symbol": "LONG XLY",
+     "symbol": "LONG L.TO",
      "verdict": "74/100, below the 80 needed"
+    },
+    {
+     "score": 72,
+     "symbol": "SHORT MET",
+     "verdict": "72/100, no clean setup yet"
     },
     {
      "score": 70,
@@ -6370,33 +6421,13 @@
     },
     {
      "score": 69,
-     "symbol": "LONG L.TO",
+     "symbol": "LONG XLY",
      "verdict": "69/100, below the 80 needed"
-    },
-    {
-     "score": 69,
-     "symbol": "LONG IAG.TO",
-     "verdict": "69/100, below the 80 needed"
-    },
-    {
-     "score": 68,
-     "symbol": "LONG WELL",
-     "verdict": "68/100, below the 80 needed"
     },
     {
      "score": 67,
      "symbol": "SHORT NFLX",
      "verdict": "67/100, below the 80 needed"
-    },
-    {
-     "score": 64,
-     "symbol": "LONG VBIL",
-     "verdict": "64/100, below the 80 needed"
-    },
-    {
-     "score": 64,
-     "symbol": "LONG TRP.TO",
-     "verdict": "64/100, below the 80 needed"
     }
    ],
    "universe": 6226
@@ -6421,11 +6452,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T14:51:39Z"
+  "updated": "2026-11-19T15:01:42Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 09:51), stock market open day",
-  "Stock scan: 87 long and 59 short ideas pre-screened; 0 breakouts, 0 breakdowns",
+  "Run 2026-11-19 WATCH (New York 10:01), stock market open day",
+  "Stock scan: 87 long and 59 short ideas pre-screened; 3 breakouts, 2 breakdowns",
   "News model loaded"
  ],
  "nav": [
@@ -6460,10 +6491,10 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9595.01,
-   "cashCad": 9911.43,
+   "benchmarkCad": 9568.59,
+   "cashCad": 9911.91,
    "date": "2026-11-19",
-   "equityCad": 9911.43
+   "equityCad": 9911.91
   }
  ],
  "pack": {
@@ -6471,7 +6502,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T14:51:39Z",
+   "checkedAt": "2026-11-19T15:01:42Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

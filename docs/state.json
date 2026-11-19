@@ -2787,19 +2787,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-19T23:01:45Z",
+   "at": "2026-11-19T23:31:45Z",
    "count": 1
   },
   "messages": [
-   {
-    "d": "quant",
-    "k": "vote",
-    "n": 5,
-    "s": "XLK",
-    "t": "2026-11-18T16:46:44Z",
-    "to": "pm",
-    "x": "XLK: in 10,000 5-minute replays the target comes first 1%, the stop 13%. Most run out of time first. Odds are against us."
-   },
    {
     "d": "risk",
     "k": "block",
@@ -5490,6 +5481,15 @@
     "t": "2026-11-19T23:01:45Z",
     "to": "pm",
     "x": "Futures market is closed right now. No futures trades."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-19T23:31:45Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short MET at 67, needs 70."
    }
   ],
   "said": {
@@ -5657,7 +5657,7 @@
    "nothing:M6E:17": "2026-11-19T22:31:41Z",
    "nothing:M6E:18": "2026-11-19T20:31:38Z",
    "nothing:MET:15": "2026-11-19T04:01:42Z",
-   "nothing:MET:16": "2026-11-19T02:01:44Z",
+   "nothing:MET:16": "2026-11-19T23:31:45Z",
    "nothing:MET:18": "2026-11-18T17:31:42Z",
    "nothing:MET:19": "2026-11-19T16:01:47Z",
    "nothing:MGC:16": "2026-11-18T01:01:39Z",
@@ -5742,7 +5742,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9333.36,
+  "benchmarkCad": 9317.92,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6017,11 +6017,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-19",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-19T23:01:45Z",
-  "lastRun": "2026-11-19T23:01:45Z",
+  "lastFuturesScan": "2026-11-19T23:31:45Z",
+  "lastRun": "2026-11-19T23:31:45Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.0% today; market mood risk-off. Bitcoin down 0.3% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,928.83 vs buy-and-hold $9,333.36.",
-  "lastSaved": "2026-11-19T23:01:45Z",
+  "lastRunNote": "The S&P 500 fund was down 2.0% today; market mood risk-off. Bitcoin down 1.7% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,928.83 vs buy-and-hold $9,317.92.",
+  "lastSaved": "2026-11-19T23:31:45Z",
   "lastStockScan": "2026-11-19T19:46:47Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-19T13:01:37Z",
@@ -6464,7 +6464,7 @@
   {
    "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 15,
+   "dataCalls": 18,
    "date": "2026-11-19",
    "liquid": 2254,
    "regime": "risk-off",
@@ -6472,14 +6472,14 @@
    "summary": "Morning: The S&P 500 fund was up 0.5% today; market mood cautious. Bitcoin down 0.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,914.33 vs buy-and-hold $9,532.20. Close: The S&P 500 fund was down 1.7% today; market mood risk-off. Bitcoin down 0.7% in 24 hours (risk-off). No new trades this run (nothing due). Holding 0 positions. Value $9,927.86 vs buy-and-hold $9,352.71.",
    "topCandidates": [
     {
-     "score": 70,
-     "symbol": "SHORT M6E",
-     "verdict": "70/100, below the 75 needed"
-    },
-    {
      "score": 67,
      "symbol": "SHORT MET",
      "verdict": "67/100, below the 70 needed"
+    },
+    {
+     "score": 60,
+     "symbol": "SHORT M6E",
+     "verdict": "60/100, below the 75 needed"
     }
    ],
    "universe": 6226
@@ -6504,11 +6504,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-19T23:01:45Z"
+  "updated": "2026-11-19T23:31:45Z"
  },
  "log": [
-  "Run 2026-11-19 WATCH (New York 18:01), stock market open day",
-  "Futures market closed now: no futures trades"
+  "Run 2026-11-19 WATCH (New York 18:31), stock market open day"
  ],
  "nav": [
   {
@@ -6542,7 +6541,7 @@
    "equityCad": 9933.66
   },
   {
-   "benchmarkCad": 9333.36,
+   "benchmarkCad": 9317.92,
    "cashCad": 9928.83,
    "date": "2026-11-19",
    "equityCad": 9928.83
@@ -6553,7 +6552,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-19T23:01:45Z",
+   "checkedAt": "2026-11-19T23:31:45Z",
    "closes": "16:00",
    "date": "2026-11-19",
    "early_close": null,

@@ -5673,7 +5673,6 @@
    "macro:stocks:long:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:short:cautious:2026-11-19T15:11:48.589009": "2026-11-19T15:11:48Z",
-   "macro:stocks:short:risk-off:2026-11-17T17:46:43.136815": "2026-11-17T17:46:43Z",
    "macro:stocks:short:risk-off:2026-11-17T18:16:44.452347": "2026-11-17T18:16:44Z",
    "macro:stocks:short:risk-off:2026-11-18T14:51:48.021733": "2026-11-18T14:51:48Z",
    "macro:stocks:short:risk-off:2026-11-18T15:11:44.108705": "2026-11-18T15:11:44Z",
@@ -5811,7 +5810,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9037.69,
+  "benchmarkCad": 9042.32,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5821,7 +5820,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9926.41,
+  "equityCad": 9924.96,
   "focus": {
    "active": [
     "SPY",
@@ -6088,11 +6087,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T17:31:43Z",
-  "lastRun": "2026-11-20T17:46:40Z",
+  "lastRun": "2026-11-20T17:56:41Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.3% today; market mood risk-off. Bitcoin down 6.2% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,926.41 vs buy-and-hold $9,037.69.",
-  "lastSaved": "2026-11-20T17:46:40Z",
-  "lastStockScan": "2026-11-20T17:46:40Z",
+  "lastRunNote": "The S&P 500 fund was down 2.2% today; market mood risk-off. Bitcoin down 6.0% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,924.96 vs buy-and-hold $9,042.32.",
+  "lastSaved": "2026-11-20T17:56:41Z",
+  "lastStockScan": "2026-11-20T17:56:41Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6158,7 +6157,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4334,
+  "usdCad": 1.4331,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6733,13 +6732,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T17:46:40Z"
+  "updated": "2026-11-20T17:56:41Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 12:46), stock market open day",
+  "Run 2026-11-20 WATCH (New York 12:56), stock market open day",
   "Stock scan: 88 long and 59 short ideas pre-screened; 9 breakouts, 8 breakdowns",
   "News model loaded",
-  "UBER: options not used (one contract costs too much for the risk budget ($395.00)); shares instead",
+  "UBER: options not used (one contract costs too much for the risk budget ($400.00)); shares instead",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for UBER unavailable (Remote end closed connection without response)",
   "BLOCK SHORT UBER: Time machine favourable",
@@ -6784,10 +6783,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9037.69,
-   "cashCad": 9926.41,
+   "benchmarkCad": 9042.32,
+   "cashCad": 9924.96,
    "date": "2026-11-20",
-   "equityCad": 9926.41
+   "equityCad": 9924.96
   }
  ],
  "pack": {
@@ -6795,7 +6794,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T17:46:40Z",
+   "checkedAt": "2026-11-20T17:56:41Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

@@ -2812,19 +2812,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T15:16:39Z",
-   "count": 17
+   "at": "2026-11-20T15:26:50Z",
+   "count": 1
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 5,
-    "s": "MET",
-    "t": "2026-11-19T07:31:42Z",
-    "to": "pm",
-    "x": "MET: no fresh headlines, neutral 13/25."
-   },
    {
     "d": "strategy",
     "k": "vote",
@@ -5515,6 +5506,15 @@
     "t": "2026-11-20T15:16:39Z",
     "to": "pm",
     "x": "Blocked WMT: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-20T15:26:50Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 59 short charts checked, 8 breakouts, 6 breakdowns. Strongest: XLP, XEL, WTW, XLI."
    }
   ],
   "said": {
@@ -5680,7 +5680,6 @@
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:close:2026-11-19": "2026-11-19T20:16:38Z",
-   "meeting:open:2026-11-17": "2026-11-17T15:16:48Z",
    "meeting:open:2026-11-18": "2026-11-18T15:16:47Z",
    "meeting:open:2026-11-19": "2026-11-19T15:16:42Z",
    "meeting:open:2026-11-20": "2026-11-20T15:16:39Z",
@@ -5750,6 +5749,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:6:7": "2026-11-18T17:36:46Z",
    "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
    "scan:stocks:XLP,XEL,WTW,XLI:8:0": "2026-11-20T15:16:39Z",
+   "scan:stocks:XLP,XEL,WTW,XLI:8:6": "2026-11-20T15:26:50Z",
    "scan:stocks:XLP,XEL,WTW,XLK:0:0": "2026-11-20T14:51:44Z",
    "scan:stocks:XLP,XEL,WTW,XLK:3:0": "2026-11-20T15:01:43Z",
    "scan:stocks:XLP,XEL,WTW,XLK:5:0": "2026-11-20T15:11:43Z",
@@ -5759,8 +5759,6 @@
    "scan:stocks:XLV,XLP,XEL,XLK:13:7": "2026-11-17T17:36:45Z",
    "scan:stocks:XLV,XLP,XEL,XLK:14:7": "2026-11-17T16:46:48Z",
    "scan:stocks:XLV,XLP,XEL,XLK:15:7": "2026-11-17T15:56:41Z",
-   "scan:stocks:XLV,XLP,XLF,XLK:11:6": "2026-11-17T15:16:48Z",
-   "scan:stocks:XLV,XLP,XLF,XLK:12:6": "2026-11-17T15:26:46Z",
    "scan:stocks:XLV,XLP,XLF,XLK:15:6": "2026-11-17T15:36:46Z",
    "scan:stocks:XLY,XEL,WM,XLI:0:0": "2026-11-19T14:51:39Z",
    "scan:stocks:XLY,XEL,WMT,XLI:3:2": "2026-11-19T15:01:42Z",
@@ -5782,7 +5780,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9231.74,
+  "benchmarkCad": 9173.82,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5792,7 +5790,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9919.64,
+  "equityCad": 9922.06,
   "focus": {
    "active": [
     "SPY",
@@ -6059,11 +6057,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T15:01:43Z",
-  "lastRun": "2026-11-20T15:16:39Z",
+  "lastRun": "2026-11-20T15:26:50Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 4.1% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.64 vs buy-and-hold $9,231.74.",
-  "lastSaved": "2026-11-20T15:16:39Z",
-  "lastStockScan": "2026-11-20T15:16:39Z",
+  "lastRunNote": "The S&P 500 fund was down 0.9% today; market mood risk-off. Bitcoin down 5.1% in 24 hours (risk-off). No trades: SHORT TSM came closest but failed time machine favourable. Holding 0 positions. Value $9,922.06 vs buy-and-hold $9,173.82.",
+  "lastSaved": "2026-11-20T15:26:50Z",
+  "lastStockScan": "2026-11-20T15:26:50Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6129,7 +6127,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.432,
+  "usdCad": 1.4325,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6602,6 +6600,12 @@
      "failed": [
       "Time machine favourable"
      ],
+     "symbol": "SHORT TSM"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
      "symbol": "SHORT XLI"
     },
     {
@@ -6612,7 +6616,7 @@
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 55,
+   "dataCalls": 52,
    "date": "2026-11-20",
    "liquid": 2258,
    "regime": "risk-off",
@@ -6622,12 +6626,12 @@
     {
      "score": 92,
      "symbol": "SHORT TSM",
-     "verdict": "92/100, no clean setup yet"
+     "verdict": "92/100, fell below its opening range"
     },
     {
      "score": 82,
      "symbol": "SHORT XLI",
-     "verdict": "82/100, new 20-day low on heavy volume"
+     "verdict": "82/100, fell below its opening range"
     },
     {
      "score": 80,
@@ -6650,9 +6654,9 @@
      "verdict": "66/100, below the 80 needed"
     },
     {
-     "score": 62,
+     "score": 57,
      "symbol": "SHORT ORCL",
-     "verdict": "62/100, below the 70 needed"
+     "verdict": "57/100, below the 70 needed"
     },
     {
      "score": 56,
@@ -6682,18 +6686,19 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T15:16:39Z"
+  "updated": "2026-11-20T15:26:50Z"
  },
  "log": [
-  "Run 2026-11-20 OPEN (New York 10:16), stock market open day",
-  "Stock scan: 88 long and 59 short ideas pre-screened; 8 breakouts, 0 breakdowns",
+  "Run 2026-11-20 WATCH (New York 10:26), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 8 breakouts, 6 breakdowns",
   "News model loaded",
-  "Earnings WMT: mixed - profit per share 0.65 vs 0.64 expected (+1.6%); sales +5% on a year ago; tone neutral (from the company's report)",
-  "SEC filed numbers for WMT: sales 5.9% y/y, operating margin 5.0%",
+  "TSM: options not used (one contract costs too much for the risk budget ($2,060.00)); shares instead",
   "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for TSM unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT TSM: Time machine favourable",
   "Borrow data for XLI unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLI: Time machine favourable",
-  "WMT: options not used (one contract costs too much for the risk budget ($665.00)); shares instead",
+  "WMT: options not used (one contract costs too much for the risk budget ($370.00)); shares instead",
   "pack sizing WMT: 9 shares, bound by position cap",
   "BLOCK LONG WMT: Time machine favourable"
  ],
@@ -6735,10 +6740,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9231.74,
-   "cashCad": 9919.64,
+   "benchmarkCad": 9173.82,
+   "cashCad": 9922.06,
    "date": "2026-11-20",
-   "equityCad": 9919.64
+   "equityCad": 9922.06
   }
  ],
  "pack": {
@@ -6746,7 +6751,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T15:16:39Z",
+   "checkedAt": "2026-11-20T15:26:50Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

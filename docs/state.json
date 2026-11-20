@@ -5638,7 +5638,6 @@
    "macro:futures:short:neutral:2026-11-20T13:31:45.353774": "2026-11-20T13:31:45Z",
    "macro:futures:short:neutral:2026-11-20T17:01:47.727613": "2026-11-20T17:01:47Z",
    "macro:futures:short:neutral:2026-11-20T18:31:33.760546": "2026-11-20T18:31:33Z",
-   "macro:futures:short:risk-off:2026-11-17T19:01:50.565495": "2026-11-17T19:01:50Z",
    "macro:futures:short:risk-off:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
    "macro:futures:short:risk-off:2026-11-18T05:01:48.283082": "2026-11-18T05:01:48Z",
    "macro:futures:short:risk-off:2026-11-18T05:31:44.429084": "2026-11-18T05:31:44Z",
@@ -5813,7 +5812,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9024.21,
+  "benchmarkCad": 9016.61,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6090,11 +6089,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T19:01:48Z",
-  "lastRun": "2026-11-20T19:01:48Z",
+  "lastRun": "2026-11-20T19:06:44Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.1% today; market mood risk-off. Bitcoin down 7.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,024.21.",
-  "lastSaved": "2026-11-20T19:01:48Z",
-  "lastStockScan": "2026-11-20T18:56:39Z",
+  "lastRunNote": "The S&P 500 fund was down 2.1% today; market mood risk-off. Bitcoin down 7.0% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,016.61.",
+  "lastSaved": "2026-11-20T19:06:44Z",
+  "lastStockScan": "2026-11-20T19:06:44Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6650,9 +6649,28 @@
    "universe": 6226
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLI"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT UBER"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT ORCL"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 18,
+   "dataCalls": 50,
    "date": "2026-11-20",
    "liquid": 2258,
    "regime": "risk-off",
@@ -6661,13 +6679,43 @@
    "topCandidates": [
     {
      "score": 77,
-     "symbol": "SHORT MET",
-     "verdict": "77/100, no clean setup yet"
+     "symbol": "SHORT XLI",
+     "verdict": "77/100, fell below its opening range"
     },
     {
-     "score": 70,
-     "symbol": "SHORT M6E",
-     "verdict": "70/100, below the 75 needed"
+     "score": 77,
+     "symbol": "SHORT UBER",
+     "verdict": "77/100, fell below its opening range"
+    },
+    {
+     "score": 74,
+     "symbol": "SHORT ORCL",
+     "verdict": "74/100, fell below its opening range"
+    },
+    {
+     "score": 71,
+     "symbol": "LONG XLP",
+     "verdict": "71/100, below the 80 needed"
+    },
+    {
+     "score": 61,
+     "symbol": "LONG VBIL",
+     "verdict": "61/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG XEL",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WTW",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WN.TO",
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6224
@@ -6692,10 +6740,19 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T19:01:48Z"
+  "updated": "2026-11-20T19:06:44Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 14:01), stock market open day"
+  "Run 2026-11-20 WATCH (New York 14:06), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 9 breakouts, 8 breakdowns",
+  "News model loaded",
+  "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for XLI unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT XLI: Time machine favourable",
+  "Borrow data for UBER unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT UBER: Time machine favourable",
+  "Borrow data for ORCL unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT ORCL: Time machine favourable"
  ],
  "nav": [
   {
@@ -6735,7 +6792,7 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9024.21,
+   "benchmarkCad": 9016.61,
    "cashCad": 9925.44,
    "date": "2026-11-20",
    "equityCad": 9925.44
@@ -6746,7 +6803,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T19:01:48Z",
+   "checkedAt": "2026-11-20T19:06:44Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

@@ -5616,7 +5616,6 @@
    "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:XLP:long:18:none": "2026-11-18T15:01:59Z",
    "idea:XLY:long:18:pullback": "2026-11-19T14:51:39Z",
-   "macro:futures:short:cautious:2026-11-17T17:31:41.123899": "2026-11-17T17:31:41Z",
    "macro:futures:short:neutral:2026-11-17T19:31:53.612360": "2026-11-17T19:31:53Z",
    "macro:futures:short:neutral:2026-11-17T23:31:48.877253": "2026-11-17T23:31:48Z",
    "macro:futures:short:neutral:2026-11-18T09:01:47.761465": "2026-11-18T09:01:47Z",
@@ -5812,7 +5811,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9061.88,
+  "benchmarkCad": 9061.27,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5822,7 +5821,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9923.51,
+  "equityCad": 9925.44,
   "focus": {
    "active": [
     "SPY",
@@ -6088,11 +6087,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-20T17:01:47Z",
-  "lastRun": "2026-11-20T17:26:47Z",
+  "lastFuturesScan": "2026-11-20T17:31:43Z",
+  "lastRun": "2026-11-20T17:31:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.1% today; market mood risk-off. Bitcoin down 5.7% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,061.88.",
-  "lastSaved": "2026-11-20T17:26:47Z",
+  "lastRunNote": "The S&P 500 fund was down 2.1% today; market mood risk-off. Bitcoin down 6.5% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,925.44 vs buy-and-hold $9,061.27.",
+  "lastSaved": "2026-11-20T17:31:43Z",
   "lastStockScan": "2026-11-20T17:26:47Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6159,7 +6158,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4328,
+  "usdCad": 1.4332,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6649,22 +6648,9 @@
    "universe": 6226
   },
   {
-   "blocked": [
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT UBER"
-    },
-    {
-     "failed": [
-      "Time machine favourable"
-     ],
-     "symbol": "SHORT XLI"
-    }
-   ],
+   "blocked": [],
    "cryptoRegime": "risk-off",
-   "dataCalls": 50,
+   "dataCalls": 18,
    "date": "2026-11-20",
    "liquid": 2258,
    "regime": "risk-off",
@@ -6672,44 +6658,14 @@
    "summary": "Morning: The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 4.1% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.64 vs buy-and-hold $9,231.74.",
    "topCandidates": [
     {
-     "score": 82,
-     "symbol": "SHORT UBER",
-     "verdict": "82/100, fell below its opening range"
-    },
-    {
      "score": 77,
-     "symbol": "SHORT XLI",
-     "verdict": "77/100, fell below its opening range"
+     "symbol": "SHORT MET",
+     "verdict": "77/100, no clean setup yet"
     },
     {
-     "score": 71,
-     "symbol": "LONG XLP",
-     "verdict": "71/100, below the 80 needed"
-    },
-    {
-     "score": 66,
-     "symbol": "LONG VBIL",
-     "verdict": "66/100, below the 80 needed"
-    },
-    {
-     "score": 62,
-     "symbol": "SHORT ORCL",
-     "verdict": "62/100, below the 70 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG XEL",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG WTW",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG WN.TO",
-     "verdict": "56/100, below the 80 needed"
+     "score": 75,
+     "symbol": "SHORT M6E",
+     "verdict": "75/100, no clean setup yet"
     }
    ],
    "universe": 6224
@@ -6734,18 +6690,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T17:26:47Z"
+  "updated": "2026-11-20T17:31:43Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 12:26), stock market open day",
-  "Stock scan: 88 long and 59 short ideas pre-screened; 9 breakouts, 8 breakdowns",
-  "News model loaded",
-  "UBER: options not used (one contract costs too much for the risk budget ($380.00)); shares instead",
-  "Borrow list unavailable: TimeoutError: timed out",
-  "Borrow data for UBER unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT UBER: Time machine favourable",
-  "Borrow data for XLI unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT XLI: Time machine favourable"
+  "Run 2026-11-20 WATCH (New York 12:31), stock market open day"
  ],
  "nav": [
   {
@@ -6785,10 +6733,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9061.88,
-   "cashCad": 9923.51,
+   "benchmarkCad": 9061.27,
+   "cashCad": 9925.44,
    "date": "2026-11-20",
-   "equityCad": 9923.51
+   "equityCad": 9925.44
   }
  ],
  "pack": {
@@ -6796,7 +6744,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T17:26:47Z",
+   "checkedAt": "2026-11-20T17:31:43Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

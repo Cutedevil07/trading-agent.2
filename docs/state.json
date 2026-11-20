@@ -2838,19 +2838,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T18:16:35Z",
-   "count": 19
+   "at": "2026-11-20T18:26:37Z",
+   "count": 1
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 1,
-    "s": "TSM",
-    "t": "2026-11-19T15:36:49Z",
-    "to": "pm",
-    "x": "Short TSM: fell below its opening range, chart 25/30."
-   },
    {
     "d": "news",
     "k": "vote",
@@ -5541,6 +5532,15 @@
     "t": "2026-11-20T18:16:35Z",
     "to": "all",
     "x": "Nothing good enough this scan. Closest: short UBER at 77, needs 70."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-20T18:26:37Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 59 short charts checked, 9 breakouts, 8 breakdowns. Strongest: XLP, XEL, WTW, XLI."
    }
   ],
   "said": {
@@ -5674,7 +5674,6 @@
    "macro:stocks:long:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:short:cautious:2026-11-19T15:11:48.589009": "2026-11-19T15:11:48Z",
-   "macro:stocks:short:risk-off:2026-11-17T18:16:44.452347": "2026-11-17T18:16:44Z",
    "macro:stocks:short:risk-off:2026-11-18T14:51:48.021733": "2026-11-18T14:51:48Z",
    "macro:stocks:short:risk-off:2026-11-18T15:11:44.108705": "2026-11-18T15:11:44Z",
    "macro:stocks:short:risk-off:2026-11-18T15:26:37.270442": "2026-11-18T15:26:37Z",
@@ -5786,7 +5785,7 @@
    "scan:stocks:XLP,XEL,WTW,XLI:9:5": "2026-11-20T15:46:36Z",
    "scan:stocks:XLP,XEL,WTW,XLI:9:6": "2026-11-20T15:56:43Z",
    "scan:stocks:XLP,XEL,WTW,XLI:9:7": "2026-11-20T16:16:59Z",
-   "scan:stocks:XLP,XEL,WTW,XLI:9:8": "2026-11-20T17:16:50Z",
+   "scan:stocks:XLP,XEL,WTW,XLI:9:8": "2026-11-20T18:26:37Z",
    "scan:stocks:XLP,XEL,WTW,XLK:0:0": "2026-11-20T14:51:44Z",
    "scan:stocks:XLP,XEL,WTW,XLK:3:0": "2026-11-20T15:01:43Z",
    "scan:stocks:XLP,XEL,WTW,XLK:5:0": "2026-11-20T15:11:43Z",
@@ -5813,7 +5812,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9046.88,
+  "benchmarkCad": 9055.18,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5823,7 +5822,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9924.96,
+  "equityCad": 9923.99,
   "focus": {
    "active": [
     "SPY",
@@ -6090,11 +6089,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T18:01:43Z",
-  "lastRun": "2026-11-20T18:16:35Z",
+  "lastRun": "2026-11-20T18:26:37Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.2% today; market mood risk-off. Bitcoin down 6.2% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,924.96 vs buy-and-hold $9,046.88.",
-  "lastSaved": "2026-11-20T18:16:35Z",
-  "lastStockScan": "2026-11-20T18:16:35Z",
+  "lastRunNote": "The S&P 500 fund was down 2.1% today; market mood risk-off. Bitcoin down 6.5% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,923.99 vs buy-and-hold $9,055.18.",
+  "lastSaved": "2026-11-20T18:26:37Z",
+  "lastStockScan": "2026-11-20T18:26:37Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6160,7 +6159,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4331,
+  "usdCad": 1.4329,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6741,10 +6740,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T18:16:35Z"
+  "updated": "2026-11-20T18:26:37Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 13:16), stock market open day",
+  "Run 2026-11-20 WATCH (New York 13:26), stock market open day",
   "Stock scan: 88 long and 59 short ideas pre-screened; 9 breakouts, 8 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
@@ -6793,10 +6792,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9046.88,
-   "cashCad": 9924.96,
+   "benchmarkCad": 9055.18,
+   "cashCad": 9923.99,
    "date": "2026-11-20",
-   "equityCad": 9924.96
+   "equityCad": 9923.99
   }
  ],
  "pack": {
@@ -6804,7 +6803,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T18:16:35Z",
+   "checkedAt": "2026-11-20T18:26:37Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

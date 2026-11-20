@@ -1788,149 +1788,6 @@
   "symbols": 402
  },
  "congress": {
-  "2026-11-10-9116403": {
-   "amount": "",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Charles J. \"Chuck\" Fleischmann",
-   "note": "no stock trades read from this report",
-   "symbol": "",
-   "tradeDate": "",
-   "type": "Filed",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/9116403.pdf"
-  },
-  "2026-11-10-APP-Cisneros-2": {
-   "amount": "$15,001 - $50,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "27 days to report",
-   "symbol": "APP",
-   "tradeDate": "2026-10-14",
-   "type": "Sale",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-APP-Cisneros-3": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "21 days to report",
-   "symbol": "APP",
-   "tradeDate": "2026-10-20",
-   "type": "Sale",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-ARE-Cisneros-0": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "21 days to report",
-   "symbol": "ARE",
-   "tradeDate": "2026-10-20",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-ARGX-Cisneros-4": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "26 days to report",
-   "symbol": "ARGX",
-   "tradeDate": "2026-10-15",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-ARGX-Cisneros-5": {
-   "amount": "$15,001 - $50,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "27 days to report",
-   "symbol": "ARGX",
-   "tradeDate": "2026-10-14",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-ARGX-Cisneros-6": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "14 days to report",
-   "symbol": "ARGX",
-   "tradeDate": "2026-10-27",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-BBIO-Cisneros-10": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "8 days to report",
-   "symbol": "BBIO",
-   "tradeDate": "2026-11-02",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-BBIO-Cisneros-9": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "14 days to report",
-   "symbol": "BBIO",
-   "tradeDate": "2026-10-27",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-BNPQF-Cisneros-8": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "28 days to report",
-   "symbol": "BNPQF",
-   "tradeDate": "2026-10-13",
-   "type": "Sale",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-10-BNS-Cisneros-7": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-10",
-   "member": "Gilbert Cisneros",
-   "note": "32 days to report",
-   "symbol": "BNS",
-   "tradeDate": "2026-10-09",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035788.pdf"
-  },
-  "2026-11-11-KO-Doggett-0": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-11",
-   "member": "Lloyd Doggett",
-   "note": "41 days to report",
-   "symbol": "KO",
-   "tradeDate": "2026-10-01",
-   "type": "Purchase",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035826.pdf"
-  },
-  "2026-11-11-SHW-Allen-0": {
-   "amount": "$1,001 - $15,000",
-   "chamber": "House",
-   "filedDate": "2026-11-11",
-   "member": "Richard W. Allen",
-   "note": "33 days to report",
-   "symbol": "SHW",
-   "tradeDate": "2026-10-09",
-   "type": "Sale",
-   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035821.pdf"
-  },
   "2026-11-12-AMGN-Taylor-2": {
    "amount": "$1,001 - $15,000",
    "chamber": "House",
@@ -2227,6 +2084,149 @@
    "tradeDate": "2026-10-02",
    "type": "Sale",
    "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20035811.pdf"
+  },
+  "2026-11-18-COST-Rulli-1": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Michael Rulli",
+   "note": "6 days to report",
+   "symbol": "COST",
+   "tradeDate": "2026-11-12",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036855.pdf"
+  },
+  "2026-11-18-GOOGL-Rulli-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Michael Rulli",
+   "note": "14 days to report",
+   "symbol": "GOOGL",
+   "tradeDate": "2026-11-04",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036855.pdf"
+  },
+  "2026-11-18-LITE-Rulli-3": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Michael Rulli",
+   "note": "14 days to report",
+   "symbol": "LITE",
+   "tradeDate": "2026-11-04",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036855.pdf"
+  },
+  "2026-11-18-LLY-Rulli-2": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Michael Rulli",
+   "note": "14 days to report",
+   "symbol": "LLY",
+   "tradeDate": "2026-11-04",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036855.pdf"
+  },
+  "2026-11-18-MSFT-Rulli-4": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Michael Rulli",
+   "note": "14 days to report",
+   "symbol": "MSFT",
+   "tradeDate": "2026-11-04",
+   "type": "Purchase",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036855.pdf"
+  },
+  "2026-11-18-NVDA-Rulli-5": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Michael Rulli",
+   "note": "21 days to report",
+   "symbol": "NVDA",
+   "tradeDate": "2026-10-28",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036855.pdf"
+  },
+  "2026-11-18-TPR-Sewell-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Terri A. Sewell",
+   "note": "13 days to report",
+   "symbol": "TPR",
+   "tradeDate": "2026-11-05",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036864.pdf"
+  },
+  "2026-11-18-WBD-Cohen-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-18",
+   "member": "Steve Cohen",
+   "note": "42 days to report",
+   "symbol": "WBD",
+   "tradeDate": "2026-10-07",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036849.pdf"
+  },
+  "2026-11-19-JNJ-Kean-0": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-19",
+   "member": "Thomas H. Kean Jr",
+   "note": "23 days to report",
+   "symbol": "JNJ",
+   "tradeDate": "2026-10-27",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036844.pdf"
+  },
+  "2026-11-19-MSFT-Kean-1": {
+   "amount": "$15,001 - $50,000",
+   "chamber": "House",
+   "filedDate": "2026-11-19",
+   "member": "Thomas H. Kean Jr",
+   "note": "23 days to report",
+   "symbol": "MSFT",
+   "tradeDate": "2026-10-27",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036844.pdf"
+  },
+  "2026-11-19-SYK-Kean-2": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-19",
+   "member": "Thomas H. Kean Jr",
+   "note": "23 days to report",
+   "symbol": "SYK",
+   "tradeDate": "2026-10-27",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036844.pdf"
+  },
+  "2026-11-19-WBD-Kean-3": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-19",
+   "member": "Thomas H. Kean Jr",
+   "note": "43 days to report",
+   "symbol": "WBD",
+   "tradeDate": "2026-10-07",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036844.pdf"
+  },
+  "2026-11-19-WBD-Kean-4": {
+   "amount": "$1,001 - $15,000",
+   "chamber": "House",
+   "filedDate": "2026-11-19",
+   "member": "Thomas H. Kean Jr",
+   "note": "43 days to report",
+   "symbol": "WBD",
+   "tradeDate": "2026-10-07",
+   "type": "Sale",
+   "url": "https://disclosures-clerk.house.gov/public_disc/ptr-pdfs/2026/20036844.pdf"
   }
  },
  "congressSeen": [
@@ -2242,6 +2242,10 @@
   "20035821",
   "20035826",
   "20035831",
+  "20036844",
+  "20036849",
+  "20036855",
+  "20036864",
   "9116403"
  ],
  "earnCal": {
@@ -2787,37 +2791,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T13:31:45Z",
-   "count": 4
+   "at": "2026-11-20T14:01:34Z",
+   "count": 3
   },
   "messages": [
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T18:36:35Z",
-    "to": "pm",
-    "x": "Stock scan: 88 long and 61 short charts checked, 6 breakouts, 6 breakdowns. Strongest: XLP, XEL, WMT, XLK."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 1,
-    "s": "XLK",
-    "t": "2026-11-18T18:36:35Z",
-    "to": "pm",
-    "x": "Short XLK: fell below its opening range, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 2,
-    "s": "XLK",
-    "t": "2026-11-18T18:36:35Z",
-    "to": "pm",
-    "x": "XLK: 1 fresh headline, mixed; 13/25. Top: \"What State Street Tech Select SPDR (XLK) Bought: Apple Leads on...\""
-   },
    {
     "d": "strategy",
     "k": "vote",
@@ -5490,6 +5467,33 @@
     "t": "2026-11-20T13:31:45Z",
     "to": "all",
     "x": "Short M6E scores 75 but no clean setup yet. Waiting."
+   },
+   {
+    "d": "analyst",
+    "k": "info",
+    "n": 0,
+    "s": "JNJ",
+    "t": "2026-11-20T14:01:34Z",
+    "to": "research",
+    "x": "House filing: Thomas H. Kean Jr sold JNJ ($1,001 - $15,000), traded Oct 27."
+   },
+   {
+    "d": "analyst",
+    "k": "info",
+    "n": 1,
+    "s": "MSFT",
+    "t": "2026-11-20T14:01:34Z",
+    "to": "research",
+    "x": "House filing: Thomas H. Kean Jr sold MSFT ($15,001 - $50,000), traded Oct 27."
+   },
+   {
+    "d": "analyst",
+    "k": "info",
+    "n": 2,
+    "s": "SYK",
+    "t": "2026-11-20T14:01:34Z",
+    "to": "research",
+    "x": "House filing: Thomas H. Kean Jr sold SYK ($1,001 - $15,000), traded Oct 27."
    }
   ],
   "said": {
@@ -5752,7 +5756,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9277.02,
+  "benchmarkCad": 9301.66,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5762,7 +5766,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9912.4,
+  "equityCad": 9913.85,
   "focus": {
    "active": [
     "SPY",
@@ -6026,13 +6030,13 @@
   },
   "haltReason": "",
   "halted": false,
-  "lastCongressCheck": "2026-11-19",
+  "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-20T13:31:45Z",
-  "lastRun": "2026-11-20T13:31:45Z",
+  "lastFuturesScan": "2026-11-20T14:01:34Z",
+  "lastRun": "2026-11-20T14:01:34Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood risk-off. Bitcoin down 3.6% in 24 hours (risk-off). No trades: SHORT MET came closest but failed daily loss limit, time machine favourable. Holding 0 positions. Value $9,912.40 vs buy-and-hold",
-  "lastSaved": "2026-11-20T13:31:45Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood risk-off. Bitcoin down 3.3% in 24 hours (risk-off). No trades: SHORT MET came closest but failed daily loss limit, time machine favourable. Holding 0 positions. Value $9,913.85 vs buy-and-hold",
+  "lastSaved": "2026-11-20T14:01:34Z",
   "lastStockScan": "2026-11-19T19:46:47Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6099,7 +6103,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4305,
+  "usdCad": 1.4308,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6546,10 +6550,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T13:31:45Z"
+  "updated": "2026-11-20T14:01:34Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 08:31), stock market open day",
+  "Run 2026-11-20 WATCH (New York 09:01), stock market open day",
+  "Congress tracker: 4 new House reports, 4 read",
   "BLOCK SHORT MET: Daily loss limit, Time machine favourable"
  ],
  "nav": [
@@ -6590,10 +6595,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9277.02,
-   "cashCad": 9912.4,
+   "benchmarkCad": 9301.66,
+   "cashCad": 9913.85,
    "date": "2026-11-20",
-   "equityCad": 9912.4
+   "equityCad": 9913.85
   }
  ],
  "pack": {
@@ -6601,7 +6606,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T13:31:45Z",
+   "checkedAt": "2026-11-20T14:01:34Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

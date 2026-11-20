@@ -2825,28 +2825,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T16:26:43Z",
-   "count": 7
+   "at": "2026-11-20T16:46:41Z",
+   "count": 2
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 3,
-    "s": "XLY",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "pm",
-    "x": "XLY: 1 fresh headline, mixed; 12/25. Top: \"What State Street Consumer Discretionary SPDR (XLY) Sold:...\""
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 4,
-    "s": "",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "pm",
-    "x": "Stocks are cautious: 8/15 for a long."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5528,6 +5510,24 @@
     "t": "2026-11-20T16:26:43Z",
     "to": "pm",
     "x": "Blocked XLI: the replays favour the stop."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-20T16:46:41Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 59 short charts checked, 8 breakouts, 6 breakdowns. Strongest: XLP, XEL, WTW, XLI."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-20T16:46:41Z",
+    "to": "pm",
+    "x": "TSX scan: 77 Canadian charts checked. Strongest: WN.TO, TRP.TO, PPL.TO."
    }
   ],
   "said": {
@@ -5760,7 +5760,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
    "scan:stocks:XLP,XEL,WTW,XLI:7:6": "2026-11-20T16:26:43Z",
    "scan:stocks:XLP,XEL,WTW,XLI:8:0": "2026-11-20T15:16:39Z",
-   "scan:stocks:XLP,XEL,WTW,XLI:8:6": "2026-11-20T15:26:50Z",
+   "scan:stocks:XLP,XEL,WTW,XLI:8:6": "2026-11-20T16:46:41Z",
    "scan:stocks:XLP,XEL,WTW,XLI:9:5": "2026-11-20T15:46:36Z",
    "scan:stocks:XLP,XEL,WTW,XLI:9:6": "2026-11-20T15:56:43Z",
    "scan:stocks:XLP,XEL,WTW,XLI:9:7": "2026-11-20T16:16:59Z",
@@ -5780,7 +5780,7 @@
    "scan:tsx:TRP.TO,PPL.TO,MRU.TO": "2026-11-20T15:36:45Z",
    "scan:tsx:TRP.TO,REI-UN.TO,PPL.TO": "2026-11-19T19:46:47Z",
    "scan:tsx:TRP.TO,SAP.TO,REI-UN.TO": "2026-11-18T16:26:44Z",
-   "scan:tsx:WN.TO,TRP.TO,PPL.TO": "2026-11-19T16:06:46Z",
+   "scan:tsx:WN.TO,TRP.TO,PPL.TO": "2026-11-20T16:46:41Z",
    "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-19T17:46:52Z",
    "scan:tsx:WN.TO,TRP.TO,SAP.TO": "2026-11-19T16:46:43Z",
    "scan:tsx:WN.TO,TRP.TO,STN.TO": "2026-11-19T17:06:37Z",
@@ -5792,7 +5792,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9094.83,
+  "benchmarkCad": 9075.4,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5802,7 +5802,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9918.19,
+  "equityCad": 9919.16,
   "focus": {
    "active": [
     "SPY",
@@ -6069,11 +6069,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T16:31:41Z",
-  "lastRun": "2026-11-20T16:36:53Z",
+  "lastRun": "2026-11-20T16:46:41Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.5% today; market mood risk-off. Bitcoin down 6.0% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,918.19 vs buy-and-hold $9,094.83.",
-  "lastSaved": "2026-11-20T16:36:53Z",
-  "lastStockScan": "2026-11-20T16:36:53Z",
+  "lastRunNote": "The S&P 500 fund was down 1.9% today; market mood risk-off. Bitcoin down 5.8% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.16 vs buy-and-hold $9,075.40.",
+  "lastSaved": "2026-11-20T16:46:41Z",
+  "lastStockScan": "2026-11-20T16:46:41Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6139,7 +6139,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4317,
+  "usdCad": 1.4319,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6671,7 +6671,7 @@
     },
     {
      "score": 56,
-     "symbol": "LONG TRP.TO",
+     "symbol": "LONG WN.TO",
      "verdict": "56/100, below the 80 needed"
     }
    ],
@@ -6697,11 +6697,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T16:36:53Z"
+  "updated": "2026-11-20T16:46:41Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 11:36), stock market open day",
-  "Stock scan: 88 long and 59 short ideas pre-screened; 7 breakouts, 6 breakdowns",
+  "Run 2026-11-20 WATCH (New York 11:46), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 8 breakouts, 6 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLI unavailable (Remote end closed connection without response)",
@@ -6745,10 +6745,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9094.83,
-   "cashCad": 9918.19,
+   "benchmarkCad": 9075.4,
+   "cashCad": 9919.16,
    "date": "2026-11-20",
-   "equityCad": 9918.19
+   "equityCad": 9919.16
   }
  ],
  "pack": {
@@ -6756,7 +6756,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T16:36:53Z",
+   "checkedAt": "2026-11-20T16:46:41Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

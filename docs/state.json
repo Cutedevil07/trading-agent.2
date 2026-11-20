@@ -5811,7 +5811,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 8985.46,
+  "benchmarkCad": 8952.61,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5821,7 +5821,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9926.89,
+  "equityCad": 9928.34,
   "focus": {
    "active": [
     "SPY",
@@ -6088,11 +6088,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T19:01:48Z",
-  "lastRun": "2026-11-20T19:16:52Z",
+  "lastRun": "2026-11-20T19:26:35Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.4% today; market mood risk-off. Bitcoin down 7.5% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,926.89 vs buy-and-hold $8,985.46.",
-  "lastSaved": "2026-11-20T19:16:52Z",
-  "lastStockScan": "2026-11-20T19:16:52Z",
+  "lastRunNote": "The S&P 500 fund was down 2.9% today; market mood risk-off. Bitcoin down 7.9% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,928.34 vs buy-and-hold $8,952.61.",
+  "lastSaved": "2026-11-20T19:26:35Z",
+  "lastStockScan": "2026-11-20T19:26:35Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6158,7 +6158,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4335,
+  "usdCad": 1.4338,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6739,13 +6739,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T19:16:52Z"
+  "updated": "2026-11-20T19:26:35Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 14:16), stock market open day",
+  "Run 2026-11-20 WATCH (New York 14:26), stock market open day",
   "Stock scan: 88 long and 59 short ideas pre-screened; 8 breakouts, 8 breakdowns",
   "News model loaded",
-  "Borrow list unavailable: OSError: [Errno 113] No route to host",
+  "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLI unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLI: Time machine favourable",
   "Borrow data for UBER unavailable (Remote end closed connection without response)",
@@ -6791,10 +6791,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 8985.46,
-   "cashCad": 9926.89,
+   "benchmarkCad": 8952.61,
+   "cashCad": 9928.34,
    "date": "2026-11-20",
-   "equityCad": 9926.89
+   "equityCad": 9928.34
   }
  ],
  "pack": {
@@ -6802,7 +6802,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T19:16:52Z",
+   "checkedAt": "2026-11-20T19:26:35Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

@@ -5812,7 +5812,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9067.68,
+  "benchmarkCad": 9061.88,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6089,11 +6089,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T17:01:47Z",
-  "lastRun": "2026-11-20T17:16:50Z",
+  "lastRun": "2026-11-20T17:26:47Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 2.0% today; market mood risk-off. Bitcoin down 4.8% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,067.68.",
-  "lastSaved": "2026-11-20T17:16:50Z",
-  "lastStockScan": "2026-11-20T17:16:50Z",
+  "lastRunNote": "The S&P 500 fund was down 2.1% today; market mood risk-off. Bitcoin down 5.7% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,923.51 vs buy-and-hold $9,061.88.",
+  "lastSaved": "2026-11-20T17:26:47Z",
+  "lastStockScan": "2026-11-20T17:26:47Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6687,14 +6687,14 @@
      "verdict": "71/100, below the 80 needed"
     },
     {
+     "score": 66,
+     "symbol": "LONG VBIL",
+     "verdict": "66/100, below the 80 needed"
+    },
+    {
      "score": 62,
      "symbol": "SHORT ORCL",
      "verdict": "62/100, below the 70 needed"
-    },
-    {
-     "score": 61,
-     "symbol": "LONG VBIL",
-     "verdict": "61/100, below the 80 needed"
     },
     {
      "score": 56,
@@ -6734,14 +6734,14 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T17:16:50Z"
+  "updated": "2026-11-20T17:26:47Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 12:16), stock market open day",
+  "Run 2026-11-20 WATCH (New York 12:26), stock market open day",
   "Stock scan: 88 long and 59 short ideas pre-screened; 9 breakouts, 8 breakdowns",
   "News model loaded",
-  "UBER: options not used (one contract costs too much for the risk budget ($385.00)); shares instead",
-  "Borrow list unavailable: OSError: [Errno 113] No route to host",
+  "UBER: options not used (one contract costs too much for the risk budget ($380.00)); shares instead",
+  "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for UBER unavailable (Remote end closed connection without response)",
   "BLOCK SHORT UBER: Time machine favourable",
   "Borrow data for XLI unavailable (Remote end closed connection without response)",
@@ -6785,7 +6785,7 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9067.68,
+   "benchmarkCad": 9061.88,
    "cashCad": 9923.51,
    "date": "2026-11-20",
    "equityCad": 9923.51
@@ -6796,7 +6796,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T17:16:50Z",
+   "checkedAt": "2026-11-20T17:26:47Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

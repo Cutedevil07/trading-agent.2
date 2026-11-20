@@ -2770,6 +2770,19 @@
    "fetchedOn": "2026-11-18",
    "missing": true
   },
+  "UBER": {
+   "epsGrowth": -92.0,
+   "epsTtm": 1.71,
+   "fetchedOn": "2026-11-20",
+   "grossMargin": null,
+   "line": "Quarter ending 2026-09-30: revenue $14.77B (+9.6% vs a year earlier), net income $512.0M (-92.3%), diluted EPS $0.25 (-92.0%).",
+   "netMargin": 3.5,
+   "note": "",
+   "oneOff": false,
+   "opMargin": 9.8,
+   "period": "2026-09-30",
+   "revGrowth": 9.6
+  },
   "UNH": {
    "epsGrowth": 76.1,
    "epsTtm": 17.55,
@@ -2825,91 +2838,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T16:46:41Z",
-   "count": 2
+   "at": "2026-11-20T16:56:43Z",
+   "count": 9
   },
   "messages": [
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 5,
-    "s": "XLY",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "all",
-    "x": "Long XLY scores 74, needs 80. Pass."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 6,
-    "s": "",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "all",
-    "x": "Nothing good enough this scan. Closest: long XLY at 74, needs 80."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 59 short charts checked, 3 breakouts, 2 breakdowns. Strongest: XLY, XEL, WMT, XLI."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "pm",
-    "x": "TSX scan: 50 Canadian charts checked. Strongest: TRP.TO, PPL.TO, L.TO."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 2,
-    "s": "WMT",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "pm",
-    "x": "Long WMT: opening-range breakout, chart 25/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 3,
-    "s": "WMT",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "pm",
-    "x": "WMT: 3 fresh headlines, mostly good; 25/25. Top: \"Walmart Stock Slips as Raised Outlook Meets Slower U.S. Sales\""
-   },
-   {
-    "d": "analyst",
-    "k": "vote",
-    "n": 4,
-    "s": "WMT",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "pm",
-    "x": "WMT: filed: operating margin 5%, sales +6%, P/E 46, debt/equity 0.6, target +5%; 10/15."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 5,
-    "s": "",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "pm",
-    "x": "Stocks are cautious: 8/15 for a long."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 6,
-    "s": "WMT",
-    "t": "2026-11-19T15:01:42Z",
-    "to": "all",
-    "x": "Long WMT scores 78, needs 80. Pass."
-   },
    {
     "d": "research",
     "k": "idea",
@@ -5528,6 +5460,87 @@
     "t": "2026-11-20T16:46:41Z",
     "to": "pm",
     "x": "TSX scan: 77 Canadian charts checked. Strongest: WN.TO, TRP.TO, PPL.TO."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 59 short charts checked, 6 breakouts, 8 breakdowns. Strongest: XLP, XEL, WTW, XLI."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "UBER",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "Short UBER: fell below its opening range, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "UBER",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "UBER: 2 fresh headlines, mostly bad; 23/25. Top: \"Amazon and McDonald\u2019s just backed Uber\u2014so why is the stock...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 3,
+    "s": "UBER",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "UBER: filed: operating margin 10%, sales +10%, P/E 39, debt/equity 0.6, target +53%; 4/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 5,
+    "s": "UBER",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "all",
+    "x": "Short UBER scores 87, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 6,
+    "s": "UBER",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "UBER: in 10,000 5-minute replays the target comes first 0%, the stop 5%. Most run out of time first. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 7,
+    "s": "UBER",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "pm",
+    "x": "Blocked UBER: the replays favour the stop."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 8,
+    "s": "",
+    "t": "2026-11-20T16:56:43Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short UBER at 87, needs 70."
    }
   ],
   "said": {
@@ -5578,6 +5591,7 @@
    "idea:TSM:short:19:none": "2026-11-18T14:51:48Z",
    "idea:TSM:short:23:breakdown": "2026-11-20T14:51:44Z",
    "idea:TSM:short:23:none": "2026-11-20T15:11:43Z",
+   "idea:UBER:short:21:breakdown": "2026-11-20T16:56:43Z",
    "idea:UNH:short:19:breakdown": "2026-11-18T15:46:31Z",
    "idea:UNH:short:20:breakdown": "2026-11-18T17:46:46Z",
    "idea:USFR:long:18:none": "2026-11-19T15:16:42Z",
@@ -5688,6 +5702,7 @@
    "macro:stocks:short:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:risk-off:2026-11-20T15:46:36.663229": "2026-11-20T15:46:36Z",
    "macro:stocks:short:risk-off:2026-11-20T16:26:43.232773": "2026-11-20T16:26:43Z",
+   "macro:stocks:short:risk-off:2026-11-20T16:56:43.454040": "2026-11-20T16:56:43Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:close:2026-11-19": "2026-11-19T20:16:38Z",
@@ -5716,6 +5731,7 @@
    "nothing:MYM:19": "2026-11-18T08:31:50Z",
    "nothing:SIL:18": "2026-11-18T00:31:42Z",
    "nothing:TSM:23": "2026-11-20T14:51:44Z",
+   "nothing:UBER:21": "2026-11-20T16:56:43Z",
    "nothing:UNH:19": "2026-11-18T15:56:44Z",
    "nothing:UNH:20": "2026-11-18T17:46:46Z",
    "nothing:WELL:19": "2026-11-18T15:01:59Z",
@@ -5758,6 +5774,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:6:6": "2026-11-18T18:36:35Z",
    "scan:stocks:XLP,XEL,WMT,XLK:6:7": "2026-11-18T17:36:46Z",
    "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
+   "scan:stocks:XLP,XEL,WTW,XLI:6:8": "2026-11-20T16:56:43Z",
    "scan:stocks:XLP,XEL,WTW,XLI:7:6": "2026-11-20T16:26:43Z",
    "scan:stocks:XLP,XEL,WTW,XLI:8:0": "2026-11-20T15:16:39Z",
    "scan:stocks:XLP,XEL,WTW,XLI:8:6": "2026-11-20T16:46:41Z",
@@ -5771,7 +5788,6 @@
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
    "scan:stocks:XLV,XLP,XEL,XLK:13:7": "2026-11-17T17:36:45Z",
-   "scan:stocks:XLV,XLP,XEL,XLK:14:7": "2026-11-17T16:46:48Z",
    "scan:stocks:XLY,XEL,WM,XLI:0:0": "2026-11-19T14:51:39Z",
    "scan:stocks:XLY,XEL,WMT,XLI:3:2": "2026-11-19T15:01:42Z",
    "scan:stocks:XLY,XEL,WMT,XLI:4:5": "2026-11-19T15:11:48Z",
@@ -5792,7 +5808,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9075.4,
+  "benchmarkCad": 9076.87,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5802,7 +5818,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9919.16,
+  "equityCad": 9921.09,
   "focus": {
    "active": [
     "SPY",
@@ -6069,11 +6085,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T16:31:41Z",
-  "lastRun": "2026-11-20T16:46:41Z",
+  "lastRun": "2026-11-20T16:56:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.9% today; market mood risk-off. Bitcoin down 5.8% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.16 vs buy-and-hold $9,075.40.",
-  "lastSaved": "2026-11-20T16:46:41Z",
-  "lastStockScan": "2026-11-20T16:46:41Z",
+  "lastRunNote": "The S&P 500 fund was down 1.9% today; market mood risk-off. Bitcoin down 5.4% in 24 hours (risk-off). No trades: SHORT UBER came closest but failed time machine favourable. Holding 0 positions. Value $9,921.09 vs buy-and-hold $9,076.87.",
+  "lastSaved": "2026-11-20T16:56:43Z",
+  "lastStockScan": "2026-11-20T16:56:43Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6139,7 +6155,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4319,
+  "usdCad": 1.4323,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6349,6 +6365,17 @@
    "sector": "Consumer Discretionary",
    "target1y": 38.0,
    "ttmEps": 1.86
+  },
+  "UBER": {
+   "debtToEquity": 0.57,
+   "epsGrowthPct": -92.0,
+   "fetchedOn": "2026-11-20",
+   "freeCashFlow": 2743000.0,
+   "lastEps": 0.25,
+   "revGrowthPct": -18.9,
+   "sector": "Consumer Discretionary",
+   "target1y": 100.0,
+   "ttmEps": 1.7
   },
   "UNH": {
    "debtToEquity": 0.81,
@@ -6623,11 +6650,17 @@
      "failed": [
       "Time machine favourable"
      ],
+     "symbol": "SHORT UBER"
+    },
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
      "symbol": "SHORT XLI"
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 48,
+   "dataCalls": 54,
    "date": "2026-11-20",
    "liquid": 2258,
    "regime": "risk-off",
@@ -6635,9 +6668,9 @@
    "summary": "Morning: The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 4.1% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.64 vs buy-and-hold $9,231.74.",
    "topCandidates": [
     {
-     "score": 85,
-     "symbol": "SHORT MU",
-     "verdict": "85/100, down more than 10% today"
+     "score": 87,
+     "symbol": "SHORT UBER",
+     "verdict": "87/100, fell below its opening range"
     },
     {
      "score": 77,
@@ -6661,12 +6694,12 @@
     },
     {
      "score": 56,
-     "symbol": "LONG XEL",
+     "symbol": "LONG WTW",
      "verdict": "56/100, below the 80 needed"
     },
     {
      "score": 56,
-     "symbol": "LONG WTW",
+     "symbol": "LONG WM",
      "verdict": "56/100, below the 80 needed"
     },
     {
@@ -6697,13 +6730,17 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T16:46:41Z"
+  "updated": "2026-11-20T16:56:43Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 11:46), stock market open day",
-  "Stock scan: 88 long and 59 short ideas pre-screened; 8 breakouts, 6 breakdowns",
+  "Run 2026-11-20 WATCH (New York 11:56), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 6 breakouts, 8 breakdowns",
   "News model loaded",
+  "SEC filed numbers for UBER: sales 9.6% y/y, operating margin 9.8%",
+  "UBER: options not used (one contract costs too much for the risk budget ($370.00)); shares instead",
   "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for UBER unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT UBER: Time machine favourable",
   "Borrow data for XLI unavailable (Remote end closed connection without response)",
   "BLOCK SHORT XLI: Time machine favourable"
  ],
@@ -6745,10 +6782,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9075.4,
-   "cashCad": 9919.16,
+   "benchmarkCad": 9076.87,
+   "cashCad": 9921.09,
    "date": "2026-11-20",
-   "equityCad": 9919.16
+   "equityCad": 9921.09
   }
  ],
  "pack": {
@@ -6756,7 +6793,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T16:46:41Z",
+   "checkedAt": "2026-11-20T16:56:43Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

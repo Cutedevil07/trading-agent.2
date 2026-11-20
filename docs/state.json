@@ -2698,6 +2698,19 @@
    "period": "2026-08-31",
    "revGrowth": 29.6
   },
+  "PLTR": {
+   "epsGrowth": 144.4,
+   "epsTtm": 1.43,
+   "fetchedOn": "2026-11-20",
+   "grossMargin": 83.4,
+   "line": "Quarter ending 2026-09-30: revenue $2.31B (+95.9% vs a year earlier), net income $1.13B (+137.2%), diluted EPS $0.44 (+144.4%).",
+   "netMargin": 48.8,
+   "note": "",
+   "oneOff": true,
+   "opMargin": 46.9,
+   "period": "2026-09-30",
+   "revGrowth": 95.9
+  },
   "SBUX": {
    "epsGrowth": 436.4,
    "epsTtm": 2.21,
@@ -2796,64 +2809,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T14:51:44Z",
-   "count": 20
+   "at": "2026-11-20T15:01:43Z",
+   "count": 6
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-18T21:01:42Z",
-    "to": "pm",
-    "x": "NYSE is closed (after the close). Opens Nov 19 at 9:30 AM."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-18T21:01:42Z",
-    "to": "all",
-    "x": "Nothing good enough this scan. Closest: short M6E at 70, needs 75."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 0,
-    "s": "MET",
-    "t": "2026-11-18T22:01:48Z",
-    "to": "pm",
-    "x": "Short MET: no clean setup yet, chart 20/30."
-   },
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 1,
-    "s": "MET",
-    "t": "2026-11-18T22:01:48Z",
-    "to": "pm",
-    "x": "MET: no fresh headlines, neutral 13/25."
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-18T22:01:48Z",
-    "to": "pm",
-    "x": "Futures are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "MET",
-    "t": "2026-11-18T22:01:48Z",
-    "to": "all",
-    "x": "Short MET scores 67, needs 70. Pass."
-   },
    {
     "d": "strategy",
     "k": "mood",
@@ -5499,6 +5458,60 @@
     "t": "2026-11-20T14:51:44Z",
     "to": "pm",
     "x": "Watching ORCL: a rally to short would start here, at $121.61."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-20T15:01:43Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 59 short charts checked, 3 breakouts, 0 breakdowns. Strongest: XLP, XEL, WTW, XLK."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "PLTR",
+    "t": "2026-11-20T15:01:43Z",
+    "to": "pm",
+    "x": "Short PLTR: new 20-day low on heavy volume, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "PLTR",
+    "t": "2026-11-20T15:01:43Z",
+    "to": "pm",
+    "x": "PLTR: 3 fresh headlines, mostly good; 7/25. Top: \"Cathie Wood's Ark Has Been Selling Palantir Stock. Under $160,...\""
+   },
+   {
+    "d": "analyst",
+    "k": "vote",
+    "n": 3,
+    "s": "PLTR",
+    "t": "2026-11-20T15:01:43Z",
+    "to": "pm",
+    "x": "PLTR: filed: operating margin 47%, sales +96%, P/E 107, debt/equity 0.0, target +62%; 2/15."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-20T15:01:43Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 5,
+    "s": "PLTR",
+    "t": "2026-11-20T15:01:43Z",
+    "to": "all",
+    "x": "Short PLTR scores 69, needs 70. Pass."
    }
   ],
   "said": {
@@ -5539,6 +5552,7 @@
    "idea:ORCL:short:16:none": "2026-11-20T14:51:44Z",
    "idea:ORCL:short:17:breakdown": "2026-11-19T17:26:37Z",
    "idea:ORCL:short:18:breakdown": "2026-11-19T17:16:43Z",
+   "idea:PLTR:short:17:breakdown": "2026-11-20T15:01:43Z",
    "idea:SBUX:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:SIL:short:18:none": "2026-11-17T23:31:48Z",
    "idea:SNDK:short:17:breakdown": "2026-11-18T15:11:44Z",
@@ -5551,11 +5565,9 @@
    "idea:UNH:short:19:breakdown": "2026-11-18T15:46:31Z",
    "idea:UNH:short:20:breakdown": "2026-11-18T17:46:46Z",
    "idea:USFR:long:18:none": "2026-11-19T15:16:42Z",
-   "idea:V:long:19:breakout": "2026-11-17T15:01:42Z",
    "idea:VGT:short:18:breakdown": "2026-11-17T15:11:45Z",
    "idea:VOO:short:19:breakdown": "2026-11-17T17:06:43Z",
    "idea:VOO:short:20:breakdown": "2026-11-17T15:46:35Z",
-   "idea:VTV:long:18:breakout": "2026-11-17T15:01:42Z",
    "idea:VUG:short:18:breakdown": "2026-11-18T15:56:44Z",
    "idea:WELL:long:19:breakout": "2026-11-19T15:01:42Z",
    "idea:WFC:short:17:breakdown": "2026-11-18T18:16:41Z",
@@ -5624,14 +5636,12 @@
    "macro:futures:short:risk-off:2026-11-20T05:31:44.143884": "2026-11-20T05:31:44Z",
    "macro:futures:short:risk-off:2026-11-20T09:01:54.435971": "2026-11-20T09:01:54Z",
    "macro:futures:short:risk-off:2026-11-20T12:31:34.137119": "2026-11-20T12:31:34Z",
-   "macro:stocks:long:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-17T15:36:46.797102": "2026-11-17T15:36:46Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:long:cautious:2026-11-18T17:26:43.384713": "2026-11-18T17:26:43Z",
    "macro:stocks:long:cautious:2026-11-19T14:51:39.399557": "2026-11-19T14:51:39Z",
    "macro:stocks:long:cautious:2026-11-19T15:01:42.070783": "2026-11-19T15:01:42Z",
    "macro:stocks:long:cautious:2026-11-19T15:16:42.230546": "2026-11-19T15:16:42Z",
-   "macro:stocks:short:cautious:2026-11-17T15:01:42.047191": "2026-11-17T15:01:42Z",
    "macro:stocks:short:cautious:2026-11-17T15:11:45.352677": "2026-11-17T15:11:45Z",
    "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:short:cautious:2026-11-19T15:11:48.589009": "2026-11-19T15:11:48Z",
@@ -5660,6 +5670,7 @@
    "macro:stocks:short:risk-off:2026-11-19T17:26:37.456377": "2026-11-19T17:26:37Z",
    "macro:stocks:short:risk-off:2026-11-19T19:26:47.386935": "2026-11-19T19:26:47Z",
    "macro:stocks:short:risk-off:2026-11-20T14:51:44.821280": "2026-11-20T14:51:44Z",
+   "macro:stocks:short:risk-off:2026-11-20T15:01:43.984149": "2026-11-20T15:01:43Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:close:2026-11-19": "2026-11-19T20:16:38Z",
@@ -5692,7 +5703,6 @@
    "nothing:TSM:23": "2026-11-20T14:51:44Z",
    "nothing:UNH:19": "2026-11-18T15:56:44Z",
    "nothing:UNH:20": "2026-11-18T17:46:46Z",
-   "nothing:V:19": "2026-11-17T15:01:42Z",
    "nothing:WELL:19": "2026-11-18T15:01:59Z",
    "nothing:WFC:19": "2026-11-18T19:06:53Z",
    "nothing:WMT:19": "2026-11-19T15:01:42Z",
@@ -5734,13 +5744,13 @@
    "scan:stocks:XLP,XEL,WMT,XLK:6:7": "2026-11-18T17:36:46Z",
    "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
    "scan:stocks:XLP,XEL,WTW,XLK:0:0": "2026-11-20T14:51:44Z",
+   "scan:stocks:XLP,XEL,WTW,XLK:3:0": "2026-11-20T15:01:43Z",
    "scan:stocks:XLV,XLP,XEL,XLK:10:7": "2026-11-17T18:56:53Z",
    "scan:stocks:XLV,XLP,XEL,XLK:11:7": "2026-11-17T19:16:38Z",
    "scan:stocks:XLV,XLP,XEL,XLK:12:7": "2026-11-17T19:46:30Z",
    "scan:stocks:XLV,XLP,XEL,XLK:13:7": "2026-11-17T17:36:45Z",
    "scan:stocks:XLV,XLP,XEL,XLK:14:7": "2026-11-17T16:46:48Z",
    "scan:stocks:XLV,XLP,XEL,XLK:15:7": "2026-11-17T15:56:41Z",
-   "scan:stocks:XLV,XLP,XLF,XLK:10:1": "2026-11-17T15:01:42Z",
    "scan:stocks:XLV,XLP,XLF,XLK:10:6": "2026-11-17T15:11:45Z",
    "scan:stocks:XLV,XLP,XLF,XLK:11:6": "2026-11-17T15:16:48Z",
    "scan:stocks:XLV,XLP,XLF,XLK:12:6": "2026-11-17T15:26:46Z",
@@ -5765,7 +5775,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9275.71,
+  "benchmarkCad": 9302.56,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6041,12 +6051,12 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-20T14:31:54Z",
-  "lastRun": "2026-11-20T14:51:44Z",
+  "lastFuturesScan": "2026-11-20T15:01:43Z",
+  "lastRun": "2026-11-20T15:01:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 0.2% today; market mood risk-off. Bitcoin down 3.4% in 24 hours (risk-off). No trades: SHORT TSM came closest but failed time machine favourable. Holding 0 positions. Value $9,921.58 vs buy-and-hold $9,275.71.",
-  "lastSaved": "2026-11-20T14:51:44Z",
-  "lastStockScan": "2026-11-20T14:51:44Z",
+  "lastRunNote": "The S&P 500 fund was up 0.0% today; market mood risk-off. Bitcoin down 3.4% in 24 hours (risk-off). No trades: SHORT TSM came closest but failed time machine favourable. Holding 0 positions. Value $9,921.58 vs buy-and-hold $9,302.56.",
+  "lastSaved": "2026-11-20T15:01:43Z",
+  "lastStockScan": "2026-11-20T15:01:43Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6194,6 +6204,17 @@
    "target1y": 173.0,
    "ttmEps": 6.62
   },
+  "PLTR": {
+   "debtToEquity": 0.0,
+   "epsGrowthPct": 131.6,
+   "fetchedOn": "2026-11-20",
+   "freeCashFlow": 1212584.0,
+   "lastEps": 0.44,
+   "revGrowthPct": 31.4,
+   "sector": "Technology",
+   "target1y": 245.0,
+   "ttmEps": 1.42
+  },
   "SBUX": {
    "debtToEquity": 1.73,
    "epsGrowthPct": 391.7,
@@ -6260,6 +6281,14 @@
    "target1y": 86.0,
    "ttmEps": 9.58
   },
+  "SYNA": {
+   "debtToEquity": 0.91,
+   "fetchedOn": "2026-11-20",
+   "freeCashFlow": 18600.0,
+   "revGrowthPct": 11.5,
+   "sector": "Technology",
+   "target1y": 123.5
+  },
   "TRV": {
    "debtToEquity": 0.37,
    "epsGrowthPct": 10.0,
@@ -6270,6 +6299,17 @@
    "sector": "Finance",
    "target1y": 383.0,
    "ttmEps": 38.03
+  },
+  "TSCO": {
+   "debtToEquity": 0.86,
+   "epsGrowthPct": -12.2,
+   "fetchedOn": "2026-11-20",
+   "freeCashFlow": 445406.0,
+   "lastEps": 0.43,
+   "revGrowthPct": -22.4,
+   "sector": "Consumer Discretionary",
+   "target1y": 38.0,
+   "ttmEps": 1.86
   },
   "UNH": {
    "debtToEquity": 0.81,
@@ -6303,6 +6343,14 @@
    "sector": "Consumer Discretionary",
    "target1y": 462.0,
    "ttmEps": 12.32
+  },
+  "VRNS": {
+   "debtToEquity": 1.05,
+   "fetchedOn": "2026-11-20",
+   "freeCashFlow": 29727.0,
+   "revGrowthPct": -13.0,
+   "sector": "Technology",
+   "target1y": 49.75
   },
   "WEC": {
    "debtToEquity": 1.59,
@@ -6543,10 +6591,17 @@
       "Time machine favourable"
      ],
      "symbol": "SHORT XLK"
+    },
+    {
+     "failed": [
+      "Daily loss limit",
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT MET"
     }
    ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 62,
+   "dataCalls": 68,
    "date": "2026-11-20",
    "liquid": 2258,
    "regime": "risk-off",
@@ -6564,14 +6619,24 @@
      "verdict": "82/100, new 20-day low on heavy volume"
     },
     {
+     "score": 77,
+     "symbol": "SHORT MET",
+     "verdict": "77/100, new 20-day low on heavy volume"
+    },
+    {
+     "score": 75,
+     "symbol": "SHORT M6E",
+     "verdict": "75/100, no clean setup yet"
+    },
+    {
      "score": 71,
      "symbol": "LONG XLP",
      "verdict": "71/100, below the 80 needed"
     },
     {
-     "score": 67,
-     "symbol": "SHORT ORCL",
-     "verdict": "67/100, below the 70 needed"
+     "score": 69,
+     "symbol": "SHORT PLTR",
+     "verdict": "69/100, below the 70 needed"
     },
     {
      "score": 66,
@@ -6579,19 +6644,9 @@
      "verdict": "66/100, below the 80 needed"
     },
     {
-     "score": 61,
+     "score": 66,
      "symbol": "LONG L.TO",
-     "verdict": "61/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG WTW",
-     "verdict": "56/100, below the 80 needed"
-    },
-    {
-     "score": 56,
-     "symbol": "LONG TRP.TO",
-     "verdict": "56/100, below the 80 needed"
+     "verdict": "66/100, below the 80 needed"
     }
    ],
    "universe": 6224
@@ -6616,18 +6671,20 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T14:51:44Z"
+  "updated": "2026-11-20T15:01:43Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 09:51), stock market open day",
-  "Stock scan: 88 long and 59 short ideas pre-screened; 0 breakouts, 0 breakdowns",
+  "Run 2026-11-20 WATCH (New York 10:01), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 3 breakouts, 0 breakdowns",
   "News model loaded",
-  "TSM: options not used (one contract costs too much for the risk budget ($2,675.00)); shares instead",
+  "SEC filed numbers for PLTR: sales 95.9% y/y, operating margin 46.9%",
+  "TSM: options not used (one contract costs too much for the risk budget ($2,715.00)); shares instead",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for TSM unavailable (Remote end closed connection without response)",
   "BLOCK SHORT TSM: Time machine favourable",
   "Borrow data for XLK unavailable (Remote end closed connection without response)",
-  "BLOCK SHORT XLK: Time machine favourable"
+  "BLOCK SHORT XLK: Time machine favourable",
+  "BLOCK SHORT MET: Daily loss limit, Time machine favourable"
  ],
  "nav": [
   {
@@ -6667,7 +6724,7 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9275.71,
+   "benchmarkCad": 9302.56,
    "cashCad": 9921.58,
    "date": "2026-11-20",
    "equityCad": 9921.58
@@ -6678,7 +6735,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T14:51:44Z",
+   "checkedAt": "2026-11-20T15:01:43Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

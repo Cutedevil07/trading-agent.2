@@ -5792,7 +5792,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9091.41,
+  "benchmarkCad": 9094.83,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -5802,7 +5802,7 @@
   "earningsKnown": true,
   "entriesThisWeek": 0,
   "entriesToday": 0,
-  "equityCad": 9920.61,
+  "equityCad": 9918.19,
   "focus": {
    "active": [
     "SPY",
@@ -6069,11 +6069,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T16:31:41Z",
-  "lastRun": "2026-11-20T16:31:41Z",
+  "lastRun": "2026-11-20T16:36:53Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.5% today; market mood risk-off. Bitcoin down 6.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,920.61 vs buy-and-hold $9,091.41.",
-  "lastSaved": "2026-11-20T16:31:41Z",
-  "lastStockScan": "2026-11-20T16:26:43Z",
+  "lastRunNote": "The S&P 500 fund was down 1.5% today; market mood risk-off. Bitcoin down 6.0% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,918.19 vs buy-and-hold $9,094.83.",
+  "lastSaved": "2026-11-20T16:36:53Z",
+  "lastStockScan": "2026-11-20T16:36:53Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6139,7 +6139,7 @@
   },
   "tradingDays": 4,
   "usd": 4832.15361973509,
-  "usdCad": 1.4322,
+  "usdCad": 1.4317,
   "weekStart": "2026-11-16",
   "weekStartEquityCad": 9897.9
  },
@@ -6618,9 +6618,16 @@
    "universe": 6226
   },
   {
-   "blocked": [],
+   "blocked": [
+    {
+     "failed": [
+      "Time machine favourable"
+     ],
+     "symbol": "SHORT XLI"
+    }
+   ],
    "cryptoRegime": "risk-off",
-   "dataCalls": 18,
+   "dataCalls": 48,
    "date": "2026-11-20",
    "liquid": 2258,
    "regime": "risk-off",
@@ -6628,14 +6635,44 @@
    "summary": "Morning: The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 4.1% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.64 vs buy-and-hold $9,231.74.",
    "topCandidates": [
     {
-     "score": 77,
-     "symbol": "SHORT MET",
-     "verdict": "77/100, no clean setup yet"
+     "score": 85,
+     "symbol": "SHORT MU",
+     "verdict": "85/100, down more than 10% today"
     },
     {
-     "score": 75,
-     "symbol": "SHORT M6E",
-     "verdict": "75/100, no clean setup yet"
+     "score": 77,
+     "symbol": "SHORT XLI",
+     "verdict": "77/100, fell below its opening range"
+    },
+    {
+     "score": 71,
+     "symbol": "LONG XLP",
+     "verdict": "71/100, below the 80 needed"
+    },
+    {
+     "score": 66,
+     "symbol": "LONG VBIL",
+     "verdict": "66/100, below the 80 needed"
+    },
+    {
+     "score": 62,
+     "symbol": "SHORT ORCL",
+     "verdict": "62/100, below the 70 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG XEL",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG WTW",
+     "verdict": "56/100, below the 80 needed"
+    },
+    {
+     "score": 56,
+     "symbol": "LONG TRP.TO",
+     "verdict": "56/100, below the 80 needed"
     }
    ],
    "universe": 6224
@@ -6660,10 +6697,15 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T16:31:41Z"
+  "updated": "2026-11-20T16:36:53Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 11:31), stock market open day"
+  "Run 2026-11-20 WATCH (New York 11:36), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 7 breakouts, 6 breakdowns",
+  "News model loaded",
+  "Borrow list unavailable: TimeoutError: timed out",
+  "Borrow data for XLI unavailable (Remote end closed connection without response)",
+  "BLOCK SHORT XLI: Time machine favourable"
  ],
  "nav": [
   {
@@ -6703,10 +6745,10 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9091.41,
-   "cashCad": 9920.61,
+   "benchmarkCad": 9094.83,
+   "cashCad": 9918.19,
    "date": "2026-11-20",
-   "equityCad": 9920.61
+   "equityCad": 9918.19
   }
  ],
  "pack": {
@@ -6714,7 +6756,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T16:31:41Z",
+   "checkedAt": "2026-11-20T16:36:53Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

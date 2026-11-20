@@ -2838,55 +2838,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T22:01:49Z",
-   "count": 4
+   "at": "2026-11-20T22:31:42Z",
+   "count": 5
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 3,
-    "s": "XLK",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "XLK: 1 fresh headline, mostly bad; 18/25. Top: \"What State Street Technology SPDR (XLK) Sold: Apple Leads on...\""
-   },
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 4,
-    "s": "",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "Stocks are risk off: 15/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 5,
-    "s": "XLK",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "all",
-    "x": "Short XLK scores 87, needs 70. Quant and Risk, check it."
-   },
-   {
-    "d": "quant",
-    "k": "vote",
-    "n": 6,
-    "s": "XLK",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "XLK: in 10,000 daily replays the target comes first 0%, the stop 0%. Most run out of time first. Odds are against us."
-   },
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 7,
-    "s": "XLK",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "Blocked XLK: the replays favour the stop."
-   },
    {
     "d": "research",
     "k": "idea",
@@ -5541,6 +5496,51 @@
     "t": "2026-11-20T22:01:49Z",
     "to": "all",
     "x": "Short MET scores 77 but no clean setup yet. Waiting."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 0,
+    "s": "MET",
+    "t": "2026-11-20T22:31:42Z",
+    "to": "pm",
+    "x": "Short MET: no clean setup yet, chart 20/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 1,
+    "s": "MET",
+    "t": "2026-11-20T22:31:42Z",
+    "to": "pm",
+    "x": "MET: no fresh headlines, neutral 13/25."
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-20T22:31:42Z",
+    "to": "pm",
+    "x": "Futures are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 3,
+    "s": "MET",
+    "t": "2026-11-20T22:31:42Z",
+    "to": "all",
+    "x": "Short MET scores 67, needs 70. Pass."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "",
+    "t": "2026-11-20T22:31:42Z",
+    "to": "all",
+    "x": "Nothing good enough this scan. Closest: short M6E at 70, needs 75."
    }
   ],
   "said": {
@@ -5563,7 +5563,7 @@
    "idea:M6E:short:17:breakdown": "2026-11-18T20:31:41Z",
    "idea:M6E:short:17:none": "2026-11-20T21:31:44Z",
    "idea:M6E:short:18:none": "2026-11-20T17:01:47Z",
-   "idea:MET:short:16:none": "2026-11-20T04:31:38Z",
+   "idea:MET:short:16:none": "2026-11-20T22:31:42Z",
    "idea:MET:short:18:none": "2026-11-19T15:31:49Z",
    "idea:MET:short:19:breakdown": "2026-11-20T15:31:44Z",
    "idea:MET:short:19:none": "2026-11-20T22:01:49Z",
@@ -5667,6 +5667,7 @@
    "macro:futures:short:risk-off:2026-11-20T16:01:36.785855": "2026-11-20T16:01:36Z",
    "macro:futures:short:risk-off:2026-11-20T19:01:48.589609": "2026-11-20T19:01:48Z",
    "macro:futures:short:risk-off:2026-11-20T22:01:49.985034": "2026-11-20T22:01:49Z",
+   "macro:futures:short:risk-off:2026-11-20T22:31:42.130487": "2026-11-20T22:31:42Z",
    "macro:stocks:long:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:long:cautious:2026-11-18T17:26:43.384713": "2026-11-18T17:26:43Z",
    "macro:stocks:long:cautious:2026-11-19T14:51:39.399557": "2026-11-19T14:51:39Z",
@@ -5720,7 +5721,7 @@
    "mood:stocks:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
    "mood:stocks:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
    "mood:stocks:risk-off:2026-11-20": "2026-11-20T05:01:36Z",
-   "nothing:M6E:17": "2026-11-19T22:31:41Z",
+   "nothing:M6E:17": "2026-11-20T22:31:42Z",
    "nothing:M6E:18": "2026-11-19T20:31:38Z",
    "nothing:MET:15": "2026-11-19T04:01:42Z",
    "nothing:MET:16": "2026-11-20T04:01:43Z",
@@ -5811,7 +5812,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 8951.55,
+  "benchmarkCad": 8953.41,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6087,11 +6088,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-20T22:01:49Z",
-  "lastRun": "2026-11-20T22:01:49Z",
+  "lastFuturesScan": "2026-11-20T22:31:42Z",
+  "lastRun": "2026-11-20T22:31:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 3.6% today; market mood risk-off. Bitcoin down 4.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $8,951.55.",
-  "lastSaved": "2026-11-20T22:01:49Z",
+  "lastRunNote": "The S&P 500 fund was down 3.6% today; market mood risk-off. Bitcoin down 5.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $8,953.41.",
+  "lastSaved": "2026-11-20T22:31:42Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6658,14 +6659,14 @@
    "summary": "Morning: The S&P 500 fund was down 0.3% today; market mood risk-off. Bitcoin down 4.1% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,919.64 vs buy-and-hold $9,231.74. Close: The S&P 500 fund was down 3.1% today; market mood risk-off. Bitcoin down 6.3% in 24 hours (risk-off). No new trades this run (nothing due). Holding 0 positions. Value $9,925.93 vs buy-and-hold $8,964.23.",
    "topCandidates": [
     {
-     "score": 77,
-     "symbol": "SHORT MET",
-     "verdict": "77/100, no clean setup yet"
-    },
-    {
      "score": 70,
      "symbol": "SHORT M6E",
      "verdict": "70/100, below the 75 needed"
+    },
+    {
+     "score": 67,
+     "symbol": "SHORT MET",
+     "verdict": "67/100, below the 70 needed"
     }
    ],
    "universe": 6224
@@ -6690,10 +6691,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T22:01:49Z"
+  "updated": "2026-11-20T22:31:42Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 17:01), stock market open day"
+  "Run 2026-11-20 WATCH (New York 17:31), stock market open day"
  ],
  "nav": [
   {
@@ -6733,7 +6734,7 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 8951.55,
+   "benchmarkCad": 8953.41,
    "cashCad": 9929.31,
    "date": "2026-11-20",
    "equityCad": 9929.31
@@ -6744,7 +6745,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T22:01:49Z",
+   "checkedAt": "2026-11-20T22:31:42Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

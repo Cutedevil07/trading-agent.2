@@ -2825,73 +2825,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T16:16:59Z",
-   "count": 1
+   "at": "2026-11-20T16:26:43Z",
+   "count": 7
   },
   "messages": [
-   {
-    "d": "strategy",
-    "k": "vote",
-    "n": 2,
-    "s": "",
-    "t": "2026-11-19T14:01:44Z",
-    "to": "pm",
-    "x": "Futures are neutral: 8/15 for a short."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 3,
-    "s": "M6E",
-    "t": "2026-11-19T14:01:44Z",
-    "to": "all",
-    "x": "Short M6E scores 75 but no clean setup yet. Waiting."
-   },
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-19T14:31:36Z",
-    "to": "pm",
-    "x": "Stocks are cautious: the S&P 500 fund is between its averages."
-   },
-   {
-    "d": "strategy",
-    "k": "mood",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-19T14:31:36Z",
-    "to": "pm",
-    "x": "NYSE is open until 4:00 PM."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 0,
-    "s": "",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "pm",
-    "x": "Stock scan: 87 long and 59 short charts checked, 0 breakouts, 0 breakdowns. Strongest: XLY, XEL, WM, XLI."
-   },
-   {
-    "d": "research",
-    "k": "info",
-    "n": 1,
-    "s": "",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "pm",
-    "x": "TSX scan: 44 Canadian charts checked. Strongest: TRP.TO, L.TO, IAG.TO."
-   },
-   {
-    "d": "research",
-    "k": "idea",
-    "n": 2,
-    "s": "XLY",
-    "t": "2026-11-19T14:51:39Z",
-    "to": "pm",
-    "x": "Long XLY: pullback in an uptrend, chart 30/30."
-   },
    {
     "d": "news",
     "k": "vote",
@@ -5528,6 +5465,69 @@
     "t": "2026-11-20T16:16:59Z",
     "to": "pm",
     "x": "Stock scan: 88 long and 59 short charts checked, 9 breakouts, 7 breakdowns. Strongest: XLP, XEL, WTW, XLI."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "pm",
+    "x": "Stock scan: 88 long and 59 short charts checked, 7 breakouts, 6 breakdowns. Strongest: XLP, XEL, WTW, XLI."
+   },
+   {
+    "d": "research",
+    "k": "idea",
+    "n": 1,
+    "s": "XLI",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "pm",
+    "x": "Short XLI: fell below its opening range, chart 30/30."
+   },
+   {
+    "d": "news",
+    "k": "vote",
+    "n": 2,
+    "s": "XLI",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "pm",
+    "x": "XLI: 1 fresh headline, mixed; 13/25. Top: \"State Street Industrial Select Sector SPDR (XLI) Adds GE and...\""
+   },
+   {
+    "d": "strategy",
+    "k": "vote",
+    "n": 3,
+    "s": "",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "pm",
+    "x": "Stocks are risk off: 15/15 for a short."
+   },
+   {
+    "d": "pm",
+    "k": "decide",
+    "n": 4,
+    "s": "XLI",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "all",
+    "x": "Short XLI scores 77, needs 70. Quant and Risk, check it."
+   },
+   {
+    "d": "quant",
+    "k": "vote",
+    "n": 5,
+    "s": "XLI",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "pm",
+    "x": "XLI: in 10,000 5-minute replays the target comes first 0%, the stop 10%. Most run out of time first. Odds are against us."
+   },
+   {
+    "d": "risk",
+    "k": "block",
+    "n": 6,
+    "s": "XLI",
+    "t": "2026-11-20T16:26:43Z",
+    "to": "pm",
+    "x": "Blocked XLI: the replays favour the stop."
    }
   ],
   "said": {
@@ -5591,6 +5591,7 @@
    "idea:WMT:long:19:none": "2026-11-18T15:01:59Z",
    "idea:WMT:long:20:breakout": "2026-11-20T15:16:39Z",
    "idea:XLI:short:18:breakdown": "2026-11-19T15:11:48Z",
+   "idea:XLI:short:19:breakdown": "2026-11-20T16:26:43Z",
    "idea:XLI:short:20:breakdown": "2026-11-20T15:16:39Z",
    "idea:XLK:short:18:breakdown": "2026-11-18T18:36:35Z",
    "idea:XLK:short:18:none": "2026-11-18T15:01:59Z",
@@ -5686,6 +5687,7 @@
    "macro:stocks:short:risk-off:2026-11-20T15:11:43.306834": "2026-11-20T15:11:43Z",
    "macro:stocks:short:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:risk-off:2026-11-20T15:46:36.663229": "2026-11-20T15:46:36Z",
+   "macro:stocks:short:risk-off:2026-11-20T16:26:43.232773": "2026-11-20T16:26:43Z",
    "meeting:close:2026-11-17": "2026-11-17T20:16:34Z",
    "meeting:close:2026-11-18": "2026-11-18T20:16:54Z",
    "meeting:close:2026-11-19": "2026-11-19T20:16:38Z",
@@ -5756,6 +5758,7 @@
    "scan:stocks:XLP,XEL,WMT,XLK:6:6": "2026-11-18T18:36:35Z",
    "scan:stocks:XLP,XEL,WMT,XLK:6:7": "2026-11-18T17:36:46Z",
    "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
+   "scan:stocks:XLP,XEL,WTW,XLI:7:6": "2026-11-20T16:26:43Z",
    "scan:stocks:XLP,XEL,WTW,XLI:8:0": "2026-11-20T15:16:39Z",
    "scan:stocks:XLP,XEL,WTW,XLI:8:6": "2026-11-20T15:26:50Z",
    "scan:stocks:XLP,XEL,WTW,XLI:9:5": "2026-11-20T15:46:36Z",
@@ -5789,7 +5792,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9124.61,
+  "benchmarkCad": 9095.11,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6066,11 +6069,11 @@
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
   "lastFuturesScan": "2026-11-20T16:01:36Z",
-  "lastRun": "2026-11-20T16:16:59Z",
+  "lastRun": "2026-11-20T16:26:43Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 1.2% today; market mood risk-off. Bitcoin down 5.7% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,920.61 vs buy-and-hold $9,124.61.",
-  "lastSaved": "2026-11-20T16:16:59Z",
-  "lastStockScan": "2026-11-20T16:16:59Z",
+  "lastRunNote": "The S&P 500 fund was down 1.4% today; market mood risk-off. Bitcoin down 6.2% in 24 hours (risk-off). No trades: SHORT XLI came closest but failed time machine favourable. Holding 0 positions. Value $9,920.61 vs buy-and-hold $9,095.11.",
+  "lastSaved": "2026-11-20T16:26:43Z",
+  "lastStockScan": "2026-11-20T16:26:43Z",
   "lastTradingDay": "2026-11-19",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
   "maxDrawdownPct": 1.06,
@@ -6637,9 +6640,9 @@
      "verdict": "85/100, down more than 10% today"
     },
     {
-     "score": 82,
+     "score": 77,
      "symbol": "SHORT XLI",
-     "verdict": "82/100, fell below its opening range"
+     "verdict": "77/100, fell below its opening range"
     },
     {
      "score": 71,
@@ -6694,11 +6697,11 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-20T16:16:59Z"
+  "updated": "2026-11-20T16:26:43Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 11:16), stock market open day",
-  "Stock scan: 88 long and 59 short ideas pre-screened; 9 breakouts, 7 breakdowns",
+  "Run 2026-11-20 WATCH (New York 11:26), stock market open day",
+  "Stock scan: 88 long and 59 short ideas pre-screened; 7 breakouts, 6 breakdowns",
   "News model loaded",
   "Borrow list unavailable: TimeoutError: timed out",
   "Borrow data for XLI unavailable (Remote end closed connection without response)",
@@ -6742,7 +6745,7 @@
    "equityCad": 9922.06
   },
   {
-   "benchmarkCad": 9124.61,
+   "benchmarkCad": 9095.11,
    "cashCad": 9920.61,
    "date": "2026-11-20",
    "equityCad": 9920.61
@@ -6753,7 +6756,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-20T16:16:59Z",
+   "checkedAt": "2026-11-20T16:26:43Z",
    "closes": "16:00",
    "date": "2026-11-20",
    "early_close": null,

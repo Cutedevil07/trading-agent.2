@@ -5609,7 +5609,6 @@
    "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:XLP:long:18:none": "2026-11-18T15:01:59Z",
    "idea:XLY:long:18:pullback": "2026-11-19T14:51:39Z",
-   "macro:futures:short:neutral:2026-11-18T13:31:48.458385": "2026-11-18T13:31:48Z",
    "macro:futures:short:neutral:2026-11-18T17:01:37.744722": "2026-11-18T17:01:37Z",
    "macro:futures:short:neutral:2026-11-18T20:31:41.208152": "2026-11-18T20:31:41Z",
    "macro:futures:short:neutral:2026-11-19T05:31:43.351476": "2026-11-19T05:31:43Z",
@@ -5787,7 +5786,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 8979.76,
+  "benchmarkCad": 9025.53,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6063,11 +6062,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-21T11:01:42Z",
-  "lastFuturesScan": "2026-11-21T13:31:36Z",
-  "lastRun": "2026-11-21T13:31:36Z",
+  "lastFuturesScan": "2026-11-21T14:01:48Z",
+  "lastRun": "2026-11-21T14:01:48Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin down 2.9% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $8,979.76.",
-  "lastSaved": "2026-11-21T13:31:36Z",
+  "lastRunNote": "US stock market closed today. Bitcoin down 2.0% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,025.53.",
+  "lastSaved": "2026-11-21T14:01:48Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6676,10 +6675,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-21T13:31:36Z"
+  "updated": "2026-11-21T14:01:48Z"
  },
  "log": [
-  "Run 2026-11-21 WATCH (New York 08:31), stock market closed today",
+  "Run 2026-11-21 WATCH (New York 09:01), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -6726,7 +6725,7 @@
    "equityCad": 9928.83
   },
   {
-   "benchmarkCad": 8979.76,
+   "benchmarkCad": 9025.53,
    "cashCad": 9929.31,
    "date": "2026-11-21",
    "equityCad": 9929.31
@@ -6737,7 +6736,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-21T13:31:36Z",
+   "checkedAt": "2026-11-21T14:01:48Z",
    "closes": null,
    "date": "2026-11-21",
    "early_close": null,

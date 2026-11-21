@@ -2838,19 +2838,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-21T11:01:42Z",
+   "at": "2026-11-21T17:01:51Z",
    "count": 1
   },
   "messages": [
-   {
-    "d": "risk",
-    "k": "block",
-    "n": 13,
-    "s": "TSM",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "Blocked TSM: the replays favour the stop."
-   },
    {
     "d": "pm",
     "k": "decide",
@@ -5541,6 +5532,15 @@
     "t": "2026-11-21T11:01:42Z",
     "to": "pm",
     "x": "Weekly ETF list: 300 liquid ETFs kept out of 4,424."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-21T17:01:51Z",
+    "to": "pm",
+    "x": "Futures market is closed right now. No futures trades."
    }
   ],
   "said": {
@@ -5554,7 +5554,7 @@
    "futures-closed:2026-11-18": "2026-11-18T23:01:38Z",
    "futures-closed:2026-11-19": "2026-11-19T23:01:45Z",
    "futures-closed:2026-11-20": "2026-11-20T23:01:44Z",
-   "futures-closed:2026-11-21": "2026-11-21T05:01:42Z",
+   "futures-closed:2026-11-21": "2026-11-21T17:01:51Z",
    "futures-fit:2026-11-19:MET,M6E": "2026-11-20T01:01:49Z",
    "futures-fit:2026-11-20:MET,M6E": "2026-11-20T05:01:36Z",
    "idea:L.TO:long:18:breakout": "2026-11-19T15:01:42Z",
@@ -5598,7 +5598,6 @@
    "idea:XLK:short:21:breakdown": "2026-11-19T16:56:55Z",
    "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:XLY:long:18:pullback": "2026-11-19T14:51:39Z",
-   "macro:futures:short:neutral:2026-11-18T17:01:37.744722": "2026-11-18T17:01:37Z",
    "macro:futures:short:neutral:2026-11-18T20:31:41.208152": "2026-11-18T20:31:41Z",
    "macro:futures:short:neutral:2026-11-19T05:31:43.351476": "2026-11-19T05:31:43Z",
    "macro:futures:short:neutral:2026-11-19T07:31:42.317590": "2026-11-19T07:31:42Z",
@@ -5642,7 +5641,6 @@
    "macro:stocks:long:cautious:2026-11-19T15:16:42.230546": "2026-11-19T15:16:42Z",
    "macro:stocks:long:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:cautious:2026-11-19T15:11:48.589009": "2026-11-19T15:11:48Z",
-   "macro:stocks:short:risk-off:2026-11-18T16:46:44.358597": "2026-11-18T16:46:44Z",
    "macro:stocks:short:risk-off:2026-11-18T17:46:46.544641": "2026-11-18T17:46:46Z",
    "macro:stocks:short:risk-off:2026-11-18T17:56:46.685476": "2026-11-18T17:56:46Z",
    "macro:stocks:short:risk-off:2026-11-18T18:16:41.153080": "2026-11-18T18:16:41Z",
@@ -5710,10 +5708,7 @@
    "scan:stocks:XEL,WMT,WM,XLK:4:5": "2026-11-19T15:16:42Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:8": "2026-11-19T18:16:35Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:8": "2026-11-19T17:26:37Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:3:6": "2026-11-18T16:56:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:3:8": "2026-11-19T18:06:43Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:4:3": "2026-11-18T16:36:45Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:4:4": "2026-11-18T16:46:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:7": "2026-11-18T17:06:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:8": "2026-11-19T19:26:47Z",
    "scan:stocks:XLP,XEL,WMT,XLK:5:6": "2026-11-18T19:06:53Z",
@@ -5752,7 +5747,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 8999.16,
+  "benchmarkCad": 9004.35,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6028,11 +6023,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-21T11:01:42Z",
-  "lastFuturesScan": "2026-11-21T16:31:47Z",
-  "lastRun": "2026-11-21T16:31:47Z",
+  "lastFuturesScan": "2026-11-21T17:01:51Z",
+  "lastRun": "2026-11-21T17:01:51Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin up 1.4% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $8,999.16.",
-  "lastSaved": "2026-11-21T16:31:47Z",
+  "lastRunNote": "US stock market closed today. Bitcoin up 1.6% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,004.35.",
+  "lastSaved": "2026-11-21T17:01:51Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6641,10 +6636,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-21T16:31:47Z"
+  "updated": "2026-11-21T17:01:51Z"
  },
  "log": [
-  "Run 2026-11-21 WATCH (New York 11:31), stock market closed today",
+  "Run 2026-11-21 WATCH (New York 12:01), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -6691,7 +6686,7 @@
    "equityCad": 9928.83
   },
   {
-   "benchmarkCad": 8999.16,
+   "benchmarkCad": 9004.35,
    "cashCad": 9929.31,
    "date": "2026-11-21",
    "equityCad": 9929.31
@@ -6702,7 +6697,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-21T16:31:47Z",
+   "checkedAt": "2026-11-21T17:01:51Z",
    "closes": null,
    "date": "2026-11-21",
    "early_close": null,

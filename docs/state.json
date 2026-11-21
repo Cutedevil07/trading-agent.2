@@ -5549,7 +5549,6 @@
    "clock:closed:2026-11-19:before the open": "2026-11-19T05:01:45Z",
    "clock:closed:2026-11-20:after the close": "2026-11-20T21:01:04Z",
    "clock:closed:2026-11-20:before the open": "2026-11-20T05:01:36Z",
-   "clock:open:2026-11-18": "2026-11-18T14:31:46Z",
    "clock:open:2026-11-19": "2026-11-19T14:31:36Z",
    "clock:open:2026-11-20": "2026-11-20T14:31:54Z",
    "futures-closed:2026-11-18": "2026-11-18T23:01:38Z",
@@ -5580,7 +5579,6 @@
    "idea:TSM:short:16:breakdown": "2026-11-19T16:46:43Z",
    "idea:TSM:short:18:breakdown": "2026-11-19T16:56:55Z",
    "idea:TSM:short:19:breakdown": "2026-11-19T15:36:49Z",
-   "idea:TSM:short:19:none": "2026-11-18T14:51:48Z",
    "idea:TSM:short:23:breakdown": "2026-11-20T14:51:44Z",
    "idea:TSM:short:23:none": "2026-11-20T15:11:43Z",
    "idea:UBER:short:19:breakdown": "2026-11-20T18:16:35Z",
@@ -5592,7 +5590,6 @@
    "idea:VUG:short:18:breakdown": "2026-11-18T15:56:44Z",
    "idea:WELL:long:19:breakout": "2026-11-19T15:01:42Z",
    "idea:WFC:short:17:breakdown": "2026-11-18T18:16:41Z",
-   "idea:WFC:short:17:none": "2026-11-18T14:51:48Z",
    "idea:WFC:short:19:breakdown": "2026-11-18T19:06:53Z",
    "idea:WMT:long:19:breakout": "2026-11-19T15:01:42Z",
    "idea:WMT:long:19:none": "2026-11-18T15:01:59Z",
@@ -5604,7 +5601,6 @@
    "idea:XLK:short:18:none": "2026-11-18T15:01:59Z",
    "idea:XLK:short:19:breakdown": "2026-11-18T17:46:46Z",
    "idea:XLK:short:20:breakdown": "2026-11-20T14:51:44Z",
-   "idea:XLK:short:20:none": "2026-11-18T14:51:48Z",
    "idea:XLK:short:21:breakdown": "2026-11-19T16:56:55Z",
    "idea:XLP:long:18:breakout": "2026-11-18T17:26:43Z",
    "idea:XLP:long:18:none": "2026-11-18T15:01:59Z",
@@ -5657,7 +5653,6 @@
    "macro:stocks:long:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:cautious:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
    "macro:stocks:short:cautious:2026-11-19T15:11:48.589009": "2026-11-19T15:11:48Z",
-   "macro:stocks:short:risk-off:2026-11-18T14:51:48.021733": "2026-11-18T14:51:48Z",
    "macro:stocks:short:risk-off:2026-11-18T15:11:44.108705": "2026-11-18T15:11:44Z",
    "macro:stocks:short:risk-off:2026-11-18T15:26:37.270442": "2026-11-18T15:26:37Z",
    "macro:stocks:short:risk-off:2026-11-18T15:46:31.827173": "2026-11-18T15:46:31Z",
@@ -5697,7 +5692,6 @@
    "mood:crypto:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
    "mood:crypto:risk-off:2026-11-20": "2026-11-20T05:01:36Z",
    "mood:crypto:risk-off:2026-11-21": "2026-11-21T05:01:42Z",
-   "mood:stocks:cautious:2026-11-18": "2026-11-18T14:31:46Z",
    "mood:stocks:cautious:2026-11-19": "2026-11-19T14:31:36Z",
    "mood:stocks:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
    "mood:stocks:risk-off:2026-11-20": "2026-11-20T05:01:36Z",
@@ -5733,7 +5727,6 @@
    "scan:stocks:XEL,WMT,WM,XLK:3:8": "2026-11-19T15:26:43Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:5": "2026-11-19T15:16:42Z",
    "scan:stocks:XEL,WMT,WM,XLK:4:8": "2026-11-19T18:16:35Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:0:0": "2026-11-18T14:51:48Z",
    "scan:stocks:XLP,XEL,WMT,XLK:1:1": "2026-11-18T15:01:59Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:2": "2026-11-18T15:11:44Z",
    "scan:stocks:XLP,XEL,WMT,XLK:2:3": "2026-11-18T15:16:47Z",
@@ -5786,7 +5779,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9013.63,
+  "benchmarkCad": 9009.02,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6062,11 +6055,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-21T11:01:42Z",
-  "lastFuturesScan": "2026-11-21T14:31:33Z",
-  "lastRun": "2026-11-21T14:31:33Z",
+  "lastFuturesScan": "2026-11-21T15:01:39Z",
+  "lastRun": "2026-11-21T15:01:39Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin down 2.3% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,013.63.",
-  "lastSaved": "2026-11-21T14:31:33Z",
+  "lastRunNote": "US stock market closed today. Bitcoin down 2.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,009.02.",
+  "lastSaved": "2026-11-21T15:01:39Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6675,10 +6668,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-21T14:31:33Z"
+  "updated": "2026-11-21T15:01:39Z"
  },
  "log": [
-  "Run 2026-11-21 WATCH (New York 09:31), stock market closed today",
+  "Run 2026-11-21 WATCH (New York 10:01), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -6725,7 +6718,7 @@
    "equityCad": 9928.83
   },
   {
-   "benchmarkCad": 9013.63,
+   "benchmarkCad": 9009.02,
    "cashCad": 9929.31,
    "date": "2026-11-21",
    "equityCad": 9929.31
@@ -6736,7 +6729,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-21T14:31:33Z",
+   "checkedAt": "2026-11-21T15:01:39Z",
    "closes": null,
    "date": "2026-11-21",
    "early_close": null,

@@ -2838,37 +2838,10 @@
  },
  "floor": {
   "lastRun": {
-   "at": "2026-11-20T23:01:44Z",
-   "count": 1
+   "at": "2026-11-21T05:01:42Z",
+   "count": 3
   },
   "messages": [
-   {
-    "d": "news",
-    "k": "vote",
-    "n": 9,
-    "s": "TSM",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "TSM: 2 fresh headlines, mostly good; 8/25. Top: \"Here\u2019s What Weighed on Taiwan Semiconductor Manufacturing...\""
-   },
-   {
-    "d": "analyst",
-    "k": "vote",
-    "n": 10,
-    "s": "TSM",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "pm",
-    "x": "TSM: company numbers unavailable today, neutral 9/15."
-   },
-   {
-    "d": "pm",
-    "k": "decide",
-    "n": 11,
-    "s": "TSM",
-    "t": "2026-11-19T16:56:55Z",
-    "to": "all",
-    "x": "Short TSM scores 72, needs 70. Quant and Risk, check it."
-   },
    {
     "d": "quant",
     "k": "vote",
@@ -5541,6 +5514,33 @@
     "t": "2026-11-20T23:01:44Z",
     "to": "pm",
     "x": "Futures market is closed right now. No futures trades."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 0,
+    "s": "",
+    "t": "2026-11-21T05:01:42Z",
+    "to": "pm",
+    "x": "Crypto is risk off: Bitcoin -8.2% in 24 hours, below its 50-day average."
+   },
+   {
+    "d": "research",
+    "k": "info",
+    "n": 1,
+    "s": "",
+    "t": "2026-11-21T05:01:42Z",
+    "to": "pm",
+    "x": "Data check: options backup not answering, borrow list not answering, economic calendar ok, SEC filings on."
+   },
+   {
+    "d": "strategy",
+    "k": "mood",
+    "n": 2,
+    "s": "",
+    "t": "2026-11-21T05:01:42Z",
+    "to": "pm",
+    "x": "Futures market is closed right now. No futures trades."
    }
   ],
   "said": {
@@ -5556,6 +5556,7 @@
    "futures-closed:2026-11-18": "2026-11-18T23:01:38Z",
    "futures-closed:2026-11-19": "2026-11-19T23:01:45Z",
    "futures-closed:2026-11-20": "2026-11-20T23:01:44Z",
+   "futures-closed:2026-11-21": "2026-11-21T05:01:42Z",
    "futures-fit:2026-11-18:MET,M6E": "2026-11-18T10:01:48Z",
    "futures-fit:2026-11-19:MET,M6E": "2026-11-20T01:01:49Z",
    "futures-fit:2026-11-20:MET,M6E": "2026-11-20T05:01:36Z",
@@ -5714,6 +5715,7 @@
    "mood:crypto:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
    "mood:crypto:risk-off:2026-11-19": "2026-11-19T05:01:45Z",
    "mood:crypto:risk-off:2026-11-20": "2026-11-20T05:01:36Z",
+   "mood:crypto:risk-off:2026-11-21": "2026-11-21T05:01:42Z",
    "mood:stocks:cautious:2026-11-18": "2026-11-18T14:31:46Z",
    "mood:stocks:cautious:2026-11-19": "2026-11-19T14:31:36Z",
    "mood:stocks:risk-off:2026-11-18": "2026-11-18T05:01:48Z",
@@ -5802,17 +5804,18 @@
    "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T19:26:45Z",
    "sources:2026-11-18": "2026-11-18T10:01:48Z",
    "sources:2026-11-19": "2026-11-19T05:01:45Z",
-   "sources:2026-11-20": "2026-11-20T05:01:36Z"
+   "sources:2026-11-20": "2026-11-20T05:01:36Z",
+   "sources:2026-11-21": "2026-11-21T05:01:42Z"
   }
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 8810.38,
+  "benchmarkCad": 8839.77,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
-  "dayDate": "2026-11-20",
-  "dayStartEquityCad": 9922.06,
+  "dayDate": "2026-11-21",
+  "dayStartEquityCad": 9928.83,
   "earningsCheckedOn": "2026-11-20",
   "earningsKnown": true,
   "entriesThisWeek": 0,
@@ -6083,11 +6086,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-21T04:31:43Z",
-  "lastRun": "2026-11-21T04:31:43Z",
+  "lastFuturesScan": "2026-11-21T05:01:42Z",
+  "lastRun": "2026-11-21T05:01:42Z",
   "lastRunBy": "github",
-  "lastRunNote": "The S&P 500 fund was down 3.6% today; market mood risk-off. Bitcoin down 9.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,928.83 vs buy-and-hold $8,810.38.",
-  "lastSaved": "2026-11-21T04:31:43Z",
+  "lastRunNote": "US stock market closed today. Bitcoin down 8.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,928.83 vs buy-and-hold $8,839.77.",
+  "lastSaved": "2026-11-21T05:01:42Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6665,6 +6668,16 @@
     }
    ],
    "universe": 6224
+  },
+  {
+   "cryptoRegime": "risk-off",
+   "dataCalls": 17,
+   "date": "2026-11-21",
+   "liquid": 2258,
+   "regime": "risk-off",
+   "screened": 6223,
+   "summary": "",
+   "universe": 6224
   }
  ],
  "lessons": [],
@@ -6686,10 +6699,13 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-21T04:31:43Z"
+  "updated": "2026-11-21T05:01:42Z"
  },
  "log": [
-  "Run 2026-11-20 WATCH (New York 23:31), stock market open day",
+  "Run 2026-11-21 WATCH (New York 00:01), stock market closed today",
+  "Borrow list unavailable: OSError: [Errno 113] No route to host",
+  "Borrow data for SPY unavailable (Remote end closed connection without response)",
+  "Data sources: Cboe options 0 rows, borrow list 0 names, CPI dates 13, jobs dates 13, SEC contact set",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -6734,6 +6750,12 @@
    "cashCad": 9928.83,
    "date": "2026-11-20",
    "equityCad": 9928.83
+  },
+  {
+   "benchmarkCad": 8839.77,
+   "cashCad": 9928.83,
+   "date": "2026-11-21",
+   "equityCad": 9928.83
   }
  ],
  "pack": {
@@ -6741,14 +6763,14 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-21T04:31:43Z",
-   "closes": "16:00",
-   "date": "2026-11-20",
+   "checkedAt": "2026-11-21T05:01:42Z",
+   "closes": null,
+   "date": "2026-11-21",
    "early_close": null,
    "next_open": "2026-11-23 09:30",
    "open": false,
-   "opens": "09:30",
-   "reason": "after the close"
+   "opens": null,
+   "reason": "weekend"
   }
  },
  "positions": {},
@@ -6807,7 +6829,7 @@
   "borrowNames": 0,
   "cboeOptions": 0,
   "cpiDates": 13,
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "jobsDates": 13,
   "secContact": true
  },

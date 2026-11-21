@@ -5569,7 +5569,6 @@
    "idea:MET:short:19:none": "2026-11-20T22:01:49Z",
    "idea:MGC:short:18:breakdown": "2026-11-18T09:01:47Z",
    "idea:MU:short:21:none": "2026-11-20T15:46:36Z",
-   "idea:MYM:short:19:none": "2026-11-18T08:31:50Z",
    "idea:NFLX:short:17:breakdown": "2026-11-18T15:26:37Z",
    "idea:NFLX:short:18:breakdown": "2026-11-19T15:26:43Z",
    "idea:NFLX:short:19:breakdown": "2026-11-19T16:06:46Z",
@@ -5632,7 +5631,6 @@
    "macro:futures:short:neutral:2026-11-20T17:01:47.727613": "2026-11-20T17:01:47Z",
    "macro:futures:short:neutral:2026-11-20T18:31:33.760546": "2026-11-20T18:31:33Z",
    "macro:futures:short:neutral:2026-11-20T21:31:44.638585": "2026-11-20T21:31:44Z",
-   "macro:futures:short:risk-off:2026-11-18T08:31:50.635439": "2026-11-18T08:31:50Z",
    "macro:futures:short:risk-off:2026-11-18T10:01:48.466111": "2026-11-18T10:01:48Z",
    "macro:futures:short:risk-off:2026-11-18T11:31:51.178629": "2026-11-18T11:31:51Z",
    "macro:futures:short:risk-off:2026-11-18T15:01:59.827410": "2026-11-18T15:01:59Z",
@@ -5717,7 +5715,6 @@
    "nothing:MET:18": "2026-11-18T17:31:42Z",
    "nothing:MET:19": "2026-11-20T21:31:44Z",
    "nothing:MU:21": "2026-11-20T15:46:36Z",
-   "nothing:MYM:19": "2026-11-18T08:31:50Z",
    "nothing:TSM:23": "2026-11-20T14:51:44Z",
    "nothing:UBER:19": "2026-11-20T18:16:35Z",
    "nothing:UBER:20": "2026-11-20T17:06:35Z",
@@ -5797,7 +5794,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 8891.92,
+  "benchmarkCad": 8897.9,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6073,11 +6070,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-14T10:48:52Z",
-  "lastFuturesScan": "2026-11-21T08:31:44Z",
-  "lastRun": "2026-11-21T08:31:44Z",
+  "lastFuturesScan": "2026-11-21T09:01:41Z",
+  "lastRun": "2026-11-21T09:01:41Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin down 7.1% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $8,891.92.",
-  "lastSaved": "2026-11-21T08:31:44Z",
+  "lastRunNote": "US stock market closed today. Bitcoin down 6.5% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $8,897.90.",
+  "lastSaved": "2026-11-21T09:01:41Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6686,10 +6683,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-21T08:31:44Z"
+  "updated": "2026-11-21T09:01:41Z"
  },
  "log": [
-  "Run 2026-11-21 WATCH (New York 03:31), stock market closed today",
+  "Run 2026-11-21 WATCH (New York 04:01), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -6736,7 +6733,7 @@
    "equityCad": 9928.83
   },
   {
-   "benchmarkCad": 8891.92,
+   "benchmarkCad": 8897.9,
    "cashCad": 9929.31,
    "date": "2026-11-21",
    "equityCad": 9929.31
@@ -6747,7 +6744,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-21T08:31:44Z",
+   "checkedAt": "2026-11-21T09:01:41Z",
    "closes": null,
    "date": "2026-11-21",
    "early_close": null,

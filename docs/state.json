@@ -5583,7 +5583,6 @@
    "idea:UBER:short:21:breakdown": "2026-11-20T16:56:43Z",
    "idea:USFR:long:18:none": "2026-11-19T15:16:42Z",
    "idea:WELL:long:19:breakout": "2026-11-19T15:01:42Z",
-   "idea:WFC:short:19:breakdown": "2026-11-18T19:06:53Z",
    "idea:WMT:long:19:breakout": "2026-11-19T15:01:42Z",
    "idea:WMT:long:20:breakout": "2026-11-20T15:16:39Z",
    "idea:XLI:short:18:breakdown": "2026-11-20T18:16:35Z",
@@ -5632,7 +5631,6 @@
    "macro:stocks:long:cautious:2026-11-19T15:16:42.230546": "2026-11-19T15:16:42Z",
    "macro:stocks:long:risk-off:2026-11-20T15:16:39.593336": "2026-11-20T15:16:39Z",
    "macro:stocks:short:cautious:2026-11-19T15:11:48.589009": "2026-11-19T15:11:48Z",
-   "macro:stocks:short:risk-off:2026-11-18T19:06:53.584775": "2026-11-18T19:06:53Z",
    "macro:stocks:short:risk-off:2026-11-19T15:26:43.629295": "2026-11-19T15:26:43Z",
    "macro:stocks:short:risk-off:2026-11-19T15:36:49.046547": "2026-11-19T15:36:49Z",
    "macro:stocks:short:risk-off:2026-11-19T16:06:46.406397": "2026-11-19T16:06:46Z",
@@ -5674,7 +5672,6 @@
    "nothing:UBER:19": "2026-11-20T18:16:35Z",
    "nothing:UBER:20": "2026-11-20T17:06:35Z",
    "nothing:UBER:21": "2026-11-20T16:56:43Z",
-   "nothing:WFC:19": "2026-11-18T19:06:53Z",
    "nothing:WMT:19": "2026-11-19T15:01:42Z",
    "nothing:XLI:19": "2026-11-20T18:46:45Z",
    "nothing:XLK:20": "2026-11-19T19:26:47Z",
@@ -5691,7 +5688,6 @@
    "scan:stocks:XLP,XEL,WMT,XLK:2:8": "2026-11-19T17:26:37Z",
    "scan:stocks:XLP,XEL,WMT,XLK:3:8": "2026-11-19T18:06:43Z",
    "scan:stocks:XLP,XEL,WMT,XLK:4:8": "2026-11-19T19:26:47Z",
-   "scan:stocks:XLP,XEL,WMT,XLK:5:6": "2026-11-18T19:06:53Z",
    "scan:stocks:XLP,XEL,WMT,XLK:7:6": "2026-11-18T19:36:38Z",
    "scan:stocks:XLP,XEL,WTW,XLI:6:8": "2026-11-20T19:46:44Z",
    "scan:stocks:XLP,XEL,WTW,XLI:7:6": "2026-11-20T16:26:43Z",
@@ -5716,7 +5712,6 @@
    "scan:tsx:WN.TO,TRP.TO,REI-UN.TO": "2026-11-20T19:16:52Z",
    "scan:tsx:WN.TO,TRP.TO,SAP.TO": "2026-11-19T16:46:43Z",
    "scan:tsx:WN.TO,TRP.TO,STN.TO": "2026-11-19T17:06:37Z",
-   "scan:tsx:X.TO,WN.TO,TRP.TO": "2026-11-18T19:26:45Z",
    "sources:2026-11-19": "2026-11-19T05:01:45Z",
    "sources:2026-11-20": "2026-11-20T05:01:36Z",
    "sources:2026-11-21": "2026-11-21T05:01:42Z"
@@ -5724,7 +5719,7 @@
  },
  "fund": {
   "benchmarkBtcUnits": 0.03103649722666308,
-  "benchmarkCad": 9001.15,
+  "benchmarkCad": 9009.32,
   "benchmarkSet": true,
   "benchmarkSpyUnits": 6.399142948573451,
   "cad": 3000.0,
@@ -6000,11 +5995,11 @@
   "halted": false,
   "lastCongressCheck": "2026-11-20",
   "lastEtfScan": "2026-11-21T11:01:42Z",
-  "lastFuturesScan": "2026-11-21T19:01:46Z",
-  "lastRun": "2026-11-21T19:01:46Z",
+  "lastFuturesScan": "2026-11-21T19:31:50Z",
+  "lastRun": "2026-11-21T19:31:50Z",
   "lastRunBy": "github",
-  "lastRunNote": "US stock market closed today. Bitcoin up 3.2% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,001.15.",
-  "lastSaved": "2026-11-21T19:01:46Z",
+  "lastRunNote": "US stock market closed today. Bitcoin up 3.7% in 24 hours (risk-off). No trades: nothing scored high enough with a clean setup. Holding 0 positions. Value $9,929.31 vs buy-and-hold $9,009.32.",
+  "lastSaved": "2026-11-21T19:31:50Z",
   "lastStockScan": "2026-11-20T19:46:44Z",
   "lastTradingDay": "2026-11-20",
   "lastUniverseScan": "2026-11-20T13:01:48Z",
@@ -6613,10 +6608,10 @@
    "exits": [],
    "signals": []
   },
-  "updated": "2026-11-21T19:01:46Z"
+  "updated": "2026-11-21T19:31:50Z"
  },
  "log": [
-  "Run 2026-11-21 WATCH (New York 14:01), stock market closed today",
+  "Run 2026-11-21 WATCH (New York 14:31), stock market closed today",
   "Futures market closed now: no futures trades"
  ],
  "nav": [
@@ -6663,7 +6658,7 @@
    "equityCad": 9928.83
   },
   {
-   "benchmarkCad": 9001.15,
+   "benchmarkCad": 9009.32,
    "cashCad": 9929.31,
    "date": "2026-11-21",
    "equityCad": 9929.31
@@ -6674,7 +6669,7 @@
   "alertState": {},
   "clock": {
    "calendar_known": true,
-   "checkedAt": "2026-11-21T19:01:46Z",
+   "checkedAt": "2026-11-21T19:31:50Z",
    "closes": null,
    "date": "2026-11-21",
    "early_close": null,
